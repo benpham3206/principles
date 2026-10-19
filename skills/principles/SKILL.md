@@ -69,6 +69,8 @@ Done means every axis has a stated choice and `principles-judge` finds no materi
 | | `principles-machine` | mechanisms, structures, engineered hardware |
 | Check | `principles-judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
 | Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
+| | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
+| | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
 | | `principles-synthesize` | a goal too big for known solutions, or inventing something new |
 | | `principles-horizons` | second- and later-order effects, strategy, long-range goals |
 | Values | `principles-qualities` | setting a design language or philosophy, resolving trade-offs between values |

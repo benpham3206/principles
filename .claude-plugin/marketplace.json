@@ -1,0 +1,14 @@
+{
+  "name": "principles",
+  "description": "Axioms, principles, and taste for agents and people, in any medium.",
+  "owner": {
+    "name": "benpham3206"
+  },
+  "plugins": [
+    {
+      "name": "principles",
+      "source": "./",
+      "description": "Axioms, principles, and taste for agents and people, in any medium, software or physical."
+    }
+  ]
+}

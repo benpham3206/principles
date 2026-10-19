@@ -1,0 +1,78 @@
+---
+name: principles
+description: Map of the principles skills and the six axes every made thing has (form, material, energy, observer, composition, time). Use when starting any design, build, critique, plan, or decision in any medium, software or physical, or when unsure which principles apply.
+---
+
+# Principles
+
+Every made thing, in any medium, is a set of choices along six axes. Intent picks the settings. Physics, logic, and perception bound them. Judgment checks them against reality.
+
+```
+                    INTENT   why, for whom, under which limits
+                       |
+   GROUND ---------> MAKE ---------> SIMULATE ---------> REALITY
+   what is true      six axes in      test the model     ship, measure
+   (cognitive)       one medium       before the world        |
+        ^            (generative)                             |
+        |                                                     |
+        +------------ JUDGE  is it true, is it good  <--------+
+                      (recognitive)
+```
+
+## The six axes
+
+| Axis | The question | Visual | Sound | Language | Interaction | Code | Machine |
+|---|---|---|---|---|---|---|---|
+| **Form** | What shape does it take? | shape, scale, proportion | pitch, interval, envelope | word, sentence length | targets, affordances | types, interfaces | geometry, tolerance, fit |
+| **Material** | What is it made of? | color, texture, roughness | timbre, resonance | diction, register | states, feedback | language, data structures, dependencies | alloy, polymer, finish |
+| **Energy** | What drives it, and how hard? | light, intensity, falloff | dynamics, attack | emphasis, stress | response, effort, latency | compute, memory, power | loads, heat, power flow |
+| **Observer** | Who meets it, from where? | viewpoint, focus, exposure | listener, room, speaker | reader, prior knowledge | user, context, ability | caller, maintainer, operator | operator, inspector, sensor |
+| **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
+| **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
+
+An axis left at its default is a decision made by accident. Set each one on purpose, or state that its default serves the intent.
+
+## Using the axes
+
+1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `method` first.
+2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
+3. Make the smallest complete version: every axis present, none polished.
+4. Run `judge`. Fix the worst axis first, then the next.
+
+Done means every axis has a stated choice and `judge` finds no material issue.
+
+## Laws that hold in every medium
+
+- **Contrast** carries meaning. Perception detects difference, not absolute level. When everything is emphasized, nothing is.
+- **Hierarchy** puts one thing first. The observer should know where to start within a second.
+- **Proportion** beats size. Relationships between parts read before the parts do.
+- **Consistency** builds a language. Break it only to say something.
+- **Subtraction** finds the work. Remove parts until it breaks, then put back the last one.
+- **Constraint** creates form. A limit chosen early forces a coherent design; a limit met late forces a patch.
+- **The observer completes the work.** Design for their real position, knowledge, attention, and body.
+- **Time is an axis.** Everything is met in sequence, changes, and wears.
+- **Ground truth lives outside language.** Measure, test, or simulate before you believe a description, your own included.
+- **Craft lives in the details nobody asked for.** The observer feels them without naming them.
+
+## The skills
+
+| Layer | Skill | Reach for it when |
+|---|---|---|
+| Ground | `ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
+| Make | `visual` | images, layout, UI look, 3D, video, any lit or seen thing |
+| | `sound` | audio, music, voice, alerts, acoustics |
+| | `touch` | physical products, spaces, ergonomics, haptics |
+| | `language` | writing, naming, speech, prompts, docs |
+| | `interaction` | flows, controls, feedback, anything a person operates |
+| | `information` | charts, diagrams, tables, dashboards, maps |
+| | `code` | software structure, APIs, data, systems |
+| | `machine` | mechanisms, structures, engineered hardware |
+| Check | `judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
+| Work | `method` | planning or doing any task, choosing how much rigor, making a decision |
+| | `synthesize` | a goal too big for known solutions, or inventing something new |
+| | `horizons` | second- and later-order effects, strategy, long-range goals |
+| Values | `qualities` | setting a design language or philosophy, resolving trade-offs between values |
+| Mind | `counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
+| | `mind` | designing an agent, an assistant, memory, or calibration |
+| | `develop` | growing a person or an agent, teaching, choosing how much to scaffold |
+| | `compound` | deciding what to invest in so gains build on gains |

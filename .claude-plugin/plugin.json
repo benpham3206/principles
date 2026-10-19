@@ -1,0 +1,10 @@
+{
+  "name": "principles",
+  "version": "0.1.0",
+  "description": "Axioms, principles, and taste for agents and people, in any medium, software or physical.",
+  "author": { "name": "benpham3206" },
+  "homepage": "https://github.com/benpham3206/principles",
+  "repository": "https://github.com/benpham3206/principles",
+  "license": "MIT",
+  "keywords": ["principles", "design", "engineering", "taste", "first-principles"]
+}

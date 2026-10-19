@@ -18,10 +18,10 @@ The bar:
 
 This repo is built by its own skills. Before adding or changing a skill:
 
-1. Run `method`: intent, definition of done, the gate.
+1. Run `principles-method`: intent, definition of done, the gate.
 2. Write it.
-3. Run `judge` on it: three distances, six axes, taste faults, verification.
-4. A change is done when `judge` finds no material issue and the skill reads as plain instructions to a capable stranger.
+3. Run `principles-judge` on it: three distances, six axes, taste faults, verification.
+4. A change is done when `principles-judge` finds no material issue and the skill reads as plain instructions to a capable stranger.
 
 ## Skill layout
 
@@ -33,7 +33,7 @@ Frontmatter: `name` and `description`. The description front-loads what the skil
 
 ### Medium skills
 
-Every medium skill (`visual`, `sound`, `touch`, `language`, `interaction`, `information`, `code`, `machine`) follows the same shape, with `visual` as the reference:
+Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`) follows the same shape, with `principles-visual` as the reference:
 
 ```
 # <Medium>

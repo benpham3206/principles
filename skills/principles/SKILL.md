@@ -34,12 +34,12 @@ An axis left at its default is a decision made by accident. Set each one on purp
 
 ## Using the axes
 
-1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `method` first.
+1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
 2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
 3. Make the smallest complete version: every axis present, none polished.
-4. Run `judge`. Fix the worst axis first, then the next.
+4. Run `principles-judge`. Fix the worst axis first, then the next.
 
-Done means every axis has a stated choice and `judge` finds no material issue.
+Done means every axis has a stated choice and `principles-judge` finds no material issue.
 
 ## Laws that hold in every medium
 
@@ -58,21 +58,21 @@ Done means every axis has a stated choice and `judge` finds no material issue.
 
 | Layer | Skill | Reach for it when |
 |---|---|---|
-| Ground | `ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
-| Make | `visual` | images, layout, UI look, 3D, video, any lit or seen thing |
-| | `sound` | audio, music, voice, alerts, acoustics |
-| | `touch` | physical products, spaces, ergonomics, haptics |
-| | `language` | writing, naming, speech, prompts, docs |
-| | `interaction` | flows, controls, feedback, anything a person operates |
-| | `information` | charts, diagrams, tables, dashboards, maps |
-| | `code` | software structure, APIs, data, systems |
-| | `machine` | mechanisms, structures, engineered hardware |
-| Check | `judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
-| Work | `method` | planning or doing any task, choosing how much rigor, making a decision |
-| | `synthesize` | a goal too big for known solutions, or inventing something new |
-| | `horizons` | second- and later-order effects, strategy, long-range goals |
-| Values | `qualities` | setting a design language or philosophy, resolving trade-offs between values |
-| Mind | `counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
-| | `mind` | designing an agent, an assistant, memory, or calibration |
-| | `develop` | growing a person or an agent, teaching, choosing how much to scaffold |
-| | `compound` | deciding what to invest in so gains build on gains |
+| Ground | `principles-ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
+| Make | `principles-visual` | images, layout, UI look, 3D, video, any lit or seen thing |
+| | `principles-sound` | audio, music, voice, alerts, acoustics |
+| | `principles-touch` | physical products, spaces, ergonomics, haptics |
+| | `principles-language` | writing, naming, speech, prompts, docs |
+| | `principles-interaction` | flows, controls, feedback, anything a person operates |
+| | `principles-information` | charts, diagrams, tables, dashboards, maps |
+| | `principles-code` | software structure, APIs, data, systems |
+| | `principles-machine` | mechanisms, structures, engineered hardware |
+| Check | `principles-judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
+| Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
+| | `principles-synthesize` | a goal too big for known solutions, or inventing something new |
+| | `principles-horizons` | second- and later-order effects, strategy, long-range goals |
+| Values | `principles-qualities` | setting a design language or philosophy, resolving trade-offs between values |
+| Mind | `principles-counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
+| | `principles-mind` | designing an agent, an assistant, memory, or calibration |
+| | `principles-develop` | growing a person or an agent, teaching, choosing how much to scaffold |
+| | `principles-compound` | deciding what to invest in so gains build on gains |

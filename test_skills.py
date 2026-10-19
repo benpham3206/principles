@@ -183,6 +183,10 @@ class TestRepo(unittest.TestCase):
             print(e)
         self.assertEqual(errors, [])
 
+    def test_policy_stays_short(self) -> None:
+        lines = (ROOT / "policy.md").read_text(encoding="utf-8").splitlines()
+        self.assertLessEqual(len(lines), 50, "policy.md loads in every session; keep it to 50 lines or fewer")
+
 
 if __name__ == "__main__":
     unittest.main()

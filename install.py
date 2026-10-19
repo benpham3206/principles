@@ -13,7 +13,9 @@ folder into every harness present. A pull therefore updates every harness at onc
 new skill needs a new link. Pulls are fast-forward only: a clone with local commits or edits
 refuses and is reported, never overwritten. A link that points elsewhere is a conflict and
 is never replaced. When a skill is renamed or removed, the links this installer made for it
-are pruned (only links, never folders). Same script on Windows and macOS, Python 3.9 or later.
+are pruned (only links, never folders). policy.md is written as one managed block into every
+harness instruction file present (fanout.py rule), replaced in place on each run. Same script
+on Windows and macOS, Python 3.9 or later.
 """
 
 from __future__ import annotations
@@ -30,6 +32,13 @@ CLONE = HOME / ".agents" / "skill-repos" / "benpham3206__principles"
 AGENT_SKILLS = HOME / ".agents" / "skills"
 FANOUT = AGENT_SKILLS / "propagate-across-harnesses" / "fanout.py"
 REMOTE = HOME / ".agents" / "hooks" / "remote.py"
+# The always-on policy. Same tag as the old ~/.agents/engineering installer, so its blocks are replaced in place.
+POLICY = "policy.md"
+POLICY_TAG = "engineering-policy"
+POLICY_TITLE = "Engineering policy from principles"
+HERMES = HOME / ".hermes" / "skills" / "software-development" / "hermes-execution-todo"
+HERMES_POINTER = ("**Engineering policy:** load `references/engineering-policy.md`, the managed copy of "
+                  "principles' `policy.md`. Fast path for cheap reversible work: build, verify, iterate.")
 WIN = sys.platform.startswith("win")
 # ssh aliases this fleet uses. remote.py drives the two it knows (same guard, same logs);
 # mbp13 has no remote.py target, so it gets plain ssh into a login shell. The remote command
@@ -115,13 +124,34 @@ def remove_link(path: Path) -> None:
         os.unlink(path)
 
 
-def harness_dirs() -> list[Path]:
-    """The harness skill folders fanout.py links into, read from fanout.py itself."""
+def load_fanout():
     import importlib.util
     spec = importlib.util.spec_from_file_location("fanout", FANOUT)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return [Path(d) for d in mod.SKILL_DIRS]
+    return mod
+
+
+def policy(check: bool) -> int:
+    """Write policy.md as one managed block into every harness instruction file. Returns drift."""
+    src = CLONE / POLICY
+    if not src.is_file():
+        print(f"skip     no {POLICY} in {CLONE}")
+        return 0
+    fo = load_fanout()
+    body = src.read_text(encoding="utf-8").strip()
+    source = f"~/.agents/skill-repos/benpham3206__principles/{POLICY}"
+    targets = fo.instruction_targets(POLICY_TAG, POLICY_TITLE)
+    # Grok loads every file in ~/.grok/rules every session; fanout only edits ~/.grok/AGENTS.md if it exists.
+    targets.append(("grok-rules", HOME / ".grok" / "rules" / f"ben-{POLICY_TAG}.md", ""))
+    targets.append(("hermes", HERMES / "references" / "engineering-policy.md", ""))
+    drift = fo.install_rule(POLICY_TAG, body, source, targets, check)
+    return drift + fo.install_rule(POLICY_TAG, HERMES_POINTER, source, [("hermes", HERMES / "SKILL.md", None)], check)
+
+
+def harness_dirs() -> list[Path]:
+    """The harness skill folders fanout.py links into, read from fanout.py itself."""
+    return [Path(d) for d in load_fanout().SKILL_DIRS]
 
 
 def prune(names: list[str], check: bool) -> list[Path]:
@@ -210,7 +240,9 @@ def install(check: bool) -> int:
     for path in prune(names, check):
         print(f"{'stale' if check else 'pruned':<8} {path} (link to a skill the repo no longer has)")
         worst = worst or (1 if check else 0)
-    print(f"{'checked' if check else 'installed'} {len(names)} skills: {'drift' if worst else 'ok'}")
+    if policy(check):
+        worst = 1
+    print(f"{'checked' if check else 'installed'} {len(names)} skills and {POLICY}: {'drift' if worst else 'ok'}")
     return worst
 
 

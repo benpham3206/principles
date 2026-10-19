@@ -142,6 +142,8 @@ def policy(check: bool) -> int:
     body = src.read_text(encoding="utf-8").strip()
     source = f"~/.agents/skill-repos/benpham3206__principles/{POLICY}"
     targets = fo.instruction_targets(POLICY_TAG, POLICY_TITLE)
+    # Grok loads every file in ~/.grok/rules every session; fanout only edits ~/.grok/AGENTS.md if it exists.
+    targets.append(("grok-rules", HOME / ".grok" / "rules" / f"ben-{POLICY_TAG}.md", ""))
     targets.append(("hermes", HERMES / "references" / "engineering-policy.md", ""))
     drift = fo.install_rule(POLICY_TAG, body, source, targets, check)
     return drift + fo.install_rule(POLICY_TAG, HERMES_POINTER, source, [("hermes", HERMES / "SKILL.md", None)], check)

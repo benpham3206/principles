@@ -165,6 +165,11 @@ class TestPolicy(Fixture):
         self.assertNotIn("rule one", text)
         self.assertIn("rule two", text)
 
+    def test_grok_rules_folder_gets_its_own_file(self) -> None:
+        (self.home / ".grok" / "rules").mkdir(parents=True)
+        install.policy(check=False)
+        self.assertIn("rule one", (self.home / ".grok" / "rules" / "ben-engineering-policy.md").read_text())
+
     def test_missing_policy_is_skipped(self) -> None:
         (self.clone / "policy.md").unlink()
         self.assertEqual(install.policy(check=True), 0)

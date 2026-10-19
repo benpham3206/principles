@@ -66,6 +66,16 @@ Any harness that reads Agent Skills folders (`SKILL.md` with `name` and `descrip
 git clone https://github.com/benpham3206/principles
 ```
 
+With agent-hooks present (its `fanout.py` links one folder into every harness), `install.py` does all of it:
+
+```
+python3 install.py --pull     # clone or fast-forward ~/.agents/skill-repos/benpham3206__principles, then link and fan out
+python3 install.py --check    # dry run; exit 1 on drift
+python3 install.py --all      # this machine, then every other one with an ssh alias (mac, mbp13, windows)
+```
+
+It installs from that clone, never from a working checkout, so unmerged edits never reach an agent. Pulls are fast-forward only, and a link that points elsewhere is reported, never replaced. Tests: `python3 -m unittest test_install`.
+
 ## Contributing
 
 Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `method` and checked with its own `judge`.

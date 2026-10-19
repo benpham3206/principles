@@ -54,9 +54,9 @@ For small reversible tasks this collapses to build, verify, iterate.
 1. Measure reality.
 2. Compare expected with actual.
 3. Find the bottleneck.
-4. Find the root cause of each failure, not the symptom.
+4. Find the root cause of each failure, not the symptom (see `principles-lessons`).
 5. Route back to Plan or Build.
-6. Verify the fix; the test must fail when the fix is removed.
+6. Verify the fix with a test that fails when the fix is removed.
 7. Delete obsolete complexity. Tools and automation are liabilities once they stop paying rent.
 8. Repeat until done is met.
 

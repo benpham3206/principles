@@ -21,11 +21,11 @@ Think big. Build small. Win.
 
   MEDIUMS            WORK              VALUES        MIND
   visual             method            qualities     counsel
-  sound              synthesize                      mind
-  touch              horizons                        develop
-  language           judge                           compound
-  interaction
-  information
+  sound              represent                       mind
+  touch              synthesize                      develop
+  language           horizons                        compound
+  interaction        lessons
+  information        judge
   code
   machine
 ```
@@ -41,6 +41,8 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
 | `principles-judge` | Taste and verification; three distances; check before you generate |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
+| `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
+| `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
 | `principles-synthesize` | Invent from a Herculean goal: complete output, plan, verify |
 | `principles-horizons` | First to nth-order consequences |
 | `principles-qualities` | Intention, agency, trust, craft, delight and the rest; fluid versus textured |

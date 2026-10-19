@@ -5,7 +5,7 @@ description: Principles of showing information (charts, diagrams, tables, dashbo
 
 # Information
 
-An **information display** is data or structure arranged so a reader can answer a question and act on it. The reader first looks for the answer to their own question, so the display succeeds when that answer is the first thing found and the thing found is true. For how marks look (color values, type, spacing), use `principles-visual`; this skill covers what the marks encode.
+An **information display** is data or structure arranged so a reader can answer a question and act on it. The reader first looks for the answer to their own question, so the display succeeds when that answer is the first thing found and the thing found is true. For how marks look (color values, type, spacing), use `principles-visual`; this skill covers what the marks encode. To choose which structure a problem should take before it is drawn, use `principles-represent`.
 
 ## Tree
 

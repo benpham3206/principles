@@ -7,6 +7,20 @@ description: Principles of anything heard (music, production, mixing, voice, sou
 
 A **sound** work is pressure variation in air arranged to reach an ear. The listener hears level and onset first, pitch and rhythm second, and timbre and space last, so every choice is a choice about what they hear in what order, in a room and on a speaker you do not control.
 
+## Laws of the medium
+
+- Level is a log scale. Sound pressure level in dB is 20 log10 of the pressure ratio to a reference, so +6 dB doubles pressure and +10 dB is heard as roughly twice as loud (a rule of thumb that varies with frequency and level). Think in ratios.
+- Two equal, uncorrelated sources add 3 dB, not 6. Two identical in-phase signals add 6 dB; opposite phase cancels.
+- Each part owns a band, a position, and a moment. When two share all three, one is lost.
+- The first milliseconds, the loudest part, and the lowest frequency tell the listener most. Set them first.
+- The room and the speaker are part of the work. A wavelength is the speed of sound (about 343 m/s in air at 20 degrees Celsius) divided by frequency, so low notes are meters long and meet the room as modes, not rays.
+- Judge at the three distances: low volume, a cheap speaker, the next room.
+- Silence and quiet are material. Contrast needs both.
+
+## Defaults to replace
+
+A single reverb on the whole mix, a tempo of 120 beats per minute, every note on the grid, everything centered, every part in the same octave, a compressor on every channel, the loudest level for every section, a stock envelope, a sound that starts on beat one of every bar, and an alert tone at one pitch and one volume everywhere.
+
 ## Tree
 
 ```
@@ -93,17 +107,3 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Gain staging | Each stage in a chain has a noise floor and a clip point; set level so the signal sits well above one and below the other | Low level early, then noise lifted late; or clipping early | At each stage, how far is the signal from noise and from clip? |
 | Noise floor | Every capture holds noise; dynamic range is the gap from the floor to the clip point, and each added bit of a digital word adds about 6 dB | Recording quiet sources so close to the floor that fixing them lifts the noise | What is the signal-to-noise ratio at the quietest part? |
 | Capture limit | A sampled signal holds only frequencies below half the sample rate (Nyquist); anything above folds back as a false lower tone | Content above the limit entering the capture | Is the highest frequency present below half the sample rate? |
-
-## Laws of the medium
-
-- Level is a log scale. Sound pressure level in dB is 20 log10 of the pressure ratio to a reference, so +6 dB doubles pressure and +10 dB is heard as roughly twice as loud (a rule of thumb that varies with frequency and level). Think in ratios.
-- Two equal, uncorrelated sources add 3 dB, not 6. Two identical in-phase signals add 6 dB; opposite phase cancels.
-- Each part owns a band, a position, and a moment. When two share all three, one is lost.
-- The first milliseconds, the loudest part, and the lowest frequency tell the listener most. Set them first.
-- The room and the speaker are part of the work. A wavelength is the speed of sound (about 343 m/s in air at 20 degrees Celsius) divided by frequency, so low notes are meters long and meet the room as modes, not rays.
-- Judge at the three distances: low volume, a cheap speaker, the next room.
-- Silence and quiet are material. Contrast needs both.
-
-## Defaults to replace
-
-A single reverb on the whole mix, a tempo of 120 beats per minute, every note on the grid, everything centered, every part in the same octave, a compressor on every channel, the loudest level for every section, a stock envelope, a sound that starts on beat one of every bar, and an alert tone at one pitch and one volume everywhere.

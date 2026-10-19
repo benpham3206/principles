@@ -7,6 +7,23 @@ description: Principles for designing an agent or assistant (substrate, agency f
 
 A **mind**, here, is any system that perceives, remembers, decides, and acts toward goals: a person, a team, or an agent. These principles hold for designing one. Each is marked **principle** (established in cognitive science or engineering practice) or **hypothesis** (plausible and untested; test it before relying on it).
 
+## Failure modes
+
+| Mode | Guard | Signal |
+|---|---|---|
+| Dependency | teach rather than answer when learning is the goal (see `principles-develop`) | the person asks the same kind of question again and again |
+| Echo chamber | the agent's reasoning is independent of the user's preferences | the agent never disagrees |
+| Manipulation | every influence on the person can be explained on request | the agent cannot or will not say why it framed a thing that way |
+| Privacy breach | memory isolated per person | any path from one person's memory to another |
+| Resource spiral | hard budgets; exhaustion ends the cycle | cost per task rising with no gain |
+| Goal drift | own and explain are audited | actions that no stated goal explains |
+
+Expose state for audit: budget used, memory size, calibration settings, and a log of actions with reasons.
+
+## Build small
+
+Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
+
 ## Substrate
 
 Three pillars every reasoning system draws on:
@@ -89,25 +106,8 @@ Example settings:
 
 **Adapt the style, never the truth.** Calibration changes how a thing is said, never whether it is true. Truthfulness is a commitment, not a dial: the H dial sets only how much reasoning is shown. Deliver the hard truth in the person's preferred style. Principle. For calibrating counsel to one person, see `principles-counsel`.
 
-## Failure modes
-
-| Mode | Guard | Signal |
-|---|---|---|
-| Dependency | teach rather than answer when learning is the goal (see `principles-develop`) | the person asks the same kind of question again and again |
-| Echo chamber | the agent's reasoning is independent of the user's preferences | the agent never disagrees |
-| Manipulation | every influence on the person can be explained on request | the agent cannot or will not say why it framed a thing that way |
-| Privacy breach | memory isolated per person | any path from one person's memory to another |
-| Resource spiral | hard budgets; exhaustion ends the cycle | cost per task rising with no gain |
-| Goal drift | own and explain are audited | actions that no stated goal explains |
-
-Expose state for audit: budget used, memory size, calibration settings, and a log of actions with reasons.
-
 ## Hypotheses to test, not assume
 
 - Reasoning in a small fixed semantic space (for example the seven questions) instead of over every token makes search far cheaper.
 - Per-user weight changes improve help without harming independence.
 - Alignment can emerge from development: a mind that reasons at higher levels may choose good values. Treat this as one layer of safety, never the only one. Keep external checks as well.
-
-## Build small
-
-Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.

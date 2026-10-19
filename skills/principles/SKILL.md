@@ -27,6 +27,33 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
   Beside the loop, for people and agents: counsel, mind, develop, compound.
 ```
 
+## The skills
+
+| Layer | Skill | Reach for it when |
+|---|---|---|
+| Ground | `principles-ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
+| Make | `principles-visual` | images, layout, UI look, 3D, video, any lit or seen thing |
+| | `principles-sound` | audio, music, voice, alerts, acoustics |
+| | `principles-touch` | physical products, spaces, ergonomics, haptics |
+| | `principles-language` | writing, naming, speech, prompts, docs |
+| | `principles-interaction` | flows, controls, feedback, anything a person operates |
+| | `principles-information` | charts, diagrams, tables, dashboards, maps |
+| | `principles-code` | software structure, APIs, data, systems |
+| | `principles-machine` | mechanisms, structures, engineered hardware |
+| Check | `principles-judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
+| Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
+| | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
+| | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
+| | `principles-integrate` | joining modules, subsystems, or work from several makers into one whole that works |
+| | `principles-improve` | making a working thing faster, cheaper, simpler, or sturdier; before optimizing or automating |
+| | `principles-synthesize` | a goal too big for known solutions, or inventing something new |
+| | `principles-horizons` | second- and later-order effects, strategy, long-range goals |
+| Values | `principles-qualities` | setting a design language or philosophy, resolving trade-offs between values |
+| Mind | `principles-counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
+| | `principles-mind` | designing an agent, an assistant, memory, or calibration |
+| | `principles-develop` | growing a person or an agent, teaching, choosing how much to scaffold |
+| | `principles-compound` | deciding what to invest in so gains build on gains |
+
 ## The six axes
 
 | Axis | The question | Visual | Sound | Language | Interaction | Code | Machine |
@@ -61,30 +88,3 @@ Done means every axis has a stated choice and `principles-judge` finds no materi
 - **Time is an axis.** Everything is met in sequence, changes, and wears.
 - **Ground truth lives outside language.** Measure, test, or simulate before you believe a description, your own included.
 - **Craft lives in the details nobody asked for.** The observer feels them without naming them.
-
-## The skills
-
-| Layer | Skill | Reach for it when |
-|---|---|---|
-| Ground | `principles-ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
-| Make | `principles-visual` | images, layout, UI look, 3D, video, any lit or seen thing |
-| | `principles-sound` | audio, music, voice, alerts, acoustics |
-| | `principles-touch` | physical products, spaces, ergonomics, haptics |
-| | `principles-language` | writing, naming, speech, prompts, docs |
-| | `principles-interaction` | flows, controls, feedback, anything a person operates |
-| | `principles-information` | charts, diagrams, tables, dashboards, maps |
-| | `principles-code` | software structure, APIs, data, systems |
-| | `principles-machine` | mechanisms, structures, engineered hardware |
-| Check | `principles-judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
-| Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
-| | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
-| | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
-| | `principles-integrate` | joining modules, subsystems, or work from several makers into one whole that works |
-| | `principles-improve` | making a working thing faster, cheaper, simpler, or sturdier; before optimizing or automating |
-| | `principles-synthesize` | a goal too big for known solutions, or inventing something new |
-| | `principles-horizons` | second- and later-order effects, strategy, long-range goals |
-| Values | `principles-qualities` | setting a design language or philosophy, resolving trade-offs between values |
-| Mind | `principles-counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
-| | `principles-mind` | designing an agent, an assistant, memory, or calibration |
-| | `principles-develop` | growing a person or an agent, teaching, choosing how much to scaffold |
-| | `principles-compound` | deciding what to invest in so gains build on gains |

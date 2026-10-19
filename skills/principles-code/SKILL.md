@@ -7,6 +7,20 @@ description: Principles of software (programs, APIs, data models, services, infr
 
 A **code** work is instructions and data arranged so a machine runs them and a person can change them. The reader meets the interface first, the data second, and the logic last, so every choice decides what the next person must hold in their head.
 
+## Laws of the medium
+
+- Complexity is the enemy. It accrues in small steps, so refuse each step that does not pay.
+- Data outlives code. Get the data model right; rewrite the code around it as needed.
+- Make the right use easy and the wrong use hard: through types, interfaces, and safe defaults.
+- Every boundary needs a contract: what comes in, what goes out, what can fail.
+- Delete what is not needed. Code not written has no bugs and costs nothing to maintain.
+- Measure, then change. Opinions about speed, correctness, and cause lose to a test or a profile.
+- Design for change that is likely, and ignore change that is merely possible.
+
+## Defaults to replace
+
+A catch-all error handler that logs and continues, a boolean flag argument, nullable fields everywhere, a utilities module, a generic "manager" or "helper" class, retry with no limit or backoff, copied logic in two places, a dependency added for one function, tests that mirror the implementation line by line, secrets and magic numbers inline, time and randomness read from the environment, comments that restate the code.
+
 ## Tree
 
 ```
@@ -97,17 +111,3 @@ CODE
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |
 | Security by default | Least privilege; validate input at every trust boundary; fail closed | Broad permissions and checks added after the leak | Strip each privilege. What breaks? Which input is unchecked? |
 | Observability | The running system answers questions you did not plan to ask: logs, metrics, traces | Debugging by redeploying with more prints | Can you explain a failure in production without changing the code? |
-
-## Laws of the medium
-
-- Complexity is the enemy. It accrues in small steps, so refuse each step that does not pay.
-- Data outlives code. Get the data model right; rewrite the code around it as needed.
-- Make the right use easy and the wrong use hard: through types, interfaces, and safe defaults.
-- Every boundary needs a contract: what comes in, what goes out, what can fail.
-- Delete what is not needed. Code not written has no bugs and costs nothing to maintain.
-- Measure, then change. Opinions about speed, correctness, and cause lose to a test or a profile.
-- Design for change that is likely, and ignore change that is merely possible.
-
-## Defaults to replace
-
-A catch-all error handler that logs and continues, a boolean flag argument, nullable fields everywhere, a utilities module, a generic "manager" or "helper" class, retry with no limit or backoff, copied logic in two places, a dependency added for one function, tests that mirror the implementation line by line, secrets and magic numbers inline, time and randomness read from the environment, comments that restate the code.

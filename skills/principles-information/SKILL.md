@@ -7,6 +7,20 @@ description: Principles of showing information (charts, diagrams, tables, dashbo
 
 An **information display** is data or structure arranged so a reader can answer a question and act on it. The reader first looks for the answer to their own question, so the display succeeds when that answer is the first thing found and the thing found is true. For how marks look (color values, type, spacing), use `principles-visual`; this skill covers what the marks encode. To choose which structure a problem should take before it is drawn, use `principles-represent`.
 
+## Laws of the medium
+
+- The reader's question comes first. Choose the encoding that answers it with the least effort.
+- Position beats everything. When a comparison matters, put it on a common aligned scale.
+- Emphasis is finite. One finding in color, the rest in gray.
+- Remove ink until reading changes, then restore the last piece.
+- Label directly and state the finding in the title. A reader should not decode a legend or guess a point.
+- Truth outranks effect. A display that misleads has failed, however clear.
+- Test with a stranger. Ask what they conclude, and compare it to what you meant.
+
+## Defaults to replace
+
+Pie charts with many slices, three-dimensional bars, rainbow color ramps, legends far from the data, alphabetical order, topic-only titles, a bar axis that starts above zero, dual axes, gridlines and borders at full weight, a frame chosen by the tool, unit-free axes, an unsourced number, a dashboard of every available metric, and an animation that adds nothing.
+
 ## Tree
 
 ```
@@ -102,17 +116,3 @@ This branch exists because a display can be perfectly readable and false. The re
 | Selection | State what was left out and why: filtered rows, a chosen window, an excluded outlier | A start date chosen to produce a trend | Would a different window or filter change the story? |
 | Cause | A pattern shown is a pattern, not a cause; imply no more than the data shows | A trend line captioned as a mechanism | Does the wording claim more than correlation, if only correlation was tested? |
 | Map and territory | A display is a model with a projection, a boundary, and a grain; each can distort | Area on a map read as quantity; a map projection distorting size | What does the chosen map or diagram leave out, stretch, or merge? Is that stated? |
-
-## Laws of the medium
-
-- The reader's question comes first. Choose the encoding that answers it with the least effort.
-- Position beats everything. When a comparison matters, put it on a common aligned scale.
-- Emphasis is finite. One finding in color, the rest in gray.
-- Remove ink until reading changes, then restore the last piece.
-- Label directly and state the finding in the title. A reader should not decode a legend or guess a point.
-- Truth outranks effect. A display that misleads has failed, however clear.
-- Test with a stranger. Ask what they conclude, and compare it to what you meant.
-
-## Defaults to replace
-
-Pie charts with many slices, three-dimensional bars, rainbow color ramps, legends far from the data, alphabetical order, topic-only titles, a bar axis that starts above zero, dual axes, gridlines and borders at full weight, a frame chosen by the tool, unit-free axes, an unsourced number, a dashboard of every available metric, and an animation that adds nothing.

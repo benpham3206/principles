@@ -7,6 +7,20 @@ description: Principles of anything touched, held, worn, or inhabited (products 
 
 A **touch** work is matter and space arranged to meet a body. The body meets it before the mind reads it: the hand judges temperature, weight, and edge in the first moment of contact, and the body judges a room by how it moves through it.
 
+## Laws of the medium
+
+- The body is the instrument. Measure with it before you trust a drawing.
+- Design for the ends of the range. The middle takes care of itself.
+- Contact area and force set pressure. Spread the load where the body rests.
+- Feel is heat flow, force, and friction. Name the mechanism before you choose the material.
+- A control found by hand and confirmed by feel needs no look.
+- Repetition is the real test. A small cost per use is a large cost per year.
+- Wear is a design input. Decide what the object looks and feels like after ten thousand touches.
+
+## Defaults to replace
+
+Dimensions taken from the average person, sharp edges left from the machining, uniform finish over the whole product, metal where skin rests, all controls the same size and shape, a detent unrelated to the action, a glove-free test, a seated and rested test user, a flat constant ceiling light, hard parallel walls, and a threshold nobody tested with wheels.
+
 ## Tree
 
 ```
@@ -95,17 +109,3 @@ Honest materials: a surface should feel like what it is made of, and a hollow pa
 | Air as felt | Comfort rests on air temperature, radiant temperature of surfaces, air speed, humidity, and fresh air. A cold wall radiates cold to a body next to it though the air is warm | Air temperature alone on the thermostat | Measure surface temperatures and air speed. Is the body losing heat unevenly? |
 | Proportion | Rooms read by the ratio of height to width and length, and by the human scale in them. A tall narrow room is formal; a low wide room is intimate | Dimensions from the structure grid alone | Stand in it. Does the ratio fit the use? |
 | Refuge and prospect | People settle where they can see without being seen: a back to a wall or an alcove, with a view out. The mix of a protected place and an open view is felt as comfort | Seats in the open, or a hidden corner with no view | For each seat, what is behind it, and what can be seen from it? |
-
-## Laws of the medium
-
-- The body is the instrument. Measure with it before you trust a drawing.
-- Design for the ends of the range. The middle takes care of itself.
-- Contact area and force set pressure. Spread the load where the body rests.
-- Feel is heat flow, force, and friction. Name the mechanism before you choose the material.
-- A control found by hand and confirmed by feel needs no look.
-- Repetition is the real test. A small cost per use is a large cost per year.
-- Wear is a design input. Decide what the object looks and feels like after ten thousand touches.
-
-## Defaults to replace
-
-Dimensions taken from the average person, sharp edges left from the machining, uniform finish over the whole product, metal where skin rests, all controls the same size and shape, a detent unrelated to the action, a glove-free test, a seated and rested test user, a flat constant ceiling light, hard parallel walls, and a threshold nobody tested with wheels.

@@ -56,6 +56,10 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 - Bold only defined terms.
 - No notes about process. The reader sees only the principle.
 
+## Verify
+
+`python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes.
+
 ## Git
 
 Work on a branch and open a pull request. Never push to `main` without the owner's yes.

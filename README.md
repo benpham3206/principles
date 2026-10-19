@@ -77,7 +77,7 @@ python3 install.py --check    # dry run; exit 1 on drift
 python3 install.py --all      # this machine, then every other one with an ssh alias (mac, mbp13, windows)
 ```
 
-It installs from that clone, never from a working checkout, so unmerged edits never reach an agent. Pulls are fast-forward only, and a link that points elsewhere is reported, never replaced. Verify: `python3 -m unittest`.
+It installs from that clone, never from a working checkout, so unmerged edits never reach an agent. Pulls are fast-forward only, and a link that points elsewhere is reported, never replaced. It also writes `policy.md`, the always-on engineering policy, as one managed block into every harness's instruction file. Verify: `python3 -m unittest`.
 
 ## Contributing
 

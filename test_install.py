@@ -126,5 +126,49 @@ class TestInstall(Fixture):
         self.assertFalse(self.agent_skills.exists())
 
 
+REAL_FANOUT = install.FANOUT
+
+
+@unittest.skipUnless(REAL_FANOUT.is_file(), "agent-hooks fanout.py is not installed")
+class TestPolicy(Fixture):
+    def setUp(self) -> None:
+        super().setUp()
+        (self.clone / "policy.md").write_text("rule one\n")
+        (self.home / ".codex").mkdir()
+        self.codex = self.home / ".codex" / "AGENTS.md"
+        self.codex.write_text("mine\n")
+        with mock.patch.object(install, "FANOUT", REAL_FANOUT):
+            fo = install.load_fanout()
+        fo.HOME = self.home  # instruction_targets reads HOME at call time: keep every write in the temp home
+        for patch in (mock.patch.object(install, "load_fanout", lambda: fo),
+                      mock.patch.object(install, "HERMES", self.home / "no-hermes")):
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_check_reports_drift_and_writes_nothing(self) -> None:
+        self.assertGreater(install.policy(check=True), 0)
+        self.assertEqual(self.codex.read_text(), "mine\n")
+
+    def test_writes_block_keeps_own_text_then_check_is_clean(self) -> None:
+        install.policy(check=False)
+        text = self.codex.read_text()
+        self.assertIn("mine", text)
+        self.assertIn("rule one", text)
+        self.assertEqual(install.policy(check=True), 0)
+
+    def test_rerun_replaces_the_block_in_place(self) -> None:
+        install.policy(check=False)
+        (self.clone / "policy.md").write_text("rule two\n")
+        install.policy(check=False)
+        text = self.codex.read_text()
+        self.assertEqual(text.count("BEGIN ben-engineering-policy"), 1)
+        self.assertNotIn("rule one", text)
+        self.assertIn("rule two", text)
+
+    def test_missing_policy_is_skipped(self) -> None:
+        (self.clone / "policy.md").unlink()
+        self.assertEqual(install.policy(check=True), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

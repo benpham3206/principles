@@ -6,6 +6,8 @@ Rules for working on this repo, for every agent and every person. [CLAUDE.md](CL
 
 `principles` is a skills plugin: axioms, principles, and philosophies that make agents and people better at making things, in any medium, software or physical. It is meant to stay true as models grow more capable. Write what will still hold in a hundred years.
 
+`policy.md` is the always-on engineering policy. `install.py` writes it into every harness's instruction file, so every agent reads it in every session. Keep it to 50 lines: it says when to load which skill, and the skills hold the depth.
+
 The bar:
 
 - **Timeless over dated.** Physics, perception, logic, and judgment stay. Tools, products, versions, and prices do not belong here.

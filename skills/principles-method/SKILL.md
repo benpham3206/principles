@@ -38,14 +38,16 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 
 1. Question each requirement, boundary, and dependency.
 2. Delete what does not need to exist.
-3. Merge unneeded boundaries; keep useful modularity.
+3. Merge unneeded boundaries; keep useful modularity (see `principles-integrate`).
 4. Simplify before optimizing.
-5. Implement: decompose into subsystems and modules, define interfaces (inputs, outputs, guarantees, failure modes), sequence by the critical path, integrate in small steps.
+5. Implement: decompose into subsystems and modules, define interfaces (inputs, outputs, guarantees, failure modes), sequence by the critical path, integrate in small steps (see `principles-integrate`).
 6. Verify against goal, constraints, and metrics (see `principles-judge`).
 7. Stress test where failure matters. Anticipate bad actors, edge cases, and the worst case.
 8. Optimize measured bottlenecks only.
 9. Shorten the feedback loop between a change and learning whether it worked.
 10. Automate only understood, stable, repeated work.
+
+Steps 2, 4, and 8 to 10 are the improvement order; `principles-improve` covers it in depth.
 
 For small reversible tasks this collapses to build, verify, iterate.
 

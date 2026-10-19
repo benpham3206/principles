@@ -7,27 +7,26 @@ Think big. Build small. Win.
 ## The map
 
 ```
-                         INTENT   why, for whom, under which limits
-                            |
-  GROUND --------------> MAKE ---------------> SIMULATE ------> REALITY
-  what is true           six axes, any medium   test the model    ship, measure
-  (cognitive)            (generative)                                |
-       ^                                                             |
-       +------------------ JUDGE  is it true, is it good  <----------+
-                           (recognitive)
+  INTENT    why, for whom, under which limits
+     |      shape it with represent, weigh values with qualities
+     v
+  GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
+  what is true   six axes, one medium       test the model  ship, measure
+  ground         visual  sound  touch       horizons           |
+                 language  interaction                         |
+                 information  code  machine                    |
+                 integrate, to join the parts                  |
+                 synthesize, for the new                       |
+     ^                                                         v
+     +---- LESSONS <----------------------- JUDGE <------------+
+           what changes next                is it true, is it good
+           lessons  improve                 judge
+
+  method runs the loop, with rigor scaled to consequence.
+  Beside the loop, for people and agents: counsel, mind, develop, compound.
 
   SIX AXES OF ANY MADE THING
   Form | Material | Energy | Observer | Composition | Time
-
-  MEDIUMS            WORK              VALUES        MIND
-  visual             method            qualities     counsel
-  sound              represent                       mind
-  touch              synthesize                      develop
-  language           horizons                        compound
-  interaction        lessons
-  information        judge
-  code
-  machine
 ```
 
 Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-judge` checks the result against reality.
@@ -43,6 +42,8 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
 | `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
+| `principles-integrate` | Join parts into one working whole: interfaces first, thin slice, one part at a time, every surface |
+| `principles-improve` | Make a working thing better in order: measure, bottleneck, delete, simplify, speed up, automate |
 | `principles-synthesize` | Invent from a Herculean goal: complete output, plan, verify |
 | `principles-horizons` | First to nth-order consequences |
 | `principles-qualities` | Intention, agency, trust, craft, delight and the rest; fluid versus textured |

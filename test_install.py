@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -59,6 +60,45 @@ class TestStale(Fixture):
         install.link("visual", check=False)
         (self.agent_skills / "other").mkdir()
         self.assertEqual(install.stale(["judge"]), ["visual"])
+
+
+class TestPrune(Fixture):
+    def setUp(self) -> None:
+        super().setUp()
+        self.harness = self.home / "harness-skills"
+        self.harness.mkdir()
+        fanout = self.home / "fanout.py"
+        fanout.write_text(f"SKILL_DIRS = [{str(self.harness)!r}]\n")
+        patch = mock.patch.object(install, "FANOUT", fanout)
+        patch.start()
+        self.addCleanup(patch.stop)
+        for name in ("judge", "visual"):
+            install.link(name, check=False)
+            install.make_link(self.harness / name, self.agent_skills / name)
+        (self.harness / "own").mkdir()  # a real folder in the harness: never touched
+
+    def remove_skill(self, name: str) -> None:
+        skill = self.clone / "skills" / name
+        (skill / "SKILL.md").unlink()
+        skill.rmdir()
+
+    def test_nothing_to_prune_when_all_skills_exist(self) -> None:
+        self.assertEqual(install.prune(["judge", "visual"], check=False), [])
+
+    def test_check_reports_without_removing(self) -> None:
+        self.remove_skill("visual")
+        found = install.prune(["judge"], check=True)
+        self.assertEqual({p.name for p in found}, {"visual"})
+        self.assertEqual(len(found), 2)
+        self.assertTrue(install.is_link(self.harness / "visual"))
+
+    def test_removes_both_links_and_keeps_everything_else(self) -> None:
+        self.remove_skill("visual")
+        install.prune(["judge"], check=False)
+        self.assertFalse(os.path.lexists(self.harness / "visual"))
+        self.assertFalse(os.path.lexists(self.agent_skills / "visual"))
+        self.assertTrue((self.harness / "judge" / "SKILL.md").is_file())
+        self.assertTrue((self.harness / "own").is_dir())
 
 
 class TestAliases(Fixture):

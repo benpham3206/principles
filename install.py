@@ -12,7 +12,8 @@ working checkout, so unfinished edits never reach an agent. Each skill is linked
 folder into every harness present. A pull therefore updates every harness at once; only a
 new skill needs a new link. Pulls are fast-forward only: a clone with local commits or edits
 refuses and is reported, never overwritten. A link that points elsewhere is a conflict and
-is never replaced. Same script on Windows and macOS, Python 3.9 or later.
+is never replaced. When a skill is renamed or removed, the links this installer made for it
+are pruned (only links, never folders). Same script on Windows and macOS, Python 3.9 or later.
 """
 
 from __future__ import annotations
@@ -95,6 +96,57 @@ def stale(names: list[str]) -> list[str]:
     return out
 
 
+def is_link(path: Path) -> bool:
+    """True for a symlink or a Windows junction (os.readlink reads both)."""
+    try:
+        os.readlink(path)
+        return True
+    except (OSError, ValueError):
+        return False
+
+
+def remove_link(path: Path) -> None:
+    """Remove the link itself, never what it points at."""
+    if WIN:
+        os.rmdir(path)  # removes a junction or directory symlink, not its target's contents
+    else:
+        os.unlink(path)
+
+
+def harness_dirs() -> list[Path]:
+    """The harness skill folders fanout.py links into, read from fanout.py itself."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("fanout", FANOUT)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return [Path(d) for d in mod.SKILL_DIRS]
+
+
+def prune(names: list[str], check: bool) -> list[Path]:
+    """Links this installer made for skills the clone no longer has (after a rename or removal).
+
+    Removes only links: the harness link to ~/.agents/skills/<name>, then that link into the
+    clone. A real folder is never touched. Returns what was (or, with check, would be) removed.
+    """
+    gone = stale(names)
+    if not gone:
+        return []
+    out = []
+    dirs = harness_dirs()
+    for name in gone:
+        ours = AGENT_SKILLS / name
+        for d in dirs:
+            entry = d / name
+            if os.path.lexists(entry) and is_link(entry) and same_path(entry, ours):
+                out.append(entry)
+        if is_link(ours):
+            out.append(ours)
+    if not check:
+        for path in out:
+            remove_link(path)
+    return out
+
+
 def fanout(name: str, check: bool) -> tuple[int, list[str]]:
     """Run fanout.py for one skill. Returns its exit code and the lines worth showing."""
     cmd = [sys.executable, str(FANOUT), "skill", name] + (["--check"] if check else [])
@@ -153,8 +205,9 @@ def install(check: bool) -> int:
         for ln in lines:
             print(f"[{name}] {ln}")
         worst = worst or code
-    for name in stale(names):
-        print(f"stale    {AGENT_SKILLS / name} points at a skill the repo no longer has; remove it by hand")
+    for path in prune(names, check):
+        print(f"{'stale' if check else 'pruned':<8} {path} (link to a skill the repo no longer has)")
+        worst = worst or (1 if check else 0)
     print(f"{'checked' if check else 'installed'} {len(names)} skills: {'drift' if worst else 'ok'}")
     return worst
 

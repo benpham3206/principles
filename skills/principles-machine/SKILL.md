@@ -9,6 +9,20 @@ A **machine** is matter arranged to carry loads and move energy so that a functi
 
 Physics does not negotiate. State the assumptions every result depends on: local gravity $g$ (not only the Earth value), the temperature, the environment, and the material condition. Write the general form first, then put numbers in.
 
+## Laws of the medium
+
+- Follow the load. Force has a path from where it enters to where it ends. A part off the path adds mass and cost; a gap in the path is a failure.
+- Stress, not force, breaks things. Concentrations multiply it, so shape the geometry before choosing a stronger material.
+- Stiffness, strength, and toughness are different properties. Name the one that governs before you select.
+- Every cycle counts. A load that is safe once can fail after enough repeats; ask how often as well as how much.
+- Stored energy is the hazard. Know what holds it and where it goes when that fails.
+- Each part, tolerance, and interface costs something and can fail. Remove first, then add only what the function needs.
+- Test beyond the limit. A model has a range; only a test finds its edge.
+
+## Defaults to replace
+
+The factor of safety of 2 with no named mode, the standard tolerance on every dimension, sharp internal corners, the familiar alloy, one fastener size for every joint, thick sections for strength when depth would serve, a part added to patch a problem, a model run with no test, and a repair that swaps the part and leaves the cause.
+
 ## Tree
 
 ```
@@ -104,17 +118,3 @@ MACHINE
 | Redundancy | Where one failure kills, add a second independent path. Common-cause failures defeat shared paths | Two paths with the same flaw or the same shared cause; a single point left in a critical load path | Name every single point. Are the backups independent? |
 | Test to failure | A test that does not break the part has not shown its margin. Load a sample until it fails and compare with the prediction | Analysis trusted that no test has tried to break | Has any sample been taken to failure, and did it fail where and when predicted? |
 | Root cause | Every failure gets a physical cause: the load, the stress, the material, the process, or the use. Replacing the part leaves the cause in place | Fixing the broken part and rerunning | Can you state the mechanism and the evidence? Does the fix change the cause? For the analysis itself, see `principles-lessons` |
-
-## Laws of the medium
-
-- Follow the load. Force has a path from where it enters to where it ends. A part off the path adds mass and cost; a gap in the path is a failure.
-- Stress, not force, breaks things. Concentrations multiply it, so shape the geometry before choosing a stronger material.
-- Stiffness, strength, and toughness are different properties. Name the one that governs before you select.
-- Every cycle counts. A load that is safe once can fail after enough repeats; ask how often as well as how much.
-- Stored energy is the hazard. Know what holds it and where it goes when that fails.
-- Each part, tolerance, and interface costs something and can fail. Remove first, then add only what the function needs.
-- Test beyond the limit. A model has a range; only a test finds its edge.
-
-## Defaults to replace
-
-The factor of safety of 2 with no named mode, the standard tolerance on every dimension, sharp internal corners, the familiar alloy, one fastener size for every joint, thick sections for strength when depth would serve, a part added to patch a problem, a model run with no test, and a repair that swaps the part and leaves the cause.

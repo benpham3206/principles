@@ -7,6 +7,20 @@ description: Principles of anything written or spoken (prose, docs, naming, spee
 
 A **language** work is a sequence of symbols that rebuilds a meaning in a reader's head. The reader meets it one word at a time, in order, and cannot interrupt, so every choice is a choice about what they know after each word.
 
+## Laws of the medium
+
+- The reader has only the page. What is not written does not exist for them.
+- Answer first. Position tells the reader what matters before the words can.
+- One concept, one name. Variety in terms reads as variety in meaning.
+- Concrete beats abstract. A reader can picture a thing and cannot picture a category.
+- Cut until it breaks, then put back the last cut. The sentences that survive carry the load.
+- Positive form wins. Say what to do. Name a forbidden thing only when no positive form exists.
+- Read it aloud. The ear catches rhythm, length, and clutter that the eye skips.
+
+## Defaults to replace
+
+Stock openers ("In today's world", "It is important to note", "In this section we will", "Let's dive in"), stock closers ("In summary", "In conclusion", "I hope this helps"), hedges (might, perhaps, arguably, it seems, somewhat, a bit) used to avoid a claim, filler transitions (moreover, furthermore, additionally), intensifiers (very, really, extremely), the stock vocabulary (crucial, delve, robust, comprehensive, seamless, leverage as a verb, utilize, ensure, landscape, tapestry, pivotal), triplets by reflex, the rhetorical question that opens a paragraph, the "not X but Y" frame used by habit, and the title that says only the topic.
+
 ## Tree
 
 ```
@@ -104,17 +118,3 @@ This branch exists only in language. A word is not the thing it names; it is a l
 | Grounding | Language cannot verify itself; ground truth sits outside it | A confident description taken as evidence | Measure, run, or look at the thing. Does it match the text? |
 
 Is language your reality? The answer in this skill is no. Language is a map. A fluent sentence can be false, and a true fact can be told badly. Write the map well, then check it against the territory.
-
-## Laws of the medium
-
-- The reader has only the page. What is not written does not exist for them.
-- Answer first. Position tells the reader what matters before the words can.
-- One concept, one name. Variety in terms reads as variety in meaning.
-- Concrete beats abstract. A reader can picture a thing and cannot picture a category.
-- Cut until it breaks, then put back the last cut. The sentences that survive carry the load.
-- Positive form wins. Say what to do. Name a forbidden thing only when no positive form exists.
-- Read it aloud. The ear catches rhythm, length, and clutter that the eye skips.
-
-## Defaults to replace
-
-Stock openers ("In today's world", "It is important to note", "In this section we will", "Let's dive in"), stock closers ("In summary", "In conclusion", "I hope this helps"), hedges (might, perhaps, arguably, it seems, somewhat, a bit) used to avoid a claim, filler transitions (moreover, furthermore, additionally), intensifiers (very, really, extremely), the stock vocabulary (crucial, delve, robust, comprehensive, seamless, leverage as a verb, utilize, ensure, landscape, tapestry, pivotal), triplets by reflex, the rhetorical question that opens a paragraph, the "not X but Y" frame used by habit, and the title that says only the topic.

@@ -16,6 +16,18 @@ that counts   the goal now     all?           not exist    fewer paths    is lef
 
 The order matters. Each step is wasted on anything a later look would have deleted.
 
+## Laws
+
+- An improvement anywhere but the bottleneck is an illusion.
+- The best part is no part; the best step is no step.
+- Make it work, then make it simple, then make it fast, in that order.
+- Measured gains are kept; felt gains are reverted.
+- Stop when the next improvement costs more than it returns.
+
+## Defaults to replace
+
+Optimizing first, a speedup with no baseline, automation of an unclear process, several changes shipped together, tuning a part that is not the bottleneck, a cache or layer added before a deletion was tried, an improvement with no revert path, an unrecorded limit, and progress measured in lines, files, or hours instead of the metric.
+
 ## Steps
 
 1. Measure the baseline on the metric the goal names. Without a baseline, no change can be shown to help.
@@ -52,15 +64,3 @@ The order matters. Each step is wasted on anything a later look would have delet
 - Parts and steps added to fix a problem that a simpler design would not have had.
 - Anything done by hand every time that is understood and stable.
 - Anything automated that nobody can explain.
-
-## Laws
-
-- An improvement anywhere but the bottleneck is an illusion.
-- The best part is no part; the best step is no step.
-- Make it work, then make it simple, then make it fast, in that order.
-- Measured gains are kept; felt gains are reverted.
-- Stop when the next improvement costs more than it returns.
-
-## Defaults to replace
-
-Optimizing first, a speedup with no baseline, automation of an unclear process, several changes shipped together, tuning a part that is not the bottleneck, a cache or layer added before a deletion was tried, an improvement with no revert path, an unrecorded limit, and progress measured in lines, files, or hours instead of the metric.

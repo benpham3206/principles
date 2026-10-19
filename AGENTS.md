@@ -31,6 +31,8 @@ skills/<name>/SKILL.md      one skill, frontmatter name equals folder name
 
 Frontmatter: `name` and `description`. The description front-loads what the skill is and lists only distinct triggers, under 45 words.
 
+Put what an agent most needs first. Some harnesses read only the first 60 to 120 lines of a skill, so laws, defaults, steps, and failures go above lookup tables.
+
 ### Medium skills
 
 Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`) follows the same shape, with `principles-visual` as the reference:
@@ -38,10 +40,10 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 ```
 # <Medium>
 <What a work in this medium is, and what the observer does first, in one or two sentences.>
-## Tree            ASCII tree: the six axes, then any branch only this medium needs
-## <Axis>          one section per axis: table of Leaf | Principle | Failure | Check
 ## Laws of the medium     5 to 7 principles that hold across the axes
 ## Defaults to replace    the unchosen values that mark generic work
+## Tree            ASCII tree: the six axes, then any branch only this medium needs
+## <Axis>          one section per axis: table of Leaf | Principle | Failure | Check
 ```
 
 ## Writing rules

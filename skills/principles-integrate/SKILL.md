@@ -14,6 +14,18 @@ the parts are    through every    whole kept         it, from both        change
 built            layer, working   working            sides                each way in and out
 ```
 
+## Laws
+
+- The whole is the product. A part that passes alone has passed nothing yet.
+- Faults gather at interfaces. Spend the checking there.
+- Integration cost grows faster than the size of the batch. Join small, join often.
+- What is not written at an interface is assumed differently on each side.
+- Evidence is the whole running, not anyone's account of it.
+
+## Defaults to replace
+
+A big join at the end, interfaces agreed in conversation, units implied by context, parts accepted on their maker's word, a boundary for every team or file, a cycle between modules, the happy path as the only path tested, a way in with no way out, and a seam found and left for later.
+
 ## Steps
 
 1. Define each interface before the parts are built: what crosses it (data, force, signal, heat, money, control), its units and frame, its range, its timing, and what each side guarantees when the other fails.
@@ -47,15 +59,3 @@ built            layer, working   working            sides                each w
 - Keep a boundary when the parts change on different schedules, are made or replaced by different owners, must be tested apart, or need a trust or failure limit between them.
 - Remove a boundary when only one caller uses it, both sides always change together, or its interface is as large as what it hides.
 - A boundary is worth its cost when the interface is small and what it hides is large.
-
-## Laws
-
-- The whole is the product. A part that passes alone has passed nothing yet.
-- Faults gather at interfaces. Spend the checking there.
-- Integration cost grows faster than the size of the batch. Join small, join often.
-- What is not written at an interface is assumed differently on each side.
-- Evidence is the whole running, not anyone's account of it.
-
-## Defaults to replace
-
-A big join at the end, interfaces agreed in conversation, units implied by context, parts accepted on their maker's word, a boundary for every team or file, a cycle between modules, the happy path as the only path tested, a way in with no way out, and a seam found and left for later.

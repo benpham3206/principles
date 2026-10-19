@@ -1,6 +1,6 @@
 ---
 name: principles-verify
-description: Verify any work before calling it done: true, works, and good. Evidence against the real thing, taste at three distances, and a bar you would sign. Use when reviewing or critiquing work, comparing options, or before claiming any result, including your own.
+description: Verify any work before calling it done, so it is true, works, and good. Evidence against the real thing, taste at three distances, and a bar you would sign. Use when reviewing or critiquing work, comparing options, or before claiming any result, including your own.
 ---
 
 # Verify

@@ -18,9 +18,9 @@ Think big. Build small. Win.
                  integrate, to join the parts                  |
                  synthesize, for the new                       |
      ^                                                         v
-     +---- LESSONS <----------------------- JUDGE <------------+
+     +---- LESSONS <----------------------- VERIFY <-----------+
            what changes next                is it true, is it good
-           lessons  improve                 judge
+           lessons  improve                 verify
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -29,7 +29,7 @@ Think big. Build small. Win.
   Form | Material | Energy | Observer | Composition | Time
 ```
 
-Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-judge` checks the result against reality.
+Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-verify` checks the result against reality.
 
 ## Skills
 
@@ -38,7 +38,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles` | The map, the six axes, and the laws that hold in every medium |
 | `principles-ground` | What is fundamentally true; map versus territory; first principles as a procedure |
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
-| `principles-judge` | Taste and verification; three distances; check before you generate |
+| `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
 | `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
@@ -61,7 +61,7 @@ Claude Code:
 /plugin install principles@principles
 ```
 
-The plugin namespaces each skill, so commands read `/principles:principles-judge`. For the shorter `/principles-judge`, `/principles-visual`, and so on, install with `install.py` below instead. Either way, agents load a skill on their own when a task matches.
+The plugin namespaces each skill, so commands read `/principles:principles-verify`. For the shorter `/principles-verify`, `/principles-visual`, and so on, install with `install.py` below instead. Either way, agents load a skill on their own when a task matches.
 
 Any harness that reads Agent Skills folders (`SKILL.md` with `name` and `description`): clone the repo and link or copy each folder in `skills/` into that harness's skills directory.
 
@@ -81,7 +81,7 @@ It installs from that clone, never from a working checkout, so unmerged edits ne
 
 ## Contributing
 
-Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `principles-method` and checked with its own `principles-judge`.
+Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `principles-method` and checked with its own `principles-verify`.
 
 ## License
 

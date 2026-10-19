@@ -20,8 +20,8 @@ This repo is built by its own skills. Before adding or changing a skill:
 
 1. Run `principles-method`: intent, definition of done, the gate.
 2. Write it.
-3. Run `principles-judge` on it: three distances, six axes, taste faults, verification.
-4. A change is done when `principles-judge` finds no material issue and the skill reads as plain instructions to a capable stranger.
+3. Run `principles-verify` on it: three distances, six axes, taste faults, verification.
+4. A change is done when `principles-verify` finds no material issue and the skill reads as plain instructions to a capable stranger.
 
 ## Skill layout
 

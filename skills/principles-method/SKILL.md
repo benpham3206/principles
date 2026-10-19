@@ -41,7 +41,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 3. Merge unneeded boundaries; keep useful modularity (see `principles-integrate`).
 4. Simplify before optimizing.
 5. Implement: decompose into subsystems and modules, define interfaces (inputs, outputs, guarantees, failure modes), sequence by the critical path, integrate in small steps (see `principles-integrate`).
-6. Verify against goal, constraints, and metrics (see `principles-judge`).
+6. Verify against goal, constraints, and metrics (see `principles-verify`).
 7. Stress test where failure matters. Anticipate bad actors, edge cases, and the worst case.
 8. Optimize measured bottlenecks only.
 9. Shorten the feedback loop between a change and learning whether it worked.

@@ -15,11 +15,12 @@ Think big. Build small. Win.
   ground         visual  sound  touch       horizons           |
                  language  interaction                         |
                  information  code  machine                    |
+                 integrate, to join the parts                  |
                  synthesize, for the new                       |
      ^                                                         v
      +---- LESSONS <----------------------- JUDGE <------------+
            what changes next                is it true, is it good
-           lessons                          judge
+           lessons  improve                 judge
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -41,6 +42,8 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
 | `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
+| `principles-integrate` | Join parts into one working whole: interfaces first, thin slice, one part at a time, every surface |
+| `principles-improve` | Make a working thing better in order: measure, bottleneck, delete, simplify, speed up, automate |
 | `principles-synthesize` | Invent from a Herculean goal: complete output, plan, verify |
 | `principles-horizons` | First to nth-order consequences |
 | `principles-qualities` | Intention, agency, trust, craft, delight and the rest; fluid versus textured |

@@ -12,7 +12,7 @@ COGNITIVE                 GENERATIVE                RECOGNITIVE
 what is true?      -->    what is possible?   <-->  is it true, is it consistent?
 axioms, limits            many candidates,          simulate, then test in reality,
 (see ground)              common and strange        compare known to unknown
-                                                    (see judge)
+                                                    (see verify)
 ```
 
 **Axiomatic constraint creates novelty.** Constrain a design only by what must be true, never by how it is usually done. When convention is removed and only laws remain, the space of answers that fits is often one nobody has explored.

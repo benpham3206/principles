@@ -19,9 +19,9 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
                  integrate, to join the parts                  |
                  synthesize, for the new                       |
      ^                                                         v
-     +---- LESSONS <----------------------- JUDGE <------------+
+     +---- LESSONS <----------------------- VERIFY <-----------+
            what changes next                is it true, is it good
-           lessons  improve                 judge
+           lessons  improve                 verify
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -40,7 +40,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | | `principles-information` | charts, diagrams, tables, dashboards, maps |
 | | `principles-code` | software structure, APIs, data, systems |
 | | `principles-machine` | mechanisms, structures, engineered hardware |
-| Check | `principles-judge` | reviewing, critiquing, verifying, or deciding if work is done and good |
+| Check | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
 | Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
 | | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
 | | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
@@ -72,9 +72,9 @@ An axis left at its default is a decision made by accident. Set each one on purp
 1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
 2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
 3. Make the smallest complete version: every axis present, none polished.
-4. Run `principles-judge`. Fix the worst axis first, then the next.
+4. Run `principles-verify`. Fix the worst axis first, then the next.
 
-Done means every axis has a stated choice and `principles-judge` finds no material issue.
+Done means every axis has a stated choice and `principles-verify` finds no material issue.
 
 ## Laws that hold in every medium
 

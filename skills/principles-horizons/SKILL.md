@@ -46,6 +46,6 @@ An example of the method, labelled by confidence.
 From this horizon come four design goals for any tool that adds intelligence:
 
 - **The counterpart rule.** Every gain in machine capability ships with a human counterpart: an explanation, a practice, or a tool that leaves the person more capable alone. Test: after using it, can the person do more without it than before?
-- **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-judge`).
+- **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-verify`).
 - **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. A result nobody understands cannot be trusted or corrected.
 - **Value flows to insight as well as labor.** Design so that people capture value from new understanding, not only from cheaper work.

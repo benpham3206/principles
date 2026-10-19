@@ -68,7 +68,6 @@ happened    evidence,   was          case like   check, or    fails when  stop c
 - Blame ends learning. People report what is safe to report.
 - Hindsight makes every past choice look obvious. Judge decisions by what was known when they were made.
 - Evidence decays. Collect it before the analysis, not after.
-- A fix is not proven until the test fails without it.
 - The cheapest lesson is the near miss. Pay attention before the bill arrives.
 
 ## Defaults to replace

@@ -49,7 +49,6 @@ have         decision it    relation    structure  fidelity,    gap, biggest    
 | Principle | Failure | Check |
 |---|---|---|
 | The representation serves one question | A diagram of everything known, so nothing stands out | Can a stranger say what question it answers? |
-| Each mark means one thing | Arrows that mean flow, dependency, and sequence on one page | Write a legend: one line per mark type. Two meanings per mark means two views |
 | Completeness is checkable | A tree or flow that looks finished but leaks | Do the children add up to the parent? Do inputs equal outputs plus losses? Does every state have an exit? |
 | Show quantity where quantity decides | Equal-sized boxes for a part that is most of the cost and a part that is none of it | Is the biggest thing drawn biggest, or labelled with its number? |
 | Name the unknowns | Guesses drawn with the same weight as facts | Mark each part as measured, estimated, or assumed (see `principles-ground`) |
@@ -72,7 +71,7 @@ have         decision it    relation    structure  fidelity,    gap, biggest    
 
 - Solving a problem is often finding the representation in which the answer is obvious. Try a second form before working harder in the first.
 - Structure before polish. A sketch with the right relations beats a finished render of the wrong ones.
-- One view, one relation. Combine views by placing them side by side, never by overlaying meanings.
+- One view, one relation. Combine views by placing them side by side, never by overlaying meanings. The rules for marks and lines are in `principles-information`.
 - Conservation is a free check. Anything that flows must balance; use the balance to find what is missing.
 - The representation is not the problem. Test what it shows against the real thing before acting on it.
 - Delete what the question does not need. Every part left in must help answer it.

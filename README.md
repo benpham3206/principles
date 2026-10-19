@@ -7,27 +7,25 @@ Think big. Build small. Win.
 ## The map
 
 ```
-                         INTENT   why, for whom, under which limits
-                            |
-  GROUND --------------> MAKE ---------------> SIMULATE ------> REALITY
-  what is true           six axes, any medium   test the model    ship, measure
-  (cognitive)            (generative)                                |
-       ^                                                             |
-       +------------------ JUDGE  is it true, is it good  <----------+
-                           (recognitive)
+  INTENT    why, for whom, under which limits
+     |      shape it with represent, weigh values with qualities
+     v
+  GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
+  what is true   six axes, one medium       test the model  ship, measure
+  ground         visual  sound  touch       horizons           |
+                 language  interaction                         |
+                 information  code  machine                    |
+                 synthesize, for the new                       |
+     ^                                                         v
+     +---- LESSONS <----------------------- JUDGE <------------+
+           what changes next                is it true, is it good
+           lessons                          judge
+
+  method runs the loop, with rigor scaled to consequence.
+  Beside the loop, for people and agents: counsel, mind, develop, compound.
 
   SIX AXES OF ANY MADE THING
   Form | Material | Energy | Observer | Composition | Time
-
-  MEDIUMS            WORK              VALUES        MIND
-  visual             method            qualities     counsel
-  sound              represent                       mind
-  touch              synthesize                      develop
-  language           horizons                        compound
-  interaction        lessons
-  information        judge
-  code
-  machine
 ```
 
 Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-judge` checks the result against reality.

@@ -8,15 +8,22 @@ description: Map of the principles skills and the six axes every made thing has 
 Every made thing, in any medium, is a set of choices along six axes. Intent picks the settings. Physics, logic, and perception bound them. Judgment checks them against reality.
 
 ```
-                    INTENT   why, for whom, under which limits
-                       |
-   GROUND ---------> MAKE ---------> SIMULATE ---------> REALITY
-   what is true      six axes in      test the model     ship, measure
-   (cognitive)       one medium       before the world        |
-        ^            (generative)                             |
-        |                                                     |
-        +------------ JUDGE  is it true, is it good  <--------+
-                      (recognitive)
+  INTENT    why, for whom, under which limits
+     |      shape it with represent, weigh values with qualities
+     v
+  GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
+  what is true   six axes, one medium       test the model  ship, measure
+  ground         visual  sound  touch       horizons           |
+                 language  interaction                         |
+                 information  code  machine                    |
+                 synthesize, for the new                       |
+     ^                                                         v
+     +---- LESSONS <----------------------- JUDGE <------------+
+           what changes next                is it true, is it good
+           lessons                          judge
+
+  method runs the loop, with rigor scaled to consequence.
+  Beside the loop, for people and agents: counsel, mind, develop, compound.
 ```
 
 ## The six axes

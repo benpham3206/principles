@@ -32,19 +32,21 @@ FANOUT = AGENT_SKILLS / "propagate-across-harnesses" / "fanout.py"
 REMOTE = HOME / ".agents" / "hooks" / "remote.py"
 WIN = sys.platform.startswith("win")
 # ssh aliases this fleet uses. remote.py drives the two it knows (same guard, same logs);
-# mbp13 has no remote.py target, so it gets plain ssh into a login shell.
+# mbp13 has no remote.py target, so it gets plain ssh into a login shell. The remote command
+# fast-forwards with git before running install.py, so a clone older than install.py updates too.
 FLEET = ("mac", "mbp13", "windows")
 REMOTE_PY_TARGETS = ("mac", "windows")
 
 POSIX_UPDATE = (
     f"R=~/.agents/skill-repos/benpham3206__principles; "
-    f"[ -d $R ] || git clone -q {ORIGIN} $R; "
+    f"if [ -d $R ]; then git -C $R pull -q --ff-only || exit 1; else git clone -q {ORIGIN} $R; fi; "
     "P=/opt/homebrew/bin/python3; [ -x $P ] || P=python3; "
     "$P $R/install.py --pull"
 )
 WINDOWS_UPDATE = (
     "$R = \"$HOME\\.agents\\skill-repos\\benpham3206__principles\"; "
-    f"if (-not (Test-Path $R)) {{ git clone -q {ORIGIN} $R }}; "
+    "if (Test-Path $R) { git -C $R pull -q --ff-only; if ($LASTEXITCODE) { exit 1 } } "
+    f"else {{ git clone -q {ORIGIN} $R }}; "
     "python \"$R\\install.py\" --pull"
 )
 

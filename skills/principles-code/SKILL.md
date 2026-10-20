@@ -88,6 +88,7 @@ CODE
 | Layering | Each layer talks to the one below through its interface only | A top layer reaching into storage details | Can you replace the layer below without touching the one above? |
 | Single source of truth | Every fact has one authoritative place; others derive from it | Two copies edited separately | Search for the fact. How many places define it? |
 | Seams | Put a seam where behavior can be swapped without editing the code under test | Code that can only be tested by running the whole system | Can the clock, network, and store be replaced in a test? |
+| Tripwires, not targets | File length and branching metrics used as goals, or never measured at all | Does the project set a threshold for file length and branching complexity, and does a tool enforce it? A file over it needs a stated reason to stay whole |
 | Abstraction timing | As a rule of thumb, abstract on the third repeat, from real cases | A general framework built for a case that never came | How many real uses justify this abstraction? |
 
 ## Time
@@ -111,3 +112,5 @@ CODE
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |
 | Security by default | Least privilege; validate input at every trust boundary; fail closed | Broad permissions and checks added after the leak | Strip each privilege. What breaks? Which input is unchecked? |
 | Observability | The running system answers questions you did not plan to ask: logs, metrics, traces | Debugging by redeploying with more prints | Can you explain a failure in production without changing the code? |
+
+Pairs with: before `principles-method`, `principles-represent`; after `principles-integrate`, `principles-verify`.

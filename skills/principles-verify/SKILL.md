@@ -24,6 +24,7 @@ Run these before calling anything done, your own work first of all.
 ## Laws
 
 - Evidence beats report. Agent prose, a passing summary, and a successful call are not proof that the intended state exists.
+- Outcome over activity. Judge work by the verified state of the world under fixed constraints, never by files, calls, or process produced. No maker certifies their own work, redefines success, or widens their own authority; consequential work gets an independent reviewer.
 - A check that cannot fail proves nothing. A regression check must fail when the fix is removed, so break the fix once and watch it fail.
 - When a check surprises you, suspect the observation before the system.
 - Never weaken a check to make it pass. A weakened check is a hidden failure.
@@ -105,3 +106,5 @@ Each project needs one command that people, agents, and automation run the same 
 5. **Clean up.** Remove what you started, never more, and keep the evidence.
 
 Run the command once end to end before trusting it. A check that was never run is a draft.
+
+Pairs with: before `principles-method`, `principles-integrate`; after `principles-lessons`, `principles-improve`.

@@ -109,3 +109,5 @@ Honest materials: a surface should feel like what it is made of, and a hollow pa
 | Air as felt | Comfort rests on air temperature, radiant temperature of surfaces, air speed, humidity, and fresh air. A cold wall radiates cold to a body next to it though the air is warm | Air temperature alone on the thermostat | Measure surface temperatures and air speed. Is the body losing heat unevenly? |
 | Proportion | Rooms read by the ratio of height to width and length, and by the human scale in them. A tall narrow room is formal; a low wide room is intimate | Dimensions from the structure grid alone | Stand in it. Does the ratio fit the use? |
 | Refuge and prospect | People settle where they can see without being seen: a back to a wall or an alcove, with a view out. The mix of a protected place and an open view is felt as comfort | Seats in the open, or a hidden corner with no view | For each seat, what is behind it, and what can be seen from it? |
+
+Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.

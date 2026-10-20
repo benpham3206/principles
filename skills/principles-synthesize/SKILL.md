@@ -49,3 +49,5 @@ Most invention is transfer. To find a candidate from another field:
 ## Think big, build small, win
 
 Hold the full vision while you build the smallest piece that proves the hardest part. Prove the riskiest assumption first. Then widen.
+
+Pairs with: before `principles-ground`, `principles-horizons`; after `principles-method`, `principles-verify`.

@@ -118,3 +118,5 @@ This branch exists only in language. A word is not the thing it names; it is a l
 | Grounding | Language cannot verify itself; ground truth sits outside it | A confident description taken as evidence | Measure, run, or look at the thing. Does it match the text? |
 
 Is language your reality? The answer in this skill is no. Language is a map. A fluent sentence can be false, and a true fact can be told badly. Write the map well, then check it against the territory.
+
+Pairs with: before `principles-method`, `principles-qualities`, `principles-counsel`; after `principles-verify`.

@@ -17,7 +17,7 @@ Rate consequence, uncertainty, and irreversibility.
 - Expensive or irreversible: plan first and never guess. An irreversible step (migration, publish, delete) always states its constraints and worst case.
 
 ### Plan, when the gate says so
-Intent and 5W1H, definition of done, how it is measured, constraints, assumptions marked as fact, assumption, estimate, or decision, and the worst credible outcome. Name constraints before choosing tools. Test the riskiest assumption first, with the cheapest reversible experiment. Think bigger than the brief: the problem solved and the joy of the person at the end are what matter.
+Intent and 5W1H, definition of done, how it is measured, constraints, assumptions marked as fact, assumption, estimate, or decision, and the worst credible outcome. Name constraints before choosing tools; language, framework, and infrastructure are downstream. Test the riskiest assumption first, with the cheapest reversible experiment. Think bigger than the brief: the problem solved and the joy of the person at the end are what matter.
 
 ### Build
 1. Make the smallest reversible change that meets the goal. Reach first for nothing, then existing code, the standard library, the platform, an existing dependency, and only then new code. Every abstraction, dependency, and piece of state carries cost; deletion counts as progress.
@@ -33,7 +33,7 @@ Intent and 5W1H, definition of done, how it is measured, constraints, assumption
 - Check every surface the change reaches, including the way back out. Remove dead code, temporary files, and stale docs you made.
 - Fix root causes, with evidence for each why, and add a check that fails without the fix. Ask which definition of done, constraint, or assumption let the fault through.
 - Excellent is the default. For user-facing work, visual quality and accessibility are part of correctness. Take pride in the details: hand over only what you would sign, and say what you did not check.
-- Judge by outcomes, not activity. Never redefine success to fit the result. Your own check is not an independent review; ask for one when the work is consequential.
+- Judge by outcomes, not activity. Never redefine success to fit the result. Your own check is not an independent review; ask for one when the work is consequential. No agent certifies its own work or widens its own authority.
 - For research, answer the decision question, cite the evidence that matters, and state the uncertainty.
 
 ### Projects

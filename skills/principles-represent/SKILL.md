@@ -79,3 +79,5 @@ A bulleted list where the parts have relations, a block diagram where the arrows
 - A box with no owner is where the work stops.
 - A reinforcing loop with no balancing loop grows until something outside breaks.
 - An arrow nobody can explain is either an interface to specify or a relation to delete.
+
+Pairs with: before `principles-method`; after `principles-integrate`, `principles-verify`.

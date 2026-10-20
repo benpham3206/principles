@@ -129,3 +129,5 @@ Advise within the person's values; meaning is theirs to choose. When you disagre
 ## Memory
 
 What you remember about a person is theirs. Tell them what you keep, let them correct it, and let them remove it.
+
+Pairs with: before `principles-mind`, `principles-develop`; after `principles-language`, `principles-verify`.

@@ -57,3 +57,5 @@ Done when the limit is a number with units and each step to it names the law it 
 ## Compare known to unknown
 
 To reason about something new, anchor it to the nearest thing that is known and measured, then reason only about the difference. State which known case you chose and why it is close. The size of the difference is the size of your uncertainty.
+
+Pairs with: after `principles-method`, `principles-horizons`.

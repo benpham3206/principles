@@ -59,3 +59,5 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 - Keep a boundary when the parts change on different schedules, are made or replaced by different owners, must be tested apart, or need a trust or failure limit between them.
 - Remove a boundary when only one caller uses it, both sides always change together, or its interface is as large as what it hides.
 - A boundary is worth its cost when the interface is small and what it hides is large.
+
+Pairs with: before `principles-code`, `principles-machine`, `principles-represent`; after `principles-verify`.

@@ -16,6 +16,18 @@ happened    evidence,   was          case like   check, or    fails when  stop c
             no blame    possible     this one    habit        cause back  it, move on
 ```
 
+## Laws
+
+- The same cause will return until the system changes. People change slowly; designs change once.
+- Blame ends learning. People report what is safe to report.
+- Hindsight makes every past choice look obvious. Judge decisions by what was known when they were made.
+- Evidence decays. Collect it before the analysis, not after.
+- The cheapest lesson is the near miss. Pay attention before the bill arrives.
+
+## Defaults to replace
+
+A single root cause, "human error" as a finding, "be more careful" as the action, a review only after harm, a write-up with no owner or date, a fix with no test that fails without it, a timeline written after the cause was chosen, a lesson filed where no one will meet it, and the same failure reviewed for the third time.
+
 ## Steps
 
 1. Stabilize first. Stop the harm, restore service, keep the part. Analysis waits until nothing is getting worse, and evidence waits for no one, so preserve it now.
@@ -61,15 +73,3 @@ happened    evidence,   was          case like   check, or    fails when  stop c
 - Put the lesson where the work happens: in the test suite, the checklist, the template, the design rule. A lesson kept only in a report is forgotten with the report.
 - Prune old lessons. When a design change removes the hazard, retire the rule that guarded against it.
 - Watch for repeats. A failure that returns means the last lesson fixed an instance, not the class. Review the lesson, not only the failure.
-
-## Laws
-
-- The same cause will return until the system changes. People change slowly; designs change once.
-- Blame ends learning. People report what is safe to report.
-- Hindsight makes every past choice look obvious. Judge decisions by what was known when they were made.
-- Evidence decays. Collect it before the analysis, not after.
-- The cheapest lesson is the near miss. Pay attention before the bill arrives.
-
-## Defaults to replace
-
-A single root cause, "human error" as a finding, "be more careful" as the action, a review only after harm, a write-up with no owner or date, a fix with no test that fails without it, a timeline written after the cause was chosen, a lesson filed where no one will meet it, and the same failure reviewed for the third time.

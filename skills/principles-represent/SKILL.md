@@ -16,6 +16,19 @@ have         decision it    relation    structure  fidelity,    gap, biggest    
              must serve     dominates   that fits  parts named  flow, unknown   owner and a check
 ```
 
+## Laws
+
+- Solving a problem is often finding the representation in which the answer is obvious. Try a second form before working harder in the first.
+- Structure before polish. A sketch with the right relations beats a finished render of the wrong ones.
+- One view, one relation. Combine views by placing them side by side, never by overlaying meanings. The rules for marks and lines are in `principles-information`.
+- Conservation is a free check. Anything that flows must balance; use the balance to find what is missing.
+- The representation is not the problem. Test what it shows against the real thing before acting on it.
+- Delete what the question does not need. Every part left in must help answer it.
+
+## Defaults to replace
+
+A bulleted list where the parts have relations, a block diagram where the arrows mean three things, a flowchart drawn for something that is really a state machine, a tree whose branches overlap, a schedule with no dependencies, a flow with no quantities, a decision matrix with no stated weights, a slide of every box at every zoom level, and a diagram that ends without a next step.
+
 ## Steps
 
 1. Write the question the representation must answer, in one sentence. A structure built to show everything answers nothing.
@@ -66,16 +79,3 @@ have         decision it    relation    structure  fidelity,    gap, biggest    
 - A box with no owner is where the work stops.
 - A reinforcing loop with no balancing loop grows until something outside breaks.
 - An arrow nobody can explain is either an interface to specify or a relation to delete.
-
-## Laws
-
-- Solving a problem is often finding the representation in which the answer is obvious. Try a second form before working harder in the first.
-- Structure before polish. A sketch with the right relations beats a finished render of the wrong ones.
-- One view, one relation. Combine views by placing them side by side, never by overlaying meanings. The rules for marks and lines are in `principles-information`.
-- Conservation is a free check. Anything that flows must balance; use the balance to find what is missing.
-- The representation is not the problem. Test what it shows against the real thing before acting on it.
-- Delete what the question does not need. Every part left in must help answer it.
-
-## Defaults to replace
-
-A bulleted list where the parts have relations, a block diagram where the arrows mean three things, a flowchart drawn for something that is really a state machine, a tree whose branches overlap, a schedule with no dependencies, a flow with no quantities, a decision matrix with no stated weights, a slide of every box at every zoom level, and a diagram that ends without a next step.

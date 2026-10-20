@@ -48,6 +48,9 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | Work the bottleneck | Effort spent where it is easy, not where it limits | Would the goal metric move if this part became perfect? If not, look elsewhere |
 | The bottleneck moves | Old wins defended after the limit has shifted | After each improvement, is the bottleneck found again? |
 | Delete before improving | Optimizing a step that should not exist | Was deletion tried first, and does the step have an owner who needs it? |
+| A place for everything, at the point of use | A tool, part, or file hunted for each time it is needed | Does each thing have one marked place where it is used, so a missing one shows at a glance? |
+| Clean to inspect | A leak, crack, or drift hidden under dirt or clutter | Does each cleaning include a look for what changed since the last one? |
+| Standardize the best known way | Each person does the job their own way, so no gain can be measured or kept | Is the current best method written where the work happens, and is it the baseline for the next change? |
 | Simplify before speeding up | A fast, tangled thing nobody can change | Could fewer parts do the same job? |
 | Automate last | A script that encodes a process nobody understands | Can a person do it by hand, correctly, from a written list? Then automate |
 | One change at a time | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change? |
@@ -64,3 +67,4 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 - Parts and steps added to fix a problem that a simpler design would not have had.
 - Anything done by hand every time that is understood and stable.
 - Anything automated that nobody can explain.
+- The workspace itself, bench or repository. Sort out what is not needed, set the rest in order, clean to inspect, standardize, and sustain: the 5S practice of the Toyota Production System. Clutter hides the bottleneck.

@@ -41,3 +41,4 @@ Intent and 5W1H, definition of done, how it is measured, constraints, assumption
 - Docs work from a fresh clone with no unstated machine paths or context. They give context before asking anyone to act, and point to the source instead of restating it. When a decision changes, rewrite the old text; history lives in git.
 - Record decisions, changes, and lessons where the next person, including future you, will find them.
 - Work on a branch and open a PR. Never push to main without Ben's yes.
+- Start every PR body with a visual that shows the change: a diagram, a screenshot, or before-and-after output. Text comes after it.

@@ -103,3 +103,5 @@ Earned because an interaction with an automated system has an owner at each inst
 | Handoff | Handoff states what was done, what remains, and what the next party must check | Automation hands back with no context, during an emergency | Can the receiver act within seconds of the handoff, using only what is shown? |
 | Person in the loop | Irreversible, costly, or outward-facing acts need the person's explicit yes, with the effect stated | The system acts, then reports; scope creeps past what was asked | List every irreversible act. Does each need an informed yes? |
 | Visibility | The person can see what the system is doing, and can stop it | Hidden activity; no way to interrupt | Can they see current activity and halt it in one action? |
+
+Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.

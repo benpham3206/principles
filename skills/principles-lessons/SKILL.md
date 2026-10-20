@@ -71,5 +71,8 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 - Decide, then let it go. Once the changes are owned and the checks are in place, the event is closed. Return to it only when new evidence arrives.
 - Keep the lesson short enough to be read. One sentence of cause, one of change, and a link to the check.
 - Put the lesson where the work happens: in the test suite, the checklist, the template, the design rule. A lesson kept only in a report is forgotten with the report.
+- Promote the class. When a lesson applies beyond this project, move it into the shared template, standard, or tool, so the next project starts with the guardrail.
 - Prune old lessons. When a design change removes the hazard, retire the rule that guarded against it.
 - Watch for repeats. A failure that returns means the last lesson fixed an instance, not the class. Review the lesson, not only the failure.
+
+Pairs with: before `principles-verify`; after `principles-improve`, `principles-compound`.

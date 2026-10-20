@@ -183,6 +183,18 @@ class TestRepo(unittest.TestCase):
             print(e)
         self.assertEqual(errors, [])
 
+    def test_every_skill_pairs_with_another_and_is_reachable(self) -> None:
+        pairs = {}
+        for d in skill_dirs():
+            lines = [l for l in (d / "SKILL.md").read_text(encoding="utf-8").splitlines()
+                     if l.startswith("Pairs with:")]
+            if d.name != "principles":
+                self.assertEqual(len(lines), 1, f"{d.name}: needs exactly one 'Pairs with:' line")
+            pairs[d.name] = {m.rstrip("-") for l in lines for m in REF.findall(l)} - {d.name}
+        reached = set().union(*pairs.values())
+        orphans = {n for n in pairs if n != "principles"} - reached
+        self.assertEqual(orphans, set(), "no other skill pairs with these")
+
     def test_policy_stays_short(self) -> None:
         lines = (ROOT / "policy.md").read_text(encoding="utf-8").splitlines()
         self.assertLessEqual(len(lines), 50, "policy.md loads in every session; keep it to 50 lines or fewer")

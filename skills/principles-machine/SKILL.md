@@ -118,3 +118,5 @@ MACHINE
 | Redundancy | Where one failure kills, add a second independent path. Common-cause failures defeat shared paths | Two paths with the same flaw or the same shared cause; a single point left in a critical load path | Name every single point. Are the backups independent? |
 | Test to failure | A test that does not break the part has not shown its margin. Load a sample until it fails and compare with the prediction | Analysis trusted that no test has tried to break | Has any sample been taken to failure, and did it fail where and when predicted? |
 | Root cause | Every failure gets a physical cause: the load, the stress, the material, the process, or the use. Replacing the part leaves the cause in place | Fixing the broken part and rerunning | Can you state the mechanism and the evidence? Does the fix change the cause? For the analysis itself, see `principles-lessons` |
+
+Pairs with: before `principles-method`, `principles-ground`; after `principles-integrate`, `principles-verify`.

@@ -54,3 +54,5 @@ This ratchets expectation, not performance. Ability dips with fatigue, stress, a
 - Remove the scaffold as the skill holds. Help that never fades becomes a crutch.
 - Practice deliberately: at the edge of ability, with fast feedback, on the part that is weakest.
 - Measure growth by a test done without help.
+
+Pairs with: before `principles-counsel`, `principles-compound`; after `principles-lessons`.

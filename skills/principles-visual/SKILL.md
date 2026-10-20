@@ -106,3 +106,5 @@ Honest materials: a surface should look like what it is made of and behave that 
 | Depth cues | Overlap, size, haze, and focus stack to show distance | One cue only, so depth is weak | How many depth cues agree? |
 | Haze and scattering | Distance lowers contrast and shifts color toward the sky | Far objects as sharp and saturated as near ones | Does contrast drop with distance? |
 | Environment | The world around the subject sets mood and reflections | Subject floating in a void | What world does this live in? |
+
+Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.

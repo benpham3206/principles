@@ -116,3 +116,5 @@ This branch exists because a display can be perfectly readable and false. The re
 | Selection | State what was left out and why: filtered rows, a chosen window, an excluded outlier | A start date chosen to produce a trend | Would a different window or filter change the story? |
 | Cause | A pattern shown is a pattern, not a cause; imply no more than the data shows | A trend line captioned as a mechanism | Does the wording claim more than correlation, if only correlation was tested? |
 | Map and territory | A display is a model with a projection, a boundary, and a grain; each can distort | Area on a map read as quantity; a map projection distorting size | What does the chosen map or diagram leave out, stretch, or merge? Is that stated? |
+
+Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.

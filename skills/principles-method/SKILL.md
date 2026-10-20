@@ -28,7 +28,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 1. **Intent**: why. Ask the 5W1H: what, why, who, when, where, how.
 2. **Goal**: what, and the definition of done. Define success, constraints, and failure conditions before building.
 3. **Metrics**: how you will know. Build the measurement tool if none exists.
-4. **Constraints**: what cannot be violated.
+4. **Constraints**: what cannot be violated. Name them before choosing tools. Language, framework, storage, and infrastructure are downstream choices; revisit them only when evidence shows a constraint or bottleneck changed.
 5. **Assumptions and dependencies**: what depends on what, and why. Mark each as fact, assumption, estimate, or decision.
 6. **First principles**: what is actually necessary (see `principles-ground`).
 7. **Architecture**: what the system should look like. Wireframe it. Name the motifs and palette for anything seen.
@@ -88,3 +88,5 @@ Never optimize what should be deleted, automate what is not understood, or add p
 | Research | question, hypothesis, what would disprove it | cheapest experiment that could fail | replication, independent check |
 | Business | customer, problem, unit economics | smallest offer someone pays for | revenue, retention, cost per unit |
 | Learning | target skill, the test that proves it | deliberate practice at the edge of ability | the test, unaided |
+
+Pairs with: before `principles-ground`, `principles-represent`; after `principles-verify`, `principles-lessons`.

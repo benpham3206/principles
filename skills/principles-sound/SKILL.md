@@ -107,3 +107,5 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Gain staging | Each stage in a chain has a noise floor and a clip point; set level so the signal sits well above one and below the other | Low level early, then noise lifted late; or clipping early | At each stage, how far is the signal from noise and from clip? |
 | Noise floor | Every capture holds noise; dynamic range is the gap from the floor to the clip point, and each added bit of a digital word adds about 6 dB | Recording quiet sources so close to the floor that fixing them lifts the noise | What is the signal-to-noise ratio at the quietest part? |
 | Capture limit | A sampled signal holds only frequencies below half the sample rate (Nyquist); anything above folds back as a false lower tone | Content above the limit entering the capture | Is the highest frequency present below half the sample rate? |
+
+Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.

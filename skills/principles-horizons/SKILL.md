@@ -49,3 +49,5 @@ From this horizon come four design goals for any tool that adds intelligence:
 - **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-verify`).
 - **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. A result nobody understands cannot be trusted or corrected.
 - **Value flows to insight as well as labor.** Design so that people capture value from new understanding, not only from cheaper work.
+
+Pairs with: before `principles-ground`; after `principles-method`, `principles-synthesize`.

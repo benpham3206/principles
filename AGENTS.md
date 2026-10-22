@@ -16,6 +16,26 @@ The bar:
 - **Honest status.** Separate established principle from heuristic from hypothesis. A heuristic states its limit. A hypothesis says how to test it.
 - **One fact, one place.** The six axes live in `skills/principles`. Other skills use them and never redefine them.
 
+## Files
+
+```
+skills/<name>/SKILL.md     the skills; skills/principles is the map and owns the six axes
+policy.md                  always-on policy, written into every harness's instruction file
+install.py                 links skills and writes policy.md on every machine
+test_skills.py             mechanical checks of the rules in this file
+test_install.py            install.py against a temp home
+README.md                  human entry point; lists every skill
+.claude-plugin/            Claude Code plugin and marketplace manifests
+.github/workflows/         CI runs the verify command on every push to main and every PR
+```
+
+## Hazards
+
+- **Installed clone is live.** Agents load skills through links into `~/.agents/skill-repos/benpham3206__principles`. An edit there reaches every agent at once, unreviewed. Work in a separate clone or a worktree.
+- **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
+- **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
+- **Policy tests need agent-hooks.** `TestPolicy` skips when agent-hooks `fanout.py` is absent, as it is in CI. Run the suite on a machine with agent-hooks before merging an `install.py` change.
+
 ## Dogfood
 
 This repo is built by its own skills. Before adding or changing a skill:
@@ -60,7 +80,9 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 ## Verify
 
-`python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes.
+`python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
+
+`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line limit. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
 
 ## Git
 

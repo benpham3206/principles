@@ -103,6 +103,52 @@ def ascii_errors(text: str) -> list[str]:
     return errors
 
 
+AXES = ("Form", "Material", "Energy", "Observer", "Composition", "Time")
+MEDIA = ("visual", "sound", "touch", "language", "interaction", "information", "code", "machine")
+SHAPE = ("Laws of the medium", "Defaults to replace", "Tree") + AXES
+LEAF_HEADER = "| Leaf | Principle | Failure | Check |"
+
+
+def shape_errors(text: str) -> list[str]:
+    """A medium skill has the AGENTS.md sections in order, and each axis section a Leaf table."""
+    sections: list[tuple[str, list[str]]] = []
+    for line in text.splitlines():
+        if line.startswith("## "):
+            sections.append((line[3:].strip(), []))
+        elif sections:
+            sections[-1][1].append(line)
+    titles = [t for t, _ in sections]
+    errors = []
+    for want, got in zip(SHAPE, titles):
+        if not got.startswith(want):
+            errors.append(f"section {got!r} where {want!r} belongs")
+            return errors
+    if len(titles) < len(SHAPE):
+        return [f"missing sections {list(SHAPE[len(titles):])}"]
+    for title, body in sections[3:3 + len(AXES)]:
+        if LEAF_HEADER not in body:
+            errors.append(f"## {title} has no {LEAF_HEADER} table")
+    return errors
+
+
+STOCK = re.compile(r"\b(crucial|delve|robust|comprehensive|seamless(ly)?|utili[sz]e|ensure|landscape)\b", re.I)
+
+
+def stock_errors(text: str) -> list[str]:
+    """Stock vocabulary AGENTS.md bans, outside fenced code blocks."""
+    errors = []
+    fenced = False
+    for i, line in enumerate(text.splitlines(), 1):
+        if line.startswith("```"):
+            fenced = not fenced
+        elif not fenced and (m := STOCK.search(line)):
+            errors.append(f"line {i}: stock word {m.group(0)!r}")
+    return errors
+
+
+AXES_ROW = re.compile(r"^\| \*\*Form\*\* \|", re.M)
+
+
 def tracked_markdown() -> list[Path]:
     out = subprocess.check_output(["git", "ls-files", "*.md"], cwd=ROOT)
     return [ROOT / f for f in out.decode().splitlines()]
@@ -164,6 +210,36 @@ class TestAscii(unittest.TestCase):
         self.assertEqual(ascii_errors("all plain\n"), [])
 
 
+class TestShape(unittest.TestCase):
+    GOOD = "\n".join(
+        [f"## {s}\n" for s in SHAPE[:3]]
+        + [f"## {a}\n{LEAF_HEADER}\n" for a in AXES]
+        + ["## Extra branch\n"])
+
+    def test_valid_shape_has_no_errors(self) -> None:
+        self.assertEqual(shape_errors(self.GOOD), [])
+
+    def test_axis_section_out_of_order_is_an_error(self) -> None:
+        self.assertTrue(shape_errors(self.GOOD.replace("## Form", "## Formx").replace("## Material", "## Form")))
+
+    def test_missing_axis_section_is_an_error(self) -> None:
+        self.assertTrue(shape_errors(self.GOOD.split("## Time")[0]))
+
+    def test_axis_section_without_leaf_table_is_an_error(self) -> None:
+        self.assertTrue(shape_errors(self.GOOD.replace(f"## Energy\n{LEAF_HEADER}", "## Energy\nprose")))
+
+
+class TestStock(unittest.TestCase):
+    def test_stock_word_is_an_error(self) -> None:
+        self.assertTrue(stock_errors("This is a robust design."))
+
+    def test_stock_word_inside_a_fence_passes(self) -> None:
+        self.assertEqual(stock_errors("```\nrobust\n```\n"), [])
+
+    def test_plain_words_pass(self) -> None:
+        self.assertEqual(stock_errors("Name a mechanism or a number."), [])
+
+
 class TestRepo(unittest.TestCase):
     def test_all_tracked_markdown_passes(self) -> None:
         errors = []
@@ -194,6 +270,33 @@ class TestRepo(unittest.TestCase):
         reached = set().union(*pairs.values())
         orphans = {n for n in pairs if n != "principles"} - reached
         self.assertEqual(orphans, set(), "no other skill pairs with these")
+
+    def test_medium_skills_follow_the_shape(self) -> None:
+        names = {p.name for p in skill_dirs()}
+        self.assertLessEqual({f"principles-{m}" for m in MEDIA}, names, "a medium skill folder is missing")
+        errors = [f"principles-{m}: {e}" for m in MEDIA for e in
+                  shape_errors((ROOT / "skills" / f"principles-{m}" / "SKILL.md").read_text(encoding="utf-8"))]
+        self.assertEqual(errors, [])
+
+    def test_no_stock_vocabulary(self) -> None:
+        # AGENTS.md and principles-language name the banned words in order to ban them.
+        exempt = {ROOT / "AGENTS.md", ROOT / "skills" / "principles-language" / "SKILL.md"}
+        errors = [f"{md}: {e}" for md in tracked_markdown() if md not in exempt
+                  for e in stock_errors(md.read_text(encoding="utf-8"))]
+        self.assertEqual(errors, [])
+
+    def test_six_axes_are_defined_in_one_place(self) -> None:
+        owners = [d.name for d in skill_dirs()
+                  if AXES_ROW.search((d / "SKILL.md").read_text(encoding="utf-8"))]
+        self.assertEqual(owners, ["principles"])
+
+    def test_every_skill_is_listed_in_the_readme_and_the_map(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        mapping = (ROOT / "skills" / "principles" / "SKILL.md").read_text(encoding="utf-8")
+        missing = [f"README: {d.name}" for d in skill_dirs() if f"`{d.name}`" not in readme]
+        missing += [f"map: {d.name}" for d in skill_dirs()
+                    if d.name != "principles" and f"`{d.name}`" not in mapping]
+        self.assertEqual(missing, [])
 
     def test_policy_stays_short(self) -> None:
         lines = (ROOT / "policy.md").read_text(encoding="utf-8").splitlines()

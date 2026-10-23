@@ -40,6 +40,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | | `principles-interaction` | flows, controls, feedback, anything a person operates |
 | | `principles-information` | charts, diagrams, tables, dashboards, maps |
 | | `principles-code` | software structure, APIs, data, systems |
+| | `principles-distribute` | launching, posting, growing an audience, pricing, pre-orders, and the funnel from attention to payment |
 | | `principles-world` | many parts meant to feel like one place: immersive sites, games, spaces, events, brands |
 | | `principles-machine` | mechanisms, structures, engineered hardware |
 | Check | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |

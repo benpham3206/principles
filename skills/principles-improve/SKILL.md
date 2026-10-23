@@ -69,4 +69,4 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 - Anything automated that nobody can explain.
 - The workspace itself, bench or repository. Sort out what is not needed, set the rest in order, clean to inspect, standardize, and sustain: the 5S practice of the Toyota Production System. Clutter hides the bottleneck.
 
-Pairs with: before `principles-verify`, `principles-ground`; after `principles-lessons`, `principles-compound`.
+Pairs with: before `principles-verify`, `principles-distribute`, `principles-ground`; after `principles-lessons`, `principles-compound`.

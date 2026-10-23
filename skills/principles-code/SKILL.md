@@ -107,6 +107,8 @@ CODE
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
+| Change reach | Before editing, list every place the change must reach: callers, tests, fixtures, config, exports. Be minimal in the solution, complete in the change | A small diff that leaves callers, fixtures, or docs broken | Search every use of what you touched. Is each one updated or still correct? |
+| Fix once, at the source | A bug in shared code is fixed in the shared code, after finding every caller, not patched at each symptom | The same guard added in three callers while the cause stays | Does the fix live where the wrong value is made? |
 | Tests | Test behavior through the interface, not the implementation; a test must fail when the behavior breaks | Tests that pin internals and break on every refactor | Change the internals, keep the behavior. Do tests still pass? Break the behavior. Do they fail? |
 | Error handling | Handle an error at the boundary that can act on it; below that, pass it up with context | Swallowed errors, or the same error handled at every layer | For each handler, can it fix, retry, or report? |
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |

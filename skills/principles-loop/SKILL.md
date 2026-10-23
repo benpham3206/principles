@@ -79,4 +79,4 @@ Made things can hold such loops when the levels are real. In a library of princi
 - The boundary: who and what you left outside the drawing, and what the loop does to them.
 - Any place a system judges itself.
 
-Pairs with: before `principles-represent`, `principles-compound`, `principles-improve`; after `principles-world`.
+Pairs with: before `principles-represent`, `principles-compound`, `principles-improve`; after `principles-distribute`, `principles-world`.

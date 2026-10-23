@@ -71,7 +71,7 @@ The ladder holds in every medium. For a machine: analysis, then a bench test, th
 
 Leave one small runnable check for any branch, loop, parser, state change, money, or security logic that no cheaper rung would catch.
 
-A model is a claim. State where it holds and where it breaks. One test in the real world outranks many simulations.
+A model is a claim. State where it holds and where it breaks. A real test outranks a simulation of the same case. A model checked against real tests can reach cases too rare, costly, or dangerous to test, within the range where it was checked.
 
 ## A verify command for every project
 

@@ -13,7 +13,7 @@ The bar:
 - **Timeless over dated.** Physics, perception, logic, and judgment stay. Tools, products, versions, and prices do not belong here.
 - **Principle, failure, check.** Every principle names the failure it prevents and a check that catches it.
 - **Positive form.** Say what to do. A prohibition earns its place only when no positive form exists.
-- **Honest status.** Separate established principle from heuristic from hypothesis. A heuristic states its limit. A hypothesis says how to test it.
+- **Honest status.** Write each claim as the kind it is, using the kinds of claim in `principles-ground`: law within stated assumptions, empirical regularity, heuristic, hypothesis, convention, or value. A heuristic states its limit. A hypothesis says how to test it. Mark the kind only where it changes how a reader should use the claim.
 - **One fact, one place.** The six axes live in `skills/principles`. Other skills use them and never redefine them.
 
 ## Files

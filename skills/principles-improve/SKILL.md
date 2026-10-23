@@ -18,7 +18,7 @@ The order matters. Each step is wasted on anything a later look would have delet
 
 ## Laws
 
-- An improvement anywhere but the bottleneck is an illusion.
+- Find what limits the metric. When one step caps it, as the slowest stage caps a line's steady throughput, a gain elsewhere changes little, except where it stops that step from waiting or being blocked. When parts add up, as latency through a chain or total cost does, compare the reduction each part can actually give for its cost; the largest term is the first place to look, not an automatic choice.
 - The best part is no part; the best step is no step.
 - Make it work, then make it simple, then make it fast, in that order.
 - Measured gains are kept; felt gains are reverted.
@@ -31,7 +31,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 ## Steps
 
 1. Measure the baseline on the metric the goal names and on the guardrails: the other measures that must not get worse. Correctness checks are always guardrails. Note how much a measure moves on its own, so noise is not read as change. Without a baseline, no change can be shown to help.
-2. Find the bottleneck: the one step, part, or resource that limits the goal now. Improving anything else changes nothing the goal can see.
+2. Find what limits the goal now, including how parts interact. For throughput, that is the limiting step and whatever makes it wait or blocks it. For a metric that adds up, compare the reduction each part can give for its cost.
 3. Question the requirement behind it. Ask who needs it and what breaks without it. A requirement with no owner is a candidate for deletion.
 4. Delete what does not need to exist. If nothing deleted has to come back later, too little was deleted.
 5. Simplify what remains: fewer parts, states, branches, boundaries, and dependencies. To merge or split parts, see `principles-integrate`.
@@ -53,7 +53,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | Standardize the best known way | Each person does the job their own way, so no gain can be measured or kept | Is the current best method written where the work happens, and is it the baseline for the next change? |
 | Simplify before speeding up | A fast, tangled thing nobody can change | Could fewer parts do the same job? |
 | Automate last | A script that encodes a process nobody understands | Can a person do it by hand, correctly, from a written list? Then automate |
-| One change at a time | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change? |
+| One change at a time, unless a designed experiment separates the effects | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change, or to a factor in a planned design (see `principles-synthesize`)? |
 | Keep it working throughout | A broken system during a long improvement | Is the thing usable after every step? |
 | Prefer reversible steps | An improvement that cannot be undone when it turns out wrong | Can this change be reverted in minutes? |
 | Optimize to a stated limit | Endless tuning with no target | What threshold makes this good enough? Stop at it |

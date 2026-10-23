@@ -1,6 +1,6 @@
 ---
 name: principles-loop
-description: Loops, where an output returns as an input, from reinforcing and balancing feedback and delays to why people return, giving back, communities, and strange loops. Use when designing for return, retention, reciprocity, growth, or a system fed by its own results.
+description: Loops, where an output returns as an input, from feedback, control, delay, and stability to why people return, communities, and strange loops. Use when tuning any self-correcting system, or designing for return, retention, reciprocity, growth, or a system fed by its own results.
 ---
 
 # Loop
@@ -25,8 +25,7 @@ A **loop** is a path where something's output returns, directly or through other
 
 | Heuristic | Where it breaks | Check |
 |---|---|---|
-| Late feedback invites overshoot, as people push harder than needed before the result shows | Some systems damp themselves, and a buffer can absorb a delay | Has the system swung past its target after past pushes? |
-| Distinguish the delays: from action to effect (response), from effect to seeing it (observation), and others such as deciding and passing a signal on. Shortening the observation delay helps a loop learn sooner | A shorter response delay can destabilize a system, and the longest delay may not be the one that limits learning | Which delay sits between action and learning, and does the system stay stable when it shrinks? |
+| Distinguish the delays: from action to effect (response), from effect to seeing it (observation), and others such as deciding and passing a signal on. Shortening the observation delay helps a loop learn sooner | Acting on every fresher reading can chase noise, and the longest delay may not be the one that limits learning | Which delay sits between action and learning, and did shortening it reduce swings or only add actions? |
 | People come back for what renews: new value, being remembered, other people, visible progress | Some returns are habits that serve the person well with nothing new | Would they come back if nothing reminded them? |
 | Giving with no condition starts trust that taking cannot | Some gifts are taken and never returned, and that is fine | Would the gift still be worth giving if nothing came back? |
 | Value made by members for members lets a community outgrow its founders | Members can be exploited for unpaid work | Are contributors credited, heard in decisions, and free to leave with their work? |
@@ -55,7 +54,6 @@ Growth planned as a straight line, a launch with no reason to return, rewards on
 | Causal evidence | A loop drawn from a story, with a reversed, confounded, or imagined link | Was each link tested by intervention, or its rivals ruled out? |
 | Stocks and flows | Watching a rate while the stock behind it drains | What accumulates here, and what fills and drains it? |
 | Named limits | Growth planned with no ceiling | What limits this reinforcing loop, and when will it bind? |
-| Sized to the delay | Oscillation from reacting to old signals | How long from action to visible result, and is the response sized for that delay? |
 | Leaks and decay | A loop that seems to grow while its stock drains | What is lost each cycle: churn, forgetting, trust? |
 | Return worth making | People come once and never again | What is new, remembered, or alive the next time they come? |
 | Consent to be remembered | Memory that surprises or exposes people | Did they agree, is it the least needed, and can they delete it? |
@@ -64,6 +62,23 @@ Growth planned as a straight line, a launch with no reason to return, rewards on
 | Willing participation | Retention bought with coercion or deception | Over months, do people choose to return, are they better off, and is leaving easy? |
 | Effects outside the loop | A loop that works for its members and harms others | Who outside the boundary bears a cost? |
 | Grounded self-reference | A system that only checks itself and drifts from reality | What outside check does each turn meet? |
+
+## Control
+
+A **controller** measures a system, compares it with a target, and acts to close the gap: a thermostat, an autopilot, an autoscaler, a retry policy, an agent that checks its own output, a manager reviewing a monthly number. The same terms describe all of them. The **state** is what the system holds now that decides what it does next: temperature, queue length, backlog, belief. **Inputs** are what the controller can change, **outputs** are what it can measure, and **disturbances** change the state from outside, unasked. **Feedback** acts on the measured error, so it corrects what nobody predicted, but only after the error shows. **Feedforward** acts on a plan or a measured disturbance before the error appears; it is fast and blind to its own model's mistakes, so pair it with feedback. A state is **observable** when it can be inferred from the outputs, and **controllable** when the inputs can move it to the target. Check both before tuning anything.
+
+**Delay limits responsiveness.** Take the simplest case: a fixed target, no saturation, and a controller that each step removes a fraction $g > 0$ of the error it saw $d$ steps ago, $e_{k+1} = e_k - g\, e_{k-d}$. With no delay it settles without overshoot for $0 < g \le 1$ and settles, swinging, for $1 < g < 2$. One step late, it swings for $g$ above 0.25, and the swings stop dying out at $g = 1$; two steps late, at about $g = 0.62$. Real loops differ in detail, but the direction holds widely: the more aggressive the response to a late signal, the more it swings, from swings that die out, to swings that persist, to swings that grow until a limit bounds them. To respond faster, shorten the delay first; otherwise correct less per step, or space corrections by the delay. To tune a specific loop, use the domain's method, such as gain and phase margin for servos, queueing models for services, or simulation for organizations and markets.
+
+| Principle | Failure | Check |
+|---|---|---|
+| Name state, inputs, outputs, disturbances | A controller tuned on what it sees, blind to the state that drives it and the pushes from outside | What does the system hold, what can you change, what can you see, and what moves it unasked? |
+| Stable before fast | A loop made more responsive that now swings: hiring and layoffs, autoscaler flapping, an agent that over-corrects each review | After a step change, does it settle, and in how many swings? Is each correction sized and spaced for the delay? |
+| Feedback for the unpredicted, feedforward for the known | Waiting for a scheduled load to cause an error, or running a plan open loop with no check | Which disturbances are known ahead? Is each met early, with feedback behind it? |
+| Observe the state, not a proxy | The measured number improves while the thing it stood for gets worse, because the loop drove the number | If this metric were gamed or drifted, what other measurement would reveal the real state, and how late? |
+| Act through a path that reaches the state | Pushing harder on an input that does not move the state: more servers for a queue held by a lock | Trace the path from input to state. Did a past change in this input move it? |
+| Plan for saturation | At an input's limit the loop is open; error that piles up meanwhile, such as a backlog, queued retries, or an integrator winding up, lurches out when the limit lifts | What happens at full input? What accumulates there, and what bounds it? |
+| Gain amplifies noise | A controller that chases measurement noise; a filter added to calm it that adds delay | Does the action change when the state did not? What delay did the filter add? |
+| Disturbances faster than the loop need other defenses | Feedback expected to catch a spike it cannot see in time | Is each fast disturbance met by a buffer, feedforward, or margin? |
 
 ## Strange loops
 

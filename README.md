@@ -21,7 +21,7 @@ Think big. Build small. Win.
 |                                                               v
 +----------- LESSONS <----------------------- VERIFY <-----------+
              what changes next                is it true, is it good
-             lessons  improve                 verify  craft  secure
+             lessons  improve                 verify  craft  secure  reliability
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -48,13 +48,14 @@ Time runs through all four: how each one changes, wears, and is met in sequence.
 | Skill | What it gives |
 |---|---|
 | `principles` | The map, the six axes, and the laws that hold in every medium |
-| `principles-ground` | What is fundamentally true; map versus territory; first principles as a procedure |
+| `principles-ground` | What is fundamentally true and how to know it: kinds of claim, comparing explanations, when more information is worth it, first principles |
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
 | `principles-world` | Many parts as one place: canon, persistence across thresholds, agreeing senses, in-world interface, voice |
 | `principles-distribute` | Getting work to its people: the funnel, channel currency, experiments and teardowns, paying early, honest urgency |
 | `principles-craft` | Good, great, timeless: what defines each and how to check; taste, pride, and the faults of generic work |
 | `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
 | `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |
+| `principles-reliability` | Keep working when parts fail: failure modes, common causes, detection, redundancy and its limits, safe degradation, tested recovery |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
 | `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
@@ -66,7 +67,7 @@ Time runs through all four: how each one changes, wears, and is met in sequence.
 | `principles-counsel` | Advising a person, and keeping their agency across a capability gap |
 | `principles-mind` | Designing an agent: memory, cycles, budgets, calibration, invariants |
 | `principles-develop` | How people and agents grow; map, path, and advice modes |
-| `principles-loop` | Loops: reinforcing and balancing feedback, delays, return, giving back, communities, strange loops |
+| `principles-loop` | Loops: reinforcing and balancing feedback, control and stability, delays, return, giving back, communities, strange loops |
 | `principles-compound` | What compounds, and how to invest so gains build on gains |
 
 ## Install

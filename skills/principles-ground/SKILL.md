@@ -1,6 +1,6 @@
 ---
 name: principles-ground
-description: What is fundamentally true, and how to know it. Use when reasoning from first principles, checking a claim, finding the physical or logical limit of a problem, separating a word or model from the thing it names, or labelling facts, assumptions, and estimates.
+description: What is fundamentally true, and how to know it. Use when reasoning from first principles, checking a claim, separating a model from the thing it names, labelling claims, comparing explanations, choosing a test, or deciding whether more information is worth it.
 ---
 
 # Ground
@@ -18,17 +18,64 @@ So:
 - When two maps disagree, go to the territory. Do not average the maps.
 - Fluency is not evidence. A smooth explanation and a true one feel the same from inside.
 
-## Kinds of truth
+## Kinds of claim
 
-| Kind | True because | Holds where | Breaks when |
+| Kind | Rests on | Holds within | Outside that, do this |
 |---|---|---|---|
-| Logic and mathematics | proof from axioms | wherever the axioms hold | an axiom does not match the situation |
-| Physics | repeated measurement | within the tested range | outside it: very fast, very small, very hot, very large |
-| Perception | how the observer's senses and mind work | for that kind of observer | the observer differs: age, ability, species, machine |
-| Convention | agreement | among those who agree | the agreement changes |
-| Claim | evidence | as far as the evidence reaches | the evidence was never checked |
+| Formal law: logic, mathematics | proof from axioms | situations that satisfy the axioms | Find the axiom that fails; the result says nothing there |
+| Physical law | repeated measurement | the tested range of speed, size, temperature, and material | Use the more general law, or measure |
+| Empirical regularity: perception, materials data, human behavior | observations of a known population | that population and setting | Treat it as a hypothesis and test it on the case |
+| Heuristic | a default that usually pays | cases without its named exceptions | Look for the exceptions; if none are named, find them before relying on it |
+| Hypothesis | it would explain what is seen | nothing yet; it waits for a test that could refute it | Run the test; revise or drop it |
+| Convention | agreement | the people who agree | Follow the current agreement, or change it openly |
+| Value or taste | the goals of the intended observers | those observers and goals | Name whose goals; judge with those people |
 
-Mark each statement as **fact** (checked), **assumption** (taken as true to proceed), **estimate** (a number with an uncertainty), or **decision** (a choice). Never let one become another without saying so. Give confidence as a percentage when it would change a decision.
+Most rules in these skills are empirical regularities or heuristics. Apply one where its conditions hold. Where they do not, say so and reason from what does hold.
+
+## Label what you know
+
+- **Observation**: seen or measured directly. Note how, and with what instrument.
+- **Inference**: derived from observations by a step you can state. It is no stronger than its weakest step.
+- **Hypothesis**: a proposed explanation, with the result that would show it false.
+- **Assumption**: taken as true to proceed, unchecked. Name what breaks if it is wrong.
+- **Estimate**: a quantity with its uncertainty and its basis.
+- **Decision**: a choice, with who made it.
+
+A **fact** is an observation, or an inference whose steps were checked. Never let one kind become another without saying so: a hypothesis that survived one test is still a hypothesis, and an assumption repeated is still an assumption.
+
+State confidence at the precision the evidence supports. Give a range and its basis ("4 to 7 days, from the last five similar jobs") rather than a point. Give a probability only when it rests on a base rate, a model, or a record of calibrated guesses; otherwise use an ordered word (likely, plausible, speculative) and say what would move it.
+
+## Compare explanations
+
+When something needs explaining, such as a failure, a result, or a surprise:
+
+1. Write every explanation still in play: at least two, and "something not yet named". The familiar one is a candidate, not the answer.
+2. For each, write what it predicts that the others do not.
+3. Weigh evidence by how much more likely it is under one explanation than under the others. Evidence that every candidate predicts moves nothing, however much of it there is.
+4. Choose the next test by how well its possible results separate the candidates that call for different actions, for its cost and risk. One test that splits three such candidates beats three tests that each confirm one.
+5. Update. When a result contradicts an assumption, mark it false and reopen every inference and decision built on it.
+6. Stop by the rule in the next section. A decision can be settled while several explanations remain plausible, when all of them call for the same action.
+
+Failure: the familiar cause is investigated, found plausible, and fixed, while the real cause stays. Check: before acting, name the result that would have pointed to a different cause, and say whether you looked for it.
+
+## When to learn more
+
+Reduce an uncertainty when reducing it could change a consequential decision. Before gathering, name the decision, the result that would change it, how likely that result is, and what waiting costs.
+
+- No plausible result would change the choice: decide now.
+- A mistake is cheap and reversible: act, and treat the result as the test.
+- Otherwise, gather the information whose likely results improve the decision by more than its cost, delay, and risk. A test that could flip the choice is worth little when that result is very unlikely or the test is often wrong.
+- A safety or legal limit is not traded against cost: where the limit could be crossed, check before acting.
+
+Failure: research that continues after the choice is settled, or an irreversible step taken on an assumption that a cheap check would have overturned. Check: what result would change the decision, how likely is it, and is learning it worth more than it costs?
+
+## Measurements and predictions
+
+- Every measurement has a resolution, a bias, and noise. Repeat it to see the noise; measure a known reference to see the bias, and correct what you know.
+- Judge a difference against the uncertainty of the difference, not of one reading. Repeats can show a difference smaller than one reading's noise; a bias shared by both readings cancels in the difference, and one that is not shared does not.
+- Carry the remaining uncertainty through the calculation. Where the calculation is close to linear over the inputs' range, independent standard uncertainties combine as the square root of the sum of their squares, each scaled by the result's sensitivity to that input; correlated inputs need their covariance, and when the dependence is unknown, summing the scaled uncertainties bounds the result. Where it is strongly nonlinear, push the input ranges or samples through the calculation itself.
+- An instrument reports only what it measures, where it sits, with its lag. Name the gap between what was measured and what is claimed.
+- A prediction is a model run forward. Its uncertainty grows with distance from the cases the model was checked against; state that distance.
 
 ## Axioms by domain
 
@@ -41,7 +88,7 @@ These are the limits nothing designed can beat. State the general form; give loc
 - **Materials.** Every material has a strength, a stiffness, and a temperature limit. Structure is the art of staying under them.
 - **Information.** Data cannot be losslessly compressed below its entropy, and noise caps how much a channel can carry.
 - **Computation.** Some problems are easy to check but hard to solve. Some questions no program can answer for every input.
-- **Perception.** The smallest noticeable change grows in proportion to the size of the stimulus. Working memory holds only a few chunks at once. Attention is finite.
+- **Perception.** These are empirical regularities. Over the middle of a sense's range, the smallest noticeable change grows in proportion to the size of the stimulus; near the threshold it does not. Working memory holds only a few chunks at once. Attention is finite.
 - **Human systems.** People respond to incentives. Every choice has an opportunity cost. Trust is slow to build and fast to lose. These are durable regularities, not physical laws.
 
 ## First principles, as a procedure

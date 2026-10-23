@@ -19,13 +19,15 @@ Start with `principles`, the [skill map](skills/principles/SKILL.md). It defines
 ## Skills
 
 - Medium: `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`.
-- Creation: `principles-synthesize`, `principles-integrate`, `principles-world`, `principles-distribute`.
+- Creation: `principles-design`, `principles-synthesize`, `principles-integrate`, `principles-world`, `principles-distribute`.
 - Decisions: `principles-ground`, `principles-method`, `principles-represent`, `principles-invert`, `principles-horizons`, `principles-qualities`.
 - Evaluation: `principles-verify`, `principles-craft`, `principles-secure`, `principles-reliability`.
-- Learning: `principles-lessons`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
+- Learning: `principles-lessons`, `principles-refine`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
 - People and agents: `principles-counsel`, `principles-develop`, `principles-mind`.
 
 Each skill names a principle, the failure it prevents, and a check. Simplification keeps useful distinctions, safety margins, accessibility, and intentional richness.
+
+Use `principles-design` to choose an approach, `principles-refine` to revise an existing result toward its quality bar, and `principles-improve` for measured gains in a working thing.
 
 ## Install
 

@@ -119,4 +119,19 @@ This branch exists only in language. A word is not the thing it names; it is a l
 
 Is language your reality? The answer in this skill is no. Language is a map. A fluent sentence can be false, and a true fact can be told badly. Write the map well, then check it against the territory.
 
+## Calls to action
+
+A **call to action** asks a reader to do one thing, for a reason. It succeeds when the reader makes an informed choice quickly. They can tell what to do, why it matters, what it costs, and what waiting means. Who may decide is covered in `principles-interaction` (person in the loop) and `principles-counsel`.
+
+| Leaf | Principle | Failure | Check |
+|---|---|---|---|
+| One action | Each ask names one concrete action with a verb: run, merge, reply, decide | A paragraph the reader must turn into a task | Can they start without rereading? |
+| The reason | Give the reason in the reader's terms: what it unblocks, prevents, or gains for them, with the evidence behind it | An ask justified only by the asker's process, or by a claim the reader cannot check | Can the reader check the reason, and would they care about it if the asker were gone? |
+| The cost | State the effort or time it takes, and anything irreversible about it | A small-sounding ask that turns out large or permanent | Does the ask say how long it takes and what cannot be undone? |
+| Waiting | Say what happens if they wait, and any real deadline | False urgency, or a real deadline left unsaid | Is every deadline true and every consequence real? |
+| Ready to act | Put the means in the ask: the link, the command, the answer to pick | An action that first needs a search | Can they act from the ask alone? |
+| Order | As a rule of thumb, order asks by what unblocks the most, then by consequence; group the rest | Ten asks of equal weight, so none gets done | Is the first ask the one that matters most? |
+| Fewest asks | Do what you are authorized to do yourself; ask for what needs this reader's authority, knowledge, or judgment | Work handed back that the asker was allowed to do, or a decision taken from its owner | Is this the reader's decision, or work within your own authority? |
+| Free to decline | Declining takes no more effort than accepting, and its real consequences are stated plainly | Guilt, hidden defaults, invented consequences, or a refusal made harder than consent | Is saying no as easy as saying yes, and is every stated consequence true? |
+
 Pairs with: before `principles-method`, `principles-qualities`, `principles-counsel`; after `principles-verify`.

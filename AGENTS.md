@@ -38,6 +38,8 @@ README.md                  human entry point; lists every skill
 
 ## Use the skills on this repository
 
+The cost of applying a principle must be justified by its expected improvement in the outcome. Use judgment to decide which principles to apply and which to skip.
+
 This repo is built by its own skills. Before adding or changing a skill or `policy.md`:
 
 1. Run `principles-method`: intent, definition of done, the gate.

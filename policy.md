@@ -28,6 +28,7 @@ Intent and 5W1H, definition of done, how it is measured, constraints, assumption
 4. Anticipate bad actors, edge cases, and the worst case. Failures are observable, recoverable, and safe by default; urgent signals arrive at once, with a fallback. Bound every wait that can block (network, model calls, remote machines, server startup and health checks) with a timeout, and decide what happens when it fires. Before retrying work with side effects, check whether it finished or is still running.
 5. Optimize only a measured bottleneck that breaks a stated limit. Automate only understood, repeated work.
 6. Scale each workaround to its irreversibility, and mark each known limit where it lives.
+7. Run independent work in parallel when it is permitted, fits the usage and resources available, and is likely to save time overall: subagents, sessions, or background jobs. Give each part exclusive ownership of the files it edits, coordinate shared state, keep dependent steps in order, and verify the joined result before calling it done.
 
 ### Done
 - Reality wins. Check the real thing; agent prose, a summary, and a successful call are not evidence. A claim about current state (which machine, which branch, merged or not, exists or not) rests on evidence read in this turn, or is labeled unverified. The evidence must show the claim itself; a call that succeeds for any input shows nothing.

@@ -5,7 +5,7 @@ description: Scale the work to its consequences. Use when planning a task, makin
 
 # Method
 
-The **method** is a loop of plan, build, and refine. Scale its rigor to the cost of a mistake and keep earlier choices easy to change.
+The **method** is a cycle: plan the work, build a version, check it, and refine it. Match the effort to the cost of a mistake. Keep earlier choices easy to change.
 
 ## Gate: how much rigor
 
@@ -19,7 +19,7 @@ Rate the task on three things: **consequence** (what a mistake costs), **uncerta
 | Expensive, irreversible | Investigate deeply before acting |
 | High uncertainty, irreversible | Do not guess. Reduce the uncertainty first |
 
-Reduce an uncertainty when reducing it could change a consequential decision; `principles-ground` has how to choose what to learn and when to stop. The same scale sets how much to spend on preventing, detecting, and recovering from failure (see `principles-reliability`).
+Investigate an uncertainty when the answer could change an important decision. Use `principles-ground` to choose what to learn and when to stop. Use the same risk assessment to choose how much to spend on preventing, detecting, and recovering from failure (`principles-reliability`).
 
 Weigh expected benefit, information gained, downside, and reversibility. These are considerations, not quantities to add without a common scale.
 
@@ -42,7 +42,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 2. Delete what does not need to exist.
 3. Merge unneeded boundaries; keep useful modularity (see `principles-integrate`).
 4. Simplify before optimizing (see `principles-simplify`).
-5. Implement: decompose into subsystems and modules, define interfaces (inputs, outputs, guarantees, failure modes), sequence by the critical path, integrate in small steps (see `principles-integrate`).
+5. Split the work into subsystems and modules. Define each interface's inputs, outputs, guarantees, and failure modes. Order the work by its dependencies and critical path, then join the parts in small steps (`principles-integrate`).
 6. Verify against goal, constraints, and metrics (see `principles-verify`).
 7. Stress test where failure matters. Anticipate bad actors, edge cases, and the worst case.
 8. Optimize measured bottlenecks only.
@@ -57,7 +57,7 @@ For small reversible tasks this collapses to build, verify, iterate.
 
 Use `principles-refine` to compare the actual result with the intent, revise at the scale of the gap, and verify the whole again. Return to Plan or Build when the evidence calls for it.
 
-Never optimize what should be deleted, automate what is not understood, or add process where an experiment is cheaper than analysis.
+Delete unnecessary work before optimizing it. Understand a process before automating it. Use a cheap experiment when it can answer the question sooner than more analysis.
 
 ## Working record
 

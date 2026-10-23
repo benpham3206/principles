@@ -31,7 +31,7 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 
 ## Steps
 
-1. Name the assets and the people at risk: data, money, access, privacy, physical safety, reputation, and the control system itself. Rank them by the harm of their loss, counting harm to people who are not the owner.
+1. Name the assets and the people at risk: data, money, access, privacy, physical safety, reputation, and the control system itself. Rank them by the harm of their loss, counting harm to people who are not the owner. Use `principles-invert` to ask how a protected value could be violated and why that path might arise.
 2. Name the adversaries and the accidents: who would want each asset, what they can reach, what they can spend, and which honest mistakes do the same damage. Include the paths that need no code: physical access and tampering, a persuaded or coerced insider, a lost device, an impersonated person.
 3. Draw the trust boundaries: every place where data, commands, or control pass between parties that trust each other differently. Inputs from people, networks, files, other services, and models all cross one.
 4. Write the authority: for each actor, the actions it may take, who granted them, and how long the grant lasts. Anything not written is denied.
@@ -61,11 +61,11 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 
 ## Reviewing a change for security
 
-- Review what changed, and trace it to everything it reaches. A one-line change can move a boundary, widen a permission, or ungate a feature far from the diff.
+- Review what changed, and trace it to everything it reaches. A one-line change can move a boundary, widen a permission, or open access to a feature far from the diff.
 - Look first for changes to boundaries, authority, and controls: who may call it, what it trusts, what it can reach, what happens when a check fails.
 - Check gates. A feature meant for some users, a flag, or an internal-only path must stay closed to everyone else on every route.
 - Check what breaks for the honest user, too: renamed secrets, moved config, changed ports, new manual steps.
-- Separate intended from unaware. A change meant to remove a safeguard, with a tight scope, needs no alarm about intent; still weigh what it exposes against the threat model and the authority for the change. A change whose author may not see the full reach does, and so does one that looks hostile.
+- Assess intent and exposure separately. An intentional, tightly scoped safeguard removal does not by itself show hostile intent. Still check what it exposes against the threat model and the authority for the change. Flag exposure the author appears not to understand, and investigate signs of hostility.
 - Report a confirmed, urgent exposure at once with its known reach. Otherwise finish the trace before reporting. A finding that says "unless the other side handles it" is unfinished when the other side can be read.
 - Rate severity by reach and likelihood, not by fear. A reviewer who calls everything critical is soon ignored.
 - Form your own view before reading other reviews, then compare. Fresh eyes find what anchored eyes miss.

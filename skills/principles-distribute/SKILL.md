@@ -15,7 +15,9 @@ their need   what it                       landing     with consent
              rewards
 ```
 
-A **funnel** is one path of countable events from attention to the outcome, such as impressions, clicks, signups, and payments. Each rate's numerator is the next rate's denominator: clicks over impressions, then signups over those same clicks. Multiply rates along one path, over the same people and time window. To combine paths that do not overlap, add their outcome counts, not their rates. Some people skip events, such as buying without signing up, so count those paths too. Choosing people and channels and learning are work around the funnel, not rates in it.
+A **funnel** counts events along one path to an outcome: for example, impressions, clicks, signups, and payments. Multiply rates only when each numerator becomes the next denominator, over the same people and time window: clicks over impressions, then signups over those same clicks.
+
+Count paths that skip an event, such as buying without signing up. To combine paths that do not overlap, add their outcome counts. Choosing an audience, choosing a channel, and learning from results support the funnel; they are not rates in it.
 
 ## Laws
 
@@ -49,7 +51,7 @@ The same cut posted everywhere, a link to a slow page that shows nothing above t
 3. Choose channels where those people already are, including direct contact, referrals, communities, and places offline. For each, write the value it seems to reward as a hypothesis.
 4. Make once, cut for each channel's format and value.
 5. Run each post or offer as an experiment, with `principles-improve`'s loop: a hypothesis first, a baseline, enough tries before judging, a conversion window long enough for slow outcomes, and the result recorded. Log every count with its denominator.
-6. Tear down what beat or missed your baseline. Each explanation stays a hypothesis until a comparison changes only the suspected cause, with the audience, timing, and exposure held as close as you can, and the difference holds. A repeat that wins again shows the result is repeatable, not why.
+6. Examine what beat or missed the baseline. Treat each explanation as a hypothesis. Test it by changing only the suspected cause, keeping audience, timing, and exposure as close as possible, and checking that the difference holds. A repeated result shows repeatability; it does not establish the cause.
 7. Ask for commitment early, in rising steps: attention, a way to reach them again, then a payment for a dated, deliverable offer where payment fits. State the full terms, the refund rule, and the delivery date.
 8. Choose the next fix by expected gain for its cost, not only by which rate looks lowest; `principles-improve` has the method.
 9. Measure past the sale: did people use it, keep using it, and recommend it? That is the result distribution serves.

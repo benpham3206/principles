@@ -33,7 +33,7 @@ Two of everything on one power feed, network, region, config, version, or suppli
 ## Steps
 
 1. Rate the harm. For each function, what happens to whom when it stops, slows, gives a wrong answer, or acts when it should not? Set the rigor from the harm and its reversibility, using the table below.
-2. List the failure modes of each part (designing the failure, as in `principles-invert`, finds paths a parts list misses), including people, power, network, suppliers, config, and procedures: how it can fail, the effect on the whole, how the failure would be seen, and how fast.
+2. List how each part can fail, its effect on the whole, and how soon the failure would be seen. Include people, power, networks, suppliers, config, and procedures. Use `principles-invert` to find failure paths that a parts list misses.
 3. Find the single points: any part, person, credential, or file whose failure alone stops a critical function. Remove each one, back it up independently, or accept it in writing with its cost.
 4. Test independence. For each redundant set, list what its members share: power, cooling, place, design, software version, config, supplier, operator, the deploy that changed them, and the assumption they were built on. Each shared item is a **common cause**. Separate those whose failure matters.
 5. Design detection and isolation. For each critical failure mode, find the time from its start to unacceptable harm. Where a signal can fire and be acted on within that time, give it an owner and enough detail to choose the safe response. Where it cannot, the mode needs prevention or a protection that acts on its own. Then ask who notices when the monitor fails.

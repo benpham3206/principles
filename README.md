@@ -1,20 +1,22 @@
 # principles
 
-Axioms, principles, and taste for agents and the people who work with them. Any medium, software or physical. Written to stay true as models grow more capable.
+A library of skills for agents and the people who work with them. Use them to make decisions, create work, and check the result in any medium.
 
 Think big. Build small. Win.
+
+Agents: read [/principles-method](skills/principles-method/SKILL.md) first. Use [/principles-language](skills/principles-language/SKILL.md) whenever writing or editing public-facing text.
 
 ## The loop
 
 ```
-INTENT -> GROUND -> MAKE -> SIMULATE -> REALITY
-  ^                                      |
-  +----------- LESSONS <- VERIFY <--------+
+Set the goal -> Check assumptions -> Make -> Predict -> Test
+     ^                                                  |
+     +--------------- Learn and revise <-----------------+
 ```
 
-State the purpose, find what is true, make the thing, and check it against reality. Use what happened to choose the next action. Scale the work to its consequences with `principles-method`.
+State what the work should do and who it serves. Check the assumptions that could change your approach. Make a small, complete version, predict how it will behave, and test that prediction against reality. Use the result to decide what to keep or change.
 
-Start with `principles`, the [skill map](skills/principles/SKILL.md). It defines six axes once: form, material, energy, observer, composition, and time. Each medium skill applies them; `principles-verify` checks the result. Load only what the task needs.
+Use `principles`, the [skill map](skills/principles/SKILL.md), to choose what to load next. It defines six axes: form, material, energy, observer, composition, and time. Each medium skill applies them; `principles-verify` checks the result. Load only what the task needs.
 
 ## Skills
 
@@ -40,13 +42,13 @@ Claude Code:
 
 The plugin namespaces each skill, so commands read `/principles:principles-verify`. For the shorter `/principles-verify`, `/principles-visual`, and so on, install with `install.py` below instead. Either way, agents load a skill on their own when a task matches.
 
-Any harness that reads Agent Skills folders (`SKILL.md` with `name` and `description`): clone the repo and link or copy each folder in `skills/` into that harness's skills directory.
+For a harness that reads Agent Skills folders, clone the repo and link or copy each folder in `skills/` into its skills directory. Each folder contains a `SKILL.md` with a name and description.
 
 ```
 git clone https://github.com/benpham3206/principles
 ```
 
-With agent-hooks present (its `fanout.py` links one folder into every harness), `install.py` does all of it:
+If agent-hooks is installed, `install.py` uses its `fanout.py` to link the skills into every harness:
 
 ```
 python3 install.py --pull     # clone or fast-forward ~/.agents/skill-repos/benpham3206__principles, then link and fan out
@@ -55,7 +57,11 @@ python3 install.py --all      # this machine, then every other one with an ssh a
 python3 install.py --check --all   # dry run here and on every other machine; pulls and writes nothing
 ```
 
-It installs from that clone, never from a working checkout, so unmerged edits never reach an agent. Pulls fast-forward to exactly `origin/main` and refuse a clone with local edits, untracked files or local commits, here and on every other machine, and a link that points elsewhere is reported, never replaced. It also writes `policy.md`, the always-on engineering policy, as one managed block into every harness's instruction file. Verify: `python3 -m unittest`.
+The installer uses the clone at `~/.agents/skill-repos/benpham3206__principles`. It does not install from a working checkout, so unmerged edits stay out of active skills.
+
+On every machine, a pull fast-forwards to exactly `origin/main`. It refuses a clone with local edits, untracked files, or local commits. A link that points elsewhere is reported and left in place.
+
+The installer also writes `policy.md`, the engineering policy, as one managed block into each harness's instruction file. Run `python3 -m unittest` to verify the repository.
 
 ## Contributing
 

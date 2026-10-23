@@ -103,7 +103,7 @@ INFORMATION
 
 ## Truth
 
-This branch exists because a display can be perfectly readable and false. The reader trusts the display, so the maker answers for it.
+A readable display can still mislead. Check its scales, data, labels, and claims before relying on the answer it appears to give.
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|

@@ -1,59 +1,81 @@
 ---
 name: principles-language
-description: Make words clear and useful. Use when writing, editing, naming, scripting, or reviewing prose, speech, dialogue, instructions, or UI copy.
+description: Shape meaning and experience with words. Use when writing or editing prose, poetry, lyrics, dialogue, speeches, scripts, social posts, instructions, names, or UI copy.
 ---
 
 # Language
 
-A **language** work conveys meaning through symbols. Each sentence builds on what the reader already knows. Choose words and order that let them follow without backtracking.
+**Language** shapes meaning and experience through words and other symbols. Decide what the audience should understand, feel, imagine, remember, or do. Choose the words, form, and rhythm for that purpose.
 
 ## Laws of the medium
 
-- The reader has only the page. What is not written does not exist for them.
-- Answer first. Position tells the reader what matters before the words can.
-- One concept, one name. Variety in terms reads as variety in meaning.
-- Concrete beats abstract. A reader can picture a thing and cannot picture a category.
-- Remove words that add no meaning. Keep the context, conditions, and distinctions the reader needs; use `principles-simplify` to check what each cut preserves.
-- Positive form wins. Say what to do. Name a forbidden thing only when no positive form exists.
-- Read it aloud. The ear catches rhythm, length, and clutter that the eye skips.
+- Serve a purpose for an audience. Know what the words should let them understand, experience, or do.
+- Order the work for that purpose. Supply needed context and choose what to reveal when.
+- Choose exact words and revealing details. Keep an abstract or technical term when it says what you mean; use examples when they help.
+- Give the work a voice suited to its speaker and situation. Let different speakers sound different.
+- Write for the ear as well as the eye. Make rhythm, stress, and sound serve the meaning and the form.
+- Keep what earns its place through meaning, sound, character, atmosphere, or emphasis. Use `principles-simplify` to cut without losing those effects.
+- Keep trust with the audience. Support factual claims; make invention, uncertainty, and persuasion clear where mistaking them would matter.
+
+Use the checks that fit the piece. Clarity can mean an explicit instruction, a vivid image, or a question left open on purpose. Repetition, ambiguity, and a delayed reveal can serve the work.
+
+### Choose the effect and form
+
+Forms can mix. Use the checks for what this piece needs to do.
+
+| Form | What it can do | Check |
+|---|---|---|
+| Explanation, instructions, report | Make something understood, support a decision, or guide action | Is the finding easy to find? Do definitions and prerequisites arrive before they are needed? |
+| Prose and essays | Develop an observation, argument, scene, or way of seeing | Do the details support the main idea? Does each passage change the thought or experience? |
+| Fiction and dialogue | Make a world, character, or conflict matter to the audience | Do events follow the world's rules? Do choices and voices belong to the characters? Is the reveal placed for a reason? |
+| Poetry | Concentrate thought, image, feeling, or sound | What do line breaks, images, rhythm, and chosen ambiguity make possible? Read it aloud and on the page |
+| Lyrics | Carry meaning and feeling through a sung performance | Sing the words to the melody. Do stress, breath, vowels, and any rhyme fit? Does repetition earn its place? Use `principles-sound` for the musical choices |
+| Scripts, speeches, and video | Move an audience through words heard in time | Perform it at the intended pace. Can a listener follow without rereading? Do words, performance, timing, and any visuals work together? |
+| Social posts and promotional copy | Earn attention and deliver an idea, experience, or offer | Does the rest fulfill the opening's promise? Is any claim supported and any ask honest? |
+| Names, labels, and UI copy | Help someone recognize, remember, distinguish, or act in a few words | Test the words in context. Can the intended person tell what they mean and distinguish nearby choices? |
 
 ## Defaults to replace
 
-Stock openers ("In today's world", "It is important to note", "In this section we will", "Let's dive in"), stock closers ("In summary", "In conclusion", "I hope this helps"), hedges (might, perhaps, arguably, it seems, somewhat, a bit) used to avoid a claim, filler transitions (moreover, furthermore, additionally), intensifiers (very, really, extremely), the stock vocabulary (crucial, delve, robust, comprehensive, seamless, leverage as a verb, utilize, ensure, landscape, tapestry, pivotal), triplets by reflex, the rhetorical question that opens a paragraph, the "not X but Y" frame used by habit, and the title that says only the topic.
+- Stock openers ("In today's world", "It is important to note", "In this section we will", "Let's dive in") and closers ("In summary", "In conclusion", "I hope this helps").
+- Hedges (might, perhaps, arguably, it seems, somewhat, a bit) used to avoid a claim; filler transitions (moreover, furthermore, additionally); intensifiers (very, really, extremely) used in place of an exact word.
+- Stock vocabulary (crucial, delve, robust, comprehensive, seamless, leverage as a verb, utilize, ensure, landscape, tapestry, pivotal).
+- Triplets, rhetorical questions, and the "not X but Y" frame used by habit; headings that name a topic where the reader needs a finding.
+- Stock imagery, rhyme that distorts the intended meaning, and a voice that changes without reason.
 
 ## Tree
 
 ```
 LANGUAGE
-├── Form          word, sentence length and shape, paragraph, the sentence as one idea
+├── Form          word, sentence length and shape, focus, paragraph, line and stanza
 ├── Material      diction, register, tone, figurative language
 ├── Energy        emphasis, verbs, voice, cadence
-├── Observer      prior knowledge, the action wanted, attention budget, a model as reader
-├── Composition   structure, order, headings, transitions, one idea per paragraph
+├── Observer      prior knowledge, intended effect, attention budget, a model as reader
+├── Composition   structure, order, headings, transitions, paragraph sequence
 ├── Time          pacing, narrative order, setup and payoff, the reader's journey, aging
-└── Meaning       map and territory, definitions, one term per concept, precision, checkable claims
+└── Meaning       map and territory, needed terms, stable labels, precision, chosen ambiguity
 ```
 
 ## Form
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
-| Word | The shortest word that is exact wins; a word is the smallest unit of choice | A long word where a short one means the same | Replace each long word with a short one. Did meaning change? |
-| Sentence length | Length sets load; the reader holds one clause open while reading another | Sentences past about 25 words (a rule of thumb) that nest clauses | Count words. Can you say it in two sentences? |
-| Sentence shape | Subject, verb, object in that order is the fastest shape to parse | The subject buried after a long lead-in | Find the verb. How many words come before its subject? |
+| Word | Choose each word for meaning, sound, and voice. Prefer the shorter word when those effects are equal | A word adds weight without adding meaning or effect | Try a shorter word. What changes or is lost? |
+| Sentence length | Length sets load and pace. In explanatory prose, about 25 words is a useful point to check for nested clauses | A reader loses the thread before the sentence ends | Can you say it in two sentences? What happens to meaning, rhythm, and voice? |
+| Sentence shape | In plain English prose, subject, verb, object is a useful default. Change the order for a reason | A buried subject delays understanding without serving emphasis or voice | Find the subject and verb. Does their order serve the sentence? |
 | Variation | Short sentences land a point; longer ones carry a chain of reasoning; mix them on purpose | Every sentence the same length | Read the lengths down the page. Is there a beat? |
-| Paragraph | A paragraph holds one idea and closes it | Two ideas in one block, or one idea split in three | State the paragraph in six words. Is it one idea? |
-| One idea per sentence | A sentence that holds two claims hides the weaker one | Claims joined with "and" that need separate proof | Mark each claim. Is there more than one? |
+| Paragraph | Give each paragraph one main idea, developed enough to follow | Unrelated ideas in one block, or a thought split before it is clear | Can you name the paragraph's main idea, and does each sentence support it? |
+| Sentence focus | Give each sentence a focus. Join clauses when their relation or effect is clearer together | Several claims or images compete without a clear relation | Would splitting the sentence make the relation clearer or weaken its effect? |
+| Line and stanza | Breaks can shape breath, rhythm, emphasis, and expectation | Line breaks are arbitrary, or erase a needed relation | Read across each break and pause at it. What does each reading do? |
 
 ## Material
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
-| Diction | A concrete word shows a thing; an abstract word names a category. Prefer the thing | "Improve outcomes" where "cut load time by half" is meant | Can you picture or measure each noun? |
-| Short roots | When two words are equal, the short Old English one (use, help, start) beats the Latin one (utilization, assistance, commencement) | Formal words chosen to sound serious | Swap in the short word. Does anything drop out? |
+| Diction | Use specific words. Keep an abstract or technical term when it is exact, and explain it if the reader needs help | "Improve outcomes" where "cut load time by half" is meant | Can the reader tell what the words refer to? Would an example help? |
+| Familiar words | In explanations and instructions, prefer a familiar word when it is equally exact. Elsewhere, weigh its associations, sound, and voice too | Formal words chosen only to sound serious | Try "use", "help", or "start" in place of a formal alternative. What does the change gain or lose? |
 | Register | Register is the level of formality; it signals who the writer thinks the reader is | Legal tone in a note to a friend, slang in a contract | Read it aloud to the real reader. Does it sound like a person talking to them? |
 | Tone | Tone is the attitude a reader infers; it comes from word choice and what is left unsaid | Tone that contradicts the content, such as cheer over bad news | Name the tone in one word. Does the situation call for it? |
-| Figurative language | A metaphor moves a known structure onto an unknown one, so it must fit in the parts that matter | Mixed or dead metaphors; a figure where a plain fact serves | Spell out what maps to what. Does it hold at each point? |
+| Figurative language | An image or metaphor makes a relation felt or understood. Let its associations serve the piece | Stock imagery, or mixed images that distract without adding meaning | What does the image let the audience see, feel, or understand? Does it hold where the piece needs it to? |
 
 ## Energy
 
@@ -70,52 +92,64 @@ LANGUAGE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Prior knowledge | Write at the edge of what the reader already knows; one step past it, with the step supplied | Jargon the reader lacks, or explanation of what they know | Name the reader. List the three terms they might not have |
-| Action wanted | A reader should finish knowing what to do, decide, or believe | Text that informs and leaves the next step unnamed | Write "after reading, the reader will ___". Does the text say it? |
+| Intended effect | Decide what the audience should understand, feel, imagine, remember, or do | The audience can follow the words but the work misses its purpose | Compare what people understood, felt, remembered, or chose with the intended effect |
 | Attention budget | Attention falls fast; spend it on what matters and cut the rest | Equal space for the key point and the footnote | Weigh words by importance. Does space follow weight? |
-| Second person | Address the reader, who is the one acting; "you" beats "the user" | A thing written about the reader instead of to them | Who is the subject of most sentences? |
+| Point of view | Address the reader in instructions and direct asks. In reports, explanations, and stories, name the actor or use the point of view the work needs | "You" obscures who caused an event, or breaks a story's point of view | Can the reader tell who acts, who is responsible, and whom the text addresses? |
 | A model as reader | Make instructions explicit and put essential steps where they will be read | Instructions depend on unstated context or assume the model attends to every line | Can a fresh reader act from the supplied context? |
-| Positive form | Tell a model what to do; a forbidden thing named in the prompt still primes the thing | "Do not mention X" with no replacement action | Rewrite each prohibition as an instruction. Does one exist? |
-| Examples are copied | A model reproduces the shape, length, and wording of an example | One example given, and every output matches it | Vary the examples, or state what may differ |
-| Listener | Speech is heard once, in order, with no page to look back at | Written structure read aloud: long lists, nested clauses, references to "the above" | Say it to one person. Can they repeat the point? |
+| Positive form | Tell a model what to do. Pair a prohibition with a usable alternative when one exists | "Do not mention X" leaves the desired content unclear | Is the desired action clear, and does each necessary prohibition keep its force? |
+| Examples guide the result | Show which parts of an example are required and which can vary | Incidental wording or format is copied as if required | Vary the examples, or state what may differ |
+| Listener | Spoken words arrive in time. Make needed meaning followable on a first hearing | Written structure read aloud: long lists, nested clauses, references to "the above" | Perform it at the intended pace. Can a listener follow the important turns? |
 
 ## Composition
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Structure | The shape of the text should match the shape of the content: steps in a list, comparisons in a table, an argument in paragraphs | Prose for a procedure, bullets for an argument | Name the content's shape. Does the form match? |
-| Order | Answer first, then support; the reader who stops early still has the point | The conclusion saved for the end | Read only the first sentence of each section. Is the point there? |
-| Headings | A heading is a label the reader scans; it should say what the section answers | Clever or vague headings that hide the content | Read the headings alone. Do they outline the argument? |
+| Order | In answers and reports, give the finding before its support. In procedures, put prerequisites before the steps that need them | A finding buried at the end, or a step that needs information supplied later | Can the reader find the answer quickly and act in the stated order? |
+| Headings and titles | Use headings to help navigation. Let a title identify, evoke, or set an expectation suited to the work | A navigational heading hides the content, or a title promises the wrong experience | Read headings alone for the outline. Does the title prepare the right expectation? |
 | Transitions | A transition states the logical link (because, so, but, then); without a link it is filler | "Moreover", "Additionally", "That said" with no logic behind them | Name the relation between the two sentences. Does the word say it? |
-| One idea per paragraph | Each paragraph carries one idea and the next one builds on it | A paragraph that opens one idea and ends on another | Do the paragraph's first and last sentences agree? |
-| Lists | A list is for items that are parallel and independent | A list of items that depend on each other, or that differ in kind | Can the items be reordered without loss? |
-| Cut | Every sentence must change what the reader knows or does | Restating the heading or the sentence before | Delete each sentence in turn. Does anything break? |
+| Paragraph sequence | Build each paragraph on what the reader has learned, and show how it connects to the next | A jump the reader must fill from unstated context | Can the reader explain why each paragraph follows the one before it? |
+| Lists | Number steps when order matters. Use bullets for comparable items that do not need a sequence | A list hides whether its order matters, or mixes unlike items without explanation | Does the numbering show a needed order? Do the bullets group comparable items? |
+| Cut | Keep what adds meaning, sound, character, atmosphere, action, or needed emphasis | Repetition or detail with no purpose | Remove a passage. What meaning or effect is lost? |
 
 ## Time
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Pacing | Density sets speed; dense text slows the reader, light text speeds them | Dense and light at the wrong places | Mark the hardest passage. Does the text give it room? |
-| Narrative order | Cause before effect, in the order events happened, unless a reason says otherwise | Events in the order the writer learned them | Lay out the events by time. Does the text follow it? |
+| Narrative order | Choose an order that serves the purpose: time order for a sequence, a finding first in a report, a chosen reveal in a story | The reader must reconstruct the sequence or misses why an event matters | Can the reader tell what happened when, and why this order helps? |
 | Setup and payoff | A reader who holds a question open expects an answer; plant what the end needs | A payoff with no setup, or a setup never paid | List each setup. Where does it close? |
-| Reader's journey | The reader moves from not knowing to knowing; each step starts from what they now hold | A term used before it is defined | Read in order. At each sentence, what does the reader hold? |
-| Dialogue | Speech in a script shows what a character wants and hides what they feel; people interrupt, dodge, and answer a different question | Characters who state their feelings in full sentences | Cover the names. Can you tell who speaks? |
-| Aging | Text outlives its moment; "now", "recently", "the latest" lose their anchor | Relative time words and named versions with no date | Replace relative words with dates, or remove them |
+| Reader's journey | Track what the audience knows, expects, and feels as the work unfolds | A reveal depends on missing context, or an explanation arrives after it is needed | Read in order. What does the audience hold or question at each turn? |
+| Dialogue | Give each speaker an intent and a distinct voice. Let directness, evasion, and interruption fit the scene | Characters explain themselves only for the reader's benefit | Cover the names. Can you tell who speaks and what they want? |
+| Aging | Anchor claims that change with time. Give a date or version when a later reader will need it | "Recently" or "the latest" leaves a later reader unable to place the claim | Will a later reader know when the claim applies? |
 | Revision | A first draft records the thinking; the second serves the reader | Shipping the draft that matches the writer's order of thought | Reorder for the reader. Does the structure change? |
 
 ## Meaning
 
-This branch exists only in language. A word is not the thing it names; it is a lossy map of it. The reader builds the territory from the map, so a gap in the map is a gap in what they build.
+Words carry meanings and associations in context. Check that context before treating an image as a literal claim or a factual claim as an image. Use `principles-ground` to check claims about the world.
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
-| Map and territory | A word points at a thing and carries its own habits; the thing does not change when the word does | Treating a name or a label as proof the thing exists or works | Point to the thing outside the text. What is it? |
-| Define before use | A term is defined where it first appears, in one line | A term used for pages and defined late, or never | Find each term's first use. Is the definition there? |
-| One term per concept | Once a concept has a name, every use of it takes that name | Synonyms for variety, so the reader suspects a second concept | List the terms for each concept. Is there one? |
-| Precision | A claim is as exact as the evidence allows: a number, a range, a condition | "Fast", "many", "often", "significant" with nothing under them | Replace each vague word with a number or a bound |
-| Checkable claims | Each factual claim names how to test it: a source, a measurement, a date | Claims that cannot fail because they say nothing | Ask "what would show this wrong?" Is there an answer? |
-| Ambiguity | A sentence that parses two ways will be read the wrong way by someone | Pronouns with two possible referents; modifiers in the wrong place | For each pronoun, name its noun. Is it one? |
-| Names | A name is the shortest label that stays unambiguous in its context and lasts as long as the thing | A name that describes an implementation, so it breaks when that changes | Does the name still fit if the internals change? |
-| Grounding | Language cannot verify itself; ground truth sits outside it | A confident description taken as evidence | Measure, run, or look at the thing. Does it match the text? |
+| Map and territory | Naming a thing does not prove a claim about it | Treating a name or label as proof the thing exists or works | For a claim about the world, what supports it beyond the wording? |
+| Explain needed terms | Define or illustrate a term before the reader needs its meaning. Keep the conditions that make the definition exact | An unexplained term blocks the next step, or a short definition drops a necessary condition | Can the reader follow each use from the explanation already given? |
+| Stable terms | Keep labels consistent where they distinguish concepts. Use clear pronouns and wording suited to each speaker | A synonym suggests a new concept, or forced repetition makes the text harder to follow | Could a changed term mislead the intended reader? Is each pronoun's referent clear? |
+| Precision | Make the claim as exact as the evidence allows. Use a number, range, or condition when it is supported | A vague claim that cannot be tested, or a number invented to sound exact | Is the claim too vague to check, or more precise than its evidence? |
+| Checkable claims | Give factual claims a way to be checked: a source, test, or measurement suited to the claim | A factual claim with no way to distinguish it from a plausible story | Ask "what would show this wrong?" Is there an answer? |
+| Ambiguity | Remove unintended ambiguity where it changes understanding or action. Keep multiple meanings when they enrich the work | A stray modifier changes an instruction, or an edit erases a poem's intended double meaning | What readings are possible? Which serve the work, and which mislead? |
+| Names | Choose a name for its role and context. Stable labels distinguish; titles may evoke | A functional label becomes unclear, or an implementation detail makes it age too soon | Does the name still serve its role when the surrounding work changes? |
+| Grounding | Check factual claims against evidence beyond the description | A confident description taken as evidence | Measure, run, read the source, or look at the thing. Does it match the claim? |
+
+## Good, great, and timeless writing
+
+Use the quality ladder in `principles-craft`. For writing, ask:
+
+| Level | Check in this piece |
+|---|---|
+| Good | Does it deliver its intended meaning, experience, or action for the audience, in the form and setting they will meet? |
+| Great | Do its insight, voice, detail, or command of form give the audience something a competent generic version would lose? Compare it with excellent work serving a similar purpose |
+| Timeless | Has it kept its clarity, force, pleasure, or usefulness as its original context recedes? Time must supply that evidence; until then, timelessness is an aim |
+
+Choose the bar for the piece. A timely notice can succeed by being accurate and useful for its brief life.
 
 ## Calls to action
 

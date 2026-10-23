@@ -1,6 +1,6 @@
 {
   "name": "principles",
-  "description": "Axioms, principles, and taste for agents and people, in any medium.",
+  "description": "Skills for agents and people to make decisions, create work, and check results in any medium.",
   "owner": {
     "name": "benpham3206"
   },
@@ -8,7 +8,7 @@
     {
       "name": "principles",
       "source": "./",
-      "description": "Axioms, principles, and taste for agents and people, in any medium, software or physical."
+      "description": "Skills for agents and people to make decisions, create work, and check results in any medium."
     }
   ]
 }

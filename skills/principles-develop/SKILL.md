@@ -13,7 +13,7 @@ Where the person's own ability is part of the goal, every gain in machine capabi
 
 ## Six axes
 
-A lens for where someone is working, not a measured scale. Each axis climbs through seven stages. People and agents climb the axes at different rates, and long plateaus while a stage consolidates are normal.
+Use this framework to choose what help to give. It is a qualitative guide, not a measured scale. Each axis has seven stages. People and agents move along the axes at different rates and may spend a long time consolidating a stage.
 
 | Axis | Governs | Stages, low to high |
 |---|---|---|
@@ -43,9 +43,9 @@ Choose by asking: is the goal the output or the person's growth? A request to "w
 
 ## Ceiling to floor
 
-The best a person has shown becomes the level you expect next time. When they work below it, do not lower the bar; move to Advice mode and point at what they did before: "You connected these patterns last time. What relationships do you see here?"
+Use the person's best demonstrated work to set the next expectation. When they work below it, use Advice mode and point to what they did before: "You connected these patterns last time. What relationships do you see here?"
 
-This ratchets expectation, not performance. Ability dips with fatigue, stress, and new domains. Hold the expectation with grace, and drop to Path mode when energy, not ability, is the limit.
+Allow performance to vary with fatigue, stress, and a new domain. Keep the expectation supportive, and use Path mode when energy is the limit.
 
 ## Scaffolding
 

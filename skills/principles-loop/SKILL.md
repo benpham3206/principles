@@ -5,27 +5,29 @@ description: Understand and shape feedback. Use when tuning control systems or d
 
 # Loop
 
-A **loop** returns an output as an input. A **reinforcing loop** amplifies change in either direction. A **balancing loop** counteracts it, though the result need not be stable or intended. Systems combine loops, delays, and **stocks** that accumulate, such as users, trust, or knowledge. Draw them with `principles-represent`; choose stocks with `principles-compound` and interventions with `principles-improve`.
+A **loop** feeds a result back into what happens next. A **reinforcing loop** amplifies change in either direction. A **balancing loop** counteracts change; it can still be unstable or produce an unwanted result. A **stock** accumulates over time, such as users, trust, or knowledge.
+
+Use `principles-represent` to draw the loops and delays. Use `principles-compound` to choose what to accumulate and `principles-improve` to choose what to change.
 
 ```
-   ACT ---------> RESULT ---------> RETURN
-    ^                                  |
-    |        (delay, decay, leaks)     |
-    +------------- INPUT <-------------+
+Action -> Result -> Return as an input
+  ^                         |
+  +-------------------------+
+Each turn can include delay, decay, and loss.
 ```
 
 ## Laws
 
 - A loop's behavior comes from its structure: which links exist, their direction, the stocks, and the delays. Change the structure to change the behavior.
 - No reinforcing loop grows forever. Something limits it: a balancing loop, a stock running out, or a boundary outside the system.
-- A loop is a causal claim. Each link holds only as far as it survives tests: an intervention where you can make one, and confounders and competing explanations ruled out where you cannot.
+- Each link in a loop claims that one change causes another. Test it by intervention where possible. Otherwise, rule out competing explanations and confounders: other factors that could produce the apparent link.
 - People return by choice when the return is worth it to them. A loop that holds them by coercion or deception, such as hidden exits, false urgency, or manufactured guilt, is a trap, however well it retains. Obligations people take on freely, such as a commitment to a group, are not.
 
 ## Heuristics (test them on your system)
 
 | Heuristic | Where it breaks | Check |
 |---|---|---|
-| Distinguish the delays: from action to effect (response), from effect to seeing it (observation), and others such as deciding and passing a signal on. Shortening the observation delay helps a loop learn sooner | Acting on every fresher reading can chase noise, and the longest delay may not be the one that limits learning | Which delay sits between action and learning, and did shortening it reduce swings or only add actions? |
+| Measure delays separately: action to effect, effect to observation, and time spent deciding or passing a signal on. Shorter observation delay can help you learn sooner | Acting on each new reading can chase noise. The longest delay may not be the one that limits learning | Which delay sits between action and learning, and did shortening it reduce swings or only add actions? |
 | People come back for what renews: new value, being remembered, other people, visible progress | Some returns are habits that serve the person well with nothing new | Would they come back if nothing reminded them? |
 | Giving with no condition starts trust that taking cannot | Some gifts are taken and never returned, and that is fine | Would the gift still be worth giving if nothing came back? |
 | Value made by members for members lets a community outgrow its founders | Members can be exploited for unpaid work | Are contributors credited, heard in decisions, and free to leave with their work? |
@@ -69,7 +71,21 @@ A **controller** compares a measurement with a target and acts to close the gap.
 
 **Feedback** corrects measured error after it appears, including errors nobody predicted. **Feedforward** acts on a plan or measured disturbance before the error appears. Pair it with feedback to catch model errors. A state is **observable** when it can be inferred from output history and known inputs, and **controllable** when inputs can move it to the target. Check both before tuning.
 
-**Delay limits responsiveness.** Take the simplest case: a fixed target, no saturation, and a controller that each step removes a fraction $g > 0$ of the error it saw $d$ steps ago, $e_{k+1} = e_k - g\, e_{k-d}$. With no delay it settles without overshoot for $0 < g \le 1$ and settles, swinging, for $1 < g < 2$. One step late, it swings for $g$ above 0.25, and the swings stop dying out at $g = 1$; two steps late, at about $g = 0.62$. Real loops differ in detail, but the direction holds widely: the more aggressive the response to a late signal, the more it swings, from swings that die out, to swings that persist, to swings that grow. In this model nothing stops the growth; saturation and other limits in a real system may or may not bound it, and that needs its own analysis. More delay shrinks the range of gain that settles, so shortening the delay is what allows a more aggressive response. Lowering the gain can restore stability; whether it also slows convergence depends on the starting gain and delay. To judge a change to gain, delay, or timing on a specific loop, use the domain's method, such as gain and phase margin for servos, queueing models for services, or simulation for organizations and markets.
+### Delay and gain
+
+A late reading can lead to a correction that is too large for the current state. Consider a model with a fixed target and no saturation. The controller's **gain** $g > 0$ sets the fraction of error it removes at each step. It acts on the error seen $d$ steps ago. Let $e_k$ be the error at step $k$:
+
+$e_{k+1} = e_k - g\, e_{k-d}$.
+
+| Delay | Behavior in this model |
+|---|---|
+| None | Settles without overshoot for $0 < g \le 1$; settles with swings for $1 < g < 2$ |
+| One step | Swings for $g > 0.25$; the swings stop decaying at $g = 1$ |
+| Two steps | The swings stop decaying at about $g = 0.62$ |
+
+In this model, more delay narrows the range of gain that settles. Shortening the delay allows a more aggressive response. Lowering the gain can restore stability; whether it slows convergence depends on the starting gain and delay.
+
+When the swings grow, this model has nothing to bound them. Saturation or other limits in a real system may bound them; check that separately. To choose gain or timing for a real loop, use the domain's method: gain and phase margin for servos, queueing models for services, or simulation for organizations and markets.
 
 | Principle | Failure | Check |
 |---|---|---|
@@ -84,9 +100,11 @@ A **controller** compares a measurement with a target and acts to close the gap.
 
 ## Strange loops
 
-A **strange loop** needs a hierarchy of levels and a path that climbs or descends through them and arrives back where it began. Examples are a drawing of hands drawing each other, a canon in which each repeat starts a step higher and ends at the start, and a statement within a formal system about that system. Self-reference, recursion, and feedback can be parts of one, but none is one by itself. One hypothesis holds that a self arises from a pattern that represents itself this way.
+A **strange loop** moves through a hierarchy of levels and arrives back where it began. Examples include hands drawing each other, a canon whose repeats rise in pitch and return to the start, and a statement within a formal system about that system. Self-reference, recursion, and feedback can be parts of a strange loop; each can also exist without one. One hypothesis holds that a self arises from a pattern that represents itself this way.
 
-Made things can hold such loops when the levels are real. In a library of principles, the principles (one level) govern how work is made (the level below). The principles also include rules for how principles change. When a lesson from the work rewrites the rule for how lessons may rewrite rules, the path has climbed from work to rules to the rules about rules, and landed back on the work that started it. They can give a thing identity and the power to improve itself. They also invite paradox, infinite regress, and echo chambers. Naming the levels helps you see these problems but does not solve them. What keeps such a loop honest is a check from outside it on each turn.
+A library of principles can contain this structure. Its principles govern how work is made. They also govern how the principles themselves may change. A lesson from the work can revise those rules and then change how the next work is made: work, rules, rules about rules, and back to work.
+
+Such loops can give a thing identity and a way to improve itself. They can also produce paradox, endless chains of justification, and echo chambers. Name the levels to make these risks visible. Check each turn against evidence outside the loop.
 
 ## Where to look
 

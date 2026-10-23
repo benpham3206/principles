@@ -32,7 +32,7 @@ A gain **compounds** when it feeds the next gain. Growth at rate $r$ for $n$ cyc
 
 ## Compounding when intelligence is cheap
 
-When machines make knowledge and analysis abundant, the assets that keep their value are the scarce ones: taste, trust, verified judgment, finished work in the physical world, relationships, and lineage. Invest there.
+If machines make knowledge and analysis abundant, look for what remains scarce: taste, trust, verified judgment, finished work in the physical world, relationships, and knowledge passed to others. Build and preserve those assets.
 
 ## Steps
 

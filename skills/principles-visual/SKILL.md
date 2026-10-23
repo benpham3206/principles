@@ -5,12 +5,12 @@ description: Shape what people see. Use when designing or reviewing images, layo
 
 # Visual
 
-A **visual** work arranges light for an observer. Establish contrast and shape before detail so they see what matters first.
+**Visual design** arranges light and shape for an observer. Establish contrast and shape before detail so they see what matters first.
 
 ## Laws of the medium
 
 - Value structure first. If it works in grayscale at thumbnail size, it can work in color.
-- One light source story. Every shadow, highlight, and reflection agrees about where light comes from.
+- Make the lighting consistent. Shadows, highlights, and reflections should agree about the light sources.
 - Edges direct attention. Sharp, high-contrast edges pull the eye; soft edges release it.
 - Fewer, larger shapes beat many small ones.
 - Reference real light and real materials before inventing them.

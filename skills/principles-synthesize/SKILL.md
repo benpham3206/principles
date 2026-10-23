@@ -8,24 +8,22 @@ description: Create a new approach from known truths. Use for ambitious goals, u
 **Synthesis** combines known truths into something new. Ask what is true, generate possibilities, and check them against reality.
 
 ```
-COGNITIVE                 GENERATIVE                RECOGNITIVE
-what is true?      -->    what is possible?   <-->  is it true, is it consistent?
-axioms, limits            many candidates,          simulate, then test in reality,
-(see ground)              common and strange        compare known to unknown
-                                                    (see verify)
+Known facts and limits -> Possible approaches -> Simulate and test
+                                  ^                    |
+                                  +------ Revise <------+
 ```
 
-**Axiomatic constraint creates novelty.** Constrain a design by what must be true, and keep a convention only where its compatibility or familiarity serves the goal. When convention is removed and only laws remain, the space of answers that fits is often one nobody has explored.
+Start from what must be true. Keep a convention when its compatibility or familiarity serves the goal. Questioning other conventions can reveal approaches that have not been tried.
 
 ## Steps
 
-1. **Take a Herculean goal.** State it as an outcome a person can see, with a number: not "better batteries" but "a car battery that charges in 5 minutes and lasts 20 years."
+1. **Set an ambitious goal.** State an outcome a person can observe and measure: for example, "a car battery that charges in 5 minutes and lasts 20 years."
 2. **Write the complete output as if it already exists.** The finished spec, the product page, the paper's abstract, the user's day with it. Completeness forces every hidden requirement into view.
 3. **Work backward to a plan**, as in `principles-invert`. List each step from today to that output, and the technology each step needs. Mark each technology as existing, existing but too costly, or not yet invented.
-4. **Bound it with ground.** Check every step against physics and logic. A step that breaks a law is removed, not optimized.
+4. **Check the limits.** Test every step against physics and logic. Replace any step that breaks a law.
 5. **Generate candidates for each open step.** Draw from two places:
-   - the common distribution: the known approaches, most likely to work;
-   - the tail: approaches from other fields, inverted assumptions (see `principles-invert`), extreme parameters. These fail more often and win larger.
+   - known approaches, which are more likely to work;
+   - unusual approaches: ideas from other fields, inverted assumptions (`principles-invert`), or extreme parameters. These fail more often but may offer larger gains.
 6. **Verify.** Simulate where a model exists, stating where it holds. Then run the cheapest real test that could fail. Reality outranks the model.
 7. **Report the gaps.** Whatever remains unverified or uninvented is the research agenda, ranked by how much of the goal it blocks.
 

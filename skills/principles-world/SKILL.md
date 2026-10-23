@@ -5,7 +5,7 @@ description: Make many parts feel like one place a person enters and believes, t
 
 # World
 
-A **world** is a set of parts that a person experiences as one place with its own rules. Immersion is the state where they stop noticing the parts and act inside the place. Any single part can be excellent and the world still fail: it fails at the seams, where the parts disagree or the place blinks.
+A **world** is a set of parts that a person experiences as one cohesive place with its own rules. Immersion is the state where they stop noticing the parts and act inside the place. Any single part can be excellent and the world still fail: it fails at the seams, where the parts disagree or the place blinks.
 
 ```
 CANON ----> SENSES ----> VOICE ----> THRESHOLDS ----> INHABITANTS ----> AGENCY ----> DEPTH

@@ -47,12 +47,12 @@ Forms can mix. Use the checks for what this piece needs to do.
 ```
 LANGUAGE
 ├── Form          word, sentence length and shape, focus, paragraph, line and stanza
-├── Material      diction, register, tone, figurative language
+├── Material      diction, connotation, register, tone, figurative language
 ├── Energy        emphasis, verbs, voice, cadence
 ├── Observer      prior knowledge, intended effect, attention budget, a model as reader
 ├── Composition   structure, order, headings, transitions, paragraph sequence
 ├── Time          pacing, narrative order, setup and payoff, the reader's journey, aging
-└── Meaning       map and territory, needed terms, stable labels, precision, chosen ambiguity
+└── Meaning       syntax, context, collocation, needed terms, stable labels, precision, chosen ambiguity
 ```
 
 ## Form
@@ -73,7 +73,8 @@ LANGUAGE
 |---|---|---|---|
 | Diction | Use specific words. Keep an abstract or technical term when it is exact, and explain it if the reader needs help | "Improve outcomes" where "cut load time by half" is meant | Can the reader tell what the words refer to? Would an example help? |
 | Familiar words | In explanations and instructions, prefer a familiar word when it is equally exact. Elsewhere, weigh its associations, sound, and voice too | Formal words chosen only to sound serious | Try "use", "help", or "start" in place of a formal alternative. What does the change gain or lose? |
-| Register | Register is the level of formality; it signals who the writer thinks the reader is | Legal tone in a note to a friend, slang in a contract | Read it aloud to the real reader. Does it sound like a person talking to them? |
+| Connotation | Words carry associations as well as reference. Associations vary with community, history, and context | Near-synonyms name the same thing but imply a different attitude or social relation | Substitute the word in the actual passage. What associations change for this audience? |
+| Register | Register is language patterned by situation: purpose, participants, activity, and medium. Formality is one part | A spoken script reads like a contract; technical precision is erased to sound friendly | Compare relevant examples from the intended situation. Do vocabulary, grammar, and directness suit the audience and task? |
 | Tone | Tone is the attitude a reader infers; it comes from word choice and what is left unsaid | Tone that contradicts the content, such as cheer over bad news | Name the tone in one word. Does the situation call for it? |
 | Figurative language | An image or metaphor makes a relation felt or understood. Let its associations serve the piece | Stock imagery, or mixed images that distract without adding meaning | What does the image let the audience see, feel, or understand? Does it hold where the piece needs it to? |
 
@@ -128,9 +129,15 @@ LANGUAGE
 
 Words carry meanings and associations in context. Check that context before treating an image as a literal claim or a factual claim as an image. Use `principles-ground` to check claims about the world.
 
+Linguistics describes patterns in language; a writing choice also needs a purpose. Sound patterns, word formation, syntax, semantics, and pragmatics explain different effects. Check a descriptive pattern in the relevant language and community before using it as advice.
+
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Map and territory | Naming a thing does not prove a claim about it | Treating a name or label as proof the thing exists or works | For a claim about the world, what supports it beyond the wording? |
+| Sound and word formation | Sound patterns and meaningful word parts shape rhythm, recognition, and possible readings | A coined word or translation loses a meaningful distinction or creates an unwanted echo | Speak it in context. Check the sounds and word parts with users of the intended language or variety |
+| Syntax | Relations among words contribute to meaning. Word order alone does not express those relations in every language | A rearrangement changes who acts, what a modifier attaches to, or what a negation covers | Paraphrase each plausible reading. Does the structure express the intended relation? |
+| Context and inference | Semantics concerns linguistic meaning; pragmatics concerns use and inference in context. Readers supply assumptions, references, and implied requests | A literally true sentence misleads, or an implied request depends on context the audience lacks | What must the audience assume, identify, or infer? Test the passage with the context they will have |
+| Collocation | Words recur with particular neighbors and grammatical patterns; near-synonyms can favor different ones | A dictionary substitution sounds misplaced or changes the phrase's associations | Read matching uses in context. Check recurring neighbors and constructions in the relevant register |
 | Explain needed terms | Define or illustrate a term before the reader needs its meaning. Keep the conditions that make the definition exact | An unexplained term blocks the next step, or a short definition drops a necessary condition | Can the reader follow each use from the explanation already given? |
 | Stable terms | Keep labels consistent where they distinguish concepts. Use clear pronouns and wording suited to each speaker | A synonym suggests a new concept, or forced repetition makes the text harder to follow | Could a changed term mislead the intended reader? Is each pronoun's referent clear? |
 | Precision | Make the claim as exact as the evidence allows. Use a number, range, or condition when it is supported | A vague claim that cannot be tested, or a number invented to sound exact | Is the claim too vague to check, or more precise than its evidence? |
@@ -138,6 +145,20 @@ Words carry meanings and associations in context. Check that context before trea
 | Ambiguity | Remove unintended ambiguity where it changes understanding or action. Keep multiple meanings when they enrich the work | A stray modifier changes an instruction, or an edit erases a poem's intended double meaning | What readings are possible? Which serve the work, and which mislead? |
 | Names | Choose a name for its role and context. Stable labels distinguish; titles may evoke | A functional label becomes unclear, or an implementation detail makes it age too soon | Does the name still serve its role when the surrounding work changes? |
 | Grounding | Check factual claims against evidence beyond the description | A confident description taken as evidence | Measure, run, read the source, or look at the thing. Does it match the claim? |
+
+### Corpus evidence and language metrics
+
+A **corpus** is a selected collection of language used as evidence. Use one to test a usage claim or compare choices that matter to the piece. Keep its population, period, medium, genre, and selection method visible. Corpus size alone does not establish representativeness. Use `principles-measure` for the measurement procedure.
+
+| Measure or method | Principle | Failure | Check |
+|---|---|---|---|
+| Frequency | Count a defined unit and normalize by relevant opportunities, such as occurrences per million words. Keep the raw count and denominator | A larger corpus appears to favor a word merely because it contains more text | Are tokenization, case, word forms, and denominators comparable? How many documents or speakers contribute the uses? |
+| Dispersion and burstiness | Dispersion describes how uses spread across texts or sections. Burstiness describes clustering relative to a stated baseline, across positions or intervals | The same total count hides one author's repeated phrase or a topic concentrated in one passage; sentence-length variation is mislabeled burstiness | State the unit, window, and baseline. Inspect occurrences across documents and positions. Does the clustering support the claim? |
+| Collocation analysis | Compare observed co-occurrence with a baseline that accounts for how common the words are. Specify the span or grammatical relation | Frequent words dominate raw neighbor counts, or a few rare pairs dominate an association score | Inspect the count, association measure, and passages around the matches. Does the pattern persist in relevant texts? |
+| Connotation in use | Recurring contexts can support an association, sometimes called semantic prosody. They do not fix a word's meaning in every passage | A pattern in one corpus is imposed on another community, speaker, or genre | Read positive, negative, and exceptional contexts. Does the proposed association hold in the intended situation? |
+| Perplexity | A language model's perplexity is the exponential of its mean negative log probability per token, using natural logs. It measures prediction on the evaluated text | Scores with different tokenization or evaluation conditions are compared; a score is treated as proof of quality or authorship | Record the model, tokenization, context, and evaluation text. Compare models on the same held-out data and protocol, or texts under the same fixed model and protocol. Judge the writing's effect separately |
+
+Use metrics to answer a stated question. Frequency establishes commonness in the sample; it does not decide which word best serves a poem, character, instruction, or song.
 
 ## Good, great, and timeless writing
 

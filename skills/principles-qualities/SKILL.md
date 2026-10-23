@@ -56,4 +56,4 @@ Common conflicts and the usual resolution. These are defaults; the stated philos
 4. Name one reference that embodies it and one that violates it.
 5. Write it in five lines or fewer, so every maker on the project can hold it in their head.
 
-Pairs with: before `principles-method`; after `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-machine`.
+Pairs with: before `principles-method`, `principles-world`; after `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-machine`.

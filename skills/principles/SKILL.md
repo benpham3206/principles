@@ -17,6 +17,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
                  language  interaction                         |
                  information  code  machine                    |
                  integrate, to join the parts                  |
+                 world, to make the parts one place            |
                  synthesize, for the new                       |
      ^                                                         v
      +---- LESSONS <----------------------- VERIFY <-----------+
@@ -39,6 +40,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | | `principles-interaction` | flows, controls, feedback, anything a person operates |
 | | `principles-information` | charts, diagrams, tables, dashboards, maps |
 | | `principles-code` | software structure, APIs, data, systems |
+| | `principles-world` | many parts meant to feel like one place: immersive sites, games, spaces, events, brands |
 | | `principles-machine` | mechanisms, structures, engineered hardware |
 | Check | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
 | | `principles-secure` | outside input, secrets, permissions, agents with power, or a change to a control; threat models and security review |

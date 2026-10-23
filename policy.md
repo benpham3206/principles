@@ -7,6 +7,7 @@ Before non-trivial work, load `principles` (the map) and the skill that matches 
 - A plan or decision: principles-method. A tangled problem: principles-represent.
 - Joining parts: principles-integrate. Making a working thing better: principles-improve.
 - A bug, outage, miss, or surprise: principles-lessons.
+- Outside input, secrets, permissions, agents with power, or a change to a control: principles-secure.
 - Before calling any work done: principles-verify.
 - Making something in a medium: the matching skill, such as principles-visual, principles-code, or principles-machine.
 

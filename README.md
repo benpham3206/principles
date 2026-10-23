@@ -20,7 +20,7 @@ Think big. Build small. Win.
      ^                                                         v
      +---- LESSONS <----------------------- VERIFY <-----------+
            what changes next                is it true, is it good
-           lessons  improve                 verify
+           lessons  improve                 verify  secure
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -39,6 +39,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-ground` | What is fundamentally true; map versus territory; first principles as a procedure |
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
 | `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
+| `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
 | `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |

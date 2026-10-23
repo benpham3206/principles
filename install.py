@@ -22,9 +22,12 @@ on Windows and macOS, Python 3.9 or later.
 from __future__ import annotations
 
 import argparse
+import io
 import os
+import signal
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ORIGIN = "https://github.com/benpham3206/principles"
@@ -108,16 +111,87 @@ GIT_TIMEOUT = 120
 STEP_TIMEOUT = 600
 
 
-def run(cmd: list[str], timeout: int, **kw) -> subprocess.CompletedProcess:
-    """subprocess.run with a deadline; a timeout comes back as a failed result, never a hang.
+def run(cmd: list[str], timeout: int, *, input: str | bytes | None = None,
+        capture_output: bool = False, text: bool = False) -> subprocess.CompletedProcess:
+    """Run cmd with a deadline. Returns a CompletedProcess like subprocess.run.
 
-    Known limit: the timeout ends the direct child. Work it started elsewhere, such as a
-    command already running on a remote machine, may keep going; check before retrying.
+    Guarantee: run returns within about timeout + 15 s. Captured output and input go through
+    temporary files, never pipes, so a grandchild holding an inherited handle cannot keep it
+    waiting (git-remote-https did exactly that to subprocess.run on Windows). The child runs
+    in its own process group (a new session on POSIX); on timeout or interrupt the whole
+    group is ended (SIGTERM, then SIGKILL; taskkill /T /F on Windows), and a timeout returns
+    code 124 with whatever was captured plus a stderr line naming the timeout. Captured
+    text is decoded as subprocess.run decodes it, except that undecodable bytes are replaced.
+
+    Known limits: a process that leaves the group (setsid, a detached git gc) survives, and
+    so does one left behind by a child that exited on time. On Windows, taskkill /T finds
+    descendants through living parents only, so one whose parent already exited survives (a
+    Job Object would close that gap). A survivor still writing to the output files can
+    garble the captured text; the read stops at the size the file had when reading began.
+    Work started elsewhere, such as a command already running on a remote machine over SSH,
+    may keep going; check before retrying. The child has no controlling terminal on POSIX,
+    so it cannot prompt there.
     """
+    with tempfile.TemporaryFile("w+" if text else "w+b") as inp, tempfile.TemporaryFile() as out, \
+            tempfile.TemporaryFile() as err:
+        if input is not None:
+            inp.write(input)
+            inp.flush()
+            inp.seek(0)
+        sinks = {"stdout": out, "stderr": err} if capture_output else {}
+        group = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if WIN else {"start_new_session": True}
+        proc = subprocess.Popen(cmd, stdin=inp if input is not None else None, **sinks, **group)
+        try:
+            code = proc.wait(timeout)
+        except subprocess.TimeoutExpired:
+            end_tree(proc)
+            code = None
+        except BaseException:
+            end_tree(proc)
+            raise
+        stdout, stderr = (decoded(out, text), decoded(err, text)) if capture_output else (None, None)
+    if code is not None:
+        return subprocess.CompletedProcess(cmd, code, stdout, stderr)
+    line = f"timed out after {timeout} s: {' '.join(cmd[:3])}"
+    if not capture_output:
+        return subprocess.CompletedProcess(cmd, 124, "", line)
+    if stderr and not stderr.endswith("\n" if text else b"\n"):
+        line = "\n" + line
+    return subprocess.CompletedProcess(cmd, 124, stdout, stderr + (line if text else line.encode()))
+
+
+def decoded(f, text: bool) -> str | bytes:
+    """Everything written to f. As text: locale encoding and newlines, as subprocess.run decodes,
+    except that undecodable bytes (half a character from a killed writer) become U+FFFD."""
+    size = os.fstat(f.fileno()).st_size  # a snapshot: a survivor still writing cannot extend the read
+    f.seek(0)
+    data = f.read(size)
+    return io.TextIOWrapper(io.BytesIO(data), errors="replace").read() if text else data
+
+
+def end_tree(proc: subprocess.Popen) -> None:
+    """End proc and every process in its group. Bounded: returns within about 15 s."""
+    if WIN:
+        try:
+            subprocess.run(["taskkill", "/T", "/F", "/PID", str(proc.pid)], timeout=10,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except (OSError, subprocess.TimeoutExpired):
+            pass
+        proc.kill()
+    else:
+        for sig, grace in ((signal.SIGTERM, 2), (signal.SIGKILL, 3)):
+            try:
+                os.killpg(proc.pid, sig)
+            except (ProcessLookupError, PermissionError):
+                pass
+            try:
+                proc.wait(grace)
+            except subprocess.TimeoutExpired:
+                pass
     try:
-        return subprocess.run(cmd, timeout=timeout, **kw)
+        proc.wait(3)
     except subprocess.TimeoutExpired:
-        return subprocess.CompletedProcess(cmd, 124, "", f"timed out after {timeout} s: {' '.join(cmd[:3])}")
+        pass
 
 
 def git(*args: str) -> subprocess.CompletedProcess:

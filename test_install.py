@@ -6,6 +6,8 @@ import os
 import subprocess
 import sys
 import tempfile
+import threading
+import time
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -366,6 +368,80 @@ class TestDeadlines(unittest.TestCase):
         done = install.run([sys.executable, "-c", "import time; time.sleep(5)"], 1)
         self.assertEqual(done.returncode, 124)
         self.assertIn("timed out", done.stderr)
+
+    def test_an_orphan_holding_the_output_cannot_stall_the_timeout(self) -> None:
+        # The PHAMPC hang: git was killed on timeout, but git-remote-https, which it had
+        # started, still held the inherited stdout, so subprocess.run waited for it forever.
+        # Here a child starts a 60 s grandchild that inherits stdout, then stalls itself.
+        with tempfile.TemporaryDirectory() as tmp:
+            pidfile = Path(tmp) / "grandchild.pid"
+            child = ("import subprocess, sys, time; "
+                     "p = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)']); "
+                     "open(sys.argv[1], 'w').write(str(p.pid)); print('started', flush=True); time.sleep(60)")
+            box: dict = {}
+            worker = threading.Thread(daemon=True, target=lambda: box.update(done=install.run(
+                [sys.executable, "-c", child, str(pidfile)], 2, capture_output=True, text=True)))
+            start = time.monotonic()
+            worker.start()
+            worker.join(20)  # watchdog: without the fix run() waits the full 60 s
+            elapsed = time.monotonic() - start
+            pid = int(pidfile.read_text()) if pidfile.is_file() else None
+            try:
+                self.assertFalse(worker.is_alive(), "run() did not return within 20 s")
+                self.assertLess(elapsed, 10)
+                done = box["done"]
+                self.assertEqual(done.returncode, 124)
+                self.assertIn("timed out after 2 s", done.stderr)
+                self.assertIsNotNone(pid)
+                deadline = time.monotonic() + 5
+                while alive(pid) and time.monotonic() < deadline:
+                    time.sleep(0.1)
+                self.assertFalse(alive(pid), f"grandchild {pid} outlived the timeout")
+                self.assertEqual(done.stdout, "started\n")  # output captured before the timeout is kept
+            finally:
+                if pid is not None and alive(pid):
+                    kill(pid)
+
+    def test_a_timeout_mid_character_still_comes_back_as_a_failure(self) -> None:
+        # A child killed while writing can leave half a UTF-8 character in the captured output.
+        script = "import sys, time; sys.stdout.buffer.write(b'cost \\xe2\\x82'); sys.stdout.flush(); time.sleep(30)"
+        done = install.run([sys.executable, "-c", script], 1, capture_output=True, text=True)
+        self.assertEqual(done.returncode, 124)
+        self.assertTrue(done.stdout.startswith("cost "))
+        self.assertIn("timed out after 1 s", done.stderr)
+
+    def test_output_and_input_come_back_on_a_normal_run(self) -> None:
+        script = ("import sys; print(sys.stdin.read().upper(), end=''); "
+                  "print('to stderr', file=sys.stderr); sys.exit(3)")
+        done = install.run([sys.executable, "-c", script], 30, input="one\ntwo\n", capture_output=True, text=True)
+        self.assertEqual((done.returncode, done.stdout, done.stderr), (3, "ONE\nTWO\n", "to stderr\n"))
+        raw = install.run([sys.executable, "-c", "import sys; sys.stdout.write(sys.stdin.read())"], 30,
+                          input=b"bytes", capture_output=True)
+        self.assertEqual((raw.returncode, raw.stdout, raw.stderr), (0, b"bytes", b""))
+
+
+def alive(pid: int) -> bool:
+    if sys.platform.startswith("win"):
+        # Never os.kill(pid, 0) on Windows: it terminates the process.
+        out = subprocess.run(["tasklist", "/FI", f"PID eq {pid}", "/NH", "/FO", "CSV"],
+                             capture_output=True, text=True).stdout
+        return f'"{pid}"' in out
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    # A zombie waiting for init to reap it runs nothing and holds no handles: not alive.
+    state = subprocess.run(["ps", "-o", "stat=", "-p", str(pid)], capture_output=True, text=True).stdout
+    return bool(state.strip()) and not state.strip().startswith("Z")
+
+
+def kill(pid: int) -> None:
+    if sys.platform.startswith("win"):
+        subprocess.run(["taskkill", "/F", "/PID", str(pid)], capture_output=True)
+    else:
+        os.kill(pid, 9)
 
 
 if __name__ == "__main__":

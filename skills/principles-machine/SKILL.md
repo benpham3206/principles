@@ -29,7 +29,7 @@ The factor of safety of 2 with no named mode, the standard tolerance on every di
 MACHINE
 ├── Form          geometry, tolerances and fits, datums, stress concentrations, stiffness from geometry
 ├── Material      property per mass and cost, strength vs stiffness vs toughness, corrosion, temperature, anisotropy
-├── Energy        loads and load cases, free-body diagram, load paths, heat, power flow, stored energy
+├── Energy        work and power, leverage, loads and load cases, free-body diagram, load paths, heat, power flow, stored energy
 ├── Observer      operator, assembler, inspector, maintainer, sensors, the person nearby
 ├── Composition   part count, interfaces and fasteners, load path continuity, modularity, assembly
 ├── Time          fatigue, creep, wear, vibration, maintenance, manufacturing sequence, life cycle
@@ -64,6 +64,8 @@ MACHINE
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
+| Work and power | **Work** is force through a distance along it, $W = \int F \cdot dx$, or $F d$ for a constant force in line with the motion. **Power** is the rate of work: average $W / t$, instantaneous $\mathbf{F} \cdot \mathbf{v}$ or $\tau \omega$ about the same axis. Size structures by force, and drives by torque across the speed range and duty cycle, including starting and holding | A drive chosen by one torque figure, which stalls at start, overheats under its duty cycle, or cannot hold the load | At each operating point (start, run, hold), what torque, at what speed, for how long? |
+| Leverage | A machine trades force for distance, or torque for speed. **Mechanical advantage** is $F_{out}/F_{in}$; the ideal advantage is $d_{in}/d_{out}$ for the same motion. Energy is conserved: work out equals work in plus any energy drawn from storage, minus losses. For constant forces, or forces averaged over the same motion, with no change in stored energy, actual advantage is the ideal advantage times efficiency | A gain in force expected without a loss in travel or speed; more work out than in with no stored energy to account for it | Account for every energy flow: input, output, losses, and the change in what is stored. Does it balance? |
 | Load cases | List every way the machine is loaded: normal, peak, abuse, transport, assembly, fault. The worst case, not the average, sizes the part | Sizing for the working load and meeting the shipping load first | Write the load list. Which case governs each part? |
 | Free-body diagram | Isolate the part, draw every force and moment on it, and require $\sum F = 0$ and $\sum M = 0$ at rest | Forces guessed, a reaction left out, a part in "equilibrium" that does not balance | Does every arrow have a source? Do the sums close? |
 | Load path | Force travels through contact, material, and joints to a reaction. Follow it end to end | A load path with a gap, a bend, or a part not built to carry it | Trace the force from the point it enters to the ground. What does it pass through? |
@@ -108,6 +110,17 @@ MACHINE
 | Manufacturing sequence | The order of operations decides what is reachable, what warps, and what is tested | Stress from welding or machining that distorts a finished surface | Walk the part through each step. What does each step do to the last? |
 | Life cycle | A machine is made, run, repaired, and retired. Design for each stage, including disassembly and what is done with the material | Parts that cannot be separated or recycled | What happens to each material at end of life? |
 
+## From simple to compound to automatic
+
+Machines are built from a few ideas. These are choices, not required steps: use the simplest that does the job, and add the next only when it cannot.
+
+| Choice | What it adds | Principle | Failure | Check |
+|---|---|---|---|---|
+| Simple machine | The lever, wheel and axle, pulley, inclined plane, wedge, or screw. Each trades force for distance | Choose the simplest one that gives the needed advantage and travel | A mechanism built where one lever or ramp would do | Could one simple machine meet the force, travel, and speed? |
+| Compound machine | Simple machines joined, in series or in parallel. In series, advantages and efficiencies multiply | Keep the chain short; each stage costs efficiency, adds play and error, and is a place to fail | A long gear train whose total efficiency, play, and error nobody worked out | Multiply advantage and efficiency along the chain. Refer each stage's play and error to the output through the ratios, then combine them. Is each stage needed? |
+| Mechanism | Linkages, cams, gears, ratchets, and clutches that shape motion: its path, timing, ratio, and direction | Define the motion first, then pick the mechanism that makes it with the fewest parts | Motion that is right at one position and wrong through the rest of the cycle | Trace the full cycle. Is the motion right at every position, including the ends? |
+| Automation | Sensing, deciding, and acting in a loop, so the machine adjusts itself. Power does the work; a separate, smaller signal controls it | Automate only motion that is understood and repeated (see `principles-improve`). Feedback is not safety. Remove each hazard by design first, then guard it, and only then add protective controls, built to keep working when one of their own parts fails, with a bounded response time, a safe stop that releases or holds stored energy as the hazard needs, and no restart on its own (see `principles-loop` for feedback) | A machine that acts without sensing the result, reacts too late, or restarts by itself after a fault | For each hazard: was it designed out or guarded first? For what remains, what senses it, how fast is the response, does the protection survive one fault, what state does the stop leave, and what must happen before restart? |
+
 ## Failure
 
 | Leaf | Principle | Failure | Check |
@@ -119,4 +132,4 @@ MACHINE
 | Test to failure | A test that does not break the part has not shown its margin. Load a sample until it fails and compare with the prediction | Analysis trusted that no test has tried to break | Has any sample been taken to failure, and did it fail where and when predicted? |
 | Root cause | Every failure gets a physical cause: the load, the stress, the material, the process, or the use. Replacing the part leaves the cause in place | Fixing the broken part and rerunning | Can you state the mechanism and the evidence? Does the fix change the cause? For the analysis itself, see `principles-lessons` |
 
-Pairs with: before `principles-method`, `principles-ground`; after `principles-integrate`, `principles-verify`.
+Pairs with: before `principles-method`, `principles-ground`, `principles-loop`; after `principles-integrate`, `principles-verify`.

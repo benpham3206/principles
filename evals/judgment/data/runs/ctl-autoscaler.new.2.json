@@ -1,0 +1,19 @@
+{
+ "task": "ctl-autoscaler",
+ "arm": "new",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 12752,
+ "text": "Reading CPU every 15 seconds alone is likely to make the oscillation worse. The main problem is the four-minute delay before added capacity serves traffic. More frequent decisions can issue more corrections before earlier ones have any effect.\n\nAssuming the CPU average covers serving instances, the formula also mixes two different populations: CPU reflects serving capacity, while `current_count` includes pending instances. Pending capacity therefore inflates the next request even though it has not reduced CPU yet. If booting instances enter the CPU average as zeros, they instead dilute the signal and can trigger premature scale-down. Either way, the accounting needs fixing.\n\nI would change the controller as follows:\n\n- **Separate ready, traffic-serving instances from pending instances.** For equal-sized instances, estimate total required capacity as `ceil(ready_count \u00d7 ready_average_cpu / 60)`. Request only the shortfall after subtracting ready and healthy pending capacity. Track failed or overdue boots separately.\n- **Allow pending capacity time to work.** Reconcile against outstanding launches on each pass, rather than repeatedly multiplying the total count. Limit scaling steps and use a deadband around 60% to avoid chasing noise.\n- **Make scale-down conservative.** Require sustained excess capacity and a stabilization window at least comparable to the four-minute startup delay. Avoid removing capacity while a recent scale-up is still settling.\n\nFifteen-second sampling could help observation and diagnosis, but it should not imply a fresh aggressive scaling action every 15 seconds. First fix the capacity accounting and delayed response.\n\nTo verify, run a controlled steady-load test and then step-load tests, recording ready and pending counts, CPU on ready instances, scaling decisions, launch-to-serving time, and request latency/errors. Under steady load, the count should settle near the capacity needed for 60% CPU rather than cycle between 8 and 30. After a load increase, pending launches should prevent duplicate requests, and CPU should settle once those instances serve traffic. After a decrease, capacity should decline gradually without repeated reversals. Run for several former oscillation periods and confirm that stability does not come at the cost of worse latency or errors.",
+ "usage": {
+  "input_tokens": 15933,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 434,
+  "reasoning_output_tokens": 0
+ },
+ "seconds": 18.3,
+ "error": null
+}

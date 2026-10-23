@@ -1,0 +1,19 @@
+{
+ "task": "res-abtest",
+ "arm": "none",
+ "sample": 1,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 840,
+ "text": "Assuming assignment was implemented correctly, the counts are roughly 4,000 per arm, and conversion was measured consistently:\n\n**1. Shipping is reasonable, but the test does not establish that the new flow is better.** The observed improvement is **0.6 percentage points**, or about **5.1% relative**. An approximate 95% confidence interval for the conversion difference is **\u22120.8 to +2.0 percentage points**. The results are compatible with a small loss, no effect, or a meaningful gain.\n\nGiven no extra operating cost and a one-day rollback, I would favor shipping if support burden, retention, and other important outcomes show no concerning changes. That is a decision under uncertainty justified by low downside and reversibility\u2014not a declaration that the experiment proved a win.\n\n**2. Do not attribute the quarter\u2019s 9% revenue rise to the new flow.** The experiment measured conversion, and the quarterly revenue comparison does not isolate the flow\u2019s effect. Pricing and other changes could explain revenue growth. Even a proven conversion improvement would not establish how much quarterly revenue it caused.\n\nThe pricing change does **not automatically invalidate the randomized comparison**: both arms experienced it concurrently. The pooled estimate describes the flow\u2019s average effect across the two weeks\u2019 pricing conditions. It may differ from the effect under the pricing now in place. Examine results by week and treatment-by-week differences, while recognizing that these smaller comparisons will be less precise.\n\nA defensible leadership statement is:\n\n> \u201cIn a randomized two-week experiment, conversion was 12.4% with the new onboarding flow versus 11.8% with the old flow. The estimated lift was 0.6 percentage points, but uncertainty includes no improvement. We are shipping because operating cost is unchanged and rollback is easy. We cannot attribute the quarter\u2019s 9% revenue growth to this change.\u201d\n\n**More data is useful, but I would not make it a prerequisite for shipping.** Prefer a broad rollout with a randomized holdout, if maintaining one is inexpensive. That lets you estimate conversion and revenue per assigned user under current pricing, with predefined evaluation dates and rollback criteria. If you ship to literally everyone, you lose that clean comparison.\n\nMore evidence is worth collecting when it can change a decision enough to justify its cost. Here, the low cost of reversal makes waiting for statistical certainty less valuable; retaining an inexpensive way to learn is still worthwhile.",
+ "usage": {
+  "input_tokens": 13303,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 647,
+  "reasoning_output_tokens": 152
+ },
+ "seconds": 31.4,
+ "error": null
+}

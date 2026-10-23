@@ -1,0 +1,24 @@
+{
+ "grade": {
+  "items": {
+   "rejects-faster": true,
+   "delay-cause": true,
+   "state-in-flight": true,
+   "reduce-gain-or-cooldown": true,
+   "verify-step": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 4,
+  "overclaims": 0,
+  "note": "The answer recommends sound capacity accounting and conservative scaling, with concrete replay and load-step checks, but does not explicitly specify failure results that would trigger a different approach."
+ },
+ "raw": "{\"items\":{\"rejects-faster\":true,\"delay-cause\":true,\"state-in-flight\":true,\"reduce-gain-or-cooldown\":true,\"verify-step\":true},\"decision_quality\":5,\"verification_quality\":4,\"overclaims\":0,\"note\":\"The answer recommends sound capacity accounting and conservative scaling, with concrete replay and load-step checks, but does not explicitly specify failure results that would trigger a different approach.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14169,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 151,
+  "reasoning_output_tokens": 58
+ }
+}

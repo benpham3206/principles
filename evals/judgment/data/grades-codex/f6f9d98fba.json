@@ -1,0 +1,24 @@
+{
+ "grade": {
+  "items": {
+   "not-significant": true,
+   "no-revenue-claim": true,
+   "randomization-note": true,
+   "voi-reversible": true,
+   "honest-claim": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 3,
+  "overclaims": 0,
+  "note": "The answer accurately handles uncertainty, causal attribution, and reversible shipping, but proposes monitoring and rollback criteria without specifying the results that would trigger a change in course."
+ },
+ "raw": "{\"items\":{\"not-significant\":true,\"no-revenue-claim\":true,\"randomization-note\":true,\"voi-reversible\":true,\"honest-claim\":true},\"decision_quality\":5,\"verification_quality\":3,\"overclaims\":0,\"note\":\"The answer accurately handles uncertainty, causal attribution, and reversible shipping, but proposes monitoring and rollback criteria without specifying the results that would trigger a change in course.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14285,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 187,
+  "reasoning_output_tokens": 96
+ }
+}

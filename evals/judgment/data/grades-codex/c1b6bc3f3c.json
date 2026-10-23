@@ -1,0 +1,25 @@
+{
+ "grade": {
+  "items": {
+   "deploy-common-cause": true,
+   "config-spof": true,
+   "db-same-zone": false,
+   "untested-backup": true,
+   "restore-drill-first": true,
+   "fits-budget": true
+  },
+  "decision_quality": 4,
+  "verification_quality": 3,
+  "overclaims": 0,
+  "note": "The answer prioritizes common-cause changes and recovery testing sensibly, but omits the single-region risk and does not specify test results that would change its priorities."
+ },
+ "raw": "{\"items\":{\"deploy-common-cause\":true,\"config-spof\":true,\"db-same-zone\":false,\"untested-backup\":true,\"restore-drill-first\":true,\"fits-budget\":true},\"decision_quality\":4,\"verification_quality\":3,\"overclaims\":0,\"note\":\"The answer prioritizes common-cause changes and recovery testing sensibly, but omits the single-region risk and does not specify test results that would change its priorities.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14108,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 206,
+  "reasoning_output_tokens": 107
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "grade": {
+  "items": {
+   "not-significant": true,
+   "no-revenue-claim": true,
+   "randomization-note": true,
+   "voi-reversible": true,
+   "honest-claim": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 3,
+  "overclaims": 0,
+  "note": "The answer gives sound statistical and rollout advice, but its proposed monitoring lacks explicit decision-changing results or rollback thresholds."
+ },
+ "raw": "{\"items\":{\"not-significant\":true,\"no-revenue-claim\":true,\"randomization-note\":true,\"voi-reversible\":true,\"honest-claim\":true},\"decision_quality\":5,\"verification_quality\":3,\"overclaims\":0,\"note\":\"The answer gives sound statistical and rollout advice, but its proposed monitoring lacks explicit decision-changing results or rollback thresholds.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14277,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 205,
+  "reasoning_output_tokens": 123
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "grade": {
+  "items": {
+   "deploy-common-cause": true,
+   "config-spof": false,
+   "db-same-zone": true,
+   "untested-backup": true,
+   "restore-drill-first": true,
+   "fits-budget": false
+  },
+  "decision_quality": 4,
+  "verification_quality": 4,
+  "overclaims": 1,
+  "note": "Strong recovery-first prioritization and concrete checks, but it never explicitly identifies the shared configuration store as a common cause and asserts an ambitious database migration and durability scope fits one engineer-week without supporting facts."
+ },
+ "raw": "{\"items\":{\"deploy-common-cause\":true,\"config-spof\":false,\"db-same-zone\":true,\"untested-backup\":true,\"restore-drill-first\":true,\"fits-budget\":false},\"decision_quality\":4,\"verification_quality\":4,\"overclaims\":1,\"note\":\"Strong recovery-first prioritization and concrete checks, but it never explicitly identifies the shared configuration store as a common cause and asserts an ambitious database migration and durability scope fits one engineer-week without supporting facts.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14132,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 225,
+  "reasoning_output_tokens": 120
+ }
+}

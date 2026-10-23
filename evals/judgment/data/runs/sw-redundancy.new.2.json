@@ -1,0 +1,19 @@
+{
+ "task": "sw-redundancy",
+ "arm": "new",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 21571,
+ "text": "Your biggest risk is **losing orders permanently**, with no proven recovery path. The database primary and replica share an availability zone, and streaming replication can copy accidental deletion or corruption. Nightly backups leave a potential gap of roughly 24 hours, and an untested backup does not establish that you can recover.\n\nAssumption: an order is accepted when the service acknowledges it to the customer. You have not specified replication guarantees or point-in-time recovery, so I would not assume acknowledged orders survive a database failure.\n\nThe team has duplicate components, but several single events can disable both copies: an availability-zone failure, a bad configuration change, or a simultaneous deployment. With one engineer-week, rank the work by irreversible harm:\n\n1. **Prove database recovery and close the backup gap.** Restore a backup into an isolated database immediately. Validate order completeness and application usability, measure recovery time, and document the procedure. Enable continuous transaction-log archiving and point-in-time recovery if absent, then exercise that recovery too. Assign an owner and alert on backup or archive failures. This establishes what is actually recoverable; nightly backups alone cannot protect orders accepted since the last backup.\n\n2. **Protect acknowledged orders from an availability-zone failure.** Put the database standby in another zone and verify its durability and failover guarantees. If losing acknowledged orders is unacceptable, require durable replication across zones before acknowledging the order, accepting the latency and availability tradeoff. An asynchronous replica can still lose recent writes. Exercise failover and verify that acknowledged orders survive, the old primary cannot continue accepting writes, and the application reconnects correctly.\n\n3. **Stop changing both application replicas together.** Stagger deployments with a health gate before updating the second replica. Apply the same discipline to configuration: validate and version changes, expose one replica first, and retain a known-good version for rollback. Define behavior during a configuration-store outage explicitly; where safe, keep serving with the last validated configuration. Test rollback and confirm that either replica can carry the required load.\n\nStart with the restore drill on day one. It can reveal an immediate recovery failure while the team works on database durability. These actions reduce the most consequential risks within the week; they do **not** establish region-failure tolerance. Two replicas are only useful protection against failures they do not share.",
+ "usage": {
+  "input_tokens": 17864,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 612,
+  "reasoning_output_tokens": 142
+ },
+ "seconds": 31.7,
+ "error": null
+}

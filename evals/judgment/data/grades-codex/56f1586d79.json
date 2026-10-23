@@ -1,0 +1,25 @@
+{
+ "grade": {
+  "items": {
+   "deploy-common-cause": true,
+   "config-spof": false,
+   "db-same-zone": false,
+   "untested-backup": true,
+   "restore-drill-first": true,
+   "fits-budget": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 5,
+  "overclaims": 0,
+  "note": "The answer gives proportionate, testable priorities, but does not explicitly identify the configuration store itself as a shared failure point or address the single-region risk."
+ },
+ "raw": "{\"items\":{\"deploy-common-cause\":true,\"config-spof\":false,\"db-same-zone\":false,\"untested-backup\":true,\"restore-drill-first\":true,\"fits-budget\":true},\"decision_quality\":5,\"verification_quality\":5,\"overclaims\":0,\"note\":\"The answer gives proportionate, testable priorities, but does not explicitly identify the configuration store itself as a shared failure point or address the single-region risk.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14093,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 256,
+  "reasoning_output_tokens": 159
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "grade": {
+  "items": {
+   "deploy-common-cause": true,
+   "config-spof": true,
+   "db-same-zone": true,
+   "untested-backup": true,
+   "restore-drill-first": true,
+   "fits-budget": false
+  },
+  "decision_quality": 4,
+  "verification_quality": 4,
+  "overclaims": 0,
+  "note": "The answer identifies all major shared failure risks and provides concrete recovery checks, but implementing zero-loss durability, cross-zone failover, and application/configuration safeguards is not convincingly scoped to one engineer-week."
+ },
+ "raw": "{\"items\":{\"deploy-common-cause\":true,\"config-spof\":true,\"db-same-zone\":true,\"untested-backup\":true,\"restore-drill-first\":true,\"fits-budget\":false},\"decision_quality\":4,\"verification_quality\":4,\"overclaims\":0,\"note\":\"The answer identifies all major shared failure risks and provides concrete recovery checks, but implementing zero-loss durability, cross-zone failover, and application/configuration safeguards is not convincingly scoped to one engineer-week.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14152,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 195,
+  "reasoning_output_tokens": 89
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "task": "sw-redundancy",
+ "arm": "old",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 13163,
+ "text": "You have duplicate components, but several failures can take out both copies. **The biggest risk is irreversible loss of acknowledged orders:** both database copies share an availability zone, streaming replication may lag, and your backups have never been proven recoverable. Two application replicas do little to reduce that risk.\n\nAssumption: \u201clost orders cannot be recovered\u201d means an order reported as successful must survive a failure. That makes data durability more important than simply restarting the service quickly.\n\nI would rank the engineer-week\u2019s work as follows:\n\n1. **Prove database recovery immediately.** Restore an actual nightly backup into an isolated database, verify order data and application access, and measure recovery time. Write a short, executable recovery procedure. Check whether continuous transaction-log archiving exists and test it if available. Nightly backups alone can leave nearly 24 hours of orders exposed; a successful restore proves recoverability, not zero data loss.\n\n2. **Remove the database\u2019s shared availability-zone failure.** Put the standby in another zone and establish the replication guarantees. If acknowledged orders must never disappear, use synchronous replication across zones\u2014or an equivalent managed durability guarantee\u2014and explicitly accept its latency and availability tradeoffs. Test controlled failover, including application reconnection and preventing two writable primaries. Merely moving an asynchronous replica does not eliminate order loss.\n\n3. **Stop changing both application replicas at once.** Roll out application releases and configuration changes to one replica first, observe health and order-processing errors, then proceed. Keep versioned, validated configuration, automatic rollback, and a last-known-good configuration so a store outage does not unnecessarily disable running replicas. Configuration changes need the same rollout discipline as code.\n\n**Start with the restore drill today**, then prioritize the database changes. At $20,000 per outage hour, recovery time matters\u2014but restoring service with missing orders is not a successful recovery. Cross-region resilience remains a gap; do not spend this week building it before proving these basics.",
+ "usage": {
+  "input_tokens": 16004,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 607,
+  "reasoning_output_tokens": 209
+ },
+ "seconds": 31.2,
+ "error": null
+}

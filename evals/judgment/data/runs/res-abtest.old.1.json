@@ -1,0 +1,19 @@
+{
+ "task": "res-abtest",
+ "arm": "old",
+ "sample": 1,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 11652,
+ "text": "**I would ship as a reversible rollout, but reject the claim that onboarding drove the quarterly revenue rise.** Assumption: assignment remained random, conversion was measured consistently, and there are no material harms to retention, support load, or other important outcomes.\n\n1. **Shipping is reasonable, but the evidence is inconclusive.** The observed lift is **0.6 percentage points**, or about **5.1% relative**\u2014roughly 24 additional conversions among 4,000 users. An approximate 95% confidence interval for the absolute effect is **\u22120.83 to +2.03 percentage points**. The test therefore supports neither a confident improvement claim nor a conclusion of no effect. With no extra operating cost and a one-day rollback, a monitored rollout is a reasonable decision under uncertainty. Set guardrails and rollback criteria before expanding.\n\n2. **Do not attribute the 9% revenue rise to onboarding.** That is a company-wide quarterly comparison, while this experiment measured conversion over two weeks. You have not established the flow\u2019s effect on revenue or separated it from pricing and other changes. Because pricing changed for both randomized arms, it does **not automatically invalidate the onboarding comparison**. However, the pooled result averages across two pricing conditions; the onboarding effect could differ under the new price. Compare arms within each week, while recognizing those smaller comparisons will be less precise.\n\nAn accurate leadership statement is:\n\n> \u201cIn a randomized two-week test of roughly 8,000 users, the new onboarding flow converted 12.4% versus 11.8% for the old flow. The estimated lift was 0.6 percentage points, with substantial uncertainty, including possible harm. We chose a reversible rollout because operating costs are unchanged. This test does not establish that onboarding caused the company\u2019s 9% quarterly revenue increase.\u201d\n\n**More data is useful, but need not delay rollout.** Preserve a randomized holdout under the current pricing if traffic allows. That lets you learn while most users receive the new flow. Measure conversion and revenue per assigned user, with an appropriate follow-up period.\n\nFor scale, detecting a true **0.6-point lift** with conventional 80% power and a two-sided 5% significance threshold takes approximately **46,000 users per arm** in total. That is a planning estimate, not a requirement to ship. Choose the smallest effect worth acting on, then decide whether the traffic and waiting time justify measuring it precisely. Predefine the analysis schedule or use a valid sequential method; do not repeatedly check and stop when significance appears.",
+ "usage": {
+  "input_tokens": 15691,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 583,
+  "reasoning_output_tokens": 57
+ },
+ "seconds": 22.1,
+ "error": null
+}

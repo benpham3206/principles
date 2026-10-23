@@ -1,0 +1,24 @@
+{
+ "grade": {
+  "items": {
+   "picks-discriminating": true,
+   "predictions": true,
+   "alloy-may-not-fix": true,
+   "defer-fleet-decision": true,
+   "common-cause-fleet": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 5,
+  "overclaims": 0,
+  "note": "The answer selects the discriminating investigation, links findings to distinct corrective decisions, and specifies fleet checks and findings that would change interim operation."
+ },
+ "raw": "{\"items\":{\"picks-discriminating\":true,\"predictions\":true,\"alloy-may-not-fix\":true,\"defer-fleet-decision\":true,\"common-cause-fleet\":true},\"decision_quality\":5,\"verification_quality\":5,\"overclaims\":0,\"note\":\"The answer selects the discriminating investigation, links findings to distinct corrective decisions, and specifies fleet checks and findings that would change interim operation.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14714,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 124,
+  "reasoning_output_tokens": 30
+ }
+}

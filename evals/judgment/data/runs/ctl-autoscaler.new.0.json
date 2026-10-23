@@ -1,0 +1,19 @@
+{
+ "task": "ctl-autoscaler",
+ "arm": "new",
+ "sample": 0,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 12752,
+ "text": "Reading CPU every 15 seconds alone is likely to worsen the swings. The main problem is the four-minute delay before added capacity affects CPU. Faster polling would allow roughly 16 decisions during that delay instead of four, repeatedly correcting an error that earlier actions have not yet resolved.\n\nAssumption: CPU is averaged over traffic-serving instances. In that case, multiplying by `current_count`, which includes booting instances, also overestimates required capacity. If booting instances instead contribute zero CPU to the average, that arithmetic bias may cancel, but the delayed feedback still needs handling.\n\nChange the controller to account explicitly for capacity already requested:\n\n- Track **ready, booting, and draining** instances separately. Estimate required capacity as `ready_count \u00d7 ready_cpu / 60`, rounded up. Compare that target with ready plus pending capacity before requesting more instances.\n- Allow time for new capacity to become ready and its effect to appear in CPU measurements before making another ordinary correction. Start with a stabilization period covering the roughly four-minute startup time plus measurement delay; permit bounded emergency scale-up if overload persists.\n- Scale down more cautiously: require sustained low demand, use a deadband around 60%, and limit how many instances can be removed at once.\n- Keep minimum and maximum capacity limits, and alert when demand exceeds the maximum.\n\nFifteen-second measurements can improve visibility and detect overload sooner, but measurement frequency should be separate from how often\u2014and how aggressively\u2014the controller changes capacity.\n\nCheck the change first with a simulation or load test using the observed boot-time distribution. Under steady traffic, verify that ready capacity and CPU settle near a stable operating point and that the 15\u201320-minute oscillation disappears. Then test traffic increases, decreases, and failed or slow boots. Plot CPU, desired count, ready count, pending count, and scaling actions together; assess settling time, overshoot, instance churn, latency, and errors. Success means stable capacity with acceptable service performance, including during demand changes.",
+ "usage": {
+  "input_tokens": 15939,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 402,
+  "reasoning_output_tokens": 0
+ },
+ "seconds": 18.7,
+ "error": null
+}

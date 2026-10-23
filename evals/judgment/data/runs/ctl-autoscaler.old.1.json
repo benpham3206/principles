@@ -1,0 +1,19 @@
+{
+ "task": "ctl-autoscaler",
+ "arm": "old",
+ "sample": 1,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 9270,
+ "text": "Reading CPU every 15 seconds alone is unlikely to fix this and could make it worse. The controller gets several chances to react before a new instance can carry traffic, so it can repeatedly correct for capacity that is already on the way.\n\nAssume the reported CPU average covers traffic-serving instances. With 8 serving instances at 90% CPU, the formula requests 12 instances. A minute later, those 4 new instances are still booting, so CPU remains near 90%, but `current_count` is now 12. The next request becomes 18, then 27. Once that capacity starts serving, CPU falls and the scaler removes capacity, setting up the next swing. A 15-second interval allows even more repeated corrections during the four-minute boot delay.\n\nFirst verify the metric\u2019s denominator: if booting instances contribute zero CPU to the average, the arithmetic behaves differently. Missing metrics must also have an explicit treatment. The observed oscillation is consistent with delayed feedback, but telemetry should establish the actual path.\n\nI would change the controller to:\n\n- **Separate serving, pending, and desired capacity.** Estimate required capacity from serving instances: `ceil(serving_count \u00d7 serving_cpu / 60)`. Reconcile the total desired count to that estimate, treating pending instances as capacity already requested. Do not multiply serving CPU by a count that includes booting instances.\n- **Stabilize scale-down.** Require sustained excess capacity over a window covering the roughly four-minute startup delay plus settling time; five to six minutes is a reasonable initial setting. Remove capacity gradually and drain connections.\n- **Bound changes and handle failures.** Set minimum and maximum capacity and per-step limits. Detect stalled boots so pending capacity does not suppress needed scaling indefinitely.\n\nSampling every 15 seconds can improve visibility and later help detect real demand changes, but it should be separate from how often the controller changes capacity.\n\nTo check the fix, replay the observed workload or run a controlled test with steady traffic and realistic boot delays. Record serving, pending, desired, and terminating counts alongside CPU, latency, errors, and scaling decisions. Verify that pending instances stop repeated scale-out requests, the 8\u201330 oscillation disappears over several former cycles, and CPU settles near 60% without degrading service. Then test traffic increases, decreases, and failed boots to ensure stability has not come at the cost of unacceptable recovery time.",
+ "usage": {
+  "input_tokens": 15114,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 486,
+  "reasoning_output_tokens": 0
+ },
+ "seconds": 17.7,
+ "error": null
+}

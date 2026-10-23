@@ -1,0 +1,19 @@
+{
+ "task": "ctl-autoscaler",
+ "arm": "none",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 811,
+ "text": "Reading CPU every 15 seconds won\u2019t fix the main problem: the controller acts again before its previous changes can take effect. With a four-minute boot time, faster updates could issue 16 decisions while new capacity is still starting, versus four today. That can make the swings worse.\n\nAssuming the CPU average covers instances serving traffic, the formula also overestimates demand: it multiplies their CPU by a count that includes idle, booting instances. Each scale-out can therefore trigger further scale-outs before CPU falls. If booting instances contribute zero to the average, that particular bias cancels, but the delayed response still needs handling.\n\nI would change the controller to:\n\n- **Separate ready and pending instances.** Estimate required capacity as `ceil(ready_count \u00d7 ready_average_cpu / 60)`, assuming roughly equal instance capacity and balanced traffic.\n- **Reconcile against a desired total.** Subtract ready and pending capacity when deciding how many instances to launch. Pending instances should satisfy outstanding capacity requests without being treated as already serving traffic.\n- **Stabilize scale-in.** Require sustained evidence of excess capacity over a window at least as long as boot and warm-up\u2014start around five minutes\u2014and remove capacity gradually. Add a small deadband around the target to avoid reacting to noise.\n\nKeep the 60-second decision interval initially. Sampling every 15 seconds can improve visibility, but it is not a substitute for accounting for pending capacity and delayed feedback. Avoid a blanket cooldown that prevents necessary scale-out during a real traffic surge.\n\nCheck the change first in a simulation or load test that includes the four-minute startup delay. Run steady traffic for several existing oscillation periods, then test traffic increases and decreases. Record ready, pending, and desired counts, ready-instance CPU, scaling actions, latency, and errors. Success means the 8\u201330 oscillation disappears, capacity settles near the count needed for 60% CPU, pending instances don\u2019t cause repeated launches, and load increases are handled without unacceptable latency or errors. Then confirm those results in a limited production rollout.",
+ "usage": {
+  "input_tokens": 13287,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 520,
+  "reasoning_output_tokens": 97
+ },
+ "seconds": 27.8,
+ "error": null
+}

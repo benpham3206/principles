@@ -1,0 +1,24 @@
+{
+ "grade": {
+  "items": {
+   "rejects-faster": false,
+   "delay-cause": true,
+   "state-in-flight": true,
+   "reduce-gain-or-cooldown": true,
+   "verify-step": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 4,
+  "overclaims": 0,
+  "note": "The recommendations address delayed and pending capacity with concrete verification, but the answer says faster sampling could worsen oscillation rather than concluding it is likely to do so."
+ },
+ "raw": "{\"items\":{\"rejects-faster\":false,\"delay-cause\":true,\"state-in-flight\":true,\"reduce-gain-or-cooldown\":true,\"verify-step\":true},\"decision_quality\":5,\"verification_quality\":4,\"overclaims\":0,\"note\":\"The recommendations address delayed and pending capacity with concrete verification, but the answer says faster sampling could worsen oscillation rather than concluding it is likely to do so.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14225,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 207,
+  "reasoning_output_tokens": 115
+ }
+}

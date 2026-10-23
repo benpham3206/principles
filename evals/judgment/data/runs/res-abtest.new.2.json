@@ -1,0 +1,19 @@
+{
+ "task": "res-abtest",
+ "arm": "new",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 17098,
+ "text": "**I would ship the new flow as a reversible rollout, but reject the claim that it drove the quarterly revenue increase.** I\u2019m assuming there are no material harms to retention, accessibility, support load, or revenue per customer.\n\n1. **Shipping:** The observed conversion improvement is **0.6 percentage points**, about **5.1% relative**. With roughly 4,000 users per arm, an approximate 95% confidence interval for the conversion effect is **\u22120.8 to +2.0 percentage points**. That leaves both a modest loss and a meaningful gain plausible. Shipping is reasonable because operating costs are unchanged and rollback takes a day\u2014not because the experiment established a benefit. Monitor conversion and downstream outcomes with an explicit rollback threshold.\n\n2. **Revenue attribution:** We cannot attribute the quarter\u2019s 9% revenue rise to onboarding. The experiment measured conversion, and the quarterly revenue comparison does not isolate onboarding from pricing or other changes. Even a proven conversion improvement would not establish how much quarterly revenue it caused.\n\n**What we can tell leadership:**\n\n> \u201cIn a two-week randomized experiment with approximately 4,000 users per group, conversion was 12.4% with the new flow versus 11.8% with the old flow. The estimated improvement was 0.6 percentage points, but the result remains uncertain: the approximate 95% confidence interval spans \u22120.8 to +2.0 percentage points. We are rolling it out because it costs no more to operate and is easy to reverse. We have not established that it increased revenue or contributed to the quarter\u2019s 9% revenue growth.\u201d\n\nThe pricing change does **not automatically invalidate the randomized comparison**, because both arms encountered it. However, the pooled result estimates onboarding performance across two pricing conditions. Check results by week and assignment balance; the effect under the current pricing could differ, and small weekly samples may not resolve that.\n\n**More data need not delay shipping.** First check experiment integrity and existing downstream metrics. If feasible, retain a randomized holdout during rollout to measure conversion and revenue per assigned user under current pricing. Collect more data before full rollout only if a plausible downside would change the decision enough to justify waiting. A larger sample would improve certainty, but certainty is not a prerequisite for this cheap, reversible decision.",
+ "usage": {
+  "input_tokens": 16810,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 546,
+  "reasoning_output_tokens": 73
+ },
+ "seconds": 22.5,
+ "error": null
+}

@@ -1,0 +1,19 @@
+{
+ "task": "res-abtest",
+ "arm": "none",
+ "sample": 2,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 840,
+ "text": "Assuming roughly 4,000 independent users per arm, comparable follow-up time, and a consistently measured conversion outcome:\n\n**1. Shipping is reasonable, but the test does not establish that the new flow is better.** The observed lift is **0.6 percentage points**, or about **5.1% relative**\u2014roughly 24 additional conversions among 4,000 users. An approximate 95% confidence interval for the absolute effect is **\u22120.8 to +2.0 percentage points**. That leaves meaningful uncertainty about both benefit and harm.\n\nGiven no extra running cost and a one-day rollback, I would favor a monitored rollout, assuming there are no adverse effects on retention, support demand, or other important outcomes. This is a decision under uncertainty, not a declaration of statistical success.\n\n**2. Do not attribute the quarter\u2019s 9% revenue rise to onboarding.** These results measure conversion during two weeks, not the flow\u2019s contribution to quarterly revenue. The pricing change and other quarterly changes provide alternative explanations. Even a conclusive conversion improvement would not, by itself, establish a revenue improvement.\n\nThe pricing change does **not automatically invalidate the randomized comparison**: both arms encountered it concurrently. The pooled estimate describes the flow\u2019s effect across the pricing conditions present during the test. Check results by week and arm for possible differences, while recognizing that those smaller comparisons will be noisier. The effect under the current pricing is most relevant to rollout.\n\nA defensible statement to leadership is:\n\n> \u201cThe new flow achieved 12.4% conversion versus 11.8% for the old flow in our randomized test. The estimated lift is 0.6 percentage points, but the sample is too small to establish an improvement reliably. We cannot attribute the quarter\u2019s 9% revenue increase to this change.\u201d\n\n**3. More data would be useful, but I would not require it before starting rollout.** Its value depends on traffic, the business cost of a possible conversion decline, and the cost of delaying a possible improvement. Low operating cost and easy rollback favor acting sooner.\n\nPrefer a broader rollout with a small randomized holdout under the current pricing. Define the follow-up duration, decision rule, and guardrails in advance; measure revenue per assigned user as well as conversion. A full rollout removes the concurrent control, making subsequent causal claims harder. Rollback limits future exposure, but cannot recover conversions already lost.",
+ "usage": {
+  "input_tokens": 13303,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 583,
+  "reasoning_output_tokens": 87
+ },
+ "seconds": 26.5,
+ "error": null
+}

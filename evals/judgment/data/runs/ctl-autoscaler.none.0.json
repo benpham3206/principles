@@ -1,0 +1,19 @@
+{
+ "task": "ctl-autoscaler",
+ "arm": "none",
+ "sample": 0,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 811,
+ "text": "Reading CPU every 15 seconds is unlikely to fix this and could make the swings worse. The main issue is the four-minute delay between requesting capacity and seeing its effect. At 60-second intervals, the controller can make four decisions before the first change takes effect; at 15 seconds, it can make sixteen.\n\nI assume CPU is averaged over instances serving traffic. In that case, multiplying that CPU by a count that includes booting instances overestimates demand. For example, eight serving instances at 90% CPU need roughly twelve instances. After requesting four more, the next reading could still be 90%, but multiplying by twelve now requests eighteen. The controller repeatedly reacts to load that its pending capacity is already intended to handle.\n\nI would change the controller to:\n\n- **Separate serving, pending, and desired counts.** Estimate required capacity as `ceil(serving_count * serving_cpu / 60)`, assuming roughly equal instance capacity and balanced traffic.\n- **Account for pending capacity when acting.** Request only the gap between required capacity and serving-plus-pending capacity. Track boot failures and timeouts so stuck instances do not suppress needed scaling.\n- **Make scale-down slower.** Require sustained excess capacity over a stabilization window at least as long as the boot delay\u2014start with five minutes\u2014and remove capacity in bounded steps. Continue allowing scale-up when demand exceeds all expected capacity.\n\nIf the CPU average includes booting instances as zero, the count and average may already cancel mathematically under ideal conditions. In that case, investigate metric timing, readiness, and termination behavior before attributing the oscillation to repeated multiplication. Either way, faster polling alone does not address delayed feedback.\n\nTo verify the change, first replay or simulate steady traffic with the actual boot delay, then run a controlled rollout. Plot serving, pending, desired, and total counts alongside serving CPU, latency, and scaling decisions. Under steady traffic, the count should settle near the capacity needed for 60% CPU without recurring 8-to-30 swings over several previous oscillation periods. Then test traffic increases, decreases, and failed boots: scale-up should meet latency targets, pending capacity should prevent duplicate requests, and scale-down should settle without causing another rebound.",
+ "usage": {
+  "input_tokens": 13293,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 546,
+  "reasoning_output_tokens": 93
+ },
+ "seconds": 34.8,
+ "error": null
+}

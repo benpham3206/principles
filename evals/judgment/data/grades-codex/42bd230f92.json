@@ -1,0 +1,25 @@
+{
+ "grade": {
+  "items": {
+   "deploy-common-cause": true,
+   "config-spof": true,
+   "db-same-zone": true,
+   "untested-backup": true,
+   "restore-drill-first": true,
+   "fits-budget": true
+  },
+  "decision_quality": 5,
+  "verification_quality": 4,
+  "overclaims": 1,
+  "note": "Strong prioritization and budget fallback, with concrete recovery and configuration tests, but limited explicit decision-changing results and an unsupported claim that simultaneous deploys are a frequent outage source."
+ },
+ "raw": "{\"items\":{\"deploy-common-cause\":true,\"config-spof\":true,\"db-same-zone\":true,\"untested-backup\":true,\"restore-drill-first\":true,\"fits-budget\":true},\"decision_quality\":5,\"verification_quality\":4,\"overclaims\":1,\"note\":\"Strong prioritization and budget fallback, with concrete recovery and configuration tests, but limited explicit decision-changing results and an unsupported claim that simultaneous deploys are a frequent outage source.\"}",
+ "error": null,
+ "usage": {
+  "input_tokens": 14163,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 211,
+  "reasoning_output_tokens": 111
+ }
+}

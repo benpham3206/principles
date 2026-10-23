@@ -1,0 +1,19 @@
+{
+ "task": "res-abtest",
+ "arm": "none",
+ "sample": 0,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 840,
+ "text": "Assuming roughly 4,000 independent users per arm, consistent conversion measurement, and no major differences in user mix:\n\n**1. Shipping is reasonable, but the test has not established a conversion improvement.** The observed gain is **0.6 percentage points**\u201412.4% versus 11.8%, or about a **5.1% relative lift**. An approximate 95% confidence interval for the absolute effect is **\u22120.8 to +2.0 percentage points**. The results remain compatible with a modest decline, no effect, or a useful improvement.\n\nBecause the flow costs nothing extra and can be reversed in a day, I would favor a monitored rollout, assuming no deterioration in important guardrails such as retention, support burden, or downstream purchases. This is a decision under uncertainty, not a declaration that the experiment proved success. Retain a randomized holdout if practical.\n\n**2. Do not attribute the quarterly revenue rise to onboarding.** The experiment measured conversion, not revenue impact, and it covers only two weeks of the quarter. The pricing change and other business changes could explain revenue growth. Even a confirmed conversion lift would not establish how much quarterly revenue it generated.\n\nThe pricing change does **not automatically invalidate the randomized onboarding comparison**: both arms encountered it at the same time. But the pooled result estimates onboarding\u2019s effect across the two pricing environments. Its effect under the current price could differ. Check results by week and the interaction with pricing, while recognizing that these smaller comparisons will be imprecise.\n\n**What you can tell leadership:**\n\n> \u201cIn our randomized two-week test, conversion was 12.4% with the new onboarding versus 11.8% with the old flow. The estimated lift was 0.6 percentage points, with substantial uncertainty. We recommend a monitored rollout because operating cost and rollback effort are low. Quarterly revenue rose 9%; we have not established that onboarding caused that increase.\u201d\n\n**More data is useful, but I would not make it a prerequisite for rollout.** Its value depends on traffic, the consequences of a conversion decline, and the cost of retaining a holdout. Continue randomization under current pricing if feasible, define success and rollback criteria in advance, and measure revenue per assigned user alongside conversion. Avoid treating repeated checks as fresh opportunities to declare statistical significance.",
+ "usage": {
+  "input_tokens": 13303,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 602,
+  "reasoning_output_tokens": 123
+ },
+ "seconds": 21.0,
+ "error": null
+}

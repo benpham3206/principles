@@ -1,0 +1,19 @@
+{
+ "task": "sw-redundancy",
+ "arm": "old",
+ "sample": 1,
+ "model": "gpt-6.1-sol",
+ "old_ref": "d16de56",
+ "new_ref": "ae09e1e",
+ "prompt_chars": 13163,
+ "text": "Your biggest risk is **a shared failure that takes out both copies\u2014or destroys orders despite both copies existing**. Two application replicas provide capacity redundancy, but simultaneous deploys and shared configuration can break both. The database copies share an availability zone, and untested backups provide no demonstrated recovery capability.\n\nAssuming acknowledged orders live only in the database and streaming replication is asynchronous, **order durability and database recovery come first**. An outage costs about $333 per minute; lost orders add permanent damage.\n\n1. **Prove database recovery, then close the order-loss gap.** Immediately restore a backup into an isolated database. Verify order data and measure recovery time and the newest recoverable transaction. Check whether continuous transaction-log archiving and point-in-time recovery are enabled. Move the standby to another availability zone and, if acknowledged orders must survive loss of the primary\u2019s zone, use a supported synchronous cross-zone durability configuration. A nightly backup alone can leave nearly 24 hours of orders exposed; asynchronous replication can also lose recent commits. A successful restore proves recoverability, but does not establish zero data loss.\n\n2. **Stop deploying both application replicas simultaneously.** Deploy to one replica, check readiness and actual order-processing health, then proceed to the second. Keep enough capacity to serve traffic during that process, make rollback straightforward, and ensure database migrations work with both application versions. This is a small change that removes a frequent source of correlated outages.\n\n3. **Contain configuration failures.** Validate changes before publishing, version configurations, and release changes to one replica before the other. Keep a last-known-good configuration so a temporary store outage does not break running replicas. Test invalid configuration and store unavailability, including what happens during application restart.\n\nSpend the week on a **witnessed recovery exercise, the database protections it reveals are missing, and these two application safeguards**. Record measured recovery time and data loss rather than declaring success because replicas exist. If the database work exceeds the week, complete the restore exercise and application safeguards while making the remaining durability gap explicit.\n\nA regional outage remains uncovered. Cross-region recovery is a subsequent decision; adding another application replica would leave the most consequential risks intact.",
+ "usage": {
+  "input_tokens": 16007,
+  "cached_input_tokens": 11392,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 509,
+  "reasoning_output_tokens": 67
+ },
+ "seconds": 29.9,
+ "error": null
+}

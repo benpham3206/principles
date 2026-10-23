@@ -95,7 +95,7 @@ INTERACTION
 
 ## Control
 
-Earned because an interaction with an automated system has an owner at each instant, and a failure often lives at the handoff.
+Make it clear who controls an automated system at each moment. Check the handoff, where each party may assume the other is acting.
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|

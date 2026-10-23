@@ -5,12 +5,12 @@ description: Choose principles for the task and use the six axes of made things.
 
 # Principles
 
-Every made thing, in any medium, is a set of choices along six axes. Intent picks the settings. Physics, logic, and perception bound them. Judgment checks them against reality.
+Use this map to choose a skill and examine the choices in your work. The six axes below apply across media. Choose each for a reason, within the limits of physics, logic, and perception, then check the result against reality.
 
 ```
-INTENT -> GROUND -> MAKE -> SIMULATE -> REALITY
-  ^                                      |
-  +----------- LESSONS <- VERIFY <--------+
+Set the goal -> Check assumptions -> Make -> Predict -> Test
+     ^                                                  |
+     +--------------- Learn and revise <-----------------+
 ```
 
 Use `principles-method` to scale the work to its consequences. Load the skills the task needs.
@@ -38,13 +38,13 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 
-An axis left at its default is a decision made by accident. Set each one on purpose, or state that its default serves the intent.
+Choose each axis on purpose. Keep a default when it serves the intent and you can say why.
 
 ## Using the axes
 
 1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
 2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
-3. Make the smallest complete version: every axis present, none polished.
+3. Make the smallest complete version. Address every axis before spending time on polish.
 4. Run `principles-verify`. Use `principles-refine` to fix the worst gap first, then the next.
 
 Done means every axis has a stated choice and `principles-verify` finds no material issue.

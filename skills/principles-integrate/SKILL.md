@@ -16,7 +16,7 @@ built            layer, working   working            sides                each w
 
 ## Laws
 
-- The whole is the product. A part that passes alone has passed nothing yet.
+- Check the whole. Passing checks on separate parts does not show that they work together.
 - Faults gather at interfaces. Spend the checking there.
 - Integration cost grows faster than the size of the batch. Join small, join often.
 - What is not written at an interface is assumed differently on each side.
@@ -32,7 +32,7 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 2. Build the thinnest slice that runs end to end through every layer. A crude whole that works teaches more than a polished part that waits.
 3. Add one part at a time. After each, the whole must still run. When it breaks, the last part added is where to look.
 4. Check each seam from both sides. Send the edge cases across it: empty, maximum, wrong unit, late, missing, repeated.
-5. Read the actual work, not the report of it. A summary of a part is a claim; the part itself, run in the whole, is the evidence.
+5. Inspect and run the actual work. Check each part inside the whole; its maker's summary is a claim to verify.
 6. Walk every surface the change reaches: entry points, clients, environments, adapters, stored data, documentation, and the way back out of every way in. Name each one and say whether it applies.
 7. Fix seams in the same pass that finds them. When a repair is not yet safe, contain the affected path, assign the fix, and keep it out of the release until fixed.
 

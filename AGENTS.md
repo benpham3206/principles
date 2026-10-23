@@ -8,7 +8,7 @@ Rules for working on this repo, for every agent and every person. [CLAUDE.md](CL
 
 `policy.md` is the always-on engineering policy. `install.py` writes it into every harness's instruction file, so every agent reads it in every session. Keep it to 50 lines: it says when to load which skill, and the skills hold the depth.
 
-The bar:
+Requirements:
 
 - **Timeless over dated.** Physics, perception, logic, and judgment stay. Tools, products, versions, and prices do not belong here.
 - **Principle, failure, check.** Every principle names the failure it prevents and a check that catches it.
@@ -36,7 +36,7 @@ README.md                  human entry point; lists every skill
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
 - **Policy tests need agent-hooks.** `TestPolicy` skips when agent-hooks `fanout.py` is absent, as it is in CI. Run the suite on a machine with agent-hooks before merging an `install.py` change.
 
-## Dogfood
+## Use the skills on this repository
 
 This repo is built by its own skills. Before adding or changing a skill or `policy.md`:
 

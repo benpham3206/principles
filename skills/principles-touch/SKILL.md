@@ -5,7 +5,7 @@ description: Design how matter and space meet the body. Use when shaping ergonom
 
 # Touch
 
-A **touch** work arranges matter and space for a body. Check contact, temperature, weight, and edges in the hand, and movement through a room.
+When designing for touch, shape the points where a body meets an object or a space. Check contact, temperature, weight, and edges in the hand, and movement through a room.
 
 ## Laws of the medium
 
@@ -106,7 +106,7 @@ Honest materials: a surface should feel like what it is made of, and a hollow pa
 |---|---|---|---|
 | Light as felt | Daylight changes in direction, color, and level through the day, and the body uses these cues to keep its rhythm. Light from the side models the room; glare from a bright source against a dark ground tires the eye | One flat, constant light level, or a bright window as the only light | Visit at three times of day. Is the light changing, and is any source in the eye? |
 | Sound as felt | Hard parallel surfaces reflect sound and extend reverberation; soft and irregular surfaces absorb and scatter it. Intelligibility and calm both depend on reverberation time | A hard-walled room where speech must be clear | Clap in the room. How long does the sound hang? |
-| Air as felt | Comfort rests on air temperature, radiant temperature of surfaces, air speed, humidity, and fresh air. A cold wall radiates cold to a body next to it though the air is warm | Air temperature alone on the thermostat | Measure surface temperatures and air speed. Is the body losing heat unevenly? |
+| Air as felt | Comfort rests on air temperature, radiant temperature of surfaces, air speed, humidity, and fresh air. A body can lose heat by radiation to a cold wall even when the air is warm | Air temperature alone on the thermostat | Measure surface temperatures and air speed. Is the body losing heat unevenly? |
 | Proportion | Rooms read by the ratio of height to width and length, and by the human scale in them. A tall narrow room is formal; a low wide room is intimate | Dimensions from the structure grid alone | Stand in it. Does the ratio fit the use? |
 | Refuge and prospect | People settle where they can see without being seen: a back to a wall or an alcove, with a view out. The mix of a protected place and an open view is felt as comfort | Seats in the open, or a hidden corner with no view | For each seat, what is behind it, and what can be seen from it? |
 

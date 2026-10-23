@@ -5,7 +5,7 @@ description: Turn a need into a coherent approach. Use when shaping a concept, c
 
 # Design
 
-**Design** chooses how a made thing will serve a need within its constraints. Its result is a coherent set of choices that can be made and checked. Novelty is useful when it serves the need; a known solution can be the right design.
+**Design** chooses how something will serve a need within its constraints. Leave a set of choices concrete enough to build and check. Use a new approach when it serves the need; a known solution can be the right design.
 
 Use `principles-method` to set the scope and rigor. Use the matching medium skills to make the choices concrete, and `principles-refine` to revise an existing result.
 
@@ -17,7 +17,7 @@ Use `principles-method` to set the scope and rigor. Use the matching medium skil
 4. Give each candidate a main idea. Choose across the six axes from `principles`, using the medium skills. Make the parts support that idea: form, behavior, construction, and upkeep must fit together. Include access, failure, recovery, and change over time where they matter.
 5. Make the cheapest prototype that can expose the most consequential uncertainty. A sketch can test arrangement; it cannot prove timing, physical grip, or structural strength. Match the prototype's fidelity to the question, then try it in the conditions that matter.
 6. Compare the candidates against the same need, constraints, and named criteria. Show the trade-offs and the evidence; use numbers where they mean something and comparative judgment where they do not. Choose a coherent whole rather than combining incompatible favorite parts. If none serves the need, reopen the framing or constraints with their owner.
-7. Leave enough to build and check the choice: a model, sketch, sample, or prototype; the reason for the consequential decisions; and unresolved assumptions with their next tests. Settle the interfaces with `principles-integrate`. Carry the chosen intent and criteria into implementation and refinement.
+7. Leave what another maker needs to build and check the design: a model, sketch, sample, or prototype. Record why the important choices were made and how to test unresolved assumptions. Settle the interfaces with `principles-integrate`. Keep the chosen intent and criteria through implementation and refinement.
 
 ## Principles
 

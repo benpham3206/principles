@@ -9,7 +9,7 @@ description: Design and review software, interfaces, and data models. Use when w
 
 ## Laws of the medium
 
-- Complexity is the enemy. It accrues in small steps, so refuse each step that does not pay.
+- Keep complexity only when it serves a requirement. Small additions accumulate maintenance cost.
 - Data outlives code. Get the data model right; rewrite the code around it as needed.
 - Make the right use easy and the wrong use hard: through types, interfaces, and safe defaults.
 - Every boundary needs a contract: what comes in, what goes out, what can fail.
@@ -88,7 +88,7 @@ CODE
 | Layering | Each layer talks to the one below through its interface only | A top layer reaching into storage details | Can you replace the layer below without touching the one above? |
 | Single source of truth | Every fact has one authoritative place; others derive from it | Two copies edited separately | Search for the fact. How many places define it? |
 | Seams | Put a seam where behavior can be swapped without editing the code under test | Code that can only be tested by running the whole system | Can the clock, network, and store be replaced in a test? |
-| Tripwires, not targets | File length and branching metrics used as goals, or never measured at all | Does the project set a threshold for file length and branching complexity, and does a tool enforce it? A file over it needs a stated reason to stay whole |
+| Review thresholds | Use file length and branching thresholds to trigger a review | Metrics treated as goals, or never measured at all | Does a tool enforce the project's thresholds? A file above the threshold needs a stated reason to stay whole |
 | Abstraction timing | As a rule of thumb, abstract on the third repeat, from real cases | A general framework built for a case that never came | How many real uses justify this abstraction? |
 
 ## Time

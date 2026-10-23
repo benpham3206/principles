@@ -5,13 +5,11 @@ description: Reason from evidence and first principles. Use when checking claims
 
 # Ground
 
-**Ground** is what stays true regardless of its description: physics, logic, mathematics, and the limits of perception. Check claims and designs against those limits.
+**Grounding** checks a claim or design against evidence and the limits of physics, logic, mathematics, and perception.
 
 ## Map and territory
 
 A description is a **map**; the thing described is the **territory**. Language compresses the world, and compression loses detail. An agent that works only in words can build a consistent, fluent map that matches nothing. People do this too.
-
-So:
 
 - Treat every statement, your own included, as a claim about the territory, not as the territory.
 - Ground a claim by touching something outside language: a measurement, a test that can fail, a simulation with stated limits, a source you have read, a person who was there.
@@ -52,7 +50,7 @@ When something needs explaining, such as a failure, a result, or a surprise:
 1. Write every explanation still in play: at least two, and "something not yet named". The familiar one is a candidate, not the answer.
 2. For each, write what it predicts that the others do not.
 3. Weigh evidence by how much more likely it is under one explanation than under the others. Evidence that every candidate predicts moves nothing, however much of it there is. When you hold a prior, state it, update it with the data, and check whether the decision changes under other plausible priors.
-4. Choose the next test by how well its possible results separate the candidates that call for different actions, for its cost and risk. One test that splits three such candidates beats three tests that each confirm one.
+4. Choose a test that can distinguish explanations requiring different actions. Weigh that information against the test's cost and risk. One test that separates three such explanations can be more useful than three tests that each support only one.
 5. Update. When a result contradicts an assumption, mark it false and reopen every inference and decision built on it.
 6. Stop by the rule in the next section. A decision can be settled while several explanations remain plausible, when all of them call for the same action.
 

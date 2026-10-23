@@ -25,7 +25,7 @@ A **quality** is a property an observer experiences in finished work. Qualities 
 
 ## Fluid or textured
 
-Every design language sits on a dial between two poles.
+Choose how continuous or deliberate the experience should feel.
 
 - **Fluid**: continuous, low friction, unbroken transitions, mechanism hidden. It suits flow states, frequent tasks, and calm.
 - **Textured**: discrete steps, tactile feedback, mechanism visible, friction on purpose. It suits deliberate actions, irreversible acts, and craft that wants to be seen.
@@ -47,6 +47,8 @@ Common conflicts and the usual resolution. These are defaults; the stated philos
 | Smoothness and agency | Smooth for reversible actions, deliberate friction for irreversible ones |
 | Craft and time | Craft where the observer touches; speed where they never will |
 | Trust and novelty | Novel only where you can keep the promise every time |
+
+Use `principles-invert` when a priority's costs or limits are unclear. Examine both its loss and the reason to choose a competing value before ranking them.
 
 ## Writing a design philosophy
 

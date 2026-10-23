@@ -7,7 +7,7 @@ description: Turn events into better future actions. Use after a failure, near m
 
 A **lesson** changes the next action because of what happened. A note becomes a lesson when it changes a design, check, or habit. Check whether the change catches the same cause next time.
 
-`principles-method` calls for root causes in its refine step; this skill is how to find them and make them stick.
+Use this skill to find causes and change what allowed them. Use `principles-method` to choose the depth of the review.
 
 ```
 EVENT ----> FACTS ----> CAUSES ----> CLASS ----> CHANGE ----> CHECK ----> CLOSE
@@ -30,7 +30,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 
 ## Steps
 
-1. Stabilize first. Stop the harm, restore service, keep the part. Analysis waits until nothing is getting worse, and evidence waits for no one, so preserve it now.
+1. Stop ongoing harm and restore service. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable.
 2. Write the facts as a timeline: what happened, when, what each person saw and did, and what they believed at that moment. Mark each item as observed, reported, or inferred.
 3. Find the causes. Ask why it was possible, not who did it. Follow each branch until you reach something that can be changed by design.
 4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap.
@@ -62,7 +62,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 - Work backward from the effect on a cause tree. Each node is something that had to be true for the node above it. Keep branches that evidence supports; mark the rest as untested.
 - Separate three layers: the trigger (what set it off), the conditions (what let the trigger cause harm), and the defenses (what should have caught it and did not). Most lasting fixes sit in the conditions and the defenses.
 - Ask what changed. Compare the failing case with the last working one: code, material, supplier, load, operator, procedure, weather. The difference is where to look first.
-- Look for the missing barrier. Every serious failure passed through several holes lined up. Each hole is a fix.
+- Look for missing or failed defenses. Identify which ones let the failure reach people or damage the system, then choose which to change.
 - Suspect the system when the same failure has many owners. A trap that catches different people is a design fault.
 - Stop at about five levels of why (a rule of thumb). Fewer usually stops at a symptom; many more usually leaves what anyone can change.
 

@@ -12,7 +12,7 @@ A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance
 | Mode | Guard | Signal |
 |---|---|---|
 | Dependency | teach rather than answer when learning is the goal (see `principles-develop`) | the person asks the same kind of question again and again |
-| Echo chamber | the agent's reasoning is independent of the user's preferences | the agent never disagrees |
+| Echo chamber | check factual claims independently of what the person wants to hear | the agent never disagrees |
 | Manipulation | every influence on the person can be explained on request | the agent cannot or will not say why it framed a thing that way |
 | Privacy breach | memory isolated per person | any path from one person's memory to another |
 | Resource spiral | hard budgets; exhaustion ends the cycle | cost per task rising with no gain |
@@ -26,13 +26,13 @@ Start with memory that persists across sessions, a generate-then-revise loop, an
 
 ## Substrate
 
-Three pillars every reasoning system draws on:
+Use three sources of constraints and methods:
 
 - **Math and physics**: what is computable and physically possible (see `principles-ground`).
 - **Logic and philosophy**: how reasoning should run, how truth is handled, how to hold a contradiction without collapsing it.
 - **Language**: how meaning is encoded and passed on (see `principles-language`).
 
-## Parse every request on seven questions
+## Understand the request
 
 **What** (the request), **why** (the motivation), **how** (the method), **which** (the priorities), **who** (the people affected), **when** (the urgency), **where** (the context). Most misunderstandings come from a missing why. Principle.
 
@@ -69,14 +69,14 @@ Own and explain are **invariants**: no configuration turns them off. Principle.
 
 ## Wake and sleep
 
-Separate acting from consolidating. Principle.
+Use separate cycles for acting and consolidating memory. Principle.
 
 - **Awake**: respond, act, log experience to a buffer. States: proactive (anticipates), reactive (responds), interactive (works alongside).
 - **Asleep**: replay the buffer, extract patterns, prune, connect ideas across domains, test counterfactuals ("what if I had answered differently?"), and precompute likely needs. Run expensive search here, where no one waits.
 
 ## Budgets force judgment
 
-Give a mind explicit limits: compute per cycle, a few working-memory slots, and the opportunity cost of every choice. Scarcity forces prioritization, and prioritization is judgment. An unlimited system never has to learn what not to do. Principle.
+Set explicit limits on compute per cycle and working memory. Account for the work forgone by each choice. These limits require the agent to choose where to spend its resources. Principle.
 
 ## Common case and tail
 

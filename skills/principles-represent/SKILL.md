@@ -10,10 +10,7 @@ A **representation** names parts and their relations while leaving out other det
 This skill picks the structure. To show it honestly and readably, use `principles-information`. For how it looks, use `principles-visual`.
 
 ```
-TANGLE ----> QUESTION ----> SHAPE ----> FORM ----> SKETCH ----> READ OFF ----> ACTIONS
-what you     the one        which       the        lowest       bottleneck,     ordered steps,
-have         decision it    relation    structure  fidelity,    gap, biggest    each with an
-             must serve     dominates   that fits  parts named  flow, unknown   owner and a check
+Name the question -> Choose a structure -> Sketch -> Read -> Act
 ```
 
 ## Laws

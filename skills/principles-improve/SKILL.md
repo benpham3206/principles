@@ -18,14 +18,14 @@ the metric    that limits      needed at      what need    fewer states,  loop t
 that counts   the goal now     all?           not exist    fewer paths    is left         stable, repeated
 ```
 
-The order matters. Each step is wasted on anything a later look would have deleted.
+Check whether a step is needed before spending effort making it faster.
 
 ## Laws
 
 - Find what limits the metric. For throughput, improve the limiting stage or what makes it wait. For totals such as latency or cost, compare each possible reduction with its cost. The largest term is a place to look, not an automatic choice.
 - The best part is no part; the best step is no step.
 - Make it work, then make it simple, then make it fast, in that order.
-- Measured gains are kept; felt gains are reverted.
+- Keep a change when measurements show a gain and the requirements still hold. Otherwise, return to the prior version.
 - Stop when the next improvement costs more than it returns.
 
 ## Defaults to replace

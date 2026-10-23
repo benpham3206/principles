@@ -5,7 +5,7 @@ description: Find paths and limits by reversing a question. Work backward from t
 
 # Invert
 
-**Inversion** reverses the direction of a question to expose what the forward framing hides. It generates candidates and finds limits. It does not show that the reverse is true: keep the original, the inversion, and the evidence for each apart, and let a test decide between them.
+**Inversion** reverses the direction of a question to expose what the forward framing hides. It generates candidates and finds limits. It does not show that the reverse is true. Keep the original, the inversion, and the evidence for each apart. Evidence settles factual claims and consequences; the person with the authority chooses between values.
 
 ```
 FORWARD     steps -------> outcome        principle ----> good result
@@ -34,7 +34,7 @@ Examples of a reversed relation:
 
 ## Limits
 
-- Laws do not invert; conventions and habits do. Use the kinds of claim in `principles-ground` to tell them apart.
+- An inversion must still satisfy the laws that apply and their assumptions; conventions and habits are what it may overturn. Use the kinds of claim in `principles-ground` to tell them apart.
 - An outcome rarely fixes one cause, so working backward gives candidate paths, not the path.
 - A reversed arrow is a hypothesis about cause. Test it before building on it.
 - A failure you design runs only on paper or in a bounded test. Safety, consent, and irreversible limits stay in force.
@@ -45,7 +45,7 @@ Examples of a reversed relation:
 2. Pick one move. Inverting several things at once leaves no way to tell which one helped.
 3. Derive a different action: what you would build, measure, remove, or decide. When nothing different follows, the inversion adds nothing; stop.
 4. Check it against the limits above.
-5. Test it. Name what the original predicts, what the inversion predicts, and the cheapest result that would separate them, as in `principles-ground`.
+5. Test it the way its kind needs. Competing factual claims: a separating test, as in `principles-ground`. A proposed action or order: does it improve the outcome within the constraints? A value trade-off: show the consequences, and name who decides.
 6. Keep, combine, or discard it by the result. When an inverted principle revealed a limit, write the limit where the principle lives.
 
 Stop when the best inversion has a mechanism and a test, when the original wins under the measured constraints, or when no inversion changes the next decision.

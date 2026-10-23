@@ -52,7 +52,7 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 | The integrator reads the parts | A whole accepted because each maker said their part was done | Did someone run each part inside the whole and read what it did? |
 | One maker per part at a time | Two makers editing the same part, each overwriting the other | Does every part have exactly one current owner? |
 | Every surface, both directions | Works on the tested path and fails on another platform, client, or the undo path | Is each surface listed with a result? Does every way in have a way out? |
-| Tolerances stack at seams | Each part within its limit, the assembly out of its limit | Add the worst cases where the whole needs a hard bound; otherwise combine them statistically against a stated failure allowance. Does the whole still meet its limit? |
+| Tolerances stack at seams | Each part within its limit, the assembly out of its limit | Add the worst cases where the whole needs a hard bound. For a stated failure allowance, combine them statistically only with a justified model of their dependence and shared bias; otherwise keep the bounds. Does the whole still meet its limit? |
 
 ## Choosing a boundary
 

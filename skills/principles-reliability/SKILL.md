@@ -64,7 +64,7 @@ Over-building is a failure too. A weekend prototype held to the bar of a flight 
 | Isolate enough to act | An alarm that says something is wrong but not enough to choose a response | From the signal alone, can the receiver choose the safe action? |
 | Watch the watcher | A monitor that died quietly, so silence reads as health | Stop the monitor. Does anyone find out, and how soon? |
 | Fail loudly where wrong is worse than stopped | A part that fails by giving plausible wrong output, so nothing downstream reacts | Can this part fail silent and wrong? What checks its output against an independent source? |
-| Two can detect; three can outvote | Two disagreeing channels and no way to tell which is right | With one channel wrong, do the two healthy ones agree within a stated tolerance, so the vote can name the bad one? |
+| Two can detect; three can mask one | Two disagreeing channels and no way to tell which is right | With one channel faulty, do the healthy results set a safe output? When agreement is ambiguous, is that detected and contained? Naming the faulty part needs its own check |
 | Contain the blast | One fault cascades through shared pools, retries, or load moved onto the survivors | Fail one part at peak load. What fails with it? Can the survivors carry its load? |
 | Degrade on purpose | All or nothing; a fallback that fails open | With each part removed, what does the user get, and is the loss shown? |
 | Recovery and standbys are found by use | A standby, spare, backup, or rollback that was broken for months and first tried during the incident | When was each last run end to end, how long did it take, what was lost, and what was checked in the first minute after restart? |

@@ -45,7 +45,7 @@ An example of the method, labelled by confidence.
 
 From this horizon come four design goals for any tool that adds intelligence:
 
-- **The counterpart rule.** Where the person's own ability is part of the goal, every gain in machine capability ships with a human counterpart; `principles-develop` holds the rule and its test. Where the goal is only the output, as with an accessibility aid or routine automation, delegation is the point.
+- **The counterpart rule.** Where the person's own ability is part of the goal, every gain in machine capability ships with a human counterpart; `principles-develop` holds the rule and its test. Where the goal is only the output, as with a routine task handed off for its result, delegation is the point.
 - **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-verify`).
 - **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. A result nobody understands cannot be trusted or corrected.
 - **Value flows to insight as well as labor.** Design so that people capture value from new understanding, not only from cheaper work.

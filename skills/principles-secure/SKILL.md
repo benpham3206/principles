@@ -5,7 +5,7 @@ description: Keep a made thing safe from misuse and from its own compromised par
 
 # Secure
 
-A thing is **secure** when everything it can be made to do is something its rightful authority meant to allow, and the risk it leaves to the people it affects stays within limits they or their representatives accepted, even when an input is hostile, a part is compromised, or a person makes a mistake. The people it affects include users, bystanders, and the people its data describes, not only its owner. Security is not a feature added at the end. It is a property of where the boundaries are and what crosses them.
+A thing is **secure** when everything it can be made to do is something its rightful authority meant to allow, and the risk it leaves to the people it affects stays within limits accepted by them or by someone with legitimate authority to accept it for them, even when an input is hostile, a part is compromised, or a person makes a mistake. The people it affects include users, bystanders, and the people its data describes, not only its owner. Security is not a feature added at the end. It is a property of where the boundaries are and what crosses them.
 
 ```
 ASSETS ----> ADVERSARIES ----> BOUNDARIES ----> AUTHORITY ----> CONTROLS ----> FAILURE ----> REVIEW

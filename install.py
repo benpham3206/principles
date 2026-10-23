@@ -5,6 +5,7 @@
     python3 install.py --check    # dry run: print what would change, exit 1 if anything would
     python3 install.py --pull     # fast-forward the installed clone from GitHub first
     python3 install.py --all      # --pull here, then on every other machine with an ssh alias
+    python3 install.py --check --all   # dry run here and on every other machine; changes nothing
 
 The installed copy is the clone at ~/.agents/skill-repos/benpham3206__principles, never a
 working checkout, so unfinished edits never reach an agent. Each skill is linked once into
@@ -27,6 +28,7 @@ import sys
 from pathlib import Path
 
 ORIGIN = "https://github.com/benpham3206/principles"
+BRANCH = "main"
 HOME = Path.home()
 CLONE = HOME / ".agents" / "skill-repos" / "benpham3206__principles"
 AGENT_SKILLS = HOME / ".agents" / "skills"
@@ -46,22 +48,80 @@ WIN = sys.platform.startswith("win")
 FLEET = ("mac", "mbp13", "windows")
 REMOTE_PY_TARGETS = ("mac", "windows")
 
-POSIX_UPDATE = (
+# Each remote script refuses before it pulls or runs the clone's installer unless the clone
+# pulls from ORIGIN, has no local changes (untracked files included, whatever git config
+# says) and no commits missing from origin/main, and every git call succeeded. The status
+# call skips git's optional index refresh, so a dry run does not write .git. --check runs
+# the installer's dry run only: no fetch, no pull, no writes, and its ahead test uses the
+# origin/main last fetched.
+# Known limits: files matched by .gitignore are not counted, because __pycache__/ appears in
+# normal use. Anyone who can write the clone's .git (hooks, config, info/exclude) can run
+# code through git itself; that is outside what these checks defend.
+POSIX_ORIGIN = (
     f"R=~/.agents/skill-repos/benpham3206__principles; "
-    f"if [ -d $R ]; then git -C $R pull -q --ff-only || exit 1; else git clone -q {ORIGIN} $R; fi; "
+    f"if [ -d $R ]; then U=$(git -C $R remote get-url origin) || exit 1; [ \"${{U%.git}}\" = {ORIGIN} ] || {{ echo \"$R pulls from $U\"; exit 1; }}; "
+)
+POSIX_CLEAN = (
+    "S=$(git --no-optional-locks -C $R status --porcelain --untracked-files=all) || exit 1; "
+    "[ -z \"$S\" ] || { echo \"$R has local changes\"; exit 1; }; "
+)
+POSIX_AHEAD = (
+    "A=$(git -C $R rev-list origin/main..HEAD) || exit 1; "
+    "[ -z \"$A\" ] || { echo \"$R has local commits\"; exit 1; }; "
+)
+POSIX_UPDATE = POSIX_ORIGIN + POSIX_CLEAN + "git -C $R fetch -q origin main || exit 1; " + POSIX_AHEAD + (
+    f"git -C $R merge -q --ff-only origin/main || exit 1; else git clone -q {ORIGIN} $R || exit 1; fi; "
     "P=/opt/homebrew/bin/python3; [ -x $P ] || P=python3; "
     "$P $R/install.py --pull"
 )
-WINDOWS_UPDATE = (
+POSIX_CHECK = POSIX_ORIGIN + POSIX_CLEAN + POSIX_AHEAD + "else echo \"no clone at $R\"; exit 1; fi; " + (
+    "P=/opt/homebrew/bin/python3; [ -x $P ] || P=python3; "
+    "$P $R/install.py --check"
+)
+WINDOWS_ORIGIN = (
     "$R = \"$HOME\\.agents\\skill-repos\\benpham3206__principles\"; "
-    "if (Test-Path $R) { git -C $R pull -q --ff-only; if ($LASTEXITCODE) { exit 1 } } "
-    f"else {{ git clone -q {ORIGIN} $R }}; "
+    "if (Test-Path $R) { "
+    "$U = git -C $R remote get-url origin; if ($LASTEXITCODE) { exit 1 }; "
+    f"$U = $U -replace '\\.git$',''; if ($U -ne '{ORIGIN}') {{ Write-Output \"$R pulls from $U\"; exit 1 }}; "
+)
+WINDOWS_CLEAN = (
+    "$S = git --no-optional-locks -C $R status --porcelain --untracked-files=all; if ($LASTEXITCODE) { exit 1 }; "
+    "if ($S) { Write-Output \"$R has local changes\"; exit 1 }; "
+)
+WINDOWS_AHEAD = (
+    "$A = git -C $R rev-list origin/main..HEAD; if ($LASTEXITCODE) { exit 1 }; "
+    "if ($A) { Write-Output \"$R has local commits\"; exit 1 }; "
+)
+WINDOWS_UPDATE = WINDOWS_ORIGIN + WINDOWS_CLEAN + (
+    "git -C $R fetch -q origin main; if ($LASTEXITCODE) { exit 1 }; "
+) + WINDOWS_AHEAD + (
+    "git -C $R merge -q --ff-only origin/main; if ($LASTEXITCODE) { exit 1 } } "
+    f"else {{ git clone -q {ORIGIN} $R; if ($LASTEXITCODE) {{ exit 1 }} }}; "
     "python \"$R\\install.py\" --pull"
 )
+WINDOWS_CHECK = WINDOWS_ORIGIN + WINDOWS_CLEAN + WINDOWS_AHEAD + (
+    "} else { Write-Output \"no clone at $R\"; exit 1 }; "
+    "python \"$R\\install.py\" --check"
+)
+# Every child process gets a deadline (seconds), so one stalled machine cannot block the rest.
+GIT_TIMEOUT = 120
+STEP_TIMEOUT = 600
+
+
+def run(cmd: list[str], timeout: int, **kw) -> subprocess.CompletedProcess:
+    """subprocess.run with a deadline; a timeout comes back as a failed result, never a hang.
+
+    Known limit: the timeout ends the direct child. Work it started elsewhere, such as a
+    command already running on a remote machine, may keep going; check before retrying.
+    """
+    try:
+        return subprocess.run(cmd, timeout=timeout, **kw)
+    except subprocess.TimeoutExpired:
+        return subprocess.CompletedProcess(cmd, 124, "", f"timed out after {timeout} s: {' '.join(cmd[:3])}")
 
 
 def git(*args: str) -> subprocess.CompletedProcess:
-    return subprocess.run(["git", "-C", str(CLONE), *args], capture_output=True, text=True)
+    return run(["git", "-C", str(CLONE), *args], GIT_TIMEOUT, capture_output=True, text=True)
 
 
 def skills(root: Path) -> list[str]:
@@ -182,17 +242,17 @@ def prune(names: list[str], check: bool) -> list[Path]:
 def fanout(name: str, check: bool) -> tuple[int, list[str]]:
     """Run fanout.py for one skill. Returns its exit code and the lines worth showing."""
     cmd = [sys.executable, str(FANOUT), "skill", name] + (["--check"] if check else [])
-    run = subprocess.run(cmd, capture_output=True, text=True)
-    lines = [ln for ln in (run.stdout + run.stderr).splitlines()
+    done = run(cmd, STEP_TIMEOUT, capture_output=True, text=True)
+    lines = [ln for ln in ((done.stdout or "") + (done.stderr or "")).splitlines()
              if ln.split() and ln.split()[0] not in ("ok", "skip")]
-    return run.returncode, lines
+    return done.returncode, lines
 
 
 def pull() -> int:
     """Clone if absent, else fast-forward from ORIGIN. Refuses a clone pointing anywhere else."""
     if not CLONE.exists():
         CLONE.parent.mkdir(parents=True, exist_ok=True)
-        done = subprocess.run(["git", "clone", "-q", ORIGIN, str(CLONE)], capture_output=True, text=True)
+        done = run(["git", "clone", "-q", ORIGIN, str(CLONE)], GIT_TIMEOUT, capture_output=True, text=True)
         if done.returncode:
             print(f"install.py: clone failed: {done.stderr.strip()}", file=sys.stderr)
             return 1
@@ -203,10 +263,23 @@ def pull() -> int:
         print(f"install.py: {CLONE} pulls from {url}, not {ORIGIN}; refusing", file=sys.stderr)
         return 1
     before = git("rev-parse", "--short", "HEAD").stdout.strip()
-    done = git("pull", "-q", "--ff-only")
-    if done.returncode:
-        print(f"install.py: fast-forward refused (local commits or edits?): {done.stderr.strip()}",
-              file=sys.stderr)
+    # Untracked files count, whatever git config says: an untracked skill folder would be
+    # installed like a real one. Ignored files do not (see the known limits above).
+    status = git("status", "--porcelain", "--untracked-files=all")
+    if status.returncode or status.stdout.strip():
+        print(f"install.py: {CLONE} has local changes or git failed; refusing", file=sys.stderr)
+        return 1
+    fetched = git("fetch", "-q", "origin", BRANCH)
+    if fetched.returncode:
+        print(f"install.py: fetch failed: {fetched.stderr.strip()}", file=sys.stderr)
+        return 1
+    ahead = git("rev-list", f"origin/{BRANCH}..HEAD")
+    if ahead.returncode or ahead.stdout.strip():
+        print(f"install.py: {CLONE} has local commits not on origin, or git failed; refusing", file=sys.stderr)
+        return 1
+    done = git("merge", "-q", "--ff-only", f"origin/{BRANCH}")
+    if done.returncode or git("rev-parse", "HEAD").stdout != git("rev-parse", f"origin/{BRANCH}").stdout:
+        print(f"install.py: could not fast-forward to origin: {done.stderr.strip()}", file=sys.stderr)
         return 1
     after = git("rev-parse", "--short", "HEAD").stdout.strip()
     print(f"updated  {before} -> {after}" if before != after else f"current  {after}")
@@ -256,14 +329,19 @@ def aliases() -> list[str]:
     return [a for a in FLEET if a in hosts]
 
 
-def update_remote(alias: str) -> int:
-    script = WINDOWS_UPDATE if alias == "windows" else POSIX_UPDATE
+def update_remote(alias: str, check: bool = False) -> int:
+    windows = alias == "windows"
+    script = (WINDOWS_CHECK if check else WINDOWS_UPDATE) if windows else (POSIX_CHECK if check else POSIX_UPDATE)
     if alias in REMOTE_PY_TARGETS and REMOTE.is_file():
-        cmd = [sys.executable, str(REMOTE), alias, "--timeout", "600"]
+        cmd = [sys.executable, str(REMOTE), alias, "--timeout", str(STEP_TIMEOUT)]
     else:
-        cmd = ["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=10", alias, "zsh -l"]
+        shell = "powershell -NoProfile -Command -" if windows else "zsh -l"
+        cmd = ["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=10", alias, shell]
     print(f"# {alias}", flush=True)
-    return subprocess.run(cmd, input=script, text=True).returncode
+    done = run(cmd, STEP_TIMEOUT + 60, input=script, text=True)
+    if done.returncode == 124 and done.stderr:
+        print(f"install.py: {alias}: {done.stderr}", file=sys.stderr)
+    return done.returncode
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -272,17 +350,17 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--pull", action="store_true", help="fast-forward the clone first")
     ap.add_argument("--all", action="store_true", help="update this machine, then every other one")
     args = ap.parse_args(argv)
-    if args.pull or args.all:
+    if (args.pull or args.all) and not args.check:
         if pull():
             return 1
         # Run the freshly pulled installer, not this one, so a new install.py takes effect now.
-        rest = ["--check"] if args.check else []
-        code = subprocess.run([sys.executable, str(CLONE / "install.py"), *rest]).returncode
+        code = run([sys.executable, str(CLONE / "install.py")], STEP_TIMEOUT).returncode
     else:
+        # --check is a dry run everywhere: no pull, no writes, here or on the other machines.
         code = install(args.check)
     if args.all:
         for alias in aliases():
-            code = update_remote(alias) or code
+            code = update_remote(alias, args.check) or code
     return code
 
 

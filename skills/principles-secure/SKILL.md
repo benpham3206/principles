@@ -5,7 +5,7 @@ description: Keep a made thing safe from misuse and from its own compromised par
 
 # Secure
 
-A thing is **secure** when everything it can be made to do is something its rightful authority meant to allow, and no one it affects is harmed by what it allows, even when an input is hostile, a part is compromised, or a person makes a mistake. The people it affects include users, bystanders, and the people its data describes, not only its owner. Security is not a feature added at the end. It is a property of where the boundaries are and what crosses them.
+A thing is **secure** when everything it can be made to do is something its rightful authority meant to allow, and the risk it leaves to the people it affects stays within limits they or their representatives accepted, even when an input is hostile, a part is compromised, or a person makes a mistake. The people it affects include users, bystanders, and the people its data describes, not only its owner. Security is not a feature added at the end. It is a property of where the boundaries are and what crosses them.
 
 ```
 ASSETS ----> ADVERSARIES ----> BOUNDARIES ----> AUTHORITY ----> CONTROLS ----> FAILURE ----> REVIEW
@@ -47,7 +47,7 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 | Least privilege | A part holds power its job does not need, so its compromise costs more than its job | For each permission, which authorized task needs it, on which path? Remove the ones with no answer |
 | Separate request from grant | An instruction found in an email, page, file, or tool result is obeyed as if the owner gave it | For each action, can you name who authorized it, outside the content that asked? |
 | Enforce outside the actor | A rule written only in the prompt, the client, or the docs of the thing it binds | Remove the actor's cooperation. Does the rule still hold? |
-| No self-granted authority | An agent or process edits the policy, key, or config that limits it | Can any actor change its own permissions without a second party? |
+| No self-granted authority | An agent or process edits the policy, key, or config that limits it | Can any actor widen its own grant without the authority that granted it? |
 | Validate at the boundary, by allowlist | A filter of known bad inputs that the next input walks around | Is each input checked against what is allowed, at the point it crosses? |
 | Untrusted until checked | Model, tool, and third-party output treated as safe because it came from your own system | Trace each output to the place it is acted on. Is it checked there? |
 | Fail to the safe state | A timeout, parse error, or missing policy that grants access, or a safety path that locks shut when power fails | Break the check: kill its dependency, cut its power, feed it garbage. Does it land in the state the threat model chose? |
@@ -65,8 +65,8 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 - Look first for changes to boundaries, authority, and controls: who may call it, what it trusts, what it can reach, what happens when a check fails.
 - Check gates. A feature meant for some users, a flag, or an internal-only path must stay closed to everyone else on every route.
 - Check what breaks for the honest user, too: renamed secrets, moved config, changed ports, new manual steps.
-- Separate intended from unaware. A change meant to remove a safeguard, with a tight scope, needs no alarm. A change whose author may not see the full reach does, and so does one that looks hostile.
-- Finish the trace before reporting. A finding that says "unless the other side handles it" is unfinished when the other side can be read.
+- Separate intended from unaware. A change meant to remove a safeguard, with a tight scope, needs no alarm about intent; still weigh what it exposes against the threat model and the authority for the change. A change whose author may not see the full reach does, and so does one that looks hostile.
+- Report a confirmed, urgent exposure at once with its known reach. Otherwise finish the trace before reporting. A finding that says "unless the other side handles it" is unfinished when the other side can be read.
 - Rate severity by reach and likelihood, not by fear. A reviewer who calls everything critical is soon ignored.
 - Form your own view before reading other reviews, then compare. Fresh eyes find what anchored eyes miss.
 

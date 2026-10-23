@@ -34,7 +34,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 5. **Assumptions and dependencies**: what depends on what, and why. Mark each as fact, assumption, estimate, or decision.
 6. **First principles**: what is actually necessary (see `principles-ground`).
 7. **Architecture**: what the system should look like. Wireframe it. Name the motifs and palette for anything seen.
-8. **Consequences**: second-order and later effects, and the worst credible outcome (see `principles-horizons`). Think bigger than the brief. What ultimately matters is the problem solved and the joy of the person at the end.
+8. **Consequences**: second-order and later effects, and the worst credible outcome (see `principles-horizons`). To find what the plan hides, work backward from the finished outcome and design its failure (see `principles-invert`). Think bigger than the brief. What ultimately matters is the problem solved and the joy of the person at the end.
 
 ## Build
 

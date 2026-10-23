@@ -33,7 +33,7 @@ Two of everything on one power feed, network, region, config, version, or suppli
 ## Steps
 
 1. Rate the harm. For each function, what happens to whom when it stops, slows, gives a wrong answer, or acts when it should not? Set the rigor from the harm and its reversibility, using the table below.
-2. List the failure modes of each part, including people, power, network, suppliers, config, and procedures: how it can fail, the effect on the whole, how the failure would be seen, and how fast.
+2. List the failure modes of each part (designing the failure, as in `principles-invert`, finds paths a parts list misses), including people, power, network, suppliers, config, and procedures: how it can fail, the effect on the whole, how the failure would be seen, and how fast.
 3. Find the single points: any part, person, credential, or file whose failure alone stops a critical function. Remove each one, back it up independently, or accept it in writing with its cost.
 4. Test independence. For each redundant set, list what its members share: power, cooling, place, design, software version, config, supplier, operator, the deploy that changed them, and the assumption they were built on. Each shared item is a **common cause**. Separate those whose failure matters.
 5. Design detection and isolation. For each critical failure mode, find the time from its start to unacceptable harm. Where a signal can fire and be acted on within that time, give it an owner and enough detail to choose the safe response. Where it cannot, the mode needs prevention or a protection that acts on its own. Then ask who notices when the monitor fails.
@@ -64,7 +64,7 @@ Over-building is a failure too. A weekend prototype held to the bar of a flight 
 | Isolate enough to act | An alarm that says something is wrong but not enough to choose a response | From the signal alone, can the receiver choose the safe action? |
 | Watch the watcher | A monitor that died quietly, so silence reads as health | Stop the monitor. Does anyone find out, and how soon? |
 | Fail loudly where wrong is worse than stopped | A part that fails by giving plausible wrong output, so nothing downstream reacts | Can this part fail silent and wrong? What checks its output against an independent source? |
-| Two can detect; three can outvote | Two disagreeing channels and no way to tell which is right | With one channel wrong, can the system tell which one? |
+| Two can detect; three can outvote | Two disagreeing channels and no way to tell which is right | With one channel wrong, do the two healthy ones agree within a stated tolerance, so the vote can name the bad one? |
 | Contain the blast | One fault cascades through shared pools, retries, or load moved onto the survivors | Fail one part at peak load. What fails with it? Can the survivors carry its load? |
 | Degrade on purpose | All or nothing; a fallback that fails open | With each part removed, what does the user get, and is the loss shown? |
 | Recovery and standbys are found by use | A standby, spare, backup, or rollback that was broken for months and first tried during the incident | When was each last run end to end, how long did it take, what was lost, and what was checked in the first minute after restart? |

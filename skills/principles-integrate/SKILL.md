@@ -34,13 +34,13 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 4. Check each seam from both sides. Send the edge cases across it: empty, maximum, wrong unit, late, missing, repeated.
 5. Read the actual work, not the report of it. A summary of a part is a claim; the part itself, run in the whole, is the evidence.
 6. Walk every surface the change reaches: entry points, clients, environments, adapters, stored data, documentation, and the way back out of every way in. Name each one and say whether it applies.
-7. Fix seams in the same pass that finds them. A seam left for later is a fault shipped.
+7. Fix seams in the same pass that finds them. When a repair is not yet safe, contain the affected path, assign the fix, and keep it out of the release until fixed.
 
 ## Principles
 
 | Principle | Failure | Check |
 |---|---|---|
-| Interfaces first | Parts built against guesses about each other, then forced to fit | Was each interface written down before either side was built? |
+| Interfaces first | Parts built against guesses about each other, then forced to fit | Was each interface written down and checked before either side was built, or before existing parts were joined? |
 | One definition per interface | Each side keeps its own copy of the contract, and the copies drift | Is there one source both sides read or test against? |
 | Units, frames, and conventions cross explicitly | One side sends one unit, the other reads another; signs or axes flipped | Does every value crossing the seam carry its unit and frame? |
 | Thin slice before thick parts | Months of parts and a big join at the end, where every fault appears at once | Did a crude end-to-end path run before any part was finished? |
@@ -52,7 +52,7 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 | The integrator reads the parts | A whole accepted because each maker said their part was done | Did someone run each part inside the whole and read what it did? |
 | One maker per part at a time | Two makers editing the same part, each overwriting the other | Does every part have exactly one current owner? |
 | Every surface, both directions | Works on the tested path and fails on another platform, client, or the undo path | Is each surface listed with a result? Does every way in have a way out? |
-| Tolerances stack at seams | Each part within its limit, the assembly out of its limit | Add the worst cases across the chain. Does the whole still meet its limit? |
+| Tolerances stack at seams | Each part within its limit, the assembly out of its limit | Add the worst cases where the whole needs a hard bound; otherwise combine them statistically against a stated failure allowance. Does the whole still meet its limit? |
 
 ## Choosing a boundary
 

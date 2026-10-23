@@ -21,7 +21,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
      ^                                                         v
      +---- LESSONS <----------------------- VERIFY <-----------+
            what changes next                is it true, is it good
-           lessons  improve                 verify
+           lessons  improve                 verify  secure
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -41,6 +41,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | | `principles-code` | software structure, APIs, data, systems |
 | | `principles-machine` | mechanisms, structures, engineered hardware |
 | Check | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
+| | `principles-secure` | outside input, secrets, permissions, agents with power, or a change to a control; threat models and security review |
 | Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
 | | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
 | | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |

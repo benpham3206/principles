@@ -112,4 +112,4 @@ Example settings:
 - Per-user weight changes improve help without harming independence.
 - Alignment can emerge from development: a mind that reasons at higher levels may choose good values. Treat this as one layer of safety, never the only one. Keep external checks as well.
 
-Pairs with: before `principles-code`, `principles-counsel`; after `principles-develop`, `principles-verify`.
+Pairs with: before `principles-code`, `principles-counsel`; after `principles-develop`, `principles-secure`, `principles-verify`.

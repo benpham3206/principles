@@ -113,4 +113,4 @@ CODE
 | Security by default | Least privilege; validate input at every trust boundary; fail closed | Broad permissions and checks added after the leak | Strip each privilege. What breaks? Which input is unchecked? |
 | Observability | The running system answers questions you did not plan to ask: logs, metrics, traces | Debugging by redeploying with more prints | Can you explain a failure in production without changing the code? |
 
-Pairs with: before `principles-method`, `principles-represent`; after `principles-integrate`, `principles-verify`.
+Pairs with: before `principles-method`, `principles-represent`; after `principles-integrate`, `principles-secure`, `principles-verify`.

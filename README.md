@@ -4,7 +4,7 @@ A library of skills for agents and the people who work with them. Use them to ma
 
 Think big. Build small. Win.
 
-Agents: when using this library, read [/principles-method](skills/principles-method/SKILL.md) first. It explains when applying principles is worth the cost and when to skip them. Use [/principles-language](skills/principles-language/SKILL.md) whenever writing or editing public-facing text; choose its checks for the piece.
+Agents: read [/principles-method](skills/principles-method/SKILL.md) first. Use [/principles-language](skills/principles-language/SKILL.md) whenever writing or editing public-facing text.
 
 ## The loop
 

@@ -7,18 +7,6 @@ description: Scale the work to its consequences. Use when planning a task, makin
 
 The **method** is a cycle: plan the work, build a version, check it, and refine it. Match the effort to the cost of a mistake. Keep earlier choices easy to change.
 
-## When to use principles
-
-The cost of applying a principle must be justified by its expected improvement in the outcome. Count time, attention, computation, delay, and added complexity. Use a brief judgment; estimate in more detail only when the stakes justify it.
-
-Use the smallest useful part. Skip a principle, skill, or step when it is irrelevant, redundant, outside its assumptions, or unlikely to improve the result. A direct answer or simple edit may need no formal principles workflow. Stop when further work would cost more than its expected benefit.
-
-Binding constraints, required checks, and the evidence needed for a claim still apply. This includes safety, authority, privacy, accessibility, and correctness.
-
-| Principle | Failure | Check |
-|---|---|---|
-| Choose effort for its expected contribution to the outcome | A checklist consumes effort without changing the result, or a shortcut drops a required safeguard | Which decision, risk, or quality could this step improve, and is that worth its cost within the constraints? |
-
 ## Gate: how much rigor
 
 Rate the task on three things: **consequence** (what a mistake costs), **uncertainty** (how much is unknown), and **irreversibility** (how hard it is to undo).

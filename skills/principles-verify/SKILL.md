@@ -9,14 +9,14 @@ description: Check work before calling it done. Use when finishing a task, revie
 
 ## Steps
 
-Choose checks by the consequences, uncertainty, and reach of the work. Use `principles-method` to judge their cost against the expected improvement. A small, reversible task may need only a direct check and a brief result. Keep required checks, binding safeguards, and enough evidence for every claim. Apply the relevant steps below to your own work first.
+Run these before calling anything done, your own work first of all.
 
-1. **Use the intent and definition of done.** Use the supplied purpose, observer, constraints, and success condition. Clarify what is missing when it could change the check.
+1. **Restate intent and done.** One sentence: purpose, observer, binding constraint, and what done means. Without it, checking is only preference; stop and get it.
 2. **Name every surface.** List each place the work reaches: entry points, platforms, clients, stored data, docs, and the way back out. Say which ones you checked. Working on the tested path and broken elsewhere is not done.
 3. **Check the real thing.** Run the feature, read the actual value, inspect the actual diff, look at the actual render. A report, a summary, a cached result, or a successful call is a claim, not evidence.
 4. **Use the simplest evidence that proves it.** Climb the evidence ladder below and stop at the first rung that proves the claim.
 5. **Make the check repeatable.** Prefer a script or a command over an eyeball, and keep its output where someone else can rerun it.
-6. **Choose useful distances.** Use far, middle, and close views from the table below when they could reveal different material faults. A narrow change may need only one.
+6. **Look at three distances.** Far, middle, and close, from the table below. Each scale hides different faults.
 7. **Read it cold.** Read it as the observer who has none of your context. Ask what a master of this medium would reject first, and fix that.
 8. **Rank and fix.** Fix the worst finding first. Stop when the next fix costs more than it returns.
 9. **Report honestly.** Name the evidence for each claim of done. List what you did not check and what is known to fail. A claim with no evidence is a guess.
@@ -47,11 +47,11 @@ Choose checks by the consequences, uncertainty, and reach of the work. Use `prin
 | Code | module names and boundaries | signatures and data flow | names, edge cases, errors |
 | Machine | free-body diagram, exploded view | load paths, interfaces | fits, finishes, fasteners |
 
-At each useful distance, inspect the axes from `principles` that could affect the outcome or expose a failure. Use all six when the work needs that breadth. Record a choice when its reason helps a decision or future work; a completed grid is not evidence of quality.
+Walk the six axes from `principles` at each distance. For each axis, name the choice made and whether it serves the intent. Most failures trace to an axis set by default.
 
 ## Good, great, timeless
 
-Verification shows the work is true and works. Use `principles-craft` when judging quality matters to the task. Apply its ladder at useful distances, and support any claimed level with evidence.
+Verification shows the work is true and works. Whether it is good, great, or timeless is judged with the ladder in `principles-craft`. Run its checks at the three distances above, and say which level the work reached.
 
 ## Evidence ladder
 

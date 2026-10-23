@@ -60,4 +60,20 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 - Remove a boundary when only one caller uses it, both sides always change together, or its interface is as large as what it hides.
 - A boundary is worth its cost when the interface is small and what it hides is large.
 
+## Vertical integration
+
+**Vertical integration** is owning more of the chain that makes a product, from raw parts to the person who uses it, so that hardware, software, and how it is made are designed together. It is the boundary decision above, made for a whole company or project: an outside supplier adds a boundary you control only in part.
+
+| Principle | Failure | Check |
+|---|---|---|
+| Own the bottleneck | A supplier's cost, speed, or quality caps the product, and nothing inside can move it | Which outside part limits cost, schedule, or performance most? Could you make it better than you can buy it? |
+| Co-design across the seam | Hardware and software built to a frozen interface, so each works around the other's limits | When one side changes, can the other change in the same cycle? Is the interface chosen for the product, or inherited? |
+| Merge seams you own when they cost more than they give | Two internal teams keep a formal handoff that only a supplier needed | Owning both sides lets you merge a seam; the rules under Choosing a boundary decide whether you should. Does this one still pay for itself? |
+| Shorten the loop | A change waits weeks on another company's schedule | How long from a design change to a tested part in hand? Who sets that time? |
+| Make where ownership pays | Making a part in-house that others make better and cheaper, or buying one you could own for better cost, supply, or quality | Over its life, which gives better total value for this part: making it or buying it? |
+| Count the full cost | Capital, people, focus, and the risk of owning a weak capability, ignored next to the savings | Over its life, does owning this beat buying it, including what you stop doing to do it? |
+| Keep a way out | Integration that locks you to one process or design when it ages | Can you change course, re-source, or open the interface later without rebuilding everything? |
+
+Integrate vertically where the boundary costs more than it saves: where the interface keeps changing, the supplier is the bottleneck, or the seam itself is where the product is won. Buy where the part is stable, standard, and not what makes the product better.
+
 Pairs with: before `principles-code`, `principles-machine`, `principles-represent`; after `principles-verify`.

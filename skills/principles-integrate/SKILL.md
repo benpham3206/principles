@@ -1,11 +1,11 @@
 ---
 name: principles-integrate
-description: Join separately made parts into one whole that works, and prove it end to end. Interfaces, seams, boundaries to merge or keep, incremental integration, and checking every surface. Use when combining modules, subsystems, or work from several people or agents.
+description: Join parts and verify the whole. Use when combining modules, subsystems, or work from several makers, or deciding which boundaries to keep.
 ---
 
 # Integrate
 
-**Integration** is joining parts made apart into one whole, and proving the whole does what each part was for. Parts that each pass alone can still fail together, because the faults live at the seams: a unit, a frame, an assumption, or a timing that two makers read differently. The integrator owns the whole, not the parts.
+**Integration** joins separately made parts and proves that the whole works. Check differences in units, frames, assumptions, and timing at each interface. Passing parts can still fail together.
 
 ```
 INTERFACES ----> THIN SLICE ----> ADD ONE PART ----> CHECK THE SEAM ----> EVERY SURFACE

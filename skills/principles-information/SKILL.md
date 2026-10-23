@@ -1,11 +1,11 @@
 ---
 name: principles-information
-description: Principles of showing information (charts, diagrams, tables, dashboards, maps, technical drawings, data slides), organized on the six axes plus truth. Use when choosing a chart, encoding data, designing a dashboard or table, labeling a figure, or critiquing whether a display is honest and readable.
+description: Show data and structure honestly. Use when choosing charts, encoding data, designing tables or dashboards, labeling figures, or checking whether a display answers its question.
 ---
 
 # Information
 
-An **information display** is data or structure arranged so a reader can answer a question and act on it. The reader first looks for the answer to their own question, so the display succeeds when that answer is the first thing found and the thing found is true. For how marks look (color values, type, spacing), use `principles-visual`; this skill covers what the marks encode. To choose which structure a problem should take before it is drawn, use `principles-represent`.
+An **information display** arranges data or structure so a reader can find a true answer and act. Use `principles-represent` to choose the structure and `principles-visual` to design its appearance.
 
 ## Laws of the medium
 

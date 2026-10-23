@@ -1,11 +1,11 @@
 ---
 name: principles-distribute
-description: Get made work to the people it is for, and measure each path from attention to use or payment as a funnel. Use when launching, posting, growing an audience, pricing, taking pre-orders, or choosing where attention comes from.
+description: Bring work to the people it serves. Use when launching, choosing channels, growing an audience, pricing, taking pre-orders, or measuring attention through use or payment.
 ---
 
 # Distribute
 
-**Distribution** carries work from its maker to the people it is for, and brings back attention, trust, use, and sometimes money. A thing nobody finds has not shipped, and a thing people find but cannot use or buy has not reached them.
+**Distribution** brings work to its intended people and brings back attention, trust, use, or payment. Check both whether people find the work and whether they can use or buy it.
 
 ```
 PEOPLE ----> CHANNEL ----> ATTENTION ----> VISIT ----> NEXT TOUCH ----> USE OR PAY ----> LEARN

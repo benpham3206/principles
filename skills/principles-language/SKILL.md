@@ -1,11 +1,11 @@
 ---
 name: principles-language
-description: Principles of anything written or spoken (prose, docs, naming, speech, dialogue, prompts for models, UI copy), organized on the six axes plus meaning. Use when writing, editing, naming, scripting, or critiquing words.
+description: Make words clear and useful. Use when writing, editing, naming, scripting, or reviewing prose, speech, dialogue, instructions, or UI copy.
 ---
 
 # Language
 
-A **language** work is a sequence of symbols that rebuilds a meaning in a reader's head. The reader meets it one word at a time, in order, and cannot interrupt, so every choice is a choice about what they know after each word.
+A **language** work conveys meaning through symbols. Each sentence builds on what the reader already knows. Choose words and order that let them follow without backtracking.
 
 ## Laws of the medium
 
@@ -13,7 +13,7 @@ A **language** work is a sequence of symbols that rebuilds a meaning in a reader
 - Answer first. Position tells the reader what matters before the words can.
 - One concept, one name. Variety in terms reads as variety in meaning.
 - Concrete beats abstract. A reader can picture a thing and cannot picture a category.
-- Cut until it breaks, then put back the last cut. The sentences that survive carry the load.
+- Remove words that add no meaning. Keep the context, conditions, and distinctions the reader needs; use `principles-simplify` to check what each cut preserves.
 - Positive form wins. Say what to do. Name a forbidden thing only when no positive form exists.
 - Read it aloud. The ear catches rhythm, length, and clutter that the eye skips.
 
@@ -73,7 +73,7 @@ LANGUAGE
 | Action wanted | A reader should finish knowing what to do, decide, or believe | Text that informs and leaves the next step unnamed | Write "after reading, the reader will ___". Does the text say it? |
 | Attention budget | Attention falls fast; spend it on what matters and cut the rest | Equal space for the key point and the footnote | Weigh words by importance. Does space follow weight? |
 | Second person | Address the reader, who is the one acting; "you" beats "the user" | A thing written about the reader instead of to them | Who is the subject of most sentences? |
-| A model as reader | A model reads literally and completely, and has only the page | Instructions that rely on unstated context | Hand the text to a fresh reader with no history. Can it act? |
+| A model as reader | Make instructions explicit and put essential steps where they will be read | Instructions depend on unstated context or assume the model attends to every line | Can a fresh reader act from the supplied context? |
 | Positive form | Tell a model what to do; a forbidden thing named in the prompt still primes the thing | "Do not mention X" with no replacement action | Rewrite each prohibition as an instruction. Does one exist? |
 | Examples are copied | A model reproduces the shape, length, and wording of an example | One example given, and every output matches it | Vary the examples, or state what may differ |
 | Listener | Speech is heard once, in order, with no page to look back at | Written structure read aloud: long lists, nested clauses, references to "the above" | Say it to one person. Can they repeat the point? |
@@ -117,8 +117,6 @@ This branch exists only in language. A word is not the thing it names; it is a l
 | Names | A name is the shortest label that stays unambiguous in its context and lasts as long as the thing | A name that describes an implementation, so it breaks when that changes | Does the name still fit if the internals change? |
 | Grounding | Language cannot verify itself; ground truth sits outside it | A confident description taken as evidence | Measure, run, or look at the thing. Does it match the text? |
 
-Is language your reality? The answer in this skill is no. Language is a map. A fluent sentence can be false, and a true fact can be told badly. Write the map well, then check it against the territory.
-
 ## Calls to action
 
 A **call to action** asks a reader to do one thing, for a reason. It succeeds when the reader makes an informed choice quickly. They can tell what to do, why it matters, what it costs, and what waiting means. Who may decide is covered in `principles-interaction` (person in the loop) and `principles-counsel`.
@@ -134,4 +132,4 @@ A **call to action** asks a reader to do one thing, for a reason. It succeeds wh
 | Fewest asks | Do what you are authorized to do yourself; ask for what needs this reader's authority, knowledge, or judgment | Work handed back that the asker was allowed to do, or a decision taken from its owner | Is this the reader's decision, or work within your own authority? |
 | Free to decline | Declining takes no more effort than accepting, and its real consequences are stated plainly | Guilt, hidden defaults, invented consequences, or a refusal made harder than consent | Is saying no as easy as saying yes, and is every stated consequence true? |
 
-Pairs with: before `principles-method`, `principles-qualities`, `principles-counsel`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-qualities`, `principles-counsel`; after `principles-verify`, `principles-simplify`.

@@ -1,11 +1,11 @@
 ---
 name: principles-horizons
-description: Trace first, second, and later-order consequences of a decision, technology, or goal. Use for strategy, long-range planning, predicting how people and systems will respond, worst-case thinking, or reasoning about a world changed by advanced AI.
+description: Trace consequences beyond the first result. Use for strategy, long-range plans, worst-case thinking, or decisions that change how people and systems behave.
 ---
 
 # Horizons
 
-A **horizon** is how far ahead you trace consequences. The **first-order** effect is the direct result. The **second-order** effect is how people and systems respond to it. Later orders are responses to the responses, until a new balance forms. Most surprises live past the first order.
+A **horizon** is how far ahead you trace consequences. First-order effects are direct results. Second-order effects are responses to them. Follow later responses until they reach a new balance or become too uncertain to guide the decision.
 
 ## Steps
 

@@ -1,11 +1,11 @@
 ---
 name: principles-verify
-description: Verify work before calling it done, so it is true, works, and good. Evidence on the real thing, taste at three distances, a bar you would sign. Use before finishing any task or reporting it done, when reviewing or critiquing work, or comparing options.
+description: Check work before calling it done. Use when finishing a task, reviewing a result, or comparing options against evidence and the intended quality bar.
 ---
 
 # Verify
 
-**Done** means three things: the work is true, it works, and it is good. **Verification** is evidence for the first two. **Taste** is a trained prediction of how the work will land with its observer, together with the will to reject work that misses. **Pride** joins them: hand over only what you would sign (see `principles-craft`). Taste without evidence ships beautiful errors. Evidence without taste ships correct work nobody wants.
+**Done** means the work is true, works, and is good. Verify the first two with evidence. Judge quality with the taste and craft checks in `principles-craft`.
 
 ## Steps
 

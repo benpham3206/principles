@@ -1,11 +1,11 @@
 ---
 name: principles-develop
-description: How people and agents grow, on six developmental axes, and how to help without replacing their thinking (map, path, and advice modes; ceiling-to-floor). Use when teaching, coaching, mentoring, tutoring, choosing whether to give the answer, or assessing what level someone is working at.
+description: Help people and agents become more capable. Use when teaching, coaching, assessing development, or choosing between giving an answer and guiding someone toward it.
 ---
 
 # Develop
 
-**Development** is a lasting rise in what a person or agent can do alone. Help that does not leave them more capable is service, not development. Both have their place; know which one you are giving.
+**Development** is a lasting gain in what a person or agent can do alone. Service does the task for them. Both have a place; choose which the goal needs.
 
 ## The counterpart rule
 

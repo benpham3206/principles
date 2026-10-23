@@ -1,11 +1,11 @@
 ---
 name: principles-synthesize
-description: Invent something new by working backward from a goal too large for known solutions. Use for Herculean goals, novel products or research, combining ideas across fields, designing experiments, or choosing settings that tolerate noise, or when every obvious answer has already been tried.
+description: Create a new approach from known truths. Use for ambitious goals, unsolved problems, ideas from other fields, or experiments that compare factors and tolerate noise.
 ---
 
 # Synthesize
 
-**Synthesis** is making something that did not exist by combining known truths in a new arrangement. It runs on one loop: what is true (cognitive), what is possible (generative), and is it true (recognitive).
+**Synthesis** combines known truths into something new. Ask what is true, generate possibilities, and check them against reality.
 
 ```
 COGNITIVE                 GENERATIVE                RECOGNITIVE
@@ -21,7 +21,7 @@ axioms, limits            many candidates,          simulate, then test in reali
 
 1. **Take a Herculean goal.** State it as an outcome a person can see, with a number: not "better batteries" but "a car battery that charges in 5 minutes and lasts 20 years."
 2. **Write the complete output as if it already exists.** The finished spec, the product page, the paper's abstract, the user's day with it. Completeness forces every hidden requirement into view.
-3. **Work backward to a plan.** List each step from today to that output, and the technology each step needs. Mark each technology as existing, existing but too costly, or not yet invented.
+3. **Work backward to a plan**, as in `principles-invert`. List each step from today to that output, and the technology each step needs. Mark each technology as existing, existing but too costly, or not yet invented.
 4. **Bound it with ground.** Check every step against physics and logic. A step that breaks a law is removed, not optimized.
 5. **Generate candidates for each open step.** Draw from two places:
    - the common distribution: the known approaches, most likely to work;
@@ -41,13 +41,12 @@ Most invention is transfer. To find a candidate from another field:
 
 ## Experiment design
 
-- **Vary several factors at once** in a designed experiment, choosing a design that can separate the effects and interactions the decision needs, and state which remain confounded. Such a design can estimate interactions that changing one factor at a time cannot see. Several changes in one uncontrolled before-and-after comparison do not identify their separate effects.
 - Choose which experiment to run by its value to the decision, as in `principles-ground`.
-- Factorial designs and their fractions, such as orthogonal arrays, are common designs for crossed factors. A fraction buys fewer runs by confounding some effects with others; state which, and check that the interactions the decision needs stay estimable.
-- Randomize run order against drift you cannot see, block on nuisances you can, and use independent repeat runs at the same settings to estimate pure error; tell them apart from repeated readings of one run. Replicated center points can test for net curvature; add points that identify the curved terms the decision needs.
+- **Vary several factors at once** with a design that separates the effects and interactions the decision needs. Factorial designs can reveal interactions that changing one factor at a time misses. Fractions and orthogonal arrays reduce runs but can mix effects; state which effects the design cannot separate and keep needed interactions estimable. An uncontrolled before-and-after comparison cannot separate several changes.
+- Randomize run order against unknown drift. Group runs by known nuisance conditions. Use independent repeat runs at the same settings to estimate pure error; repeated readings of one run are different. Repeated center points can test for net curvature. Add points that identify the curved terms the decision needs.
 - Work in stages: screen many factors with few runs, model the few that matter as a response surface to find the best settings, then confirm with fresh runs. Validate the model where the decision will use it; extrapolation needs its own justification.
-- **Design against noise in three stages.** System design chooses the architecture. Parameter design chooses the settings that make performance insensitive to noise you cannot control, such as wear, temperature, and use. Tolerance design then tightens only the tolerances that still matter. Compare the cost of lowering sensitivity through settings with the cost of tighter tolerances. Vary the noise on purpose, with enough repeats to estimate the mean and the spread separately.
-- When runs are costly and earlier results can guide later ones, consider choosing runs in sequence with a model, picking each by its expected value to the decision for its cost. A Gaussian process is one such model, for a few factors and a smooth response. Its stated uncertainty holds only under its assumptions; check it on fresh runs.
+- **Design against noise in three stages**, as in Taguchi's method. System design chooses the architecture. Parameter design finds settings less sensitive to wear, temperature, and use. Tolerance design tightens only the remaining critical tolerances. Compare the cost of better settings with tighter tolerances. Vary noise deliberately and repeat runs enough to estimate both mean and spread.
+- For costly runs, use earlier results to choose the next run by its expected value to the decision and its cost. A Gaussian process can model a few factors with a smooth response. Its uncertainty depends on its assumptions; check it on fresh runs.
 - Carry prior knowledge into the analysis as in `principles-ground`.
 - Prefer many cheap, fast, reversible experiments over one large one.
 - Decide before running what result would kill the idea.

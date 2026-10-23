@@ -1,11 +1,11 @@
 ---
 name: principles-lessons
-description: Learn from failures, near misses, and successes, then move forward. Root cause analysis, blameless reviews, turning a lesson into a check, and closing the loop. Use after an incident, a bug, a missed goal, a surprise, or a project ends.
+description: Turn events into better future actions. Use after a failure, near miss, bug, surprise, missed goal, success, or completed project.
 ---
 
 # Lessons
 
-A **lesson** is a change in what a person, team, or system does next, caused by something that happened. A conclusion written down that changes nothing is a note, not a lesson. The test of learning is the next time: the same cause meets a check, a design, or a habit that stops it.
+A **lesson** changes the next action because of what happened. A note becomes a lesson when it changes a design, check, or habit. Check whether the change catches the same cause next time.
 
 `principles-method` calls for root causes in its refine step; this skill is how to find them and make them stick.
 

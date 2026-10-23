@@ -1,11 +1,11 @@
 ---
 name: principles-visual
-description: Principles of anything seen (images, layout, UI appearance, 3D, renders, video, product looks), organized on the six axes. Use when designing, directing, or critiquing how something looks.
+description: Shape what people see. Use when designing or reviewing images, layouts, interfaces, 3D scenes, renders, video, or product appearance.
 ---
 
 # Visual
 
-A **visual** work is light arranged to reach an eye. The observer sees contrast first, shapes second, and detail last, so every choice is a choice about what they see in what order.
+A **visual** work arranges light for an observer. Establish contrast and shape before detail so they see what matters first.
 
 ## Laws of the medium
 

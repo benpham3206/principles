@@ -1,11 +1,11 @@
 ---
 name: principles-touch
-description: Principles of anything touched, held, worn, or inhabited (products in the hand, controls, haptics, furniture, rooms, buildings), organized on the six axes. Use when designing, specifying, or critiquing ergonomics, feel, grip, reach, or how a space is lived in.
+description: Design how matter and space meet the body. Use when shaping ergonomics, grip, reach, haptics, comfort, or how a place is inhabited.
 ---
 
 # Touch
 
-A **touch** work is matter and space arranged to meet a body. The body meets it before the mind reads it: the hand judges temperature, weight, and edge in the first moment of contact, and the body judges a room by how it moves through it.
+A **touch** work arranges matter and space for a body. Check contact, temperature, weight, and edges in the hand, and movement through a room.
 
 ## Laws of the medium
 

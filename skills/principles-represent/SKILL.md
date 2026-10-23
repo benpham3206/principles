@@ -1,11 +1,11 @@
 ---
 name: principles-represent
-description: Turn a messy problem into a structure that shows the next action (flows, trees, state machines, dependency graphs, matrices, architectures). Use when a problem feels tangled, before planning or deciding, when breaking work into steps, or when choosing which diagram fits.
+description: Choose a structure that makes a problem easier to solve. Use before planning tangled work or choosing among flows, trees, state machines, graphs, and matrices.
 ---
 
 # Represent
 
-A **representation** is the structure a problem is put into: the parts it names, the relations it draws, and what it leaves out. A good one makes the answer, or the next action, visible without further thought. A poor one leaves the problem as hard as it was, however tidy it looks.
+A **representation** names parts and their relations while leaving out other detail. Choose one that reveals an answer or next action. A tidy picture that hides the hard part has not helped.
 
 This skill picks the structure. To show it honestly and readably, use `principles-information`. For how it looks, use `principles-visual`.
 

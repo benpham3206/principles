@@ -1,11 +1,11 @@
 ---
 name: principles-method
-description: How to work on any task in any domain, from first principles with rigor scaled to consequence. Use when planning, starting, or running a task, choosing how much rigor, making a decision under uncertainty, handling a failure, or setting up how a project works.
+description: Scale the work to its consequences. Use when planning a task, making a decision, choosing rigor, or setting up how a project works.
 ---
 
 # Method
 
-The **method** is the loop of plan, build, and refine, with rigor scaled to how much a mistake would cost. It is one way to work, not the only way. Think of every project as a factory game: decisions made now shape everything downstream, so lay out the foundations with care and keep the lines easy to rebuild.
+The **method** is a loop of plan, build, and refine. Scale its rigor to the cost of a mistake and keep earlier choices easy to change.
 
 ## Gate: how much rigor
 
@@ -21,7 +21,7 @@ Rate the task on three things: **consequence** (what a mistake costs), **uncerta
 
 Reduce an uncertainty when reducing it could change a consequential decision; `principles-ground` has how to choose what to learn and when to stop. The same scale sets how much to spend on preventing, detecting, and recovering from failure (see `principles-reliability`).
 
-A heuristic for weighing a decision (the terms share no unit; use it as a list of what to weigh): decision quality = expected value + information gained - downside risk - irreversibility cost.
+Weigh expected benefit, information gained, downside, and reversibility. These are considerations, not quantities to add without a common scale.
 
 ## Plan
 
@@ -41,7 +41,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 1. Question each requirement, boundary, and dependency.
 2. Delete what does not need to exist.
 3. Merge unneeded boundaries; keep useful modularity (see `principles-integrate`).
-4. Simplify before optimizing.
+4. Simplify before optimizing (see `principles-simplify`).
 5. Implement: decompose into subsystems and modules, define interfaces (inputs, outputs, guarantees, failure modes), sequence by the critical path, integrate in small steps (see `principles-integrate`).
 6. Verify against goal, constraints, and metrics (see `principles-verify`).
 7. Stress test where failure matters. Anticipate bad actors, edge cases, and the worst case.
@@ -66,18 +66,9 @@ For small reversible tasks this collapses to build, verify, iterate.
 
 Never optimize what should be deleted, automate what is not understood, or add process where an experiment is cheaper than analysis.
 
-## Habits
+## Working record
 
-- **Be curious.** There is always something to learn or rediscover. Combine ideas from different fields.
-- **Hold a mental model** of the whole project, and update it when reality disagrees.
-- **Understand fundamentals and dependencies** before building on them.
-- **Take pride in small details.**
-- **Measure before assuming.** Build tools and logs that compare data with reality.
-- **Scale workarounds to their irreversibility.** A quick patch on a reversible path is fine; on an irreversible one it needs a plan.
-- **Make failures observable, recoverable, and safe by default.** Urgent signals arrive at once, with a fallback channel.
-- **Keep traceability**: intent, requirement, decision, implementation, verification. Record inspiration, decisions, changes, fixes, and new insights where the next person will find them.
-- **Build for the next person**, including your future self. Work should be understandable on first pass with no context. Comment the quirks. Give context before asking anyone to use a thing.
-- **Organize tools by use.** Keep what is used often within reach. Consolidate the rest or delete it.
+Keep a current model of the project and revise it when evidence changes. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make failures visible and recoverable, with an immediate signal and fallback when needed.
 
 ## The method in each domain
 

@@ -1,11 +1,11 @@
 ---
 name: principles-sound
-description: Principles of anything heard (music, production, mixing, voice, sound design, alerts and UI sounds, room acoustics), organized on the six axes. Use when composing, mixing, recording, designing, or critiquing how something sounds.
+description: Shape what people hear. Use when composing, recording, mixing, or reviewing music, speech, sound design, alerts, or room acoustics.
 ---
 
 # Sound
 
-A **sound** work is pressure variation in air arranged to reach an ear. The listener hears level and onset first, pitch and rhythm second, and timbre and space last, so every choice is a choice about what they hear in what order, in a room and on a speaker you do not control.
+A **sound** work arranges pressure variations for a listener. Choose what they should hear first. Check it in the rooms and on the speakers they may use.
 
 ## Laws of the medium
 

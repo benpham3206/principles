@@ -1,11 +1,11 @@
 ---
 name: principles-compound
-description: What compounds (knowledge, experience, taste, execution, speed, memory, lineage), what does not, and how to invest so gains build on gains. Use when choosing what to learn, build, document, or invest time in, or designing a system that should improve with use.
+description: Keep gains and reuse them so later work builds on earlier work. Use when choosing what to learn, build, record, or invest time in.
 ---
 
 # Compound
 
-A gain **compounds** when it becomes input to the next gain. Growth by a rate $r$ per cycle for $n$ cycles multiplies by $(1 + r)^n$, so a small rate over many cycles beats a large rate over few. Three conditions make it work:
+A gain **compounds** when it feeds the next gain. Growth at rate $r$ for $n$ cycles multiplies by $(1 + r)^n$. Both the rate and the number of cycles matter. Three conditions make it work:
 
 - **Retention.** The gain is kept: written down, practiced, stored, built in.
 - **Reinvestment.** The gain is used as input to the next cycle.

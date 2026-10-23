@@ -1,11 +1,11 @@
 ---
 name: principles-reliability
-description: Keep a system doing its job when parts fail. Failure modes, common causes, single points, detection, redundancy and its limits, safe degradation, recovery, and drift. Use when designing for uptime or safety, adding a backup or failover, or planning rollback and restore.
+description: Keep systems working when parts fail. Use when designing for uptime or safety, adding redundancy or failover, or planning detection, rollback, recovery, and restore.
 ---
 
 # Reliability
 
-**Reliability** is the chance that a thing keeps doing its job, under its real conditions, for as long as it must. Every part fails in time. A reliable whole is one whose failures are rare, seen early, kept small, and recovered from, with each layer sized to the harm. This skill covers failure from wear, defects, error, accident, and chance; for failure caused on purpose by an adversary, see `principles-secure`.
+**Reliability** is the chance that a thing does its job under stated conditions for the required time. Prevent faults, detect failures, contain harm, and test recovery. Scale each measure to the harm. For deliberate attacks, use `principles-secure`.
 
 ```
 PREVENT ---------> DETECT ----------> CONTAIN ----------> RECOVER

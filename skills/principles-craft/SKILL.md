@@ -1,11 +1,11 @@
 ---
 name: principles-craft
-description: What makes work good, great, or timeless, in any medium, and how to tell which it is. Taste, pride, the faults that mark generic work, and how to train judgment. Use when judging, critiquing, or raising the quality of work, or setting a bar.
+description: Judge and raise the quality of work. Use when setting a quality bar, critiquing a result, training taste, or distinguishing good work from generic work.
 ---
 
 # Craft
 
-**Craft** is care in every part of a work, seen and unseen: the choices a maker took the trouble to get right at every scale, including reliability, accessibility, and ease of upkeep that nobody sees until they fail. **Taste** is a trained prediction of how work will land with its observer, together with the will to reject work that misses. **Pride** is the bar: hand over only what you would sign.
+**Craft** is care in the choices that make work useful and well made, including reliability, accessibility, and upkeep. **Taste** predicts how work will meet its observer and rejects what misses. **Pride** sets the bar: hand over only what you would sign.
 
 ## The ladder
 

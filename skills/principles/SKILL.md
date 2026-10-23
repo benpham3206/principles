@@ -1,6 +1,6 @@
 ---
 name: principles
-description: Map of the principles skills and the six axes every made thing has (form, material, energy, observer, composition, time). Use when starting any design, build, critique, plan, or decision in any medium, software or physical, or when unsure which principles apply.
+description: Choose principles for the task and use the six axes of made things. Use when starting a design, build, review, or decision, or when unsure which skill applies.
 ---
 
 # Principles
@@ -8,59 +8,24 @@ description: Map of the principles skills and the six axes every made thing has 
 Every made thing, in any medium, is a set of choices along six axes. Intent picks the settings. Physics, logic, and perception bound them. Judgment checks them against reality.
 
 ```
-    INTENT    why, for whom, under which limits
-       |      shape it with represent, weigh values with qualities
-       v
-+-> GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
-|   what is true   six axes, one medium       test the model  ship, measure
-|   ground         visual  sound  touch       horizons           |
-|                  language  interaction                         |
-|                  information  code  machine                    |
-|                  integrate, to join the parts                  |
-|                  world, to make the parts one place            |
-|                  synthesize, for the new                       |
-|                                                               v
-+----------- LESSONS <----------------------- VERIFY <-----------+
-             what changes next                is it true, is it good
-             lessons  improve                 verify  craft  secure  reliability
-
-  method runs the loop, with rigor scaled to consequence.
-  Beside the loop, for people and agents: counsel, mind, develop, compound.
+INTENT -> GROUND -> MAKE -> SIMULATE -> REALITY
+  ^                                      |
+  +----------- LESSONS <- VERIFY <--------+
 ```
 
-## The skills
+Use `principles-method` to scale the work to its consequences. Load the skills the task needs.
 
-| Layer | Skill | Reach for it when |
-|---|---|---|
-| Ground | `principles-ground` | asking what is fundamentally true, checking a claim, or separating a word from the thing it names |
-| Make | `principles-visual` | images, layout, UI look, 3D, video, any lit or seen thing |
-| | `principles-sound` | audio, music, voice, alerts, acoustics |
-| | `principles-touch` | physical products, spaces, ergonomics, haptics |
-| | `principles-language` | writing, naming, speech, prompts, docs |
-| | `principles-interaction` | flows, controls, feedback, anything a person operates |
-| | `principles-information` | charts, diagrams, tables, dashboards, maps |
-| | `principles-code` | software structure, APIs, data, systems |
-| | `principles-distribute` | launching, posting, growing an audience, pricing, pre-orders, and the funnel from attention to payment |
-| | `principles-world` | many parts meant to feel like one place: immersive sites, games, spaces, events, brands |
-| | `principles-machine` | mechanisms, structures, engineered hardware |
-| Check | `principles-craft` | judging whether work is good, great, or timeless; taste, pride, and the faults of generic work |
-| | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
-| | `principles-secure` | outside input, secrets, permissions, agents with power, or a change to a control; threat models and security review |
-| | `principles-reliability` | parts that can fail: redundancy, common causes, detection, safe degradation, rollback and restore |
-| Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
-| | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
-| | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
-| | `principles-integrate` | joining modules, subsystems, or work from several makers into one whole that works |
-| | `principles-improve` | making a working thing faster, cheaper, simpler, or sturdier; before optimizing or automating |
-| | `principles-invert` | a plan, framing, or rule that feels fixed; working backward from the outcome; finding where a principle fails |
-| | `principles-synthesize` | a goal too big for known solutions, or inventing something new |
-| | `principles-horizons` | second- and later-order effects, strategy, long-range goals |
-| Values | `principles-qualities` | setting a design language or philosophy, resolving trade-offs between values |
-| Mind | `principles-counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
-| | `principles-mind` | designing an agent, an assistant, memory, or calibration |
-| | `principles-develop` | growing a person or an agent, teaching, choosing how much to scaffold |
-| | `principles-loop` | loops of any kind: feedback, delays, return, reciprocity, communities, self-reference |
-| | `principles-compound` | deciding what to invest in so gains build on gains |
+## Choose a skill
+
+| Task | Skills |
+|---|---|
+| Establish what is true | `principles-ground` |
+| Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
+| Create and connect | `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
+| Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` for reverse questions; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |
+| Check the result | `principles-verify` for evidence; `principles-craft` for quality; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
+| Learn and improve | `principles-lessons` for events; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for feedback; `principles-compound` for lasting gains |
+| Help people and agents | `principles-counsel` for advice; `principles-develop` for growth; `principles-mind` for agent design |
 
 ## The six axes
 
@@ -84,7 +49,7 @@ An axis left at its default is a decision made by accident. Set each one on purp
 
 Done means every axis has a stated choice and `principles-verify` finds no material issue.
 
-## Laws that hold in every medium
+## Shared principles
 
 - **Contrast** carries meaning. Perception detects difference, not absolute level. When everything is emphasized, nothing is.
 - **Hierarchy** puts one thing first. The observer should know where to start within a second.

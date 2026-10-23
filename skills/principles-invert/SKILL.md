@@ -1,11 +1,11 @@
 ---
 name: principles-invert
-description: Find paths and limits by reversing a question. Work backward from the outcome, invert a principle or its intent to find where it fails, design the failure to find its guard, or reverse a relation. Use when a plan, framing, or rule feels fixed.
+description: Find paths and limits by reversing a question. Use when working backward from an outcome, testing a rule against its opposite, or designing a failure to find its guard.
 ---
 
 # Invert
 
-**Inversion** reverses the direction of a question to expose what the forward framing hides. It generates candidates and finds limits. It does not show that the reverse is true. Keep the original, the inversion, and the evidence for each apart. Evidence settles factual claims and consequences; the person with the authority chooses between values.
+**Inversion** reverses a question to find hidden paths or limits. The reverse is a candidate, not proof. Keep evidence for both directions separate. Evidence tests factual claims; the rightful decision maker chooses between values.
 
 ```
 FORWARD     steps -------> outcome        principle ----> good result

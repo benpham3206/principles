@@ -36,7 +36,7 @@ The six axes, condensed into four questions:
 
 | Lens | Asks | Axes |
 |---|---|---|
-| **Function** | What does it do, and why? | Energy (action, behavior); purpose is the intent that sets every axis |
+| **Function** | What does it do, how, does it do it, and why? | Energy (action, behavior); purpose is the intent that sets every axis |
 | **Substance** | What is it made of? | Material |
 | **Structure** | What shape is it, and how are its parts arranged? | Form, Composition |
 | **Relationship** | Who and what does it meet, and what depends on it? | Observer, Composition (interdependence) |

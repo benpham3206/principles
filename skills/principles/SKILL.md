@@ -84,6 +84,7 @@ Done means every axis has a stated choice and `principles-verify` finds no mater
 - **Proportion** beats size. Relationships between parts read before the parts do.
 - **Consistency** builds a language. Break it only to say something.
 - **Subtraction** finds the work. Remove parts until it breaks, then put back the last one.
+- **No ruin.** A loss that cannot be undone ends every later gain. Before an irreversible act, have a way back that has been tried.
 - **Constraint** creates form. A limit chosen early forces a coherent design; a limit met late forces a patch.
 - **The observer completes the work.** Design for their real position, knowledge, attention, and body.
 - **Time is an axis.** Everything is met in sequence, changes, and wears.

@@ -19,6 +19,8 @@ Rate the task on three things: **consequence** (what a mistake costs), **uncerta
 | Expensive, irreversible | Investigate deeply before acting |
 | High uncertainty, irreversible | Do not guess. Reduce the uncertainty first |
 
+Reduce an uncertainty when reducing it could change a consequential decision; `principles-ground` has how to choose what to learn and when to stop. The same scale sets how much to spend on preventing, detecting, and recovering from failure (see `principles-reliability`).
+
 A heuristic for weighing a decision (the terms share no unit; use it as a list of what to weigh): decision quality = expected value + information gained - downside risk - irreversibility cost.
 
 ## Plan
@@ -54,7 +56,7 @@ For small reversible tasks this collapses to build, verify, iterate.
 ## Refine
 
 1. Measure reality.
-2. Compare expected with actual.
+2. Compare actual results with the predicted range and the measurement's uncertainty. Investigate a difference larger than both: check the measurement, the implementation, and the assumptions, then revise the model and the conclusions built on it where the evidence warrants (see `principles-ground`).
 3. Find the bottleneck.
 4. Find the root cause of each failure, not the symptom (see `principles-lessons`).
 5. Route back to Plan or Build.

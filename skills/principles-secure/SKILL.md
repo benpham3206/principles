@@ -79,4 +79,4 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 - Every actor that can change its own controls, including the people and agents who run the system.
 - Every new input, integration, or power since the threat model was last written.
 
-Pairs with: before `principles-verify`, `principles-code`; after `principles-horizons`, `principles-mind`.
+Pairs with: before `principles-verify`, `principles-code`, `principles-reliability`; after `principles-horizons`, `principles-mind`.

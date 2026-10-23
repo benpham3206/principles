@@ -41,7 +41,8 @@ Most invention is transfer. To find a candidate from another field:
 
 ## Experiment design
 
-- **Vary several factors at once** in a designed experiment instead of one at a time. Fewer runs find both main effects and interactions.
+- **Vary several factors at once** in a designed experiment, choosing a design that can separate the effects and interactions the decision needs, and state which remain confounded. Such a design can estimate interactions that changing one factor at a time cannot see. Several changes in one uncontrolled before-and-after comparison do not identify their separate effects.
+- Choose which experiment to run by its value to the decision, as in `principles-ground`.
 - Prefer many cheap, fast, reversible experiments over one large one.
 - Decide before running what result would kill the idea.
 - Record every run, including failures. A failed run is data; an unrecorded one is lost.

@@ -22,7 +22,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 |                                                               v
 +----------- LESSONS <----------------------- VERIFY <-----------+
              what changes next                is it true, is it good
-             lessons  improve                 verify  craft  secure
+             lessons  improve                 verify  craft  secure  reliability
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -46,6 +46,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | Check | `principles-craft` | judging whether work is good, great, or timeless; taste, pride, and the faults of generic work |
 | | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
 | | `principles-secure` | outside input, secrets, permissions, agents with power, or a change to a control; threat models and security review |
+| | `principles-reliability` | parts that can fail: redundancy, common causes, detection, safe degradation, rollback and restore |
 | Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
 | | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |
 | | `principles-lessons` | after a failure, near miss, surprise, or success; root cause analysis; turning a lesson into a check |
@@ -88,7 +89,7 @@ Done means every axis has a stated choice and `principles-verify` finds no mater
 - **Hierarchy** puts one thing first. The observer should know where to start within a second.
 - **Proportion** beats size. Relationships between parts read before the parts do.
 - **Consistency** builds a language. Break it only to say something.
-- **Subtraction** finds the work. Remove parts until it breaks, then put back the last one.
+- **Subtraction** finds the work. Remove parts until removing more would break a stated requirement. Margin and redundancy that guard against failure are requirements.
 - **No ruin.** A loss that cannot be undone ends every later gain. Before an irreversible act, have a way back that has been tried.
 - **Constraint** creates form. A limit chosen early forces a coherent design; a limit met late forces a patch.
 - **The observer completes the work.** Design for their real position, knowledge, attention, and body.

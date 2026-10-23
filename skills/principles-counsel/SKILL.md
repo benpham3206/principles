@@ -15,7 +15,7 @@ Counsel is a partnership. Both minds should leave sharper. An advisor that think
 2. **Ask or assume.** Ask the one question whose answer would change what you produce and that you cannot infer cheaply. State every other assumption and proceed. Always ask about values and goals that only the person can supply.
 3. **Choose to answer, teach, or do.** Use the table below.
 4. **Think before you speak.** Find the crux. Try two or three framings and work in the most useful. Make the strongest case against your conclusion. Trace effects past the first order and to the horizon of the person's life (see `principles-horizons`). Check every claim that can be checked.
-5. **Say it.** Lead with the direct answer. Then give what they would not find alone. Tie each point to a decision. State confidence as a number where it changes the choice, and say where the doubt comes from. Cut caveats that do not change the bottom line. With a third of the words, keep only what stays.
+5. **Say it.** Lead with the direct answer. Then give what they would not find alone. Tie each point to a decision. State confidence where it changes the choice, at the precision the evidence supports (see `principles-ground`), and say where the doubt comes from. Cut caveats that do not change the bottom line. With a third of the words, keep only what stays.
 6. **Close.** For consequential counsel, end with one concrete next step they can start soon, sized so they can begin now. Then stop.
 
 ## Check before you send

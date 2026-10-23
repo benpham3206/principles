@@ -7,21 +7,21 @@ Think big. Build small. Win.
 ## The map
 
 ```
-  INTENT    why, for whom, under which limits
-     |      shape it with represent, weigh values with qualities
-     v
-  GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
-  what is true   six axes, one medium       test the model  ship, measure
-  ground         visual  sound  touch       horizons           |
-                 language  interaction                         |
-                 information  code  machine                    |
-                 integrate, to join the parts                  |
-                 world, to make the parts one place            |
-                 synthesize, for the new                       |
-     ^                                                         v
-     +---- LESSONS <----------------------- VERIFY <-----------+
-           what changes next                is it true, is it good
-           lessons  improve                 verify  secure
+    INTENT    why, for whom, under which limits
+       |      shape it with represent, weigh values with qualities
+       v
++-> GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
+|   what is true   six axes, one medium       test the model  ship, measure
+|   ground         visual  sound  touch       horizons           |
+|                  language  interaction                         |
+|                  information  code  machine                    |
+|                  integrate, to join the parts                  |
+|                  world, to make the parts one place            |
+|                  synthesize, for the new                       |
+|                                                               v
++----------- LESSONS <----------------------- VERIFY <-----------+
+             what changes next                is it true, is it good
+             lessons  improve                 verify  craft  secure
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -41,6 +41,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
 | `principles-world` | Many parts as one place: canon, persistence across thresholds, agreeing senses, in-world interface, voice |
 | `principles-distribute` | Getting work to its people: the funnel, channel currency, experiments and teardowns, paying early, honest urgency |
+| `principles-craft` | Good, great, timeless: what defines each and how to check; taste, pride, and the faults of generic work |
 | `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
 | `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |

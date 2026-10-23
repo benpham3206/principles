@@ -8,21 +8,21 @@ description: Map of the principles skills and the six axes every made thing has 
 Every made thing, in any medium, is a set of choices along six axes. Intent picks the settings. Physics, logic, and perception bound them. Judgment checks them against reality.
 
 ```
-  INTENT    why, for whom, under which limits
-     |      shape it with represent, weigh values with qualities
-     v
-  GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
-  what is true   six axes, one medium       test the model  ship, measure
-  ground         visual  sound  touch       horizons           |
-                 language  interaction                         |
-                 information  code  machine                    |
-                 integrate, to join the parts                  |
-                 world, to make the parts one place            |
-                 synthesize, for the new                       |
-     ^                                                         v
-     +---- LESSONS <----------------------- VERIFY <-----------+
-           what changes next                is it true, is it good
-           lessons  improve                 verify  secure
+    INTENT    why, for whom, under which limits
+       |      shape it with represent, weigh values with qualities
+       v
++-> GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
+|   what is true   six axes, one medium       test the model  ship, measure
+|   ground         visual  sound  touch       horizons           |
+|                  language  interaction                         |
+|                  information  code  machine                    |
+|                  integrate, to join the parts                  |
+|                  world, to make the parts one place            |
+|                  synthesize, for the new                       |
+|                                                               v
++----------- LESSONS <----------------------- VERIFY <-----------+
+             what changes next                is it true, is it good
+             lessons  improve                 verify  craft  secure
 
   method runs the loop, with rigor scaled to consequence.
   Beside the loop, for people and agents: counsel, mind, develop, compound.
@@ -43,7 +43,8 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | | `principles-distribute` | launching, posting, growing an audience, pricing, pre-orders, and the funnel from attention to payment |
 | | `principles-world` | many parts meant to feel like one place: immersive sites, games, spaces, events, brands |
 | | `principles-machine` | mechanisms, structures, engineered hardware |
-| Check | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
+| Check | `principles-craft` | judging whether work is good, great, or timeless; taste, pride, and the faults of generic work |
+| | `principles-verify` | before calling any work done, reviewing or critiquing work, or comparing options |
 | | `principles-secure` | outside input, secrets, permissions, agents with power, or a change to a control; threat models and security review |
 | Work | `principles-method` | planning or doing any task, choosing how much rigor, making a decision |
 | | `principles-represent` | a tangled problem, choosing which diagram or structure fits, turning a picture into action steps |

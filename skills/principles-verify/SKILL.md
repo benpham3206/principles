@@ -5,7 +5,7 @@ description: Verify work before calling it done, so it is true, works, and good.
 
 # Verify
 
-**Done** means three things: the work is true, it works, and it is good. **Verification** is evidence for the first two. **Taste** is a trained prediction of how the work will land with its observer, together with the will to reject work that misses. **Pride** joins them: hand over only what you would sign. Taste without evidence ships beautiful errors. Evidence without taste ships correct work nobody wants.
+**Done** means three things: the work is true, it works, and it is good. **Verification** is evidence for the first two. **Taste** is a trained prediction of how the work will land with its observer, together with the will to reject work that misses. **Pride** joins them: hand over only what you would sign (see `principles-craft`). Taste without evidence ships beautiful errors. Evidence without taste ships correct work nobody wants.
 
 ## Steps
 
@@ -32,10 +32,6 @@ Run these before calling anything done, your own work first of all.
 - Write the check before the attempt. Checking an answer is far cheaper than finding one, so fix the target first.
 - Separate facts, assumptions, estimates, and decisions. Never let one quietly become another.
 
-## Pride
-
-Pride is the standard of work you would put your name on. Before handing it over, ask: would I show this to the best maker in this medium without apology? If the answer needs a caveat, fix the thing or state the caveat plainly, never hide it. Craft lives in the details nobody asked for, so check those too.
-
 ## Defaults to replace
 
 "It compiles." "Tests pass" when the changed path never ran. A subagent's summary taken as proof. A screenshot from before the last change. Only the happy path tried. A check that was never seen to fail. Done declared with no evidence named. Polish on the details while the whole is wrong.
@@ -53,27 +49,9 @@ Pride is the standard of work you would put your name on. Before handing it over
 
 Walk the six axes from `principles` at each distance. For each axis, name the choice made and whether it serves the intent. Most failures trace to an axis set by default.
 
-## Taste: what to look for
+## Good, great, timeless
 
-Faults:
-
-- **Sameness.** Every element at the same weight, so nothing leads.
-- **Decoration.** A part with no job.
-- **Defaults.** Values nobody chose: the stock font, the stock gray, the stock padding, the stock tempo, the stock phrase.
-- **Hedging.** Elements or words added to avoid being wrong rather than to be right.
-- **Genericness.** It could have come from anyone. Specificity is the first mark of taste.
-- **Noise.** Inconsistency that means nothing.
-- **Effort on the wrong scale.** Polish on details while the whole is wrong.
-
-Marks of good work:
-
-- One clear idea the observer gets without help.
-- Every part earns its place; removing any part loses something.
-- Choices hold at all three distances.
-- Materials are honest: each one does what it looks like it does.
-- Consistent where it should be, surprising where it means to be.
-
-To build taste: study the best work in the medium until you can say why it is best in terms of the six axes, make many versions, and compare them side by side. Side-by-side comparison beats judging one thing alone.
+Verification shows the work is true and works. Whether it is good, great, or timeless is judged with the ladder in `principles-craft`. Run its checks at the three distances above, and say which level the work reached.
 
 ## Evidence ladder
 
@@ -107,4 +85,4 @@ Each project needs one command that people, agents, and automation run the same 
 
 Run the command once end to end before trusting it. A check that was never run is a draft.
 
-Pairs with: before `principles-method`, `principles-integrate`; after `principles-lessons`, `principles-improve`.
+Pairs with: before `principles-method`, `principles-integrate`, `principles-craft`; after `principles-lessons`, `principles-improve`.

@@ -58,10 +58,10 @@ Each is a fault when it serves nothing. Ornament that gives pleasure, repetition
 4. Remove every fault above. For each default you keep, say why it serves the intent.
 5. Put care where the observer touches: the first second, the edges, the moments of waiting or failure.
 6. Check the unseen parts too: reliability, accessibility, and upkeep, with checks suited to the medium.
-7. Run the ladder's checks, with evidence from use and judges other than yourself where the work matters. Where it falls short of its level, fix it or state the gap plainly; never hide it.
+7. Run the ladder's checks, with evidence from use and judges other than yourself where the work matters. Use `principles-refine` to close the gaps. State any remaining gap plainly.
 
 ## Building taste
 
 Study the best work until you can say why it is best. Make many versions and compare them side by side; judging one thing alone trains little. Seek the opinion of someone whose taste you trust, and of the people the work is for. Keep the work you are proud of and look at it again a year later: what still holds is your taste; what does not is a lesson.
 
-Pairs with: before `principles-verify`, `principles-qualities`; after `principles-visual`, `principles-language`, `principles-world`.
+Pairs with: before `principles-verify`, `principles-qualities`; after `principles-refine`, `principles-visual`, `principles-language`, `principles-world`.

@@ -21,10 +21,10 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 |---|---|
 | Establish what is true | `principles-ground` |
 | Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
-| Create and connect | `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
+| Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
 | Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` for reverse questions; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |
 | Check the result | `principles-verify` for evidence; `principles-craft` for quality; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
-| Learn and improve | `principles-lessons` for events; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for feedback; `principles-compound` for lasting gains |
+| Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for feedback; `principles-compound` for lasting gains |
 | Help people and agents | `principles-counsel` for advice; `principles-develop` for growth; `principles-mind` for agent design |
 
 ## The six axes
@@ -45,7 +45,7 @@ An axis left at its default is a decision made by accident. Set each one on purp
 1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
 2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
 3. Make the smallest complete version: every axis present, none polished.
-4. Run `principles-verify`. Fix the worst axis first, then the next.
+4. Run `principles-verify`. Use `principles-refine` to fix the worst gap first, then the next.
 
 Done means every axis has a stated choice and `principles-verify` finds no material issue.
 

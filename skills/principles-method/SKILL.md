@@ -33,7 +33,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 4. **Constraints**: what cannot be violated. Name them before choosing tools. Language, framework, storage, and infrastructure are downstream choices; revisit them only when evidence shows a constraint or bottleneck changed.
 5. **Assumptions and dependencies**: what depends on what, and why. Mark each as fact, assumption, estimate, or decision.
 6. **First principles**: what is actually necessary (see `principles-ground`).
-7. **Architecture**: what the system should look like. Wireframe it. Name the motifs and palette for anything seen.
+7. **Design**: choose a coherent approach with `principles-design`. Make the form, behavior, and construction concrete enough to check the consequential choices.
 8. **Consequences**: second-order and later effects, and the worst credible outcome (see `principles-horizons`). To find what the plan hides, work backward from the finished outcome and design its failure (see `principles-invert`). Think bigger than the brief. What ultimately matters is the problem solved and the joy of the person at the end.
 
 ## Build
@@ -55,14 +55,7 @@ For small reversible tasks this collapses to build, verify, iterate.
 
 ## Refine
 
-1. Measure reality.
-2. Compare actual results with the predicted range and the measurement's uncertainty. Investigate a difference larger than both: check the measurement, the implementation, and the assumptions, then revise the model and the conclusions built on it where the evidence warrants (see `principles-ground`).
-3. Find the bottleneck.
-4. Find the root cause of each failure, not the symptom (see `principles-lessons`).
-5. Route back to Plan or Build.
-6. Verify the fix with a test that fails when the fix is removed.
-7. Delete obsolete complexity. Tools and automation are liabilities once they stop paying rent.
-8. Repeat until done is met.
+Use `principles-refine` to compare the actual result with the intent, revise at the scale of the gap, and verify the whole again. Return to Plan or Build when the evidence calls for it.
 
 Never optimize what should be deleted, automate what is not understood, or add process where an experiment is cheaper than analysis.
 
@@ -82,4 +75,4 @@ Keep a current model of the project and revise it when evidence changes. Record 
 | Business | customer, problem, unit economics | smallest offer someone pays for | revenue, retention, cost per unit |
 | Learning | target skill, the test that proves it | deliberate practice at the edge of ability | the test, unaided |
 
-Pairs with: before `principles-ground`, `principles-represent`; after `principles-verify`, `principles-lessons`.
+Pairs with: before `principles-ground`, `principles-represent`; after `principles-design`, `principles-refine`, `principles-verify`, `principles-lessons`.

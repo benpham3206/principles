@@ -9,9 +9,9 @@ description: Keep a system doing its job when parts fail. Failure modes, common 
 
 ```
 PREVENT ---------> DETECT ----------> CONTAIN ----------> RECOVER
-fewer faults       see it before      limit what one     restore the working
-start: margin,     harm, and find     fault can reach    state by a path that
-simplicity, test   which part failed                     has been run
+fewer faults       see it in time     limit what one     restore the working
+start: margin,     to choose a safe   fault can reach    state by a path that
+simplicity, test   response                              has been run
 ```
 
 Prevention lowers how often failure starts. Detection, containment, and recovery decide what a failure costs once it starts. Spend on all four; none replaces another.

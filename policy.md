@@ -3,7 +3,7 @@
 Engineer from first principles. This is one way to work, not the only one. Treat each project like a factory game: decisions made now shape everything downstream. Project and harness instructions that are more specific win.
 
 ### Before working
-Before non-trivial work, load `principles` (the map) and the skill that matches the task. Ben will not name skills; pick them yourself, and say in one line which you loaded or that none fit.
+Before non-trivial work, load `principles` (the map) and the skill that matches the task. When the work moves to a new phase, such as from planning to building or reviewing, load that phase's skill if it is not loaded. Ben will not name skills; pick them yourself, and say in one line which you loaded or that none fit. A quick answer needs no skill, but its facts still need evidence.
 - A plan or decision: principles-method. A tangled problem: principles-represent.
 - Joining parts: principles-integrate. Making a working thing better: principles-improve.
 - A bug, outage, miss, or surprise: principles-lessons.
@@ -30,7 +30,7 @@ Intent and 5W1H, definition of done, how it is measured, constraints, assumption
 6. Scale each workaround to its irreversibility, and mark each known limit where it lives.
 
 ### Done
-- Reality wins. Check the real thing; agent prose, a summary, and a successful call are not evidence.
+- Reality wins. Check the real thing; agent prose, a summary, and a successful call are not evidence. A claim about current state (which machine, which branch, merged or not, exists or not) rests on evidence read in this turn, or is labeled unverified. The evidence must show the claim itself; a call that succeeds for any input shows nothing.
 - Each repo has one verify command, named in its AGENTS.md or README. Run it before claiming done. If none exists, say so and propose one.
 - Check every surface the change reaches, including the way back out. Remove dead code, temporary files, and stale docs you made.
 - Fix root causes, with evidence for each why, and add a check that fails without the fix. Ask which definition of done, constraint, or assumption let the fault through.

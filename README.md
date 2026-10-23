@@ -32,6 +32,17 @@ Think big. Build small. Win.
 
 Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-verify` checks the result against reality.
 
+The six axes, condensed into four questions:
+
+| Lens | Asks | Axes |
+|---|---|---|
+| **Function** | What does it do, how, does it do it, and why? | Energy (action, behavior; in physical things, force, leverage, work, energy, and power, as principles in `principles-machine`); purpose is the intent that sets every axis |
+| **Substance** | What is it made of? | Material |
+| **Structure** | What shape is it, and how are its parts arranged? | Form, Composition |
+| **Relationship** | Who and what does it meet, and what depends on it? | Observer, Composition (interdependence) |
+
+Time runs through all four: how each one changes, wears, and is met in sequence.
+
 ## Skills
 
 | Skill | What it gives |

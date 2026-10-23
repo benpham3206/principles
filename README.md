@@ -40,6 +40,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-ground` | What is fundamentally true; map versus territory; first principles as a procedure |
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
 | `principles-world` | Many parts as one place: canon, persistence across thresholds, agreeing senses, in-world interface, voice |
+| `principles-distribute` | Getting work to its people: the funnel, channel currency, experiments and teardowns, paying early, honest urgency |
 | `principles-craft` | Good, great, timeless: what defines each and how to check; taste, pride, and the faults of generic work |
 | `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
 | `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |

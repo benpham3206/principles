@@ -1,11 +1,11 @@
 ---
 name: principles-interaction
-description: Principles of anything a person operates (software interfaces, flows, controls, games, devices, conversational agents, machines with operators), organized on the six axes plus control. Use when designing, directing, or critiquing how something is used, how it responds, or who is in control.
+description: Design how people operate a system. Use when shaping controls, flows, feedback, response times, discoverability, or who can take an action.
 ---
 
 # Interaction
 
-An **interaction** is a loop: the person acts, the system responds, the person reads the response and acts again. The person first finds what they can do, then what happened, so every choice is a choice about what they can discover, what they are told, and how long they wait.
+An **interaction** is a loop: a person acts, reads the system response, and acts again. Make available actions, results, and waiting time clear.
 
 ## Laws of the medium
 

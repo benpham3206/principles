@@ -1,11 +1,11 @@
 ---
 name: principles-mind
-description: Principles for designing an agent or assistant (substrate, agency functions, memory, wake and sleep cycles, budgets, communication calibration, safety invariants). Use when building or configuring an AI assistant, agent memory, a system prompt, or a personal model of a user.
+description: Design agents and assistants. Use when shaping memory, goals, reasoning cycles, budgets, communication, system prompts, or a model of the person being helped.
 ---
 
 # Mind
 
-A **mind**, here, is any system that perceives, remembers, decides, and acts toward goals: a person, a team, or an agent. These principles hold for designing one. Each is marked **principle** (established in cognitive science or engineering practice) or **hypothesis** (plausible and untested; test it before relying on it).
+A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance below is marked **principle** where established in cognitive science or engineering, or **hypothesis** where plausible but untested. Test hypotheses before relying on them.
 
 ## Failure modes
 

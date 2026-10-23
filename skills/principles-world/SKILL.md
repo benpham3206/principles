@@ -1,11 +1,11 @@
 ---
 name: principles-world
-description: Make many parts feel like one place a person enters and believes, through a canon, persistence across thresholds, agreeing senses, an in-world interface, and voice. Use for immersive sites, games, products, spaces, events, brands, or anything meant to be a world.
+description: Make parts feel like one place. Use when designing immersive products, games, sites, spaces, events, or brands with shared rules and persistent state.
 ---
 
 # World
 
-A **world** is a set of parts that a person experiences as one cohesive place with its own rules. Immersion is the state where they stop noticing the parts and act inside the place. Any single part can be excellent and the world still fail: it fails at the seams, where the parts disagree or the place blinks.
+A **world** is a set of parts experienced as one place with shared rules. **Immersion** lets a person act within it without noticing its construction. Check where parts meet: inconsistencies there can break the whole.
 
 ```
 CANON ----> SENSES ----> VOICE ----> THRESHOLDS ----> INHABITANTS ----> AGENCY ----> DEPTH

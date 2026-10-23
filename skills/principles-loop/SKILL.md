@@ -1,11 +1,11 @@
 ---
 name: principles-loop
-description: Loops, where an output returns as an input, from feedback, control, delay, and stability to why people return, communities, and strange loops. Use when tuning any self-correcting system, or designing for return, retention, reciprocity, growth, or a system fed by its own results.
+description: Understand and shape feedback. Use when tuning control systems or designing return, retention, reciprocity, growth, or any system fed by its own results.
 ---
 
 # Loop
 
-A **loop** is a path where something's output returns, directly or through others, as its own input. A **reinforcing loop** amplifies change in either direction: more users bring more users, and fewer bring fewer. A **balancing loop** counteracts change, pulling toward some level, though not always a stable or chosen one. Real systems link several of each, with **stocks** that accumulate (users, trust, knowledge) and delays between cause and effect. To draw one, see `principles-represent`; to choose what to accumulate, see `principles-compound`; to pick where to intervene, see `principles-improve`.
+A **loop** returns an output as an input. A **reinforcing loop** amplifies change in either direction. A **balancing loop** counteracts it, though the result need not be stable or intended. Systems combine loops, delays, and **stocks** that accumulate, such as users, trust, or knowledge. Draw them with `principles-represent`; choose stocks with `principles-compound` and interventions with `principles-improve`.
 
 ```
    ACT ---------> RESULT ---------> RETURN
@@ -65,7 +65,9 @@ Growth planned as a straight line, a launch with no reason to return, rewards on
 
 ## Control
 
-A **controller** measures a system, compares it with a target, and acts to close the gap: a thermostat, an autopilot, an autoscaler, a retry policy, an agent that checks its own output, a manager reviewing a monthly number. The same terms describe all of them. The **state** is what the system holds now that decides what it does next: temperature, queue length, backlog, belief. **Inputs** are what the controller can change, **outputs** are what it can measure, and **disturbances** change the state from outside, unasked. **Feedback** acts on the measured error, so it corrects what nobody predicted, but only after the error shows. **Feedforward** acts on a plan or a measured disturbance before the error appears; it is fast and blind to its own model's mistakes, so pair it with feedback. A state is **observable** when it can be inferred from the outputs, and **controllable** when the inputs can move it to the target. Check both before tuning anything.
+A **controller** compares a measurement with a target and acts to close the gap. The **state** determines what the system does next, such as temperature or queue length. **Inputs** are what the controller changes; **outputs** are what it measures. **Disturbances** change the state from outside.
+
+**Feedback** corrects measured error after it appears, including errors nobody predicted. **Feedforward** acts on a plan or measured disturbance before the error appears. Pair it with feedback to catch model errors. A state is **observable** when it can be inferred from output history and known inputs, and **controllable** when inputs can move it to the target. Check both before tuning.
 
 **Delay limits responsiveness.** Take the simplest case: a fixed target, no saturation, and a controller that each step removes a fraction $g > 0$ of the error it saw $d$ steps ago, $e_{k+1} = e_k - g\, e_{k-d}$. With no delay it settles without overshoot for $0 < g \le 1$ and settles, swinging, for $1 < g < 2$. One step late, it swings for $g$ above 0.25, and the swings stop dying out at $g = 1$; two steps late, at about $g = 0.62$. Real loops differ in detail, but the direction holds widely: the more aggressive the response to a late signal, the more it swings, from swings that die out, to swings that persist, to swings that grow. In this model nothing stops the growth; saturation and other limits in a real system may or may not bound it, and that needs its own analysis. More delay shrinks the range of gain that settles, so shortening the delay is what allows a more aggressive response. Lowering the gain can restore stability; whether it also slows convergence depends on the starting gain and delay. To judge a change to gain, delay, or timing on a specific loop, use the domain's method, such as gain and phase margin for servos, queueing models for services, or simulation for organizations and markets.
 

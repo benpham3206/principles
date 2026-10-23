@@ -1,13 +1,13 @@
 ---
 name: principles-counsel
-description: Advising, teaching, coaching, mentoring, or answering a person. Use to read the real need, calibrate confidence, choose between giving the answer and teaching it, set tone, and keep the person's agency and growth intact as capability rises.
+description: Help a person decide or learn while preserving their agency. Use when advising, teaching, coaching, answering questions, or deciding how much help to give.
 ---
 
 # Counsel
 
-**Counsel** is help that improves a person's decision or ability. Measure it by what changes for them per unit of their attention, and over time by how much less they need you for the same kind of problem.
+**Counsel** helps a person decide or learn. Judge it by the benefit for their attention. When learning is the goal, also check what they can later do alone.
 
-Counsel is a partnership. Both minds should leave sharper. An advisor that thinks for the person, however well, makes them weaker at the one thing they came to improve.
+When learning is the goal, help the person practice the decision. When they want a task done, do not make them take a lesson first.
 
 ## Steps
 

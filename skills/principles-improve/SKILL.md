@@ -1,11 +1,11 @@
 ---
 name: principles-improve
-description: Make a working thing better without breaking it, in the right order (question, delete, simplify, then speed, then automate) and only at the measured bottleneck. Use when something works but is slow, costly, complex, or fragile, or before optimizing or automating.
+description: Improve a working thing while preserving what matters. Use when reducing cost, delay, complexity, or failures, or before optimizing or automating.
 ---
 
 # Improve
 
-An **improvement** is a change that moves a working thing closer to its goal on a measured metric, while it keeps working. A change that adds activity, parts, or polish without moving the metric is not an improvement, however much work it took. Deletion is often the largest improvement available.
+An **improvement** moves a working thing toward its goal on a measured metric while preserving its requirements. Extra activity or polish alone proves no gain.
 
 ```
 MEASURE ----> BOTTLENECK ----> QUESTION ----> DELETE ----> SIMPLIFY ----> SPEED UP ----> AUTOMATE
@@ -18,7 +18,7 @@ The order matters. Each step is wasted on anything a later look would have delet
 
 ## Laws
 
-- Find what limits the metric. When one step caps it, as the slowest stage caps a line's steady throughput, a gain elsewhere changes little, except where it stops that step from waiting or being blocked. When parts add up, as latency through a chain or total cost does, compare the reduction each part can actually give for its cost; the largest term is the first place to look, not an automatic choice.
+- Find what limits the metric. For throughput, improve the limiting stage or what makes it wait. For totals such as latency or cost, compare each possible reduction with its cost. The largest term is a place to look, not an automatic choice.
 - The best part is no part; the best step is no step.
 - Make it work, then make it simple, then make it fast, in that order.
 - Measured gains are kept; felt gains are reverted.
@@ -34,11 +34,11 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 2. Find what limits the goal now, including how parts interact. For throughput, that is the limiting step and whatever makes it wait or blocks it. For a metric that adds up, compare the reduction each part can give for its cost.
 3. Question the requirement behind it. Ask who needs it and what breaks without it. A requirement with no owner is a candidate for deletion.
 4. Delete what does not need to exist. Stop when the next deletion would break the goal or a guardrail.
-5. Simplify what remains: fewer parts, states, branches, boundaries, and dependencies. To merge or split parts, see `principles-integrate`.
+5. Simplify what remains with `principles-simplify`. Reduce parts, states, branches, and dependencies while preserving requirements.
 6. Speed up the loop that is left: the time from a change to knowing whether it worked.
 7. Automate only work that is understood, stable, and repeated, or a one-time job whose manual cost or risk exceeds the cost of building and checking the automation. Automating a broken process makes it fail faster.
 8. Optimize performance only when a measured metric breaks a stated limit at the bottleneck, or measurements show it will before a fix could be ready, and the code or part is verified and not about to be deleted. Otherwise ship the simple version and write down its known limit and how to raise it.
-9. Run each change as an experiment. Before it, write the hypothesis: what you will change and what the metric should do. After it, measure the metric and the guardrails. Set the acceptable range of each guardrail before the change. Keep the change if the metric moved toward the goal by more than noise and every guardrail stayed in its range; revert it if not. Record the hypothesis, the numbers, and the decision where the work's history lives, such as the commit message or the lab notebook, including for a change you reverted. Then find the bottleneck again. The define, measure, analyze, improve, control cycle of Six Sigma is one named form of these steps; its control stage is the check that the gain holds.
+9. Run each change as an experiment. First record its hypothesis, expected metric change, and acceptable guardrail ranges. Keep it only if the gain exceeds noise and every guardrail holds; otherwise revert it. Record the measurements and decision, including rejected changes, in the work's history. Then find the limit again. Six Sigma's define, measure, analyze, improve, control cycle (DMAIC) is one form of this loop. Control checks that the gain holds.
 
 ## Principles
 
@@ -69,4 +69,4 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 - Anything automated that nobody can explain.
 - The workspace itself, bench or repository. Sort out what is not needed, set the rest in order, clean to inspect, standardize, and sustain: the 5S practice of the Toyota Production System. Clutter hides the bottleneck.
 
-Pairs with: before `principles-verify`, `principles-distribute`, `principles-ground`; after `principles-lessons`, `principles-compound`.
+Pairs with: before `principles-simplify`, `principles-verify`, `principles-distribute`, `principles-ground`; after `principles-lessons`, `principles-compound`.

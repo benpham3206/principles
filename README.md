@@ -4,72 +4,28 @@ Axioms, principles, and taste for agents and the people who work with them. Any 
 
 Think big. Build small. Win.
 
-## The map
+## The loop
 
 ```
-    INTENT    why, for whom, under which limits
-       |      shape it with represent, weigh values with qualities
-       v
-+-> GROUND ------> MAKE --------------------> SIMULATE -----> REALITY
-|   what is true   six axes, one medium       test the model  ship, measure
-|   ground         visual  sound  touch       horizons           |
-|                  language  interaction                         |
-|                  information  code  machine                    |
-|                  integrate, to join the parts                  |
-|                  world, to make the parts one place            |
-|                  synthesize, for the new                       |
-|                                                               v
-+----------- LESSONS <----------------------- VERIFY <-----------+
-             what changes next                is it true, is it good
-             lessons  improve                 verify  craft  secure  reliability
-
-  method runs the loop, with rigor scaled to consequence.
-  Beside the loop, for people and agents: counsel, mind, develop, compound.
-
-  SIX AXES OF ANY MADE THING
-  Form | Material | Energy | Observer | Composition | Time
+INTENT -> GROUND -> MAKE -> SIMULATE -> REALITY
+  ^                                      |
+  +----------- LESSONS <- VERIFY <--------+
 ```
 
-Every made thing is a set of choices along six axes. `principles` defines them once, each medium skill fills them in, and `principles-verify` checks the result against reality.
+State the purpose, find what is true, make the thing, and check it against reality. Use what happened to choose the next action. Scale the work to its consequences with `principles-method`.
 
-The six axes, condensed into four questions:
-
-| Lens | Asks | Axes |
-|---|---|---|
-| **Function** | What does it do, how, does it do it, and why? | Energy (action, behavior; in physical things, force, leverage, work, energy, and power, as principles in `principles-machine`); purpose is the intent that sets every axis |
-| **Substance** | What is it made of? | Material |
-| **Structure** | What shape is it, and how are its parts arranged? | Form, Composition |
-| **Relationship** | Who and what does it meet, and what depends on it? | Observer, Composition (interdependence) |
-
-Time runs through all four: how each one changes, wears, and is met in sequence.
+Start with `principles`, the [skill map](skills/principles/SKILL.md). It defines six axes once: form, material, energy, observer, composition, and time. Each medium skill applies them; `principles-verify` checks the result. Load only what the task needs.
 
 ## Skills
 
-| Skill | What it gives |
-|---|---|
-| `principles` | The map, the six axes, and the laws that hold in every medium |
-| `principles-ground` | What is fundamentally true and how to know it: kinds of claim, comparing explanations, when more information is worth it, first principles |
-| `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
-| `principles-world` | Many parts as one place: canon, persistence across thresholds, agreeing senses, in-world interface, voice |
-| `principles-distribute` | Getting work to its people: the funnel, channel currency, experiments and teardowns, paying early, honest urgency |
-| `principles-craft` | Good, great, timeless: what defines each and how to check; taste, pride, and the faults of generic work |
-| `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
-| `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |
-| `principles-reliability` | Keep working when parts fail: failure modes, common causes, detection, redundancy and its limits, safe degradation, tested recovery |
-| `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |
-| `principles-represent` | Put a problem into the structure that shows the next action: flows, trees, state machines, graphs, matrices |
-| `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
-| `principles-integrate` | Join parts into one working whole: interfaces first, thin slice, one part at a time, every surface |
-| `principles-improve` | Make a working thing better in order: measure, bottleneck, delete, simplify, speed up, automate |
-| `principles-invert` | Reverse the question: backward from the outcome, a principle against its opposite, a value against its cost, the failure against its guard |
-| `principles-synthesize` | Invent from a Herculean goal: complete output, plan, verify |
-| `principles-horizons` | First to nth-order consequences |
-| `principles-qualities` | Intention, agency, trust, craft, delight and the rest; fluid versus textured |
-| `principles-counsel` | Advising a person, and keeping their agency across a capability gap |
-| `principles-mind` | Designing an agent: memory, cycles, budgets, calibration, invariants |
-| `principles-develop` | How people and agents grow; map, path, and advice modes |
-| `principles-loop` | Loops: reinforcing and balancing feedback, control and stability, delays, return, giving back, communities, strange loops |
-| `principles-compound` | What compounds, and how to invest so gains build on gains |
+- Medium: `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`.
+- Creation: `principles-synthesize`, `principles-integrate`, `principles-world`, `principles-distribute`.
+- Decisions: `principles-ground`, `principles-method`, `principles-represent`, `principles-invert`, `principles-horizons`, `principles-qualities`.
+- Evaluation: `principles-verify`, `principles-craft`, `principles-secure`, `principles-reliability`.
+- Learning: `principles-lessons`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
+- People and agents: `principles-counsel`, `principles-develop`, `principles-mind`.
+
+Each skill names a principle, the failure it prevents, and a check. Simplification keeps useful distinctions, safety margins, accessibility, and intentional richness.
 
 ## Install
 

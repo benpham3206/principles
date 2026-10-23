@@ -1,11 +1,11 @@
 ---
 name: principles-code
-description: Principles of software (programs, APIs, data models, services, infrastructure, agents as software), organized on the six axes plus correctness. Use when designing, writing, structuring, reviewing, or refactoring code, interfaces, schemas, or systems.
+description: Design and review software, interfaces, and data models. Use when writing, structuring, or refactoring code, APIs, schemas, services, or infrastructure.
 ---
 
 # Code
 
-A **code** work is instructions and data arranged so a machine runs them and a person can change them. The reader meets the interface first, the data second, and the logic last, so every choice decides what the next person must hold in their head.
+**Code** is instructions and data that a machine runs and a person can change. Make the interface, data, and logic easy for the next person to follow.
 
 ## Laws of the medium
 

@@ -1,11 +1,11 @@
 ---
 name: principles-qualities
-description: The qualities good work has (intention, agency, responsibility, familiarity, flexibility, simplicity, craft, delight, time, trust, smoothness) and how to resolve trade-offs between them. Use when setting a design language or philosophy, choosing fluid versus textured, or when two good values conflict.
+description: Choose which qualities matter most. Use when setting a design philosophy, choosing fluid or textured presentation, or resolving a conflict between useful values.
 ---
 
 # Qualities
 
-A **quality** is a property the observer feels in finished work, built from many small choices along the six axes. Qualities conflict. A **design philosophy** is the stated order in which they win.
+A **quality** is a property an observer experiences in finished work. Qualities can conflict. A **design philosophy** states which one takes priority and why.
 
 ## The qualities
 

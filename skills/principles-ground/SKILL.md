@@ -1,13 +1,13 @@
 ---
 name: principles-ground
-description: What is fundamentally true, and how to know it. Use when reasoning from first principles, checking a claim, separating a model from the thing it names, labelling claims, comparing explanations, choosing a test, or deciding whether more information is worth it.
+description: Reason from evidence and first principles. Use when checking claims, comparing explanations, choosing experiments, estimating uncertainty, or deciding whether more information would change a decision.
 ---
 
 # Ground
 
-**Ground** is what stays true whatever anyone says about it: the laws of physics, the results of logic and mathematics, and the limits of perception. This is the cognitive layer. Everything made is bounded by it, and every claim is tested against it.
+**Ground** is what stays true regardless of its description: physics, logic, mathematics, and the limits of perception. Check claims and designs against those limits.
 
-## Is language your reality?
+## Map and territory
 
 A description is a **map**; the thing described is the **territory**. Language compresses the world, and compression loses detail. An agent that works only in words can build a consistent, fluent map that matches nothing. People do this too.
 
@@ -43,7 +43,7 @@ Most rules in these skills are empirical regularities or heuristics. Apply one w
 
 A **fact** is an observation, or an inference whose steps were checked. Never let one kind become another without saying so: a hypothesis that survived one test is still a hypothesis, and an assumption repeated is still an assumption.
 
-State confidence at the precision the evidence supports. Give a range and its basis ("4 to 7 days, from the last five similar jobs") rather than a point. Give a probability only when it rests on a base rate, a model, or a record of calibrated guesses; otherwise use an ordered word (likely, plausible, speculative) and say what would move it.
+Match confidence to evidence. Give a range and its basis, such as "4 to 7 days, from five similar jobs." Use a probability only with a base rate, model, or calibrated track record. Otherwise say likely, plausible, or speculative, and name what would change that judgment.
 
 ## Compare explanations
 
@@ -73,7 +73,7 @@ Failure: research that continues after the choice is settled, or an irreversible
 
 - Every measurement has a resolution, a bias, and noise. Repeat it to see the noise; measure a known reference to see the bias, and correct what you know.
 - Judge a difference against the uncertainty of the difference, not of one reading. Repeats can show a difference smaller than one reading's noise; a bias shared by both readings cancels in the difference, and one that is not shared does not.
-- Carry the remaining uncertainty through the calculation. Where the calculation is close to linear over the inputs' range, independent standard uncertainties combine as the square root of the sum of their squares, each scaled by the result's sensitivity to that input; correlated inputs need their covariance, and when the dependence is unknown, the sum of the absolute values of the scaled uncertainties bounds the result's standard uncertainty. Where it is strongly nonlinear, push the input ranges or samples through the calculation itself.
+- Carry uncertainty through the calculation. For a nearly linear calculation, scale each input's standard uncertainty by the result's sensitivity to it. Combine independent terms by the square root of their squared sum. Correlated terms need their covariance. If dependence is unknown, the sum of the absolute scaled terms bounds the standard uncertainty. For strongly nonlinear calculations, propagate ranges or samples through the calculation itself.
 - An instrument reports only what it measures, where it sits, with its lag. Name the gap between what was measured and what is claimed.
 - A prediction is a model run forward. Its uncertainty grows with distance from the cases the model was checked against; state that distance.
 

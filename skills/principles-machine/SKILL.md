@@ -1,13 +1,13 @@
 ---
 name: principles-machine
-description: Principles of engineered physical things (mechanisms, structures, vehicles, rockets, machines, hardware products, manufacturing), organized on the six axes plus failure. Use when designing, building, reviewing, or diagnosing hardware, loads, tolerances, materials, assemblies, fatigue, or safety factors.
+description: Design and check physical engineering. Use when working on hardware, mechanisms, loads, materials, manufacturing, assemblies, tolerances, fatigue, or safety factors.
 ---
 
 # Machine
 
-A **machine** is matter arranged to carry loads and move energy so that a function happens, repeatedly, under conditions its maker does not fully control. The first fact about any machine is its load path: where force enters, where it goes, and what it passes through on the way.
+A **machine** arranges matter to carry loads and move energy under real conditions. Start with its load path: where force enters, where it goes, and what carries it.
 
-Physics does not negotiate. State the assumptions every result depends on: local gravity $g$ (not only the Earth value), the temperature, the environment, and the material condition. Write the general form first, then put numbers in.
+State each result's assumptions: local gravity $g$, temperature, environment, and material condition. Write the general form before inserting local values.
 
 ## Laws of the medium
 

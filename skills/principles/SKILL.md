@@ -5,7 +5,7 @@ description: Choose principles for the task and use the six axes of made things.
 
 # Principles
 
-Use this map to choose a skill and examine the choices in your work. The six axes below apply across media. Choose each for a reason, within the limits of physics, logic, and perception, then check the result against reality.
+Use this map when choosing a skill or examining design choices can improve the outcome. The six axes below apply across media. Examine those that matter to the task, within the limits of physics, logic, and perception, then check the result against reality.
 
 ```
 Set the goal -> Check assumptions -> Make -> Predict -> Test
@@ -13,7 +13,7 @@ Set the goal -> Check assumptions -> Make -> Predict -> Test
      +--------------- Learn and revise <-----------------+
 ```
 
-Use `principles-method` to scale the work to its consequences. Load the skills the task needs.
+Use `principles-method` to judge whether the benefit of applying principles justifies the cost. Load only the skills that help; a task may need no formal workflow.
 
 ## Choose a skill
 
@@ -38,16 +38,18 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 
-Choose each axis on purpose. Keep a default when it serves the intent and you can say why.
+For axes that affect the outcome, choose on purpose. Keep a default when it serves the intent.
 
 ## Using the axes
 
-1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
-2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
-3. Make the smallest complete version. Address every axis before spending time on polish.
+Use this procedure when examining the axes will help. A broad design may need all six; a narrow change may need only one.
+
+1. Use the task's intent: its purpose, observer, and binding constraints. Clarify it with `principles-method` when needed.
+2. Load a medium skill when it helps. Examine the axes that could change a decision or reveal a failure.
+3. Make the smallest complete version. Address the consequential choices before spending time on polish.
 4. Run `principles-verify`. Use `principles-refine` to fix the worst gap first, then the next.
 
-Done means every axis has a stated choice and `principles-verify` finds no material issue.
+Done means the result meets its intent and constraints with sufficient evidence. Use `principles-verify` to choose the checks; record choices where their reasons matter to the next decision.
 
 ## Shared principles
 

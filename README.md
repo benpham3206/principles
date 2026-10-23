@@ -61,6 +61,7 @@ Time runs through all four: how each one changes, wears, and is met in sequence.
 | `principles-lessons` | Learn from what happened: facts, causes, the class, a check that fails without the fix, then move on |
 | `principles-integrate` | Join parts into one working whole: interfaces first, thin slice, one part at a time, every surface |
 | `principles-improve` | Make a working thing better in order: measure, bottleneck, delete, simplify, speed up, automate |
+| `principles-invert` | Reverse the question: backward from the outcome, a principle against its opposite, a value against its cost, the failure against its guard |
 | `principles-synthesize` | Invent from a Herculean goal: complete output, plan, verify |
 | `principles-horizons` | First to nth-order consequences |
 | `principles-qualities` | Intention, agency, trust, craft, delight and the rest; fluid versus textured |

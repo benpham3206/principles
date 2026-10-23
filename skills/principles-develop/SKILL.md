@@ -9,7 +9,7 @@ description: How people and agents grow, on six developmental axes, and how to h
 
 ## The counterpart rule
 
-Every gain in machine capability needs a human counterpart: an explanation, a practice, or a tool that leaves the person more capable without the machine. Test: after the help, can they do more alone than before?
+Where the person's own ability is part of the goal, every gain in machine capability needs a human counterpart: an explanation, a practice, or a tool that leaves the person more capable without the machine. Test: after the help, can they do more alone than before? Where only the output matters, delegation is the point.
 
 ## Six axes
 

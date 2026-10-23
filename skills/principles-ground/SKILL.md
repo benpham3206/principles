@@ -51,7 +51,7 @@ When something needs explaining, such as a failure, a result, or a surprise:
 
 1. Write every explanation still in play: at least two, and "something not yet named". The familiar one is a candidate, not the answer.
 2. For each, write what it predicts that the others do not.
-3. Weigh evidence by how much more likely it is under one explanation than under the others. Evidence that every candidate predicts moves nothing, however much of it there is.
+3. Weigh evidence by how much more likely it is under one explanation than under the others. Evidence that every candidate predicts moves nothing, however much of it there is. When you hold a prior, state it, update it with the data, and check whether the decision changes under other plausible priors.
 4. Choose the next test by how well its possible results separate the candidates that call for different actions, for its cost and risk. One test that splits three such candidates beats three tests that each confirm one.
 5. Update. When a result contradicts an assumption, mark it false and reopen every inference and decision built on it.
 6. Stop by the rule in the next section. A decision can be settled while several explanations remain plausible, when all of them call for the same action.

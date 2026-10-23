@@ -34,6 +34,21 @@ Forms can mix. Use the checks for what this piece needs to do.
 | Social posts and promotional copy | Earn attention and deliver an idea, experience, or offer | Does the rest fulfill the opening's promise? Is any claim supported and any ask honest? |
 | Names, labels, and UI copy | Help someone recognize, remember, distinguish, or act in a few words | Test the words in context. Can the intended person tell what they mean and distinguish nearby choices? |
 
+### Documentation
+
+Choose the reader's main need for each page or clearly marked section. Separate learning from work, and doing from understanding. Split and link material when switching purposes interrupts the reader's task. A README can serve several needs through clear sections and routes.
+
+| Mode | Principle | Failure | Check |
+|---|---|---|---|
+| Tutorial | Teach through a concrete thing the learner makes. Give expected, visible results early and at checkpoints | The learner follows commands without knowing whether they worked | Can a newcomer reach the result from the stated prerequisites and recognize success along the way? |
+| How-to | Solve a named task with direct commands. Put prerequisites, conditions, and warnings before the actions they govern; give the common path before exceptions | A warning arrives after the risky action, or background hides the next step | Walk the task in order. Does each action have its needed context, and does each branch say when to take it? |
+| Reference | Organize facts for lookup around the thing described. State options, defaults, limits, and errors within a declared scope | Readers hunt through a lesson for one fact, or rely on stale details | Can a reader find the needed fact where the artifact's structure leads them, and does it match the actual version? |
+| Explanation | Answer a bounded why question with context, mechanisms, alternatives, and trade-offs | A list of facts leaves the reason for a choice unexplained | Can the reader explain the choice and the conditions under which another choice would fit? |
+
+In procedures, give each instruction one action. Inspect instructions longer than about 20 words; keep the conditions that make them correct. Use exact command, symbol, file, flag, and interface-label names. Run examples from the stated starting conditions and show the result to expect. Generate changing facts from their source where practical; otherwise check them against it. A command or count that has not been checked is provisional.
+
+PR descriptions and commit messages are brief accounts of a change. Lead with the problem and resulting behavior, name the relevant evidence, and link long logs. Choose their structure for that briefing rather than forcing a documentation mode. For product UI copy, use the names and labels checks above and `principles-interaction`.
+
 ## Defaults to replace
 
 - Stock openers ("In today's world", "It is important to note", "In this section we will", "Let's dive in") and closers ("In summary", "In conclusion", "I hope this helps").
@@ -41,6 +56,19 @@ Forms can mix. Use the checks for what this piece needs to do.
 - Stock vocabulary (crucial, delve, robust, comprehensive, seamless, leverage as a verb, utilize, ensure, landscape, tapestry, pivotal).
 - Triplets, rhetorical questions, and the "not X but Y" frame used by habit; headings that name a topic where the reader needs a finding.
 - Stock imagery, rhyme that distorts the intended meaning, and a voice that changes without reason.
+
+### Editing pass
+
+Revise structure before polishing sentences. Then scan for the patterns below and read the result in context. Preserve necessary conditions, uncertainty, technical terms, and the piece's chosen voice. Judge an edit by the meaning and effect it preserves or improves.
+
+| Principle | Failure | Check |
+|---|---|---|
+| Make factual claims carry evidence | "Experts say" hides the source; a trailing phrase such as "highlighting its value" adds praise without support | Name the source and what it establishes. Does each added clause supply a fact, mechanism, or intended effect? Cut it if it adds none |
+| Name what happens in operational prose | Inflated predicates or metaphorical jargon replace an action, property, or limit | Try a direct verb, "is", or "has". Replace an image with the literal mechanism when readers need to act on it; keep exact terms and images that serve the work |
+| Make endpoint relations clear | A factual range implies a scale or coverage it does not have | What relation do the endpoints express? Use a list when they misleadingly imply a span. Keep deliberate breadth or contrast that serves the piece |
+| Keep the grammar that carries relations | Dropped articles or verbs, noun strings, and compressed shorthand make explanatory prose hard to decode | Restore the missing words and expand the noun string. Can the reader identify each actor, action, and relation on the first read? |
+| Make punctuation and formatting show structure | Repeated dashes, colons, bold labels, or decoration create emphasis without a reason | Check each pause and highlighted span. Does it mark a relation, hierarchy, voice, or effect the piece needs? Remove empty emphasis |
+| Give openings and endings a job | Flattery, capability announcements, and generic conclusions delay the content | Does the passage give needed context, establish a voice, deliver a result, or invite a real next action? Cut social padding that does none of these |
 
 ## Tree
 
@@ -86,7 +114,7 @@ LANGUAGE
 | Verbs | A strong verb carries the force; nouns made from verbs (make a decision, perform an analysis) drain it | The action hidden in a noun, with "make", "do", "is" as the verb | Circle the verbs. Do they name the action? |
 | Voice | Active voice names the actor; passive fits when the actor is unknown or beside the point | Passive that hides who did what | Ask "who?" of each passive. Is the answer missing on purpose? |
 | Cadence | Spoken and written text has a stress pattern the ear checks even in silence | Strings of equal stresses, or a trailing clause that deflates the end | Read it aloud. Where do you stumble? |
-| Intensifiers | Force comes from the exact word, not from a modifier on a weak one | "Very important", "extremely significant", "really good" | Delete the intensifier. Pick a stronger word or accept the plain one |
+| Modifiers | Put force in the precise word. Keep a modifier that changes meaning or supplies a needed effect | "Very important", "extremely significant", or an adverb that props up a vague verb | Remove the modifier. Is meaning or effect lost? Use a more exact word or a supported measure when it expresses the claim |
 
 ## Observer
 
@@ -107,10 +135,11 @@ LANGUAGE
 |---|---|---|---|
 | Structure | The shape of the text should match the shape of the content: steps in a list, comparisons in a table, an argument in paragraphs | Prose for a procedure, bullets for an argument | Name the content's shape. Does the form match? |
 | Order | In answers and reports, give the finding before its support. In procedures, put prerequisites before the steps that need them | A finding buried at the end, or a step that needs information supplied later | Can the reader find the answer quickly and act in the stated order? |
-| Headings and titles | Use headings to help navigation. Let a title identify, evoke, or set an expectation suited to the work | A navigational heading hides the content, or a title promises the wrong experience | Read headings alone for the outline. Does the title prepare the right expectation? |
+| Headings and titles | Use headings to help navigation and their levels to show hierarchy. Let a title identify, evoke, or set an expectation suited to the work | A navigational heading hides the content, skips a needed level, or promises the wrong experience | Read headings alone for the outline. Do levels show the content's relations, and does the title prepare the right expectation? |
 | Transitions | A transition states the logical link (because, so, but, then); without a link it is filler | "Moreover", "Additionally", "That said" with no logic behind them | Name the relation between the two sentences. Does the word say it? |
 | Paragraph sequence | Build each paragraph on what the reader has learned, and show how it connects to the next | A jump the reader must fill from unstated context | Can the reader explain why each paragraph follows the one before it? |
-| Lists | Number steps when order matters. Use bullets for comparable items that do not need a sequence | A list hides whether its order matters, or mixes unlike items without explanation | Does the numbering show a needed order? Do the bullets group comparable items? |
+| Lists | Number steps when order matters. Use bullets for comparable items that do not need a sequence. Keep items parallel | A list hides whether its order matters, or mixes unlike items without explanation | Does the numbering show a needed order? Do items share a clear role and grammatical pattern? |
+| Links and literals | Give a link context and destination-specific text. Format literal code as code and reproduce interface labels exactly | "Click here" hides the destination; a paraphrased label sends the reader to the wrong control | Can the reader predict where the link goes and match each literal name to the thing it names? |
 | Cut | Keep what adds meaning, sound, character, atmosphere, action, or needed emphasis | Repetition or detail with no purpose | Remove a passage. What meaning or effect is lost? |
 
 ## Time
@@ -142,7 +171,7 @@ Linguistics describes patterns in language; a writing choice also needs a purpos
 | Stable terms | Keep labels consistent where they distinguish concepts. Use clear pronouns and wording suited to each speaker | A synonym suggests a new concept, or forced repetition makes the text harder to follow | Could a changed term mislead the intended reader? Is each pronoun's referent clear? |
 | Precision | Make the claim as exact as the evidence allows. Use a number, range, or condition when it is supported | A vague claim that cannot be tested, or a number invented to sound exact | Is the claim too vague to check, or more precise than its evidence? |
 | Checkable claims | Give factual claims a way to be checked: a source, test, or measurement suited to the claim | A factual claim with no way to distinguish it from a plausible story | Ask "what would show this wrong?" Is there an answer? |
-| Ambiguity | Remove unintended ambiguity where it changes understanding or action. Keep multiple meanings when they enrich the work | A stray modifier changes an instruction, or an edit erases a poem's intended double meaning | What readings are possible? Which serve the work, and which mislead? |
+| Ambiguity | Remove unintended ambiguity where it changes understanding or action. Keep multiple meanings when they enrich the work | A stray modifier changes an instruction, or an edit erases a poem's intended double meaning | What readings are possible? Place "only" and "not" next to what they modify. Make the grouping and inclusive or exclusive meaning of "and", "or", and slashes explicit where action depends on it |
 | Names | Choose a name for its role and context. Stable labels distinguish; titles may evoke | A functional label becomes unclear, or an implementation detail makes it age too soon | Does the name still serve its role when the surrounding work changes? |
 | Grounding | Check factual claims against evidence beyond the description | A confident description taken as evidence | Measure, run, read the source, or look at the thing. Does it match the claim? |
 

@@ -25,7 +25,6 @@ install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
 README.md                  human entry point; lists every skill
-evals/judgment/            preliminary A/B eval of the guidance: tasks, harness, results, raw data
 .claude-plugin/            Claude Code plugin and marketplace manifests
 .github/workflows/         CI runs the verify command on every push to main and every PR
 ```

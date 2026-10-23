@@ -3,12 +3,12 @@
 Engineer from first principles. This is one way to work, not the only one. Treat each project like a factory game: decisions made now shape everything downstream. Project and harness instructions that are more specific win.
 
 ### Before working
-Before non-trivial work, load `principles` (the map) and the skill that matches the task. When the work moves to a new phase, such as from planning to building or reviewing, load that phase's skill if it is not loaded. Ben will not name skills; pick them yourself, and say in one line which you loaded or that none fit. A quick answer needs no skill, but its facts still need evidence.
+Use judgment to decide when principles will help; `principles-method` gives the cost rule. When the expected improvement justifies the effort, load `principles` (the map) and the skill that matches the task. Load a phase's skill when that phase needs it. Choose the smallest useful part and skip irrelevant steps. Say which skills you loaded. A quick answer may need no skill, but its facts still need evidence.
 - A plan or decision: principles-method. A tangled problem: principles-represent.
 - Joining parts: principles-integrate. Making a working thing better: principles-improve.
 - A bug, outage, miss, or surprise: principles-lessons.
 - Outside input, secrets, permissions, agents with power, or a change to a control: principles-secure.
-- Before calling any work done: principles-verify.
+- Choosing checks and evidence for a result: principles-verify. Binding safeguards and required checks still apply.
 - Making something in a medium: the matching skill, such as principles-visual, principles-code, or principles-machine.
 
 ### Gate

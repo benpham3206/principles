@@ -16,6 +16,7 @@ Think big. Build small. Win.
                  language  interaction                         |
                  information  code  machine                    |
                  integrate, to join the parts                  |
+                 world, to make the parts one place            |
                  synthesize, for the new                       |
      ^                                                         v
      +---- LESSONS <----------------------- VERIFY <-----------+
@@ -38,6 +39,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles` | The map, the six axes, and the laws that hold in every medium |
 | `principles-ground` | What is fundamentally true; map versus territory; first principles as a procedure |
 | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` | Each medium on the six axes: principle, failure, and check for every leaf |
+| `principles-world` | Many parts as one place: canon, persistence across thresholds, agreeing senses, in-world interface, voice |
 | `principles-verify` | Done means true, works, and good: evidence on the real thing, taste at three distances, a bar you would sign |
 | `principles-secure` | Safe from misuse and from its own compromised parts: threat model, trust boundaries, authority, fail closed, review |
 | `principles-method` | How to work: gate, plan, build, refine; decisions under uncertainty |

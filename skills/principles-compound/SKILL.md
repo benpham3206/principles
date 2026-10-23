@@ -42,4 +42,4 @@ When machines make knowledge and analysis abundant, the assets that keep their v
 4. For each compounding item, name where its gain is retained.
 5. Name the one loss that could reset everything, and protect against it first.
 
-Pairs with: before `principles-lessons`, `principles-develop`; after `principles-improve`.
+Pairs with: before `principles-lessons`, `principles-develop`, `principles-loop`; after `principles-improve`.

@@ -68,7 +68,7 @@ Keep a current model of the project and revise it when evidence changes. Record 
 | Domain | Plan looks like | Build looks like | Verify looks like |
 |---|---|---|---|
 | Software | spec, interfaces, data model | small commits behind tests | tests, types, staging, metrics in production |
-| Hardware | requirements, load cases, free-body diagrams | sketch, model, prototype, test article | analysis, then physical test to failure |
+| Hardware | requirements, load cases, free-body diagrams | sketch, model, prototype, test article | analysis and representative tests chosen for the required margin or failure behavior |
 | Visual and sound design | brief, references, motifs, palette | thumbnails, then one full pass, then detail | three-distance review, real observers |
 | Writing | reader, purpose, outline | draft fast, then cut | cold read, does the reader act correctly? |
 | Research | question, hypothesis, what would disprove it | cheapest experiment that could fail | replication, independent check |

@@ -67,7 +67,7 @@ Cheapest first. Stop at the first rung that proves the property. A higher rung i
 8. Observation of real use, when real use is the evidence that matters.
 9. Load, failure, security, or adversarial tests, when those are the actual risks.
 
-The ladder holds in every medium. For a machine: analysis, then a bench test, then a test to failure. For writing: a cold read, then a reader who must act on it.
+The ladder holds in every medium. For a machine, choose analysis or a representative proof test to establish a required bound. Use a controlled test to failure to measure a sample's capacity or check its predicted failure mode. For writing: a cold read, then a reader who must act on it.
 
 Leave one small runnable check for any branch, loop, parser, state change, money, or security logic that no cheaper rung would catch.
 

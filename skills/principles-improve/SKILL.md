@@ -9,6 +9,8 @@ An **improvement** moves a working thing toward its goal on a measured metric wh
 
 Use `principles-refine` for revisions to expression, coherence, or fit judged through comparison and use. A refinement can include measured improvement; match the evidence to the claim.
 
+Keep representations used for current decisions aligned with the evidence and accepted changes. Use `principles-represent` when the structure is unclear or the current view hides the next action. Preserve baseline snapshots for comparison.
+
 ```
 MEASURE ----> BOTTLENECK ----> QUESTION ----> DELETE ----> SIMPLIFY ----> SPEED UP ----> AUTOMATE
 baseline,     the one thing    is this        remove       fewer parts,   shorten the     only what is

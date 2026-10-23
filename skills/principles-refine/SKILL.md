@@ -9,6 +9,8 @@ description: Revise existing work toward its intended quality. Use when comparin
 
 Use `principles-craft` to set the quality bar and the medium skills to judge specific choices. Use `principles-improve` for measured gains in cost, delay, throughput, or failures; use `principles-simplify` when less complexity is the goal. These can be part of a refinement.
 
+Keep representations used for current decisions aligned with the evidence and accepted changes. Use `principles-represent` when the structure is unclear or the current view hides the next action. Preserve baseline snapshots for comparison.
+
 ## Steps
 
 1. Return to the intent, audience, constraints, and definition of done. Keep the current version as a baseline. Name what must survive the revision and the quality gap that matters most.

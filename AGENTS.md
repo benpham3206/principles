@@ -38,12 +38,13 @@ README.md                  human entry point; lists every skill
 
 ## Dogfood
 
-This repo is built by its own skills. Before adding or changing a skill:
+This repo is built by its own skills. Before adding or changing a skill or `policy.md`:
 
 1. Run `principles-method`: intent, definition of done, the gate.
 2. Write it.
 3. Run `principles-verify` on it: three distances, six axes, taste faults, verification.
-4. A change is done when `principles-verify` finds no material issue and the skill reads as plain instructions to a capable stranger.
+4. Before the pull request opens, get an independent review from a different model or person, and fix each material issue it finds. The author reviewing in another session is not independent.
+5. A change is done when `principles-verify` and the independent review find no remaining material issue, and the skill reads as plain instructions to a capable stranger.
 
 ## Skill layout
 

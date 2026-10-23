@@ -67,7 +67,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | **Form** | What shape does it take? | shape, scale, proportion | pitch, interval, envelope | word, sentence length | targets, affordances | types, interfaces | geometry, tolerance, fit |
 | **Material** | What is it made of? | color, texture, roughness | timbre, resonance | diction, register | states, feedback | language, data structures, dependencies | alloy, polymer, finish |
 | **Energy** | What drives it, and how hard? | light, intensity, falloff | dynamics, attack | emphasis, stress | response, effort, latency | compute, memory, power | work, power, leverage, loads, heat |
-| **Observer** | Who meets it, from where? | viewpoint, focus, exposure | listener, room, speaker | reader, prior knowledge | user, context, ability | caller, maintainer, operator | operator, inspector, sensor |
+| **Observer** | Who meets it, from where? | viewpoint, focus, exposure | listener, room, speaker | reader, prior knowledge | user, context, ability | caller, maintainer, operator | user, operator, inspector, sensor |
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 

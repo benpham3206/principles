@@ -30,7 +30,7 @@ MACHINE
 ├── Form          geometry, tolerances and fits, datums, stress concentrations, stiffness from geometry
 ├── Material      property per mass and cost, strength vs stiffness vs toughness, corrosion, temperature, anisotropy
 ├── Energy        work and power, leverage, loads and load cases, free-body diagram, load paths, heat, power flow, stored energy
-├── Observer      operator, assembler, inspector, maintainer, sensors, the person nearby
+├── Observer      user, operator, assembler, inspector, maintainer, sensors, the person nearby
 ├── Composition   part count, interfaces and fasteners, load path continuity, modularity, assembly
 ├── Time          fatigue, creep, wear, vibration, maintenance, manufacturing sequence, life cycle
 └── Failure       factor of safety, fail safe, redundancy, test to failure, root cause
@@ -78,6 +78,7 @@ MACHINE
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
+| User | The person the machine serves: what they need it to do, where, how often, and what they already know. Their task and context set the function, not the mechanism | A machine that works on the bench and fails the person it was built for: wrong force, size, speed, or setting | Have the intended user do the real task, in the real setting. Do they get the outcome they need, as often as they need it? |
 | Operator | The operator's body, reach, strength, attention, and error rate bound the design | Controls reachable only in a pose the operator cannot hold; error-prone steps | Can a tired operator in a poor position use it correctly? |
 | Assembler | A part should go together in one way only, with tools that fit and room to use them | Parts that fit backward; fasteners hidden behind other parts | Can it go together wrong? Can the tool reach every fastener? |
 | Inspector | A requirement that cannot be measured cannot be accepted. The inspector needs access and a datum | Features inside a closed cavity; tolerances finer than the instrument | How is each critical feature checked, and with what resolution? |

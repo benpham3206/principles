@@ -54,6 +54,7 @@ Every made thing is a set of choices along six axes. `principles` defines them o
 | `principles-counsel` | Advising a person, and keeping their agency across a capability gap |
 | `principles-mind` | Designing an agent: memory, cycles, budgets, calibration, invariants |
 | `principles-develop` | How people and agents grow; map, path, and advice modes |
+| `principles-loop` | Loops: reinforcing and balancing feedback, delays, return, giving back, communities, strange loops |
 | `principles-compound` | What compounds, and how to invest so gains build on gains |
 
 ## Install

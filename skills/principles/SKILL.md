@@ -56,6 +56,7 @@ Every made thing, in any medium, is a set of choices along six axes. Intent pick
 | Mind | `principles-counsel` | advising, teaching, coaching, or answering a person; deciding whether to give the answer or teach it |
 | | `principles-mind` | designing an agent, an assistant, memory, or calibration |
 | | `principles-develop` | growing a person or an agent, teaching, choosing how much to scaffold |
+| | `principles-loop` | loops of any kind: feedback, delays, return, reciprocity, communities, self-reference |
 | | `principles-compound` | deciding what to invest in so gains build on gains |
 
 ## The six axes

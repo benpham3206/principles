@@ -30,7 +30,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 
 ## Steps
 
-1. Measure the baseline on the metric the goal names. Without a baseline, no change can be shown to help.
+1. Measure the baseline on the metric the goal names and on the guardrails: the other measures that must not get worse. Correctness checks are always guardrails. Note how much a measure moves on its own, so noise is not read as change. Without a baseline, no change can be shown to help.
 2. Find the bottleneck: the one step, part, or resource that limits the goal now. Improving anything else changes nothing the goal can see.
 3. Question the requirement behind it. Ask who needs it and what breaks without it. A requirement with no owner is a candidate for deletion.
 4. Delete what does not need to exist. If nothing deleted has to come back later, too little was deleted.
@@ -38,7 +38,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 6. Speed up the loop that is left: the time from a change to knowing whether it worked.
 7. Automate only work that is understood, stable, and repeated. Automating a broken process makes it fail faster.
 8. Optimize performance only when a measured metric breaks a stated limit at the bottleneck, and the code or part is verified and not about to be deleted. Otherwise ship the simple version and write down its known limit and how to raise it.
-9. Measure again against the baseline. Keep the change if the metric moved and nothing else broke; revert it if not.
+9. Run each change as an experiment. Before it, write the hypothesis: what you will change and what the metric should do. After it, measure the metric and the guardrails. Keep the change if the metric moved toward the goal by more than noise and no guardrail got worse; revert it if not. Record the hypothesis, the numbers, and the decision where the work's history lives, such as the commit message or the lab notebook, including for a change you reverted. Then find the bottleneck again.
 
 ## Principles
 

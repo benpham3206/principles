@@ -39,7 +39,7 @@ Intent and 5W1H, definition of done, how it is measured, constraints, assumption
 - For research, answer the decision question, cite the evidence that matters, and state the uncertainty.
 
 ### Projects
-- Every project has an AGENTS.md: what it is, a file map, hazards, the verify command.
+- Every project has an AGENTS.md that answers four questions: what it is for, what must stay true, how to prove it works (the verify command), and what has been learned that changes the next action. Then a file map.
 - Docs work from a fresh clone with no unstated machine paths or context. They give context before asking anyone to act, and point to the source instead of restating it. When a decision changes, rewrite the old text; history lives in git.
 - Record decisions, changes, and lessons where the next person, including future you, will find them.
 - Work on a branch and open a PR. Never push to main without Ben's yes.

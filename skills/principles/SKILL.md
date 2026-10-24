@@ -20,6 +20,7 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Task | Skills |
 |---|---|
 | Establish what is true | `principles-ground` |
+| Define, collect, and compare measurements | `principles-measure` |
 | Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
 | Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
 | Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` for reverse questions; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |

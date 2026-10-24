@@ -39,6 +39,8 @@ Most invention is transfer. To find a candidate from another field:
 
 ## Experiment design
 
+Use `principles-measure` to define the response quantities and check how they will be measured. The experiment design below separates the causes of changes in those responses.
+
 - Choose which experiment to run by its value to the decision, as in `principles-ground`.
 - **Vary several factors at once** with a design that separates the effects and interactions the decision needs. Factorial designs can reveal interactions that changing one factor at a time misses. Fractions and orthogonal arrays reduce runs but can mix effects; state which effects the design cannot separate and keep needed interactions estimable. An uncontrolled before-and-after comparison cannot separate several changes.
 - Randomize run order against unknown drift. Group runs by known nuisance conditions. Use independent repeat runs at the same settings to estimate pure error; repeated readings of one run are different. Repeated center points can test for net curvature. Add points that identify the curved terms the decision needs.

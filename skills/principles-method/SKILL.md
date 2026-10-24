@@ -29,7 +29,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 
 1. **Intent**: why. Ask the 5W1H: what, why, who, when, where, how.
 2. **Goal**: what, and the definition of done. Define success, constraints, and failure conditions before building.
-3. **Metrics**: how you will know. Build the measurement tool if none exists.
+3. **Metrics**: how you will know. Use `principles-measure` to define quantities and check the measurement method before building a tool.
 4. **Constraints**: what cannot be violated. Name them before choosing tools. Language, framework, storage, and infrastructure are downstream choices; revisit them only when evidence shows a constraint or bottleneck changed.
 5. **Assumptions and dependencies**: what depends on what, and why. Mark each as fact, assumption, estimate, or decision.
 6. **First principles**: what is actually necessary (see `principles-ground`).

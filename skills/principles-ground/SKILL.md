@@ -1,6 +1,6 @@
 ---
 name: principles-ground
-description: Reason from evidence and first principles. Use when checking claims, comparing explanations, choosing experiments, estimating uncertainty, or deciding whether more information would change a decision.
+description: Reason from evidence and first principles. Use when checking claims, comparing explanations, choosing experiments, or deciding whether more information would change a decision.
 ---
 
 # Ground
@@ -69,10 +69,7 @@ Failure: research that continues after the choice is settled, or an irreversible
 
 ## Measurements and predictions
 
-- Every measurement has a resolution, a bias, and noise. Repeat it to see the noise; measure a known reference to see the bias, and correct what you know.
-- Judge a difference against the uncertainty of the difference, not of one reading. Repeats can show a difference smaller than one reading's noise; a bias shared by both readings cancels in the difference, and one that is not shared does not.
-- Carry uncertainty through the calculation. For a nearly linear calculation, scale each input's standard uncertainty by the result's sensitivity to it. Combine independent terms by the square root of their squared sum. Correlated terms need their covariance. If dependence is unknown, the sum of the absolute scaled terms bounds the standard uncertainty. For strongly nonlinear calculations, propagate ranges or samples through the calculation itself.
-- An instrument reports only what it measures, where it sits, with its lag. Name the gap between what was measured and what is claimed.
+- Use `principles-measure` to define quantities, choose and check instruments, collect readings, carry uncertainty, and compare results. Establish what the measurement supports before inferring a cause or generalizing beyond its conditions.
 - A prediction is a model run forward. Its uncertainty grows with distance from the cases the model was checked against; state that distance.
 
 ## Axioms by domain
@@ -103,4 +100,4 @@ Done when the limit is a number with units and each step to it names the law it 
 
 To reason about something new, anchor it to the nearest thing that is known and measured, then reason only about the difference. State which known case you chose and why it is close. The size of the difference is the size of your uncertainty.
 
-Pairs with: after `principles-method`, `principles-horizons`.
+Pairs with: before `principles-measure`; after `principles-method`, `principles-horizons`.

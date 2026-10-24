@@ -34,7 +34,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 
 ## Steps
 
-1. Measure the baseline on the metric the goal names and on the guardrails: the other measures that must not get worse. Correctness checks are always guardrails. Note how much a measure moves on its own, so noise is not read as change. Without a baseline, no change can be shown to help.
+1. Use `principles-measure` to establish the baseline on the goal metric and the guardrails: the other measures that must not get worse. Correctness checks are always guardrails. Without a baseline, no change can be shown to help.
 2. Find what limits the goal now, including how parts interact. For throughput, that is the limiting step and whatever makes it wait or blocks it. For a metric that adds up, compare the reduction each part can give for its cost.
 3. Question the requirement behind it. Ask who needs it and what breaks without it. A requirement with no owner is a candidate for deletion.
 4. Delete what does not need to exist. Stop when the next deletion would break the goal or a guardrail.

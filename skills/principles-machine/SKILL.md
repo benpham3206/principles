@@ -30,7 +30,7 @@ MACHINE
 ├── Form          geometry, tolerances and fits, datums, stress concentrations, stiffness from geometry
 ├── Material      property per mass and cost, strength vs stiffness vs toughness, corrosion, temperature, anisotropy
 ├── Energy        work and power, energy balance, loads and load cases, free-body diagram, load paths, heat, power flow, stored energy
-├── Observer      user, operator, assembler, inspector, maintainer, sensors, the person nearby
+├── Observer      user, operator, assembler, inspector, measurement geometry, maintainer, sensors, the person nearby
 ├── Composition   part count, interfaces and fasteners, load path continuity, modularity, assembly
 ├── Time          fatigue, creep, wear, vibration, maintenance, manufacturing sequence, life cycle
 └── Failure       factor of safety, fail safe, redundancy, test to failure, root cause
@@ -82,6 +82,8 @@ MACHINE
 | Operator | The operator's body, reach, strength, attention, and error rate bound the design | Controls reachable only in a pose the operator cannot hold; error-prone steps | Can a tired operator in a poor position use it correctly? |
 | Assembler | A part should go together in one way only, with tools that fit and room to use them | Parts that fit backward; fasteners hidden behind other parts | Can it go together wrong? Can the tool reach every fastener? |
 | Inspector | A requirement that cannot be measured cannot be accepted. The inspector needs access and a datum | Features inside a closed cavity; tolerances finer than the instrument | How is each critical feature checked, and with what resolution? |
+| Measurement geometry | Abbe's principle places the measurement axis on the line of the dimension being measured. With offset $h$ and a small angular error $\theta$ in the relevant plane, in radians, the leading displacement error has magnitude about $h\theta$. Align the axes or account for angular motion | Fine instrument resolution hides an error caused by rotation at an offset | Use `principles-measure` for the measurement and uncertainty budget. What are the offset and angular range, and does their contribution fit the budget? |
+| Measurement conditions | Temperature, contact force, and fixtures can change the dimension under inspection | A stable reading describes the heated, compressed, or distorted part rather than the required condition | State the reference condition. Bound thermal expansion and deformation, or measure and correct them with uncertainty |
 | Maintainer | Parts that wear need to be reachable, identifiable, and replaceable by one person with common tools | An hours-long teardown for a ten-minute part | Time the swap of the part that wears first |
 | Sensors | A sensor reports only what it measures, at its place, with its lag and noise. Control and safety depend on the measure | A reading taken as the state of the whole machine; a sensor placed where the failure is not | What does the sensor not see? Where would the fault have to be to hide? |
 | The person nearby | Plan for the person closest when it fails: guards, shields, and clear paths away from the stored energy | Safety left to a warning label | If the worst part fails now, where does the energy go, and who is there? |

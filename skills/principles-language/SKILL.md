@@ -110,7 +110,7 @@ LANGUAGE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Structure | Match form to content: steps in a list, comparisons in a table, an argument in paragraphs | Layout hides the relation among ideas | Can the reader see how the parts relate? |
-| Order | Lead answers and reports with the finding. Put prerequisites before procedural steps | The answer is buried or needed context arrives late | Read in order. Can the reader understand and act at each point? |
+| Order | Lead answers and reports with the finding. In final task responses, state the result and completed work with needed context, material evidence, and limits, then next steps or actions if any remain. Keep the account focused on outcomes. Put prerequisites before procedural steps | The answer is buried or needed context arrives late | Read in order. Can the reader understand and act at each point? |
 | Headings and titles | Headings help readers find their way; levels show hierarchy. Titles can name the subject or suggest a mood or idea | A heading hides content, or a title promises the wrong experience | Read headings alone. Do they give a usable outline and the right expectation? |
 | Connections | Show how sentences and paragraphs build on each other | A jump needs context the reader lacks; "moreover" does not show the relation | Name the relation. Use a transition that shows it, or remove the empty transition |
 | Lists | Number sequences and use bullets for comparable items. Keep items parallel | The reader cannot tell whether order matters | Does numbering show a sequence, and do the items serve the same kind of purpose? |

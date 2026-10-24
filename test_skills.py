@@ -91,8 +91,8 @@ def ref_errors(text: str, names: set[str]) -> list[str]:
 
 
 def ascii_errors(text: str) -> list[str]:
-    """Non-ASCII outside fenced code blocks."""
-    errors = []
+    """Non-ASCII outside fenced code blocks, and NUL anywhere (a file saved as UTF-16)."""
+    errors = ["NUL bytes: the file is not UTF-8 (UTF-16?)"] if "\x00" in text else []
     fenced = False
     for i, line in enumerate(text.splitlines(), 1):
         if line.startswith("```"):
@@ -227,6 +227,9 @@ class TestAscii(unittest.TestCase):
 
     def test_non_ascii_inside_a_fence_passes(self) -> None:
         self.assertEqual(ascii_errors("```\n├── tree\n```\nplain\n"), [])
+
+    def test_utf16_text_is_an_error(self) -> None:
+        self.assertTrue(ascii_errors("# Title\n".encode("utf-16-le").decode("utf-8")))
 
     def test_plain_ascii_has_no_errors(self) -> None:
         self.assertEqual(ascii_errors("all plain\n"), [])

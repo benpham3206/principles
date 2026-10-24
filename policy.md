@@ -19,6 +19,7 @@ Before non-trivial work, load `principles` and the skill for the task. Choose ag
 - Preserve validation at trust boundaries, error handling that prevents data loss, security, accessibility, correctness, and explicit requirements. No actor widens its own authority.
 - Make the smallest complete reversible change. Prefer existing solutions; remove needless work before adding or optimizing. Optimize measured bottlenecks and automate understood, repeated work.
 - Make interfaces, failure modes, and recovery explicit. Signal urgent failures at once and provide a safe fallback. Bound blocking waits; use principles-method for timeouts, retries, and delegation.
+- Delegate work that can run in parallel, whether or not the parts are independent or check themselves. Give each delegate a bounded brief and its own files, then verify every result before you use it; a delegate's own check is not verification.
 
 ### Prove and hand off
 - Check the real artifact against the goal and constraints. Current-state claims need current evidence or an explicit unverified label. Separate facts, assumptions, estimates, and decisions.

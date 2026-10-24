@@ -6,7 +6,7 @@ Rules for working on this repo, for every agent and every person. [CLAUDE.md](CL
 
 `principles` is a skills plugin: axioms, principles, and philosophies that make agents and people better at making things, in any medium, software or physical. It is meant to stay true as models grow more capable. Write what will still hold in a hundred years.
 
-`policy.md` is the always-on engineering policy. `install.py` writes it into every harness's instruction file, so every agent reads it in every session. Keep it to 50 lines: it says when to load which skill, and the skills hold the depth.
+`policy.md` is the always-on engineering policy. `install.py` writes it into every harness's instruction file, so every agent reads it in every session. Keep it to 50 lines and 550 whitespace-separated words, including headings. These are context budgets, not token counts. The policy holds universal constraints and routing; the skills hold the depth.
 
 Requirements:
 
@@ -24,6 +24,7 @@ policy.md                  always-on policy, written into every harness's instru
 install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
+tests/fixtures/policy_fanout.py  pinned upstream policy fanout logic for clean CI
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests
 .github/workflows/         CI runs the verify command on every push to main and every PR
@@ -34,7 +35,7 @@ README.md                  human entry point; lists every skill
 - **Installed clone is live.** Agents load skills through links into `~/.agents/skill-repos/benpham3206__principles`. An edit there reaches every agent at once, unreviewed. Work in a separate clone or a worktree.
 - **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
-- **Policy tests need agent-hooks.** `TestPolicy` skips when agent-hooks `fanout.py` is absent, as it is in CI. Run the suite on a machine with agent-hooks before merging an `install.py` change.
+- **Policy tests run in clean CI.** `TestPolicy` uses the pinned agent-hooks excerpt in `tests/fixtures/policy_fanout.py`. `TestPolicyRealFanout` repeats the same temp-home scenarios with the installed dependency when present; only this optional integration skips when absent. Keep the fixture provenance when refreshing it.
 
 ## Use the skills on this repository
 
@@ -85,7 +86,7 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 `python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
 
-`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line limit. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
+`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
 
 ## Git
 

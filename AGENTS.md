@@ -24,6 +24,7 @@ policy.md                  always-on policy, written into every harness's instru
 install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
+evals/routing.md           situations with the skill an agent should load first
 tests/fixtures/policy_fanout.py  pinned upstream policy fanout logic for clean CI
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests
@@ -91,6 +92,8 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 `test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
 
 Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
+
+Routing needs an agent, so no unit test covers it. After changing the `Choose guidance` list in `policy.md` or the map in `skills/principles`, run `evals/routing.md` on fresh agents, at least twice. Every situation should route as expected. When an agent misroutes in real work, add that situation before changing the routing text. The eval measures choosing a skill once asked; whether an agent stops to choose mid-task needs observation of real sessions.
 
 ## Git
 

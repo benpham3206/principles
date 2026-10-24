@@ -26,7 +26,7 @@ test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
 evals/routing.md           situations with the skill an agent should load first
 evals/agent-ab.md          lessons and checks for rerunning the with-and-without principles eval
-tests/fixtures/policy_fanout.py  pinned upstream policy fanout logic for clean CI
+harnesses.py               built-in harness map, copied verbatim from agent-hooks' fanout.py
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests
 .github/workflows/         CI runs the verify command on every push to main and every PR
@@ -37,7 +37,7 @@ README.md                  human entry point; lists every skill
 - **Installed clone is live.** Agents load skills through links into `~/.agents/skill-repos/benpham3206__principles`. An edit there reaches every agent at once, unreviewed. Work in a separate clone or a worktree.
 - **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
-- **Policy tests run in clean CI.** `TestPolicy` uses the pinned agent-hooks excerpt in `tests/fixtures/policy_fanout.py`. `TestPolicyRealFanout` repeats the same temp-home scenarios with the installed dependency when present; only this optional integration skips when absent. `TestPosixScripts` skips where `/bin/sh` is absent, such as Windows; CI runs it on Linux. Keep the fixture provenance when refreshing it.
+- **Install works without agent-hooks.** `install.py` uses agent-hooks' `fanout.py` when installed and `harnesses.py` otherwise. `TestFreshMachine` runs the real installer in a blank home; `TestPolicy` uses `harnesses.py`. `TestPolicyRealFanout` repeats the policy scenarios with the installed dependency when present; only this optional integration skips when absent. `TestPosixScripts` skips where `/bin/sh` is absent, such as Windows; CI runs it on Linux. Refresh `harnesses.py` only from a reviewed upstream commit, and update its recorded commit and hash.
 - **Some agent tools on Windows save new files as UTF-16.** Text editors and PowerShell show such a file normally; Python, git diffs, and CLIs reading stdin see NUL bytes. `evals/routing.md` reached main this way. `test_skills.py` rejects NUL bytes in tracked markdown; check the bytes of any file an agent creates outside markdown.
 
 ## Use the skills on this repository

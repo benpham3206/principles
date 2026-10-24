@@ -37,6 +37,7 @@ README.md                  human entry point; lists every skill
 - **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
 - **Policy tests run in clean CI.** `TestPolicy` uses the pinned agent-hooks excerpt in `tests/fixtures/policy_fanout.py`. `TestPolicyRealFanout` repeats the same temp-home scenarios with the installed dependency when present; only this optional integration skips when absent. `TestPosixScripts` skips where `/bin/sh` is absent, such as Windows; CI runs it on Linux. Keep the fixture provenance when refreshing it.
+- **Some agent tools on Windows save new files as UTF-16.** Text editors and PowerShell show such a file normally; Python, git diffs, and CLIs reading stdin see NUL bytes. `evals/routing.md` reached main this way. `test_skills.py` rejects NUL bytes in tracked markdown; check the bytes of any file an agent creates outside markdown.
 
 ## Use the skills on this repository
 

@@ -46,6 +46,7 @@ HERMES = HOME / ".hermes" / "skills" / "software-development" / "hermes-executio
 HERMES_POINTER = ("**Engineering policy:** load `references/engineering-policy.md`, the managed copy of "
                   "principles' `policy.md`. Fast path for cheap reversible work: build, verify, iterate.")
 WIN = sys.platform.startswith("win")
+CREATE_IF_MISSING = {"claude-code", "codex", "kimi", "gemini", "copilot"}
 # ssh aliases this fleet uses. remote.py drives the two it knows (same guard, same logs);
 # mbp13 has no remote.py target, so it gets plain ssh into a login shell. The remote command
 # fast-forwards with git before running install.py, so a clone older than install.py updates too.
@@ -268,6 +269,29 @@ def load_fanout():
     return mod
 
 
+def harness_folders(folders: list[Path], check: bool) -> int:
+    """Create each missing folder whose harness is installed. Returns how many were (or would be) made.
+
+    A harness counts as installed when its own folder exists: the first folder under HOME, or the
+    first two under ~/.config, which most machines have whatever harnesses they run. A fresh install
+    often lacks the skills or rules folder the harness reads; without this it would get nothing.
+    """
+    missing = []
+    for d in folders:
+        try:
+            parts = d.relative_to(HOME).parts
+        except ValueError:
+            continue
+        root = HOME.joinpath(*parts[:2 if parts[0] == ".config" else 1])
+        if root.is_dir() and root != d and not d.is_dir():
+            missing.append(d)
+    for d in missing:
+        print(f"{'missing' if check else 'created':<8} {d}")
+        if not check:
+            d.mkdir(parents=True, exist_ok=True)
+    return len(missing)
+
+
 def policy(check: bool) -> int:
     """Write policy.md as one managed block into every harness instruction file. Returns drift."""
     src = CLONE / POLICY
@@ -277,17 +301,20 @@ def policy(check: bool) -> int:
     fo = load_fanout()
     body = src.read_text(encoding="utf-8").strip()
     source = f"~/.agents/skill-repos/benpham3206__principles/{POLICY}"
-    targets = fo.instruction_targets(POLICY_TAG, POLICY_TITLE)
-    # Grok loads every file in ~/.grok/rules every session; fanout only edits ~/.grok/AGENTS.md if it exists.
+    # An installed harness gets its instruction file even when it has none yet. Grok is left out: it
+    # reads the policy from ~/.grok/rules, and a second copy in ~/.grok/AGENTS.md would double it.
+    targets = [(h, p, "" if head is None and h in CREATE_IF_MISSING else head)
+               for h, p, head in fo.instruction_targets(POLICY_TAG, POLICY_TITLE)]
     targets.append(("grok-rules", HOME / ".grok" / "rules" / f"ben-{POLICY_TAG}.md", ""))
     targets.append(("hermes", HERMES / "references" / "engineering-policy.md", ""))
-    drift = fo.install_rule(POLICY_TAG, body, source, targets, check)
+    made = harness_folders([p.parent for h, p, _ in targets if h not in ("canonical", "hermes")], check)
+    drift = (made if check else 0) + fo.install_rule(POLICY_TAG, body, source, targets, check)
     return drift + fo.install_rule(POLICY_TAG, HERMES_POINTER, source, [("hermes", HERMES / "SKILL.md", None)], check)
 
 
 def harness_dirs() -> list[Path]:
     """The harness skill folders fanout.py links into, read from fanout.py itself."""
-    return [Path(d) for d in load_fanout().SKILL_DIRS]
+    return [Path(d) for d in getattr(load_fanout(), "SKILL_DIRS", [])]
 
 
 def prune(names: list[str], check: bool) -> list[Path]:
@@ -379,7 +406,7 @@ def install(check: bool) -> int:
         return 1
     print(f"harnesses {FANOUT if FANOUT.is_file() else BUILTIN}")
     names = skills(CLONE)
-    worst = 0
+    worst = 1 if harness_folders(harness_dirs(), check) and check else 0
     for name in names:
         state = link(name, check)
         if state == "conflict":

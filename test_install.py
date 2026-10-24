@@ -153,17 +153,19 @@ class TestFreshMachine(unittest.TestCase):
         shutil.copytree(repo / "skills", clone / "skills")
         for name in ("install.py", "harnesses.py", "policy.md"):
             shutil.copy2(repo / name, clone / name)
-        (home / ".codex" / "skills").mkdir(parents=True)
-        (home / ".codex" / "AGENTS.md").write_text("# Mine\n", encoding="utf-8")
+        (home / ".codex").mkdir()  # harnesses as a fresh install leaves them: no skills folder, no rules
+        (home / ".cursor").mkdir()
         env = {**os.environ, "HOME": str(home), "USERPROFILE": str(home), "APPDATA": str(home / "AppData")}
         done = subprocess.run([sys.executable, str(clone / "install.py")], env=env,
                               capture_output=True, text=True, timeout=300)
         self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
         self.assertIn("harnesses.py", done.stdout)
-        self.assertTrue((home / ".codex" / "skills" / "principles-verify" / "SKILL.md").is_file())
-        agents = (home / ".codex" / "AGENTS.md").read_text(encoding="utf-8")
-        self.assertTrue(agents.startswith("# Mine\n"))
-        self.assertIn("## Engineering policy", agents)
+        for harness in (".codex", ".cursor"):
+            self.assertTrue((home / harness / "skills" / "principles-verify" / "SKILL.md").is_file(), harness)
+        self.assertIn("## Engineering policy", (home / ".codex" / "AGENTS.md").read_text(encoding="utf-8"))
+        self.assertIn("## Engineering policy",
+                      (home / ".cursor" / "rules" / "ben-engineering-policy.mdc").read_text(encoding="utf-8"))
+        self.assertFalse((home / ".claude").exists())
         again = subprocess.run([sys.executable, str(clone / "install.py"), "--check"], env=env,
                                capture_output=True, text=True, timeout=300)
         self.assertEqual(again.returncode, 0, again.stdout + again.stderr)
@@ -248,11 +250,23 @@ class TestPolicy(Fixture):
         self.assertTrue(pointer.startswith("# My Hermes skill\n"))
         self.assertIn(install.HERMES_POINTER, pointer)
 
-    def test_absent_harnesses_and_missing_instruction_files_stay_absent(self) -> None:
+    def test_absent_harnesses_stay_absent(self) -> None:
         install.policy(check=False)
-        for path in (".claude/CLAUDE.md", ".grok/AGENTS.md", ".config", "FABLE", ".kimi", ".gemini", ".copilot"):
+        for path in (".grok/AGENTS.md", ".config", "FABLE", ".kimi", ".gemini", ".copilot"):
             with self.subTest(path=path):
                 self.assertFalse((self.home / path).exists())
+
+    def test_present_harness_without_an_instruction_file_gets_one(self) -> None:
+        install.policy(check=False)
+        self.assertIn("rule one", (self.home / ".claude" / "CLAUDE.md").read_text(encoding="utf-8"))
+
+    def test_present_harness_without_its_rules_folder_gets_it(self) -> None:
+        (self.home / ".cursor" / "rules").rmdir()
+        self.assertGreater(install.policy(check=True), 0)
+        self.assertFalse((self.home / ".cursor" / "rules").exists())
+        install.policy(check=False)
+        self.assertIn("rule one", (self.home / ".cursor/rules/ben-engineering-policy.mdc").read_text())
+        self.assertEqual(install.policy(check=True), 0)
 
     def test_duplicate_blocks_refuse_without_changing_the_file(self) -> None:
         install.policy(check=False)

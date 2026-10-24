@@ -155,6 +155,8 @@ class TestFreshMachine(unittest.TestCase):
             shutil.copy2(repo / name, clone / name)
         (home / ".codex").mkdir()  # harnesses as a fresh install leaves them: no skills folder, no rules
         (home / ".cursor").mkdir()
+        (home / ".codex-school").mkdir()  # a second Codex account: CODEX_HOME=~/.codex-school
+        (home / ".codex-school" / "auth.json").write_text("{}", encoding="utf-8")
         env = {**os.environ, "HOME": str(home), "USERPROFILE": str(home), "APPDATA": str(home / "AppData")}
         done = subprocess.run([sys.executable, str(clone / "install.py")], env=env,
                               capture_output=True, text=True, timeout=300)
@@ -162,7 +164,8 @@ class TestFreshMachine(unittest.TestCase):
         self.assertIn("harnesses.py", done.stdout)
         for harness in (".codex", ".cursor"):
             self.assertTrue((home / harness / "skills" / "principles-verify" / "SKILL.md").is_file(), harness)
-        self.assertIn("## Engineering policy", (home / ".codex" / "AGENTS.md").read_text(encoding="utf-8"))
+        for codex in (".codex", ".codex-school"):
+            self.assertIn("## Engineering policy", (home / codex / "AGENTS.md").read_text(encoding="utf-8"))
         self.assertIn("## Engineering policy",
                       (home / ".cursor" / "rules" / "ben-engineering-policy.mdc").read_text(encoding="utf-8"))
         self.assertFalse((home / ".claude").exists())

@@ -26,6 +26,6 @@ Before non-trivial work, load `principles` and the skill for the task. Choose ag
 - Run the repository's verify command and check every affected surface, including recovery. If no command exists, say so and propose one. Fix root causes and leave a check that fails without the fix and names the rule it guards.
 - Judge outcomes, never activity. Keep the definition of success fixed. Consequential work needs independent review; the author's own check is not independent.
 - User-facing quality includes visual craft and accessibility. For research, answer the question, cite material evidence, and state uncertainty. Report what was not checked.
-- Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns.
+- Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns, once nothing still needs them. Move files to the trash; never delete permanently.
 - Keep project purpose, invariants, verify command, lessons, and file map in AGENTS.md. Docs must work from a fresh clone, link to authoritative details, and record decisions where successors can find them.
 - Publish on a branch with a pull request. Never push main or merge without the owner's explicit approval. Start the PR body with a visual showing the change.

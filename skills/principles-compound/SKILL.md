@@ -9,6 +9,8 @@ In one line: Keep each gain and feed it into the next cycle, and protect the ser
 
 A gain **compounds** when it becomes input to the next gain. The thing that grows is a **stock**: knowledge, skill, tools, records, trust, capital, or a body of work. Each **cycle** adds to it or takes from it. The same arithmetic applies to a person, a team, a codebase, an organization, or a field.
 
+Compounding is momentum: what each cycle carries into the next. `principles-loop` shapes the cycle itself, and the two are used together.
+
 ```
 gain -> retained in the stock -> reinvested as input -> next gain
   ^                                                      |

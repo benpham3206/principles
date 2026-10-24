@@ -34,7 +34,7 @@ Use `principles-design` to choose an approach, `principles-refine` to revise an 
 
 Use `principles-measure` for measurements in software and physical work. It defines the quantity, method, references, uncertainty, and comparison; `principles-ground` handles what to infer from the evidence.
 
-Use `principles-create` to add a skill to this family using the repository's conventions. It checks overlap before adding a new entry. Use `principles-tidy` to close agent work, account for temporary resources, and reconcile dependency and architecture documentation. Tidy works without a cleanup tool and can use an existing one within the task's scope. It complements `principles-verify` for evidence and `principles-simplify` for reducing complexity.
+Use `principles-create` to add a skill to this family using the repository's conventions. It checks overlap before adding a new entry. Use `principles-tidy` to close agent work, account for temporary resources, and reconcile dependency and architecture documentation. Tidy works without a cleanup tool and can use an existing one within the task's scope. It records which tools were used and makes useful tools reachable from the project's agent entry point. It connects to Create for reusable skills and Measure for claims about tool improvements. It complements `principles-verify` for evidence and `principles-simplify` for reducing complexity.
 
 ## Install
 

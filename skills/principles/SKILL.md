@@ -27,7 +27,7 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Check the result | `principles-verify` for evidence; `principles-craft` for quality; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
 | Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for feedback; `principles-compound` for lasting gains |
 | Help people and agents | `principles-counsel` for advice; `principles-develop` for growth; `principles-mind` for agent design |
-| Extend and close the work | `principles-create` for adding a family skill; `principles-tidy` for task cleanup and dependency and architecture documentation |
+| Extend and close the work | `principles-create` for adding a family skill; `principles-tidy` for task cleanup, documentation, and tool discovery |
 
 ## The six axes
 

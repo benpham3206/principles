@@ -26,12 +26,15 @@ Use `principles`, the [skill map](skills/principles/SKILL.md), to choose what to
 - Evaluation: `principles-measure`, `principles-verify`, `principles-craft`, `principles-secure`, `principles-reliability`.
 - Learning: `principles-lessons`, `principles-refine`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
 - People and agents: `principles-counsel`, `principles-develop`, `principles-mind`.
+- Skills and closeout: `principles-create`, `principles-tidy`.
 
 Each skill names a principle, the failure it prevents, and a check. Simplification keeps useful distinctions, safety margins, accessibility, and intentional richness.
 
 Use `principles-design` to choose an approach, `principles-refine` to revise an existing result toward its quality bar, and `principles-improve` for measured gains in a working thing.
 
 Use `principles-measure` for measurements in software and physical work. It defines the quantity, method, references, uncertainty, and comparison; `principles-ground` handles what to infer from the evidence.
+
+Use `principles-create` to add a skill to this family using the repository's conventions. It checks overlap before adding a new entry. Use `principles-tidy` to close agent work, account for temporary resources, and reconcile dependency and architecture documentation. Tidy works without a cleanup tool and can use an existing one within the task's scope. It complements `principles-verify` for evidence and `principles-simplify` for reducing complexity.
 
 ## Install
 

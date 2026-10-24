@@ -29,7 +29,7 @@ protecting   reach and spend                    who said so    outside the     c
 
 ## Defaults to replace
 
-Trust because the caller is internal, a permission granted broadly "for now", one credential shared by many parts, secrets in code, config, logs, or examples, a denylist of bad inputs, checks only in the client or the prompt, errors that fail open, an agent that can edit the rules that bind it, a model's output passed straight to a shell, query, path, or tool, recovery keys within reach of everyday work, a review of the changed lines only, and severity set by alarm instead of reach.
+Trust because the caller is internal, a permission granted broadly "for now", one credential shared by many parts, secrets in code, config, logs, or examples, a denylist of bad inputs, checks only in the client or in an agent's instructions, errors that fail open, an agent that can edit the rules that bind it, a model's output passed straight to a shell, query, path, or tool, recovery keys within reach of everyday work, a review of the changed lines only, and severity set by alarm instead of reach.
 
 ## Steps
 

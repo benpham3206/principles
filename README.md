@@ -40,16 +40,22 @@ Use `principles-create` to add a family skill with the repository's conventions 
 
 ## Install
 
-Claude Code:
+Ask your coding agent, in any harness, on Windows, macOS, or Linux:
+
+```
+Install the principles skills and engineering policy from https://github.com/benpham3206/principles by following the Install section of its README.
+```
+
+In Claude Code you can install the plugin instead:
 
 ```
 /plugin marketplace add benpham3206/principles
 /plugin install principles@principles
 ```
 
-The plugin namespaces each skill, so commands read `/principles:principles-verify`. For the shorter `/principles-verify`, `/principles-visual`, and so on, install with `install.py` below instead. Either way, agents load a skill on their own when a task matches.
+The plugin installs skills only, without the engineering policy. It namespaces each skill, so commands read `/principles:principles-verify`. Either way, agents load a skill on their own when a task matches.
 
-Any other machine, with Python 3.9 or later and git (use `python` on Windows):
+To install by hand, or for the policy and every harness on the machine, you need Python 3.9 or later and git (use `python` on Windows):
 
 ```
 git clone https://github.com/benpham3206/principles
@@ -57,7 +63,7 @@ cd principles
 python3 install.py --pull
 ```
 
-This clones the installed copy to `~/.agents/skill-repos/benpham3206__principles` and links each skill into `~/.agents/skills`. It then links them into every coding agent's skills folder that exists on the machine, such as `~/.claude/skills`, `~/.codex/skills`, and `~/.cursor/skills`. It needs no admin rights; on Windows the links are junctions. Run the same command again to update. `python3 install.py --check` is a dry run that exits 1 when anything would change.
+This clones the installed copy to `~/.agents/skill-repos/benpham3206__principles` and links each skill into `~/.agents/skills`. It then links them into every coding agent's skills folder, such as `~/.claude/skills`, `~/.codex/skills`, and `~/.cursor/skills`, when that harness's own folder exists. It creates a missing skills folder or instruction file for such a harness. It needs no admin rights; on Windows the links are junctions. Run the same command again to update. `python3 install.py --check` is a dry run that exits 1 when anything would change.
 
 The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates every other machine named by the maintainer's ssh aliases `mac`, `mbp13`, and `windows`, when they exist; `--check --all` is the dry run.
 
@@ -68,6 +74,20 @@ On every machine, a pull fast-forwards to exactly `origin/main`. It refuses a cl
 The installer also writes `policy.md`, the engineering policy, as one managed block into each harness's instruction file. Run `python3 -m unittest` to verify the repository.
 
 Install tests use temporary homes, including one that runs the real installer in a blank home with no agent-hooks. When agent-hooks is installed, the policy scenarios also run against its `fanout.py`. `harnesses.py` records the upstream commit and source hash it was copied from. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
+
+## Uninstall
+
+The plugin uninstalls with `/plugin uninstall principles@principles`. For an `install.py` installation, ask your agent to follow these steps, or follow them yourself. `~` means your home folder (`$HOME` in PowerShell). Keep the clone until you finish removing its links and policy blocks.
+
+1. Remove only skill links that lead to `~/.agents/skill-repos/benpham3206__principles`: first those in each harness's skills folder, then those in `~/.agents/skills`. See `SKILL_DIRS` in [harnesses.py](harnesses.py) for harness paths. On macOS, inspect each link with `ls -l "<link>"`, then use `unlink "<link>"`. On Windows, inspect its target with `Get-Item -LiteralPath '<link>' | Select-Object FullName, LinkType, Target`, then use `cmd /c rmdir "<link>"`. Replace `<link>` with the full link path. Windows links are junctions; removing one this way does not delete its target. Keep real folders and links to other clones.
+2. In each instruction file, delete only the managed policy block, including both marker lines below. Keep all other text. See `instruction_targets` in [harnesses.py](harnesses.py) and `policy` in [install.py](install.py) for paths, including the Hermes policy reference and pointer. Delete `~/.grok/rules/ben-engineering-policy.md` and `~/.cursor/rules/ben-engineering-policy.mdc` only if they contain nothing you added; otherwise remove just the block. Removing a block from a newly created instruction file leaves it empty, which is harmless.
+
+   ```
+   <!-- BEGIN ben-engineering-policy (managed by propagate-across-harnesses; edit ~/.agents/skill-repos/benpham3206__principles/policy.md, then rerun) -->
+   <!-- END ben-engineering-policy -->
+   ```
+
+3. Move `~/.agents/skill-repos/benpham3206__principles` to Trash on macOS or the Recycle Bin on Windows. Keep any local work you still need.
 
 ## Contributing
 

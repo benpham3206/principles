@@ -11,17 +11,15 @@ Scale checks with consequences, uncertainty, and reversibility using `principles
 
 ## Steps
 
-Use the checks that can change your decision about whether the work is done.
-
 1. **Set intent and done.** State the purpose, observer, binding constraint, and success condition when these are not already clear.
 2. **Check affected surfaces.** Include the entry points, platforms, stored data, docs, and recovery paths the change reaches. Report material surfaces you did not check.
 3. **Check the real thing.** Run the feature, read the actual value, inspect the actual diff, look at the actual render. A report, a summary, a cached result, or a successful call is a claim, not evidence.
 4. **Use the simplest evidence that proves it.** Stop at the first rung below that proves the claim.
 5. **Make repeatable checks when they will be reused.** Keep enough evidence for another person to confirm important results.
-6. **Use the three distances when each can expose a different fault.** Choose far, middle, or close from the table below.
+6. **Check each distance that could expose a different fault.** Skip a distance only when it cannot change the outcome.
 7. **Read it cold when understanding or use matters.** Check it as an observer with none of your context.
 8. **Rank and fix.** Fix the worst finding first. Stop when the next fix costs more than it returns.
-9. **Report honestly.** Name evidence for important claims. List unchecked material risks and known failures.
+9. **Report honestly.** Name the evidence that supports the claims that the work is true and works. List material gaps and known failures.
 
 ## Laws
 
@@ -53,7 +51,7 @@ Use the relevant axes from `principles` as prompts at the distances that matter.
 
 ## Good, great, timeless
 
-Verification shows the work is true and works. Judge quality with `principles-craft`. Use the distances above when they help assess the chosen quality bar, and state any material gap.
+Verification shows the work is true and works. Judge quality with `principles-craft` at the distances required by step 6. State the level reached and material gaps.
 
 ## Evidence ladder
 

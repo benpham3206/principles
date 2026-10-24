@@ -9,13 +9,13 @@
 
 The installed copy is the clone at ~/.agents/skill-repos/benpham3206__principles, never a
 working checkout, so unfinished edits never reach an agent. Each skill is linked once into
-~/.agents/skills/<name> (a junction on Windows), and fanout.py from agent-hooks links that
-folder into every harness present. A pull therefore updates every harness at once; only a
+~/.agents/skills/<name> (a junction on Windows), then linked into every harness present:
+by agent-hooks' fanout.py when installed, else by the built-in harness map in harnesses.py. A pull therefore updates every harness at once; only a
 new skill needs a new link. Pulls are fast-forward only: a clone with local commits or edits
 refuses and is reported, never overwritten. A link that points elsewhere is a conflict and
 is never replaced. When a skill is renamed or removed, the links this installer made for it
 are pruned (only links, never folders). policy.md is written as one managed block into every
-harness instruction file present (fanout.py rule), replaced in place on each run. Same script
+harness instruction file present, replaced in place on each run. Same script
 on Windows and macOS, Python 3.9 or later.
 """
 
@@ -36,6 +36,7 @@ HOME = Path.home()
 CLONE = HOME / ".agents" / "skill-repos" / "benpham3206__principles"
 AGENT_SKILLS = HOME / ".agents" / "skills"
 FANOUT = AGENT_SKILLS / "propagate-across-harnesses" / "fanout.py"
+BUILTIN = Path(__file__).resolve().parent / "harnesses.py"
 REMOTE = HOME / ".agents" / "hooks" / "remote.py"
 # The always-on policy. Same tag as the old ~/.agents/engineering installer, so its blocks are replaced in place.
 POLICY = "policy.md"
@@ -259,8 +260,9 @@ def remove_link(path: Path) -> None:
 
 
 def load_fanout():
+    """agent-hooks' fanout.py when installed, else the built-in copy of its harness map."""
     import importlib.util
-    spec = importlib.util.spec_from_file_location("fanout", FANOUT)
+    spec = importlib.util.spec_from_file_location("fanout", FANOUT if FANOUT.is_file() else BUILTIN)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
@@ -314,12 +316,23 @@ def prune(names: list[str], check: bool) -> list[Path]:
 
 
 def fanout(name: str, check: bool) -> tuple[int, list[str]]:
-    """Run fanout.py for one skill. Returns its exit code and the lines worth showing."""
-    cmd = [sys.executable, str(FANOUT), "skill", name] + (["--check"] if check else [])
-    done = run(cmd, STEP_TIMEOUT, capture_output=True, text=True)
-    lines = [ln for ln in ((done.stdout or "") + (done.stderr or "")).splitlines()
-             if ln.split() and ln.split()[0] not in ("ok", "skip")]
-    return done.returncode, lines
+    """Link one skill into every present harness. Returns an exit code and the lines worth showing.
+
+    With agent-hooks installed, its fanout.py runs, including its skill scan. Without it, the
+    built-in harness map links the skill directly.
+    """
+    if FANOUT.is_file():
+        cmd = [sys.executable, str(FANOUT), "skill", name] + (["--check"] if check else [])
+        done = run(cmd, STEP_TIMEOUT, capture_output=True, text=True)
+        code, out = done.returncode, (done.stdout or "") + (done.stderr or "")
+    else:
+        import contextlib
+        fo, buf = load_fanout(), io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            code = 1 if fo.link_skill(name, fo.SKILL_DIRS, check, AGENT_SKILLS) else 0
+        out = buf.getvalue()
+    lines = [ln for ln in out.splitlines() if ln.split() and ln.split()[0] not in ("ok", "skip")]
+    return code, lines
 
 
 def pull() -> int:
@@ -364,9 +377,7 @@ def install(check: bool) -> int:
     if not CLONE.is_dir():
         print(f"install.py: no clone at {CLONE}; run with --pull", file=sys.stderr)
         return 1
-    if not FANOUT.is_file():
-        print(f"install.py: {FANOUT} is missing; install agent-hooks first", file=sys.stderr)
-        return 1
+    print(f"harnesses {FANOUT if FANOUT.is_file() else BUILTIN}")
     names = skills(CLONE)
     worst = 0
     for name in names:

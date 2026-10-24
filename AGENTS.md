@@ -25,6 +25,7 @@ install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
 evals/routing.md           situations with the skill an agent should load first
+evals/agent-ab.md          lessons and checks for rerunning the with-and-without principles eval
 tests/fixtures/policy_fanout.py  pinned upstream policy fanout logic for clean CI
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests

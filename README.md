@@ -49,28 +49,25 @@ Claude Code:
 
 The plugin namespaces each skill, so commands read `/principles:principles-verify`. For the shorter `/principles-verify`, `/principles-visual`, and so on, install with `install.py` below instead. Either way, agents load a skill on their own when a task matches.
 
-For a harness that reads Agent Skills folders, clone the repo and link or copy each folder in `skills/` into its skills directory. Each folder contains a `SKILL.md` with a name and description.
+Any other machine, with Python 3.9 or later and git (use `python` on Windows):
 
 ```
 git clone https://github.com/benpham3206/principles
+cd principles
+python3 install.py --pull
 ```
 
-If agent-hooks is installed, `install.py` uses its `fanout.py` to link the skills into every harness:
+This clones the installed copy to `~/.agents/skill-repos/benpham3206__principles` and links each skill into `~/.agents/skills`. It then links them into every coding agent's skills folder that exists on the machine, such as `~/.claude/skills`, `~/.codex/skills`, and `~/.cursor/skills`. It needs no admin rights; on Windows the links are junctions. Run the same command again to update. `python3 install.py --check` is a dry run that exits 1 when anything would change.
 
-```
-python3 install.py --pull     # clone or fast-forward ~/.agents/skill-repos/benpham3206__principles, then link and fan out
-python3 install.py --check    # dry run; exit 1 on drift
-python3 install.py --all      # this machine, then every other one with an ssh alias (mac, mbp13, windows; aliases name the other machines, see agent-hooks' "Machines and Tailscale")
-python3 install.py --check --all   # dry run here and on every other machine; pulls and writes nothing
-```
+The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates every other machine named by the maintainer's ssh aliases `mac`, `mbp13`, and `windows`, when they exist; `--check --all` is the dry run.
 
-The installer uses the clone at `~/.agents/skill-repos/benpham3206__principles`. It does not install from a working checkout, so unmerged edits stay out of active skills.
+For a harness the installer does not know, link or copy each folder in `skills/` into its skills directory. Each folder contains a `SKILL.md` with a name and description.
 
 On every machine, a pull fast-forwards to exactly `origin/main`. It refuses a clone with local edits, untracked files, or local commits. A link that points elsewhere is reported and left in place.
 
 The installer also writes `policy.md`, the engineering policy, as one managed block into each harness's instruction file. Run `python3 -m unittest` to verify the repository.
 
-Policy tests use temporary homes and a pinned agent-hooks fixture in clean CI. When agent-hooks is installed, the same scenarios also run against that dependency. The fixture records its upstream commit and source hash. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
+Install tests use temporary homes, including one that runs the real installer in a blank home with no agent-hooks. When agent-hooks is installed, the policy scenarios also run against its `fanout.py`. `harnesses.py` records the upstream commit and source hash it was copied from. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
 
 ## Contributing
 

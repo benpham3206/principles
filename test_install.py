@@ -124,18 +124,59 @@ class TestInstall(Fixture):
             self.assertEqual(install.install(check=True), 1)
         self.assertFalse(self.agent_skills.exists())
 
-    def test_missing_fanout_fails_before_linking(self) -> None:
+    def test_without_agent_hooks_the_builtin_map_links_every_skill(self) -> None:
+        """Rule: install works on a machine without agent-hooks."""
+        harness = self.home / "harness-skills"
+        harness.mkdir()
         with mock.patch.object(install, "FANOUT", self.home / "absent.py"):
-            self.assertEqual(install.install(check=False), 1)
-        self.assertFalse(self.agent_skills.exists())
+            fo = install.load_fanout()
+        self.assertEqual(Path(fo.__file__).name, "harnesses.py")
+        fo.SKILL_DIRS = [harness]
+        with mock.patch.object(install, "FANOUT", self.home / "absent.py"), \
+                mock.patch.object(install, "load_fanout", return_value=fo):
+            self.assertEqual(install.install(check=False), 0)
+            self.assertEqual(install.install(check=True), 0)
+        for name in ("judge", "visual"):
+            self.assertTrue((harness / name / "SKILL.md").is_file())
+
+
+class TestFreshMachine(unittest.TestCase):
+    """Rule: install works on a machine without agent-hooks. Runs the real installer in a blank home."""
+
+    def test_installs_skills_and_policy_into_a_blank_home(self) -> None:
+        import shutil
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        home = Path(tmp.name)
+        repo = Path(__file__).resolve().parent
+        clone = home / ".agents" / "skill-repos" / "benpham3206__principles"
+        shutil.copytree(repo / "skills", clone / "skills")
+        for name in ("install.py", "harnesses.py", "policy.md"):
+            shutil.copy2(repo / name, clone / name)
+        (home / ".codex").mkdir()  # harnesses as a fresh install leaves them: no skills folder, no rules
+        (home / ".cursor").mkdir()
+        env = {**os.environ, "HOME": str(home), "USERPROFILE": str(home), "APPDATA": str(home / "AppData")}
+        done = subprocess.run([sys.executable, str(clone / "install.py")], env=env,
+                              capture_output=True, text=True, timeout=300)
+        self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+        self.assertIn("harnesses.py", done.stdout)
+        for harness in (".codex", ".cursor"):
+            self.assertTrue((home / harness / "skills" / "principles-verify" / "SKILL.md").is_file(), harness)
+        self.assertIn("## Engineering policy", (home / ".codex" / "AGENTS.md").read_text(encoding="utf-8"))
+        self.assertIn("## Engineering policy",
+                      (home / ".cursor" / "rules" / "ben-engineering-policy.mdc").read_text(encoding="utf-8"))
+        self.assertFalse((home / ".claude").exists())
+        again = subprocess.run([sys.executable, str(clone / "install.py"), "--check"], env=env,
+                               capture_output=True, text=True, timeout=300)
+        self.assertEqual(again.returncode, 0, again.stdout + again.stderr)
 
 
 REAL_FANOUT = install.FANOUT
-POLICY_FANOUT = Path(__file__).parent / "tests" / "fixtures" / "policy_fanout.py"
+POLICY_FANOUT = install.BUILTIN
 
 
 class TestPolicy(Fixture):
-    """Run policy through the installer and pinned upstream file I/O, in a temp home."""
+    """Run policy through the installer and the built-in harness map's file I/O, in a temp home."""
 
     fanout = POLICY_FANOUT
 
@@ -209,11 +250,23 @@ class TestPolicy(Fixture):
         self.assertTrue(pointer.startswith("# My Hermes skill\n"))
         self.assertIn(install.HERMES_POINTER, pointer)
 
-    def test_absent_harnesses_and_missing_instruction_files_stay_absent(self) -> None:
+    def test_absent_harnesses_stay_absent(self) -> None:
         install.policy(check=False)
-        for path in (".claude/CLAUDE.md", ".grok/AGENTS.md", ".config", "FABLE", ".kimi", ".gemini", ".copilot"):
+        for path in (".grok/AGENTS.md", ".config", "FABLE", ".kimi", ".gemini", ".copilot"):
             with self.subTest(path=path):
                 self.assertFalse((self.home / path).exists())
+
+    def test_present_harness_without_an_instruction_file_gets_one(self) -> None:
+        install.policy(check=False)
+        self.assertIn("rule one", (self.home / ".claude" / "CLAUDE.md").read_text(encoding="utf-8"))
+
+    def test_present_harness_without_its_rules_folder_gets_it(self) -> None:
+        (self.home / ".cursor" / "rules").rmdir()
+        self.assertGreater(install.policy(check=True), 0)
+        self.assertFalse((self.home / ".cursor" / "rules").exists())
+        install.policy(check=False)
+        self.assertIn("rule one", (self.home / ".cursor/rules/ben-engineering-policy.mdc").read_text())
+        self.assertEqual(install.policy(check=True), 0)
 
     def test_duplicate_blocks_refuse_without_changing_the_file(self) -> None:
         install.policy(check=False)

@@ -5,7 +5,7 @@ description: Choose principles for the task and use the six axes of made things.
 
 # Principles
 
-Use this map to choose a skill and examine the choices in your work. The six axes below apply across media. Choose each for a reason, within the limits of physics, logic, and perception, then check the result against reality.
+Use this map to choose relevant skills and examine important choices. The six axes apply across media; treat them as prompts, not a checklist. Consider an axis when it could change the result or its risks, then check consequential choices against reality.
 
 ```
 Set the goal -> Check assumptions -> Make -> Predict -> Test
@@ -40,16 +40,16 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 
-Choose each axis on purpose. Keep a default when it serves the intent and you can say why.
+Choose an axis on purpose when it can affect the result. Keep a sound default elsewhere.
 
 ## Using the axes
 
 1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
-2. Load the medium skill. Choose a setting on each axis and say why it serves the intent.
-3. Make the smallest complete version. Address every axis before spending time on polish.
-4. Run `principles-verify`. Use `principles-refine` to fix the worst gap first, then the next.
+2. Load the medium skill. Consider each axis; explain choices that could change the result or its risks.
+3. Make the smallest complete version. Address the relevant axes before spending time on polish.
+4. Use `principles-verify` at a depth suited to the work. Use `principles-refine` to fix the most important gap first.
 
-Done means every axis has a stated choice and `principles-verify` finds no material issue.
+Done means the work meets its intent and `principles-verify` finds no material issue. State the choices and remaining gaps that matter to the result.
 
 ## Shared principles
 

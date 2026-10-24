@@ -162,7 +162,7 @@ For procedures:
 3. Run examples from the stated starting conditions and show expected results. Treat unchecked commands and counts as not yet confirmed.
 4. Generate changing facts from their source when practical. Otherwise, check them against it.
 
-For PR descriptions and commit messages, lead with the problem and resulting behavior, name the evidence, and link long logs. Choose the structure for a brief account of the change.
+For a record of a change, such as a change request or a history entry, lead with the problem and resulting behavior, name the evidence, and link long records. Choose the structure for a brief account of the change.
 
 ## Requests
 
@@ -187,7 +187,7 @@ A **corpus** is a selected collection of language used as evidence. Use it to te
 | Dispersion and burstiness | Dispersion describes spread; burstiness describes clustering relative to a stated baseline | A total hides one speaker or topic; sentence-length variation is called burstiness | State the unit, window, and baseline. Inspect positions and contributing texts |
 | Collocation analysis | Compare co-occurrence with a baseline that accounts for word frequencies. Define span or grammatical relation | Common words dominate counts, or rare pairs dominate a score | Inspect counts, association measures, and passages. Does the pattern persist in relevant texts? |
 | Connotation in use | Recurring contexts can support an association, sometimes called semantic prosody | One corpus's association is imposed on every speaker or passage | Read positive, negative, and exceptional contexts in the intended situation |
-| Perplexity | Exponential of a language model's mean negative log probability per token, using natural logs; measures prediction on the evaluated text | Incompatible scores are compared, or taken as proof of quality or authorship | Record model, tokenization, context, and text. Compare models on the same held-out data and protocol, or texts under the same fixed model and protocol |
+| Perplexity | Exponential of a predictive model's mean negative log probability per unit of text, such as a word or character, using natural logs; measures prediction on the evaluated text | Incompatible scores are compared, or taken as proof of quality or authorship | Record model, unit of text, context, and text. Compare models on the same held-out data and protocol, or texts under the same fixed model and protocol |
 
 Metrics answer the stated question. Commonness and predictability do not determine which words best serve a poem, character, instruction, or song. Judge the writing's effect separately.
 

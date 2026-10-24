@@ -110,7 +110,7 @@ Example settings:
 
 ## Hypotheses to test, not assume
 
-- Reasoning in a small fixed semantic space (for example the seven questions) instead of over every token makes search far cheaper.
+- Reasoning in a small fixed semantic space (for example the seven questions) instead of over every word makes search far cheaper.
 - Per-user weight changes improve help without harming independence.
 - Alignment can emerge from development: a mind that reasons at higher levels may choose good values. Treat this as one layer of safety, never the only one. Keep external checks as well.
 

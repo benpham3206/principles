@@ -1,8 +1,8 @@
 """Built-in harness map, so install.py works on a machine without agent-hooks.
 
-Source: https://github.com/benpham3206/agent-hooks/blob/c018b7e678c3d2854ac2c56dfd8ef3ea079abef4/skills/propagate-across-harnesses/fanout.py
-Upstream file SHA-256: 550618129f467f5475b6813f0f0e7b597fbee357ee59e2f171b0eab52197a364
-Extracted verbatim: SKILL_DIRS, instruction_targets, render, install_rule, points_to, link_skill.
+Source: https://github.com/benpham3206/agent-hooks/blob/a9e6c61a68526612a2fc39195b96a7e2f5628005/skills/propagate-across-harnesses/fanout.py
+Upstream file SHA-256: 47651f55cfafaa9c66b897acebabcc82f35e421a752f86099236ac8f4d8d38d7
+Extracted verbatim: SKILL_DIRS, codex_homes, instruction_targets, render, install_rule, points_to, link_skill.
 Only module imports and HOME initialization are reduced to their dependencies. Left out: the
 skill scan, which runs agent-hooks' skill_guard.py. This repo's skills are reviewed through
 pull requests, the same exemption fanout.py gives agent-hooks' own skills.
@@ -29,12 +29,18 @@ SKILL_DIRS = [HOME / p for p in (
 )] + [DEVIN_SKILLS]
 
 
+def codex_homes() -> list[Path]:
+    """~/.codex, then every other Codex home in use (CODEX_HOME=~/.codex-school)."""
+    return [HOME / ".codex"] + sorted(p for p in HOME.glob(".codex?*") if p.is_dir()
+                                      and ((p / "config.toml").exists() or (p / "auth.json").exists()))
+
+
 def instruction_targets(tag: str, title: str) -> list[tuple[str, Path, str | None]]:
     """(harness, file, head). head None: edit only if the file exists. Else create with head."""
     return [
         ("canonical", HOME / "FABLE/AGENTS.md", None),
         ("claude-code", HOME / ".claude/CLAUDE.md", None),
-        ("codex", HOME / ".codex/AGENTS.md", None),
+        *[("codex", home / "AGENTS.md", None) for home in codex_homes()],
         ("grok", HOME / ".grok/AGENTS.md", None),
         ("kimi", HOME / ".kimi/AGENTS.md", None),
         ("gemini", HOME / ".gemini/GEMINI.md", None),

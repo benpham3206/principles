@@ -26,7 +26,7 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Diagnose a failure in use | `principles-lessons` for the timeline and causes; `principles-measure` for a baseline before trusting a signal; `principles-ground` for competing explanations |
 | Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
 | Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
-| Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` for reverse questions; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |
+| Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` before adopting a rule, test, standard, or plan, and for working backward; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |
 | Check the result | `principles-verify` for evidence; `principles-craft` for quality; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
 | Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for feedback; `principles-compound` for lasting gains |
 | Help people and agents | `principles-counsel` for advice; `principles-develop` for growth; `principles-mind` for agent design |

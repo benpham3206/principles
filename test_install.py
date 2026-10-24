@@ -106,11 +106,11 @@ class TestPrune(Fixture):
 
 
 class TestAliases(Fixture):
-    def test_keeps_fleet_aliases_in_fleet_order(self) -> None:
+    def test_keeps_supported_aliases_in_order(self) -> None:
         (self.home / ".ssh").mkdir()
         (self.home / ".ssh" / "config").write_text(
-            "Host github-x\n  HostName github.com\nHost windows\nHost mbp13\n  User b\n")
-        self.assertEqual(install.aliases(), ["mbp13", "windows"])
+            "Host github-x\n  HostName github.com\nHost windows\nHost mac\n  User b\n")
+        self.assertEqual(install.aliases(), ["mac", "windows"])
 
     def test_no_config_means_no_aliases(self) -> None:
         self.assertEqual(install.aliases(), [])
@@ -546,10 +546,10 @@ class TestRemoteShell(unittest.TestCase):
         with mock.patch.object(install, "REMOTE", Path("/nonexistent/remote.py")), \
                 mock.patch.object(install, "run", side_effect=fake_run):
             install.update_remote("windows")
-            install.update_remote("mbp13")
+            install.update_remote("posix-host")
         self.assertTrue(sent["windows"][0].startswith("powershell"))
         self.assertEqual(sent["windows"][1], install.WINDOWS_UPDATE)
-        self.assertEqual(sent["mbp13"][0], "zsh -l")
+        self.assertEqual(sent["posix-host"][0], "zsh -l")
 
 
 class TestDeadlines(unittest.TestCase):

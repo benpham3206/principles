@@ -86,7 +86,7 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 - Name a mechanism or a number, never a feeling.
 - Bold only defined terms.
 - No notes about process. The reader sees only the principle.
-- Use project attribution in public text and plugin metadata. Keep personal and machine names out. Preserve working repository URLs and identifiers needed to migrate existing installations.
+- Keep personal machine names, local account paths, addresses, and hardware details out of public text, source defaults, and examples. Repository username attribution is allowed. Preserve working repository URLs and identifiers needed to migrate existing installations.
 
 ## Verify
 

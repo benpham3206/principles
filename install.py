@@ -47,10 +47,9 @@ HERMES_POINTER = ("**Engineering policy:** load `references/engineering-policy.m
                   "principles' `policy.md`. Fast path for cheap reversible work: build, verify, iterate.")
 WIN = sys.platform.startswith("win")
 CREATE_IF_MISSING = {"claude-code", "codex", "kimi", "gemini", "copilot"}
-# ssh aliases this fleet uses. remote.py drives the two it knows (same guard, same logs);
-# mbp13 has no remote.py target, so it gets plain ssh into a login shell. The remote command
-# fast-forwards with git before running install.py, so a clone older than install.py updates too.
-FLEET = ("mac", "mbp13", "windows")
+# Generic SSH aliases supported by remote.py (same guard, same logs). Remote updates
+# fast-forward with git before running install.py, so older clones update too.
+FLEET = ("mac", "windows")
 REMOTE_PY_TARGETS = ("mac", "windows")
 
 # Each remote script refuses before it pulls or runs the clone's installer unless the clone

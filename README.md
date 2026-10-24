@@ -65,7 +65,7 @@ python3 install.py --pull
 
 This clones the installed copy to `~/.agents/skill-repos/benpham3206__principles` and links each skill into `~/.agents/skills`. It then links them into every coding agent's skills folder, such as `~/.claude/skills`, `~/.codex/skills`, and `~/.cursor/skills`, when that harness's own folder exists. It creates a missing skills folder or instruction file for such a harness. It needs no admin rights; on Windows the links are junctions. Run the same command again to update. `python3 install.py --check` is a dry run that exits 1 when anything would change.
 
-The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates configured machines with the ssh aliases `mac`, `mbp13`, and `windows`, when they exist; `--check --all` is the dry run.
+The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates configured machines with the generic ssh aliases `mac` and `windows`, when they exist; `--check --all` is the dry run.
 
 For a harness the installer does not know, link or copy each folder in `skills/` into its skills directory. Each folder contains a `SKILL.md` with a name and description.
 

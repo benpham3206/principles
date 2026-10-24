@@ -48,7 +48,7 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 |---|---|---|
 | Least privilege | A part holds power its job does not need, so its compromise costs more than its job | For each permission, which authorized task needs it, on which path? Remove the ones with no answer |
 | Separate request from grant | An instruction found in an email, page, file, or tool result is obeyed as if the owner gave it | For each action, can you name who authorized it, outside the content that asked? |
-| Enforce outside the actor | A rule written only in the prompt, the client, or the docs of the thing it binds | Remove the actor's cooperation. Does the rule still hold? |
+| Enforce outside the actor | A rule written only in the instructions given to the actor, the client, or the docs of the thing it binds | Remove the actor's cooperation. Does the rule still hold? |
 | No self-granted authority | An agent or process edits the policy, key, or config that limits it | Can any actor widen its own grant without the authority that granted it? |
 | Validate at the boundary, by allowlist | A filter of known bad inputs that the next input walks around | Is each input checked against what is allowed, at the point it crosses? |
 | Untrusted until checked | Model, tool, and third-party output treated as safe because it came from your own system | Trace each output to the place it is acted on. Is it checked there? |

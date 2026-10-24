@@ -5,6 +5,8 @@ description: Choose principles for the task and use the six axes of made things.
 
 # Principles
 
+In one line: Set the goal, build the smallest complete version, test it against reality, and use axes where they matter.
+
 Use this map to choose relevant skills and examine important choices. The six axes apply across media; treat them as prompts, not a checklist. Consider an axis when it could change the result or its risks, then check consequential choices against reality.
 
 ```
@@ -21,6 +23,7 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 |---|---|
 | Establish what is true | `principles-ground` for inference; `principles-research` for finding and synthesizing sources |
 | Define, collect, and compare measurements | `principles-measure` |
+| Diagnose a failure in use | `principles-lessons` for the timeline and causes; `principles-measure` for a baseline before trusting a signal; `principles-ground` for competing explanations |
 | Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
 | Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-world` for one coherent place; `principles-distribute` for reaching people |
 | Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` for reverse questions; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |

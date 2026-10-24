@@ -5,6 +5,8 @@ description: Keep gains and reuse them so later work builds on earlier work. Use
 
 # Compound
 
+In one line: Choose gains that feed the next gain and keep them, because rate and cycle count both multiply.
+
 A gain **compounds** when it feeds the next gain. Growth at rate $r$ for $n$ cycles multiplies by $(1 + r)^n$. Both the rate and the number of cycles matter. Three conditions make it work:
 
 - **Retention.** The gain is kept: written down, practiced, stored, built in.

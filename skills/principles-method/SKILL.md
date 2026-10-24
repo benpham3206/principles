@@ -5,6 +5,8 @@ description: Scale the work to its consequences. Use when planning a task, makin
 
 # Method
 
+In one line: Match effort to the cost of a mistake, and delete needless work before you optimize or automate it.
+
 The **method** is a cycle: plan the work, build a version, check it, and refine it. Match the effort to the cost of a mistake. Keep earlier choices easy to change.
 
 ## Gate: how much rigor

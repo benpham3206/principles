@@ -5,6 +5,8 @@ description: Remove complexity while preserving what matters. Use when work is c
 
 # Simplify
 
+In one line: Remove the cause of difficulty, not just parts, and confirm the difficulty did not move elsewhere.
+
 **Simplification** reduces what someone must understand, operate, or maintain while preserving the intended result. Fewer words or parts help only when the difficulty has not moved elsewhere.
 
 ## Steps

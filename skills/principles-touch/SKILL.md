@@ -5,6 +5,8 @@ description: Design how matter and space meet the body. Use when shaping ergonom
 
 # Touch
 
+In one line: Shape where the body meets the thing, and check contact, weight, temperature, and edges in the hand.
+
 When designing for touch, shape the points where a body meets an object or a space. Check contact, temperature, weight, and edges in the hand, and movement through a room.
 
 ## Laws of the medium

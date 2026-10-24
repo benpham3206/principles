@@ -5,6 +5,8 @@ description: Turn a need into a coherent approach. Use when shaping a concept, c
 
 # Design
 
+In one line: Name the need and constraints first, then test the one uncertainty that could change the approach.
+
 **Design** chooses how something will serve a need within its constraints. Leave a set of choices concrete enough to build and check. Use a new approach when it serves the need; a known solution can be the right design.
 
 Use `principles-method` to set the scope and rigor. Use the matching medium skills to make the choices concrete, and `principles-refine` to revise an existing result.

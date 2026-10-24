@@ -21,7 +21,7 @@ Before non-trivial work, load `principles` and the skill for the task or new pha
 
 ### Prove and hand off
 - Check the real artifact against the goal and constraints. Current-state claims need current evidence or an explicit unverified label. Separate facts, assumptions, estimates, and decisions.
-- Run the repository's verify command and check every affected surface, including recovery. If no command exists, say so and propose one. Fix root causes and leave a check that fails without the fix.
+- Run the repository's verify command and check every affected surface, including recovery. If no command exists, say so and propose one. Fix root causes and leave a check that fails without the fix and names the rule it guards.
 - Judge outcomes, never activity. Keep the definition of success fixed. Consequential work needs independent review; the author's own check is not independent.
 - User-facing quality includes visual craft and accessibility. For research, answer the question, cite material evidence, and state uncertainty. Report what was not checked.
 - Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns.

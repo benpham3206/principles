@@ -5,6 +5,8 @@ description: Make parts feel like one place. Use when designing immersive produc
 
 # World
 
+In one line: Give the parts shared rules, and check the seams, where one inconsistency can break the whole.
+
 A **world** is a set of parts experienced as one place with shared rules. **Immersion** lets a person act within it without noticing its construction. Check where parts meet: inconsistencies there can break the whole.
 
 ```

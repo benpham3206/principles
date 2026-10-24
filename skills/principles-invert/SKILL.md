@@ -5,6 +5,8 @@ description: Find paths and limits by reversing a question. Use when working bac
 
 # Invert
 
+In one line: Reverse the question to find hidden paths and limits, then test what the reverse suggests.
+
 **Inversion** reverses a question to find hidden paths or limits. The reverse is a candidate, not proof. Keep evidence for both directions separate. Evidence tests factual claims; the rightful decision maker chooses between values.
 
 ```

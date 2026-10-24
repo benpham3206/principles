@@ -5,6 +5,8 @@ description: Help people and agents become more capable. Use when teaching, coac
 
 # Develop
 
+In one line: Decide whether the goal needs the task done or the person able to do it alone, and serve that.
+
 **Development** is a lasting gain in what a person or agent can do alone. Service does the task for them. Both have a place; choose which the goal needs.
 
 ## The counterpart rule

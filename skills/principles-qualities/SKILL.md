@@ -5,6 +5,8 @@ description: Choose which qualities matter most. Use when setting a design philo
 
 # Qualities
 
+In one line: Decide which quality wins when qualities conflict, and why, before the conflict forces a patch.
+
 A **quality** is a property an observer experiences in finished work. Qualities can conflict. A **design philosophy** states which one takes priority and why.
 
 ## The qualities

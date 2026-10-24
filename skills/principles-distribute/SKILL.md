@@ -5,6 +5,8 @@ description: Bring work to the people it serves. Use when launching, choosing ch
 
 # Distribute
 
+In one line: Bring the work to the people it serves, and check that they can find, use, and pay for it.
+
 **Distribution** brings work to its intended people and brings back attention, trust, use, or payment. Check both whether people find the work and whether they can use or buy it.
 
 ```

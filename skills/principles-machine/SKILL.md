@@ -5,6 +5,8 @@ description: Design and check physical engineering. Use when working on hardware
 
 # Machine
 
+In one line: Start from the load path: where force enters, where it goes, and what carries it.
+
 A **machine** arranges matter to carry loads and move energy under real conditions. Start with its load path: where force enters, where it goes, and what carries it.
 
 State each result's assumptions: local gravity $g$, temperature, environment, and material condition. Write the general form before inserting local values.

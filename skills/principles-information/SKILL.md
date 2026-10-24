@@ -5,6 +5,8 @@ description: Show data and structure honestly. Use when choosing charts, encodin
 
 # Information
 
+In one line: Arrange data so the reader finds a true answer and can act on it.
+
 An **information display** arranges data or structure so a reader can find a true answer and act. Use `principles-represent` to choose the structure and `principles-visual` to design its appearance.
 
 ## Laws of the medium

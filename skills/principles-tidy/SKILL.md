@@ -5,6 +5,8 @@ description: Close agent work with safe cleanup, accurate dependency and archite
 
 # Tidy
 
+In one line: Leave the next person a clean workspace, accurate docs, findable tools, and the evidence to continue.
+
 Leave the next person a usable workspace, accurate documentation, discoverable tools, and the evidence needed to continue. Apply this to the work being closed. A dedicated cleanup tool is optional.
 
 ## Establish ownership

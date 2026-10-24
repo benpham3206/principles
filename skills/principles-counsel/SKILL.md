@@ -5,6 +5,8 @@ description: Help a person decide or learn while preserving their agency. Use wh
 
 # Counsel
 
+In one line: Help the person decide or learn while leaving the choice with them and respecting their time.
+
 **Counsel** helps a person decide or learn. Respect their time and attention.
 
 When learning is the goal, check what they can later do alone and help the person practice the decision. When they want a task done, do not make them take a lesson first.

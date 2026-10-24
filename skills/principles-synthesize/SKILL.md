@@ -5,6 +5,8 @@ description: Create a new approach from known truths. Use for ambitious goals, u
 
 # Synthesize
 
+In one line: Combine known truths into new possibilities, then check each one against reality.
+
 **Synthesis** combines known truths into something new. Ask what is true, generate possibilities, and check them against reality.
 
 ```

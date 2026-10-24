@@ -5,6 +5,8 @@ description: Judge and raise the quality of work. Use when setting a quality bar
 
 # Craft
 
+In one line: Hand over only work you would sign: useful, reliable, accessible, and right in the details.
+
 **Craft** is care in the choices that make work useful and well made, including reliability, accessibility, and upkeep. **Taste** predicts how work will meet its observer and rejects what misses. **Pride** sets the bar: hand over only what you would sign.
 
 ## The ladder

@@ -5,6 +5,8 @@ description: Revise existing work toward its intended quality. Use when comparin
 
 # Refine
 
+In one line: Close the largest gap between the result and the intent first, and keep what already works.
+
 **Refinement** revises an existing result so its choices better serve the intent. It can add, remove, or reshape parts, from the structure to the smallest detail. Keep the qualities that already work, including intentional richness.
 
 Use `principles-craft` to set the quality bar and the medium skills to judge specific choices. Use `principles-improve` for measured gains in cost, delay, throughput, or failures; use `principles-simplify` when less complexity is the goal. These can be part of a refinement.

@@ -5,6 +5,8 @@ description: Choose a structure that makes a problem easier to solve. Use before
 
 # Represent
 
+In one line: Choose the structure that reveals the answer or next action, not the tidiest picture.
+
 A **representation** names parts and their relations while leaving out other detail. Choose one that reveals an answer or next action. A tidy picture that hides the hard part has not helped.
 
 This skill picks the structure. To show it honestly and readably, use `principles-information`. For how it looks, use `principles-visual`.

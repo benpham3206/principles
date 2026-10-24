@@ -35,7 +35,7 @@ README.md                  human entry point; lists every skill
 - **Installed clone is live.** Agents load skills through links into `~/.agents/skill-repos/benpham3206__principles`. An edit there reaches every agent at once, unreviewed. Work in a separate clone or a worktree.
 - **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
-- **Policy tests run in clean CI.** `TestPolicy` uses the pinned agent-hooks excerpt in `tests/fixtures/policy_fanout.py`. `TestPolicyRealFanout` repeats the same temp-home scenarios with the installed dependency when present; only this optional integration skips when absent. Keep the fixture provenance when refreshing it.
+- **Policy tests run in clean CI.** `TestPolicy` uses the pinned agent-hooks excerpt in `tests/fixtures/policy_fanout.py`. `TestPolicyRealFanout` repeats the same temp-home scenarios with the installed dependency when present; only this optional integration skips when absent. `TestPosixScripts` skips where `/bin/sh` is absent, such as Windows; CI runs it on Linux. Keep the fixture provenance when refreshing it.
 
 ## Use the skills on this repository
 
@@ -56,6 +56,8 @@ skills/<name>/SKILL.md      one skill, frontmatter name equals folder name
 ```
 
 Frontmatter: `name` and `description`. The description front-loads what the skill is and lists only distinct triggers, under 45 words.
+
+The first line under the title is `In one line:` followed by the skill's rule as one imperative sentence of 20 words or fewer. The description says when to load the skill; the one line says what to do.
 
 Put what an agent most needs first. Some harnesses read only the first 60 to 120 lines of a skill, so laws, defaults, steps, and failures go above lookup tables.
 
@@ -87,6 +89,8 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 `python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
 
 `test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
+
+Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
 
 ## Git
 

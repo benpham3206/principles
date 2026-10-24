@@ -5,6 +5,8 @@ description: Turn events into better future actions. Use after a failure, near m
 
 # Lessons
 
+In one line: Find how the failure was possible, change the design or check, and confirm the change catches the cause.
+
 A **lesson** changes the next action because of what happened. A note becomes a lesson when it changes a design, check, or habit. Check whether the change catches the same cause next time.
 
 Use this skill to find causes and change what allowed them. Use `principles-method` to choose the depth of the review.
@@ -36,7 +38,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap.
 5. Choose the change, strongest form first: remove the hazard, then make the error impossible, then make it detectable, then train or document. A reminder is the weakest fix.
 6. Add the check. Write the test, alarm, review item, or gate that would have caught it. Confirm it fails with the cause present and passes with it removed.
-7. Close. Record the lesson where the next person will meet it, assign each change an owner and a date, and stop re-arguing the event. Moving forward is the point.
+7. Close. Record the lesson where the next person or agent will meet it; for an agent, that is the skill, rule, or instruction file its next session loads. Assign each change an owner and a date, and stop re-arguing the event. Moving forward is the point.
 
 ## Principles
 

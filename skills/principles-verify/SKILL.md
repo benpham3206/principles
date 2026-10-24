@@ -7,19 +7,21 @@ description: Check work before calling it done. Use when finishing a task, revie
 
 **Done** means the work is true, works, and is good. Verify the first two with evidence. Judge quality with the taste and craft checks in `principles-craft`.
 
+Scale checks with consequences, uncertainty, and reversibility using `principles-method`. A clear, cheap, reversible task may need one direct check. Expand coverage when a missed fault could change the outcome.
+
 ## Steps
 
-Run these before calling anything done, your own work first of all.
+Use the checks that can change your decision about whether the work is done.
 
-1. **Restate intent and done.** One sentence: purpose, observer, binding constraint, and what done means. Without it, checking is only preference; stop and get it.
-2. **Name every surface.** List each place the work reaches: entry points, platforms, clients, stored data, docs, and the way back out. Say which ones you checked. Working on the tested path and broken elsewhere is not done.
+1. **Set intent and done.** State the purpose, observer, binding constraint, and success condition when these are not already clear.
+2. **Check affected surfaces.** Include the entry points, platforms, stored data, docs, and recovery paths the change reaches. Report material surfaces you did not check.
 3. **Check the real thing.** Run the feature, read the actual value, inspect the actual diff, look at the actual render. A report, a summary, a cached result, or a successful call is a claim, not evidence.
 4. **Use the simplest evidence that proves it.** Stop at the first rung below that proves the claim.
-5. **Make the check repeatable.** Prefer a script or a command over an eyeball, and keep its output where someone else can rerun it.
-6. **Look at the three distances in the table below: far, middle, and close.** Each scale hides different faults.
-7. **Read it cold, as the observer with none of your context.** Ask what a master of this medium would reject first, and fix that.
+5. **Make repeatable checks when they will be reused.** Keep enough evidence for another person to confirm important results.
+6. **Use the three distances when each can expose a different fault.** Choose far, middle, or close from the table below.
+7. **Read it cold when understanding or use matters.** Check it as an observer with none of your context.
 8. **Rank and fix.** Fix the worst finding first. Stop when the next fix costs more than it returns.
-9. **Report honestly.** Name the evidence for each claim of done. List what you did not check and what is known to fail. A claim with no evidence is a guess.
+9. **Report honestly.** Name evidence for important claims. List unchecked material risks and known failures.
 
 ## Laws
 
@@ -47,11 +49,11 @@ Run these before calling anything done, your own work first of all.
 | Code | module names and boundaries | signatures and data flow | names, edge cases, errors |
 | Machine | free-body diagram, exploded view | load paths, interfaces | fits, finishes, fasteners |
 
-Walk the six axes from `principles` at each distance. For each axis, name the choice made and whether it serves the intent. Most failures trace to an axis set by default.
+Use the relevant axes from `principles` as prompts at the distances that matter. You do not need to name every axis at every distance. Most failures trace to a consequential choice left at default.
 
 ## Good, great, timeless
 
-Verification shows the work is true and works. Whether it is good, great, or timeless is judged with the ladder in `principles-craft`. Run its checks at the three distances above, and say which level the work reached.
+Verification shows the work is true and works. Judge quality with `principles-craft`. Use the distances above when they help assess the chosen quality bar, and state any material gap.
 
 ## Evidence ladder
 
@@ -73,9 +75,11 @@ Leave one small runnable check for any branch, loop, parser, state change, money
 
 A model is a claim. State where it holds and where it breaks. A real test outranks a simulation of the same case. A model checked against real tests can reach cases too rare, costly, or dangerous to test, within the range where it was checked.
 
-## A verify command for every project
+## A repeatable verify command
 
-Each project needs one command that people, agents, and automation run the same way. When a project has none, say so and build it:
+When people, agents, or automation need the same end-to-end check, provide one command they can all run. For a one-off task, use the smallest relevant check. If no shared command exists, report the gap; add one when repeated use justifies it.
+
+For an end-to-end command:
 
 1. **Launch.** Start the thing from an empty state, and know when it is ready to use, not merely running.
 2. **Health check.** One read-only check that this instance is worth testing: it is up, it is the right version, and it is yours.
@@ -83,6 +87,6 @@ Each project needs one command that people, agents, and automation run the same 
 4. **Capture.** Record the action and the resulting state, including side effects such as files written or messages sent.
 5. **Clean up.** Remove what you started, never more, and keep the evidence.
 
-Run the command once end to end before trusting it. A check that was never run is a draft.
+Run a new command end to end before trusting it. A check that was never run is a draft.
 
 Pairs with: before `principles-method`, `principles-integrate`, `principles-craft`; after `principles-lessons`, `principles-improve`.

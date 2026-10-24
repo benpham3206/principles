@@ -5,17 +5,18 @@ description: Design and review software, interfaces, and data models. Use when w
 
 # Code
 
-**Code** is instructions and data that a machine runs and a person can change. Make the interface, data, and logic easy for the next person to follow.
+**Code** is an executable model of a need: machines run it, and people read, change, and operate it. Make its data, behavior, and boundaries clear to the people who use and maintain it.
 
 ## Laws of the medium
 
-- Keep complexity only when it serves a requirement. Small additions accumulate maintenance cost.
-- Data outlives code. Get the data model right; rewrite the code around it as needed.
-- Make the right use easy and the wrong use hard: through types, interfaces, and safe defaults.
+Use these as defaults, not as a required checklist. Choose those that affect the goal, the people served, or the cost of failure.
+
+- Keep complexity when it serves a real need; delete the rest. Each extra state, branch, and dependency costs attention and maintenance.
+- Data and interfaces often outlive their implementations. Model their meaning and protect it through change.
+- Use types, contracts, and safe defaults to make valid behavior easy and invalid behavior visible.
 - Every boundary needs a contract: what comes in, what goes out, what can fail.
-- Delete what is not needed. Code not written has no bugs and costs nothing to maintain.
-- Measure, then change. Opinions about speed, correctness, and cause lose to a test or a profile.
-- Design for change that is likely, and ignore change that is merely possible.
+- Match evidence to the claim: test behavior, measure performance, and check causes before acting on them.
+- Design for likely change. Keep uncertain choices easy to revise when their cost justifies it.
 
 ## Defaults to replace
 
@@ -39,7 +40,7 @@ CODE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Interface depth | A deep module has a small interface and much behind it; cost is the interface, benefit is the behavior | Shallow modules whose interface is as large as their body | Compare the lines needed to call it with the work it does |
-| Types | Make invalid states unrepresentable; encode rules in the type, not in a comment | Flags and nulls that allow combinations the program never handles | List the type's values. Is each one legal? |
+| Types | Use types to encode invariants the language can express; validate the rest at runtime boundaries | Illegal values are easy to create, or assumptions stay hidden | Which invalid combinations can still be represented? Where are they rejected? |
 | Function shape | One function, one level of abstraction, inputs in and a result out | Functions that read, compute, write, and log in one body | Can you name it without "and"? |
 | Signature honesty | The signature states every input, output, and failure | Hidden inputs (globals, clock, environment) and hidden failures | Can you call it from a test with nothing else set up? |
 | Naming | A name states what a thing is or does at its level; one concept, one word | One idea under three names, or one name for two ideas | Read only the names. Does the program's story survive? |
@@ -75,7 +76,7 @@ CODE
 | Maintainer | Code is read far more than written; it must make sense cold | Cleverness that needs its author in the room | Hand it to someone with no context. Where do they stall? |
 | Comments | Code says what; comments say why, and mark the quirk | Comments that restate the line, or none on the surprising line | Is each comment something the code cannot say? |
 | Operator | The person at 3 a.m. needs to see state, find the cause, and act | Errors that say "failed" and nothing else | From the log alone, can you tell what, where, and which input? |
-| Attacker | Every input from outside is hostile until validated | Trust given by default because the caller is internal | List the inputs. Who controls each? |
+| Attacker | Treat data as untrusted across a trust boundary; caller identity alone does not make it safe | Trust given by default because a caller is internal or familiar | Which actor controls each value, and where is it validated? |
 | Model as reader | A model reading code as context sees names, structure, and nearby text only | Naming and layout that need hidden knowledge | Does the file make sense with nothing else loaded? |
 
 ## Composition
@@ -84,11 +85,11 @@ CODE
 |---|---|---|---|
 | Modules and boundaries | Draw boundaries where change is independent; hide the decision likely to change | A change to one decision touching many files | Pick a likely change. How many modules does it touch? |
 | Coupling and cohesion | Things that change together live together; things that do not, apart | Unrelated code in one file; one idea split across five | For each module, can you state its one reason to change? |
-| Data flow | Data moves one way through layers; callbacks upward are a smell | Cycles in the dependency graph | Draw the dependency arrows. Any loops? |
+| Data flow | Prefer clear dependency direction; inspect cycles for hidden coupling or deliberate feedback | Dependencies that make change or reasoning hard to localize | Does a cycle express needed feedback, or accidental ownership? |
 | Layering | Each layer talks to the one below through its interface only | A top layer reaching into storage details | Can you replace the layer below without touching the one above? |
 | Single source of truth | Every fact has one authoritative place; others derive from it | Two copies edited separately | Search for the fact. How many places define it? |
 | Seams | Put a seam where behavior can be swapped without editing the code under test | Code that can only be tested by running the whole system | Can the clock, network, and store be replaced in a test? |
-| Review thresholds | Use file length and branching thresholds to trigger a review | Metrics treated as goals, or never measured at all | Does a tool enforce the project's thresholds? A file above the threshold needs a stated reason to stay whole |
+| Review signals | Use size and branching as signals to inspect code, not as split targets | A metric drives a harmful split, or tangled code avoids review | What responsibility or change would a split clarify? Would it only move code? |
 | Abstraction timing | As a rule of thumb, abstract on the third repeat, from real cases | A general framework built for a case that never came | How many real uses justify this abstraction? |
 
 ## Time

@@ -14,10 +14,10 @@ Run these before calling anything done, your own work first of all.
 1. **Restate intent and done.** One sentence: purpose, observer, binding constraint, and what done means. Without it, checking is only preference; stop and get it.
 2. **Name every surface.** List each place the work reaches: entry points, platforms, clients, stored data, docs, and the way back out. Say which ones you checked. Working on the tested path and broken elsewhere is not done.
 3. **Check the real thing.** Run the feature, read the actual value, inspect the actual diff, look at the actual render. A report, a summary, a cached result, or a successful call is a claim, not evidence.
-4. **Use the simplest evidence that proves it.** Climb the evidence ladder below and stop at the first rung that proves the claim.
+4. **Use the simplest evidence that proves it.** Stop at the first rung below that proves the claim.
 5. **Make the check repeatable.** Prefer a script or a command over an eyeball, and keep its output where someone else can rerun it.
-6. **Look at three distances.** Far, middle, and close, from the table below. Each scale hides different faults.
-7. **Read it cold.** Read it as the observer who has none of your context. Ask what a master of this medium would reject first, and fix that.
+6. **Look at the three distances in the table below: far, middle, and close.** Each scale hides different faults.
+7. **Read it cold, as the observer with none of your context.** Ask what a master of this medium would reject first, and fix that.
 8. **Rank and fix.** Fix the worst finding first. Stop when the next fix costs more than it returns.
 9. **Report honestly.** Name the evidence for each claim of done. List what you did not check and what is known to fail. A claim with no evidence is a guess.
 

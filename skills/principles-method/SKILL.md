@@ -72,7 +72,7 @@ Delete unnecessary work before optimizing it. Understand a process before automa
 
 ## Working record
 
-Keep a current model of the project and revise it when evidence changes. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make failures visible and recoverable, with an immediate signal and fallback when needed.
+Keep the project model current; revise it when evidence changes. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make failures visible and recoverable, with an immediate signal and fallback when needed.
 
 ## The method in each domain
 

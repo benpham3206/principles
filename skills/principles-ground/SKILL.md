@@ -43,6 +43,23 @@ A **fact** is an observation, or an inference whose steps were checked. Never le
 
 Match confidence to evidence. Give a range and its basis, such as "4 to 7 days, from five similar jobs." Use a probability only with a base rate, model, or calibrated track record. Otherwise say likely, plausible, or speculative, and name what would change that judgment.
 
+## Reasoning Methods
+
+Choose and combine reasoning methods based on the problem, available evidence, and uncertainty. Check assumptions, consider alternative explanations, and revise conclusions when evidence changes.
+
+| Method | Use and check |
+|---|---|
+| Deduction | Apply known rules to reach conclusions. Check premises and the rule's scope with [kinds of claim](#kinds-of-claim) |
+| Induction | Find patterns in observations. Check their population and setting with [kinds of claim](#kinds-of-claim) |
+| Abduction | Identify the most likely explanation by [comparing explanations](#compare-explanations) |
+| First principles | Break problems into fundamental facts and rebuild solutions with "First principles, as a procedure" below |
+| Analogy | Apply lessons from similar problems; [compare known to unknown](#compare-known-to-unknown) to check the differences |
+| Causal reasoning | Determine what causes what. Use the intervention and confounder checks in `principles-loop` |
+| Probabilistic reasoning | Make decisions with incomplete information. Use [confidence labels](#label-what-you-know), [explanation updates](#compare-explanations), and [stopping rules](#when-to-learn-more) |
+| Counterfactual reasoning | Consider what would happen if something changed. State what changes and what stays fixed; trace consequences with `principles-horizons` |
+| Systems reasoning | Understand how components interact. Trace feedback, stocks, and delays with `principles-loop` |
+| Metacognition | Examine and correct your own reasoning; [label what you know](#label-what-you-know) and [reopen conclusions built on false assumptions](#compare-explanations) |
+
 ## Compare explanations
 
 When something needs explaining, such as a failure, a result, or a surprise:

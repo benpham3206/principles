@@ -24,30 +24,36 @@ A **horizon** is how far ahead you trace consequences. First-order effects are d
 
 Done when each order has its answers to the four questions, a worst case, and a confidence label.
 
+Failure: the trace stops at the first order, so the response that undoes the change is missed. Check: does each order name who adapts, and does the plan still hold after they do?
+
+Failure: a speculative order is treated as a forecast. Check: is every order labeled, and does any irreversible step rest on a speculative one?
+
 ## Patterns that recur
 
-- **Cheaper means more.** When a thing gets cheaper, total use often rises enough to raise total consumption.
+These are heuristics. Check each against the case before relying on it (`principles-ground`).
+
+- **Cheaper means more.** When a thing gets cheaper, total use often rises enough to raise total consumption. This holds when demand grows faster than the price falls; where demand is already met, total consumption falls.
 - **Value moves to the bottleneck.** When one step of a chain becomes abundant, value flows to the step that stays scarce.
 - **Signals decay.** When a signal becomes cheap to fake, it stops carrying information, and people look for a new one.
 - **Incentives win.** Over time, a system does what it rewards, whatever it says it does.
 - **Slow variables decide.** Trust, skill, infrastructure, and culture change slowly and outweigh fast variables over long horizons.
 
-## Worked horizon: abundant machine intelligence
+## Worked horizon: a scarce capability becomes cheap
 
-An example of the method, labelled by confidence.
+An example of the method, labelled by confidence for a typical case. Cases include printed text, mechanical calculation, and machine analysis. Relabel each order for the case at hand.
 
 | Order | Change | Confidence |
 |---|---|---|
-| First | Analysis, writing, and code become cheap and fast. Growth accelerates; expert explanation reaches anyone who asks | likely |
-| Second | Everyone can reach a doctoral level of synthesis. The scarce inputs become the questions worth asking, taste, verification, trust, physical execution, and attention | plausible |
-| Third | Credentials lose signal because the knowledge they certified is available on demand. Value flows to insight and to arbitrage between cheap machine labor and costly human needs | plausible |
-| Fourth | People who stop practicing judgment lose it; dependency grows unless tools build the user's ability | plausible |
-| Fifth | Legitimacy questions arise: who decides, who is accountable, whose values the systems carry | speculative |
-| Sixth | Meaning and identity shift when work no longer defines contribution | speculative |
+| First | The capability becomes cheap and fast. Far more people use it, for far more purposes | likely |
+| Second | The scarce inputs become what the capability does not supply: the questions worth asking, taste, verification, trust, physical execution, and attention | plausible |
+| Third | Credentials lose signal because the skill they certified is available on demand. Value flows to the scarce inputs and to the gap between the cheap capability and costly needs | plausible |
+| Fourth | People who stop practicing the skill lose it; dependency grows unless tools build the user's ability | plausible |
+| Fifth | Legitimacy questions arise: who controls the capability, who is accountable, whose values it carries | speculative |
+| Sixth | Meaning and identity shift for people whose contribution was the capability | speculative |
 
-From this horizon come four design goals for any tool that adds intelligence:
+From this horizon come four design goals for any tool that makes a capability cheap:
 
-- **The counterpart rule.** Where the person's own ability is part of the goal, every gain in machine capability ships with a human counterpart; `principles-develop` holds the rule and its test. Where the goal is only the output, as with a routine task handed off for its result, delegation is the point.
+- **The counterpart rule.** Where the person's own ability is part of the goal, every gain in the tool's capability ships with a human counterpart; `principles-develop` holds the rule and its test. Where the goal is only the output, as with a routine task handed off for its result, delegation is the point.
 - **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-verify`).
 - **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. A result nobody understands cannot be trusted or corrected.
 - **Value flows to insight as well as labor.** Design so that people capture value from new understanding, not only from cheaper work.

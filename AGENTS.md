@@ -11,7 +11,7 @@ Rules for working on this repo, for every agent and every person. [CLAUDE.md](CL
 Requirements:
 
 - **Timeless over dated.** Physics, perception, logic, and judgment stay. Tools, products, versions, and prices do not belong here.
-- **Principle, failure, check.** Every principle names the failure it prevents and a check that catches it.
+- **Principle, failure, check.** Every principle names the failure it prevents and a check that catches it, in the form that fits its skill: a table, a `Failure:` and `Check:` pair, a law, or a defaults list. The shape follows the subject. Only the medium skills share a shape, because every medium shares a structure. No test enforces a shape elsewhere: it would reward adding a table over naming a real failure, so a reader checks this rule.
 - **Positive form.** Say what to do. A prohibition earns its place only when no positive form exists.
 - **Honest status.** Write each claim as the kind it is, using the kinds of claim in `principles-ground`: law within stated assumptions, empirical regularity, heuristic, hypothesis, convention, or value. A heuristic states its limit. A hypothesis says how to test it. Mark the kind only where it changes how a reader should use the claim.
 - **One fact, one place.** The six axes live in `skills/principles`. Other skills use them and never redefine them.

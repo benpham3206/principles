@@ -5,6 +5,8 @@ description: Reason from evidence and first principles. Use when checking claims
 
 # Ground
 
+In one line: Believe a claim only as far as evidence and the limits of physics, logic, and perception support it.
+
 **Grounding** checks a claim or design against evidence and the limits of physics, logic, mathematics, and perception.
 
 ## Map and territory

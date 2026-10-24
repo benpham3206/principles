@@ -5,6 +5,8 @@ description: Check work before calling it done. Use when finishing a task, revie
 
 # Verify
 
+In one line: Show with evidence that the work is true and works, then judge whether it is good.
+
 **Done** means the work is true, works, and is good. Verify the first two with evidence. Judge quality with the taste and craft checks in `principles-craft`.
 
 Scale checks with consequences, uncertainty, and reversibility using `principles-method`. A clear, cheap, reversible task may need one direct check. Expand coverage when a missed fault could change the outcome.
@@ -25,7 +27,8 @@ Scale checks with consequences, uncertainty, and reversibility using `principles
 
 - Evidence beats report. Agent prose, a passing summary, and a successful call are not proof that the intended state exists.
 - Outcome over activity. Judge work by the verified state of the world under fixed constraints, never by files, calls, or process produced. No maker certifies their own work, redefines success, or widens their own authority; consequential work gets an independent reviewer.
-- A check that cannot fail proves nothing. A regression check must fail when the fix is removed, so break the fix once and watch it fail.
+- A check that cannot fail proves nothing. Watch it fail once: write it before the fix, or break the fix. Better, keep a known-bad case beside it that must fail on every run, so the proof does not depend on any maker remembering.
+- A test is a check that runs without its author: it keeps a stated rule true for people who never saw the reason. It earns its place when it guards a named rule or a failure that happened, fails when that rule breaks, and catches what no cheaper rung would. Name the rule in the test. Delete the test when the rule goes; a test that guards nothing costs every run and teaches people to ignore failures.
 - When a check surprises you, suspect the observation before the system.
 - Never weaken a check to make it pass. A weakened check is a hidden failure.
 - Evidence outlives cleanup. Tear down what you started, and keep the proof.

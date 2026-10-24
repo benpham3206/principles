@@ -5,6 +5,8 @@ description: Understand and shape feedback. Use when tuning control systems or d
 
 # Loop
 
+In one line: Find what feeds back into what, then shape the loop before pushing on any single part.
+
 A **loop** feeds a result back into what happens next. A **reinforcing loop** amplifies change in either direction. A **balancing loop** counteracts change; it can still be unstable or produce an unwanted result. A **stock** accumulates over time, such as users, trust, or knowledge.
 
 Use `principles-represent` to draw the loops and delays. Use `principles-compound` to choose what to accumulate and `principles-improve` to choose what to change.

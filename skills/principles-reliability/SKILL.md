@@ -5,6 +5,8 @@ description: Keep systems working when parts fail. Use when designing for uptime
 
 # Reliability
 
+In one line: Prevent, detect, contain, and recover in proportion to the harm, and run every fallback before you need it.
+
 **Reliability** is the chance that a thing does its job under stated conditions for the required time. Prevent faults, detect failures, contain harm, and test recovery. Scale each measure to the harm. For deliberate attacks, use `principles-secure`.
 
 ```

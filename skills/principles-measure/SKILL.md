@@ -5,6 +5,8 @@ description: Define and check measurements. Use when choosing metrics, benchmark
 
 # Measure
 
+In one line: Define the quantity, its reference, and its uncertainty before you trust or compare a number.
+
 A **measurement** assigns a value to a defined quantity through a stated procedure. A useful result says what was measured, under which conditions, against which reference, and with what uncertainty. This procedure applies to software and physical work.
 
 Use `principles-design` to choose the approach and the property a prototype must test. Use this skill to measure that property. Return to design when the result rejects the approach or shows that the prototype cannot answer the question. Use `principles-ground` to reason from the evidence and decide whether more information would change the choice.

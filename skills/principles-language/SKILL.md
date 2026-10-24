@@ -5,6 +5,8 @@ description: Shape meaning and experience with words. Use when writing or editin
 
 # Language
 
+In one line: Choose words for what the audience must understand, feel, remember, or do, and cut the rest.
+
 **Language** shapes what an audience understands, feels, imagines, remembers, or does through words and other symbols.
 
 ## Laws of the medium

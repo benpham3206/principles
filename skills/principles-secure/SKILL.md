@@ -5,6 +5,8 @@ description: Protect against misuse and compromised parts. Use when handling out
 
 # Secure
 
+In one line: Keep every action within rightful authority, and treat what crosses each boundary as possibly hostile.
+
 A thing is **secure** when its actions stay within rightful authority and its remaining risks stay within limits accepted by affected people or their legitimate representatives. Check hostile inputs, compromised parts, and mistakes. Affected people include users, bystanders, and people described by the data. Security depends on boundaries and what crosses them.
 
 ```

@@ -308,6 +308,7 @@ class TestPull(unittest.TestCase):
         self.assertEqual(install.pull(), 1)
 
 
+@unittest.skipUnless(Path("/bin/sh").exists(), "needs /bin/sh; CI runs these on Linux")
 class TestPosixScripts(unittest.TestCase):
     """Run the POSIX remote scripts for real against a temporary HOME and origin.
 

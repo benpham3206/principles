@@ -5,6 +5,8 @@ description: Shape what people see. Use when designing or reviewing images, layo
 
 # Visual
 
+In one line: Set contrast and shape before detail so the observer sees what matters first.
+
 **Visual design** arranges light and shape for an observer. Establish contrast and shape before detail so they see what matters first.
 
 ## Laws of the medium

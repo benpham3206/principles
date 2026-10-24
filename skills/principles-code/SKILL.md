@@ -5,6 +5,8 @@ description: Design and review software, interfaces, and data models. Use when w
 
 # Code
 
+In one line: Make data, behavior, and boundaries clear enough that the next maintainer can change the code safely.
+
 **Code** is an executable model of a need: machines run it, and people read, change, and operate it. Make its data, behavior, and boundaries clear to the people who use and maintain it.
 
 ## Laws of the medium

@@ -5,6 +5,8 @@ description: Design how people operate a system. Use when shaping controls, flow
 
 # Interaction
 
+In one line: Make each action, its result, the wait, and who holds authority clear to the person in the loop.
+
 An **interaction** is a loop: a person acts, perceives the system's response, and acts again. Automation can execute parts of the loop. Make actions, results, waiting time, and authority clear for the actual goal, setting, abilities, and consequences of error.
 
 ## Laws of the medium

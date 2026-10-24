@@ -5,6 +5,8 @@ description: Shape what people hear. Use when composing, recording, mixing, or r
 
 # Sound
 
+In one line: Decide what the listener hears first, and check it in the rooms and speakers they actually use.
+
 A **sound** work arranges pressure variations for a listener. Choose what they should hear first. Check it in the rooms and on the speakers they may use.
 
 ## Laws of the medium

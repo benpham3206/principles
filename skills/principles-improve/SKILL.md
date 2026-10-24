@@ -5,6 +5,8 @@ description: Improve a working thing while preserving what matters. Use when red
 
 # Improve
 
+In one line: Measure the gain on the goal's own metric, and keep every requirement intact while you pursue it.
+
 An **improvement** moves a working thing toward its goal on a measured metric while preserving its requirements. Extra activity or polish alone proves no gain.
 
 Use `principles-refine` for revisions to expression, coherence, or fit judged through comparison and use. A refinement can include measured improvement; match the evidence to the claim.

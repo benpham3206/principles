@@ -5,6 +5,8 @@ description: Turn a research question into a traceable answer. Use when planning
 
 # Research
 
+In one line: State the question and what counts as enough evidence, then trace every answer to its sources.
+
 Research gathers and connects evidence to answer a question. Start by stating the question, who needs the answer, and what would count as enough evidence.
 
 Use this skill for the path from question to sources to findings. Use `principles-ground` for kinds of claim, competing explanations, inference, and whether more information is worth gathering. Use `principles-measure` when collecting or comparing measurements. A research request authorizes investigation within its scope; preserve the user's limits on experiments, access, spending, and publication.

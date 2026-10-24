@@ -10,8 +10,10 @@ frontmatter as YAML then fail and the skill silently never registers.
 
 from __future__ import annotations
 
+import inspect
 import re
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -147,6 +149,26 @@ def stock_errors(text: str) -> list[str]:
 
 
 AXES_ROW = re.compile(r"^\| \*\*Form\*\* \|", re.M)
+ONE_LINE = "In one line: "
+ONE_LINE_WORDS = 20
+
+
+def one_line_errors(text: str) -> list[str]:
+    """The first line after the title states the skill's rule in one sentence."""
+    lines = text.splitlines()
+    title = next((i for i, l in enumerate(lines) if l.startswith("# ")), None)
+    if title is None:
+        return ["no '# ' title"]
+    first = next((l for l in lines[title + 1:] if l.strip()), "")
+    if not first.startswith(ONE_LINE):
+        return [f"first line after the title must start with {ONE_LINE!r}"]
+    body = first[len(ONE_LINE):]
+    errors = []
+    if len(body.split()) > ONE_LINE_WORDS:
+        errors.append(f"one line has {len(body.split())} words; keep it to {ONE_LINE_WORDS}")
+    if not body.endswith(".") or ". " in body:
+        errors.append("one line must be a single sentence ending in a period")
+    return errors
 
 
 def tracked_markdown() -> list[Path]:
@@ -240,7 +262,47 @@ class TestStock(unittest.TestCase):
         self.assertEqual(stock_errors("Name a mechanism or a number."), [])
 
 
+class TestOneLine(unittest.TestCase):
+    GOOD = "---\nname: x\n---\n\n# X\n\nIn one line: Check the work against evidence before calling it done.\n\nBody.\n"
+
+    def test_valid_one_line_has_no_errors(self) -> None:
+        self.assertEqual(one_line_errors(self.GOOD), [])
+
+    def test_missing_one_line_is_an_error(self) -> None:
+        self.assertTrue(one_line_errors("# X\n\nA **term** is defined here.\n"))
+
+    def test_long_one_line_is_an_error(self) -> None:
+        self.assertTrue(one_line_errors("# X\n\nIn one line: " + " ".join(["word"] * 21) + ".\n"))
+
+    def test_two_sentences_are_an_error(self) -> None:
+        self.assertTrue(one_line_errors("# X\n\nIn one line: Do this. Then that.\n"))
+
+
+def unproven_checkers(namespace: dict, source: str) -> list[str]:
+    """Checkers with no known-bad case: no test asserts that they return errors."""
+    return sorted(n for n, f in namespace.items()
+                  if n.endswith("_errors") and callable(f) and f"assertTrue({n}(" not in source)
+
+
+class TestKnownBad(unittest.TestCase):
+    def test_checker_without_a_known_bad_case_is_reported(self) -> None:
+        self.assertEqual(unproven_checkers({"x_errors": len}, "assertEqual(x_errors(''), [])"), ["x_errors"])
+
+    def test_checker_with_a_known_bad_case_passes(self) -> None:
+        self.assertEqual(unproven_checkers({"x_errors": len}, "assertTrue(x_errors('bad'))"), [])
+
+
 class TestRepo(unittest.TestCase):
+    def test_every_checker_is_seen_to_fail(self) -> None:
+        # principles-verify: a check that cannot fail proves nothing; each checker keeps a known-bad case.
+        module = sys.modules[__name__]
+        self.assertEqual(unproven_checkers(vars(module), inspect.getsource(module)), [])
+
+    def test_every_skill_states_its_rule_in_one_line(self) -> None:
+        errors = [f"{d.name}: {e}" for d in skill_dirs()
+                  for e in one_line_errors((d / "SKILL.md").read_text(encoding="utf-8"))]
+        self.assertEqual(errors, [])
+
     def test_all_tracked_markdown_passes(self) -> None:
         errors = []
         names = {p.name for p in skill_dirs()}

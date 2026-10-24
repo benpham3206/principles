@@ -5,6 +5,8 @@ description: Design agents and assistants. Use when shaping memory, goals, reaso
 
 # Mind
 
+In one line: Give an agent memory, goals, and limits it can audit, and test each hypothesis before relying on it.
+
 A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance below is marked **principle** where established in cognitive science or engineering, or **hypothesis** where plausible but untested. Test hypotheses before relying on them.
 
 ## Failure modes

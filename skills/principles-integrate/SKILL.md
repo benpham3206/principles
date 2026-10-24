@@ -5,6 +5,8 @@ description: Join parts and verify the whole. Use when combining modules, subsys
 
 # Integrate
 
+In one line: Check units, frames, assumptions, and timing at every interface, then prove the joined whole works.
+
 **Integration** joins separately made parts and proves that the whole works. Check differences in units, frames, assumptions, and timing at each interface. Passing parts can still fail together.
 
 ```

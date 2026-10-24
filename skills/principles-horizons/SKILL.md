@@ -5,6 +5,8 @@ description: Trace consequences beyond the first result. Use for strategy, long-
 
 # Horizons
 
+In one line: Trace consequences past the first result until they settle or grow too uncertain to guide the choice.
+
 A **horizon** is how far ahead you trace consequences. First-order effects are direct results. Second-order effects are responses to them. Follow later responses until they reach a new balance or become too uncertain to guide the decision.
 
 ## Steps

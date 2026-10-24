@@ -5,6 +5,8 @@ description: Create or revise a skill in the Principles family. Use when adding 
 
 # Create
 
+In one line: Add a skill only when a distinct task needs guidance no existing skill supplies; otherwise extend one.
+
 A skill earns a place when a distinct task needs guidance that existing skills do not supply. Use this procedure to make a Principles skill. Keep the rules in the repository instructions as the source of its format.
 
 ## Steps

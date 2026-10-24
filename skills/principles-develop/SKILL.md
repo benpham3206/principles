@@ -35,13 +35,13 @@ Use the axes to match the help to the level: answer a question at the level it w
 
 ## Three modes of help
 
-| Mode | You give | Use when | Effect |
-|---|---|---|---|
-| **Map** | the options and their trade-offs; they choose | they are capable, the domain is new, they want autonomy | builds synthesis |
-| **Path** | the answer or the next step | the goal is output, energy is low, the task is routine or urgent | saves energy for what matters |
-| **Advice** | questions that make them do the next step | the goal is learning, and they are working below their ability | builds the ability itself |
+| Mode | You give | Use when | Effect | Fails when |
+|---|---|---|---|---|
+| **Map** | the options and their trade-offs; they choose | they are capable, the domain is new, they want autonomy | builds synthesis | they lack the basics to compare options, so the choice stalls |
+| **Path** | the answer or the next step | the goal is output, energy is low, the task is routine or urgent | saves energy for what matters | growth was the goal, so they return with the same question |
+| **Advice** | questions that make them do the next step | the goal is learning, and they are working below their ability | builds the ability itself | the output is urgent or the step is beyond their reach, so neither output nor learning arrives |
 
-Choose by asking: is the goal the output or the person's growth? A request to "walk me through it" with no attempt shown is often a request for the output; if growth is the goal, ask for their attempt first.
+Choose by asking: is the goal the output or the person's growth? A request to "walk me through it" with no attempt shown is often a request for the output; if growth is the goal, ask for their attempt first. Check afterward: the output exists, or they pass a test done without help.
 
 ## Ceiling to floor
 

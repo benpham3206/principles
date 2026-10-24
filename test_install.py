@@ -131,52 +131,114 @@ class TestInstall(Fixture):
 
 
 REAL_FANOUT = install.FANOUT
+POLICY_FANOUT = Path(__file__).parent / "tests" / "fixtures" / "policy_fanout.py"
 
 
-@unittest.skipUnless(REAL_FANOUT.is_file(), "agent-hooks fanout.py is not installed")
 class TestPolicy(Fixture):
+    """Run policy through the installer and pinned upstream file I/O, in a temp home."""
+
+    fanout = POLICY_FANOUT
+
     def setUp(self) -> None:
         super().setUp()
         (self.clone / "policy.md").write_text("rule one\n")
         (self.home / ".codex").mkdir()
         self.codex = self.home / ".codex" / "AGENTS.md"
-        self.codex.write_text("mine\n")
-        with mock.patch.object(install, "FANOUT", REAL_FANOUT):
+        self.own_text = ("# My rules\nKeep caf\u00e9 text.\n\n"
+                         "<!-- BEGIN ben-other -->\nkeep this block\n<!-- END ben-other -->\n")
+        self.codex.write_text(self.own_text, encoding="utf-8")
+        self.hermes = self.home / ".hermes" / "skills" / "software-development" / "hermes-execution-todo"
+        for folder in (".claude", ".grok/rules", ".cursor/rules", ".kiro/steering"):
+            (self.home / folder).mkdir(parents=True)
+        (self.hermes / "references").mkdir(parents=True)
+        (self.hermes / "SKILL.md").write_text("# My Hermes skill\n")
+        with mock.patch.object(install, "FANOUT", self.fanout):
             fo = install.load_fanout()
         fo.HOME = self.home  # instruction_targets reads HOME at call time: keep every write in the temp home
-        for patch in (mock.patch.object(install, "load_fanout", lambda: fo),
-                      mock.patch.object(install, "HERMES", self.home / "no-hermes")):
+        for patch in (mock.patch.object(install, "load_fanout", return_value=fo),
+                      mock.patch.object(install, "HERMES", self.hermes)):
             patch.start()
             self.addCleanup(patch.stop)
 
     def test_check_reports_drift_and_writes_nothing(self) -> None:
+        before = {p.relative_to(self.home): p.read_bytes() if p.is_file() else None
+                  for p in self.home.rglob("*")}
         self.assertGreater(install.policy(check=True), 0)
-        self.assertEqual(self.codex.read_text(), "mine\n")
+        self.assertEqual({p.relative_to(self.home): p.read_bytes() if p.is_file() else None
+                          for p in self.home.rglob("*")}, before)
 
     def test_writes_block_keeps_own_text_then_check_is_clean(self) -> None:
         install.policy(check=False)
-        text = self.codex.read_text()
-        self.assertIn("mine", text)
-        self.assertIn("rule one", text)
+        block = ("<!-- BEGIN ben-engineering-policy (managed by propagate-across-harnesses; edit "
+                 "~/.agents/skill-repos/benpham3206__principles/policy.md, then rerun) -->\n"
+                 "rule one\n<!-- END ben-engineering-policy -->\n")
+        self.assertEqual(self.codex.read_text(encoding="utf-8"), self.own_text + "\n" + block)
+        before = {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in self.home.rglob("*") if p.is_file()}
         self.assertEqual(install.policy(check=True), 0)
+        install.policy(check=False)
+        self.assertEqual({p: (p.read_bytes(), p.stat().st_mtime_ns)
+                          for p in self.home.rglob("*") if p.is_file()}, before)
 
     def test_rerun_replaces_the_block_in_place(self) -> None:
         install.policy(check=False)
-        (self.clone / "policy.md").write_text("rule two\n")
+        original = self.codex.read_text(encoding="utf-8") + "\n# My footer\nKeep this too.\n"
+        self.codex.write_text(original, encoding="utf-8")
+        body = "rule two: literal \\1 and \\path\nnext line"
+        (self.clone / "policy.md").write_text(body + "\n")
+        self.assertGreater(install.policy(check=True), 0)
+        self.assertEqual(self.codex.read_text(encoding="utf-8"), original)
         install.policy(check=False)
-        text = self.codex.read_text()
+        text = self.codex.read_text(encoding="utf-8")
         self.assertEqual(text.count("BEGIN ben-engineering-policy"), 1)
-        self.assertNotIn("rule one", text)
-        self.assertIn("rule two", text)
+        self.assertEqual(text, original.replace("rule one", body))
+        self.assertEqual(install.policy(check=True), 0)
 
     def test_grok_rules_folder_gets_its_own_file(self) -> None:
-        (self.home / ".grok" / "rules").mkdir(parents=True)
         install.policy(check=False)
         self.assertIn("rule one", (self.home / ".grok" / "rules" / "ben-engineering-policy.md").read_text())
 
+    def test_present_harnesses_get_headers_and_hermes_pointer(self) -> None:
+        install.policy(check=False)
+        cursor = (self.home / ".cursor/rules/ben-engineering-policy.mdc").read_text()
+        self.assertTrue(cursor.startswith("---\ndescription: Engineering policy from principles (Ben fleet)\nalwaysApply: true\n---\n"))
+        kiro = (self.home / ".kiro/steering/engineering-policy.md").read_text()
+        self.assertTrue(kiro.startswith("---\ntitle: Engineering policy from principles\ninclusion: always\n---\n"))
+        for text in (cursor, kiro, (self.hermes / "references/engineering-policy.md").read_text()):
+            self.assertIn("rule one", text)
+        pointer = (self.hermes / "SKILL.md").read_text()
+        self.assertTrue(pointer.startswith("# My Hermes skill\n"))
+        self.assertIn(install.HERMES_POINTER, pointer)
+
+    def test_absent_harnesses_and_missing_instruction_files_stay_absent(self) -> None:
+        install.policy(check=False)
+        for path in (".claude/CLAUDE.md", ".grok/AGENTS.md", ".config", "FABLE", ".kimi", ".gemini", ".copilot"):
+            with self.subTest(path=path):
+                self.assertFalse((self.home / path).exists())
+
+    def test_duplicate_blocks_refuse_without_changing_the_file(self) -> None:
+        install.policy(check=False)
+        duplicate = self.codex.read_text(encoding="utf-8") * 2
+        self.codex.write_text(duplicate, encoding="utf-8")
+        for check in (True, False):
+            with self.subTest(check=check), self.assertRaises(ValueError):
+                install.policy(check=check)
+            self.assertEqual(self.codex.read_text(encoding="utf-8"), duplicate)
+
     def test_missing_policy_is_skipped(self) -> None:
         (self.clone / "policy.md").unlink()
+        before = {p.relative_to(self.home): p.read_bytes() if p.is_file() else None
+                  for p in self.home.rglob("*")}
         self.assertEqual(install.policy(check=True), 0)
+        self.assertEqual(install.policy(check=False), 0)
+        self.assertEqual({p.relative_to(self.home): p.read_bytes() if p.is_file() else None
+                          for p in self.home.rglob("*")}, before)
+
+
+@unittest.skipUnless(REAL_FANOUT.is_file(), "optional integration: agent-hooks fanout.py is not installed")
+class TestPolicyRealFanout(TestPolicy):
+    """Keep the same policy contract checked against installed agent-hooks when present."""
+
+    fanout = REAL_FANOUT
 
 
 def sh(cwd: Path, *args: str) -> str:

@@ -68,6 +68,8 @@ On every machine, a pull fast-forwards to exactly `origin/main`. It refuses a cl
 
 The installer also writes `policy.md`, the engineering policy, as one managed block into each harness's instruction file. Run `python3 -m unittest` to verify the repository.
 
+Policy tests use temporary homes and a pinned agent-hooks fixture in clean CI. When agent-hooks is installed, the same scenarios also run against that dependency. The fixture records its upstream commit and source hash. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
+
 ## Contributing
 
 Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `principles-method` and checked with its own `principles-verify`.

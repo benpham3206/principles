@@ -1,6 +1,6 @@
 ---
 name: principles-method
-description: Scale the work to its consequences. Use when planning a task, making a decision, choosing rigor, or setting up how a project works.
+description: Scale the work to its consequences. Use when planning a task, making a decision, choosing rigor, managing long-running or delegated work, or setting up how a project works.
 ---
 
 # Method
@@ -52,6 +52,17 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 Steps 2, 4, and 8 to 10 are the improvement order; `principles-improve` covers it in depth.
 
 For small reversible tasks this collapses to build, verify, iterate.
+
+## Execution limits
+
+For work that can block, stall, or run in the background:
+
+| Principle | Failure | Check |
+|---|---|---|
+| Bound each wait | A network call, remote machine, model call, server start, or health check hangs the task | Give it a timeout and name the response when it expires |
+| Judge progress within limits | Useful work is stopped too soon, or stalled work consumes resources without end | Set limits for time to start, time between meaningful progress signals, and total duration. Keep work running while progress stays within all three |
+| Resolve state before retrying | A retry duplicates work or side effects from an unfinished attempt | On expiry, check completion and liveness. Stop what remains and confirm it stopped. Before retrying, check for completed effects. Retry at most once, only when safe; otherwise escalate |
+| Parallelize independent work | Sequential work delays the result, or concurrent writers corrupt shared state | When permitted and likely to save time within available resources, give each part exclusive file ownership. Coordinate shared state, keep dependencies ordered, and verify the joined result |
 
 ## Refine
 

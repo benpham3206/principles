@@ -17,7 +17,7 @@ State each result's assumptions: local gravity $g$, temperature, environment, an
 - Every cycle counts. A load that is safe once can fail after enough repeats; ask how often as well as how much.
 - Stored energy is the hazard. Know what holds it and where it goes when that fails.
 - Each part, tolerance, and interface costs something and can fail. Remove first, then add only what the function needs.
-- Test beyond the limit. A model has a range; only a test finds its edge.
+- Match the test to the claim. Establish the required margin with analysis or representative tests. Use a controlled test to failure to measure a sample's capacity or check its predicted failure mode.
 
 ## Defaults to replace
 
@@ -52,7 +52,7 @@ MACHINE
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
-| Property per mass and cost | Rank by the ratio the function needs: $E/\rho$ for stiffness per mass, $\sigma_y/\rho$ for strength per mass, then cost per kilogram and per part | Choosing by strength alone, or by the familiar material | Name the governing property ratio. Does the choice lead on it? |
+| Property per mass and cost | Derive the material index from the load, constraints, and dimensions free to change. For a tie of fixed length and adjustable area, maximize $E/\rho$ for elastic axial stiffness or $\sigma_y/\rho$ for yield-limited axial strength. Compare cost per finished part too | Ranking bending members by an axial index; choosing the familiar material | Which dimensions can change? Compare mass and cost at the same required performance |
 | Strength, stiffness, toughness | Strength is the stress a material bears, stiffness is $E$, toughness is the energy absorbed before fracture. They are three properties and often trade against each other. Alloying and heat treatment move strength far more than $E$ | A stronger alloy chosen to fix a part that is too flexible | Is the part failing by yielding, deflecting, or cracking? Fix that property |
 | Ductile and brittle | A ductile material yields and warns; a brittle one fractures with little warning. Some steels turn brittle below a transition temperature | A tough material at room temperature that shatters cold | Is the lowest service temperature above the transition temperature? |
 | Corrosion | Corrosion needs a metal, an electrolyte, and a potential difference. Dissimilar metals in contact with moisture corrode the less noble one | Fasteners and plates of different metals in a wet joint; crevices that hold water | List the wet surfaces and every contact pair. Is each pair compatible or isolated? |
@@ -132,7 +132,7 @@ Machines are built from a few ideas. These are choices, not required steps: use 
 | Margin sources | The factor covers load uncertainty, material scatter, model error, and consequence. Set it by those, not by custom | A large factor over a poor model, or a small factor where the load is unknown | Which uncertainties does the factor cover, and are they measured? |
 | Fail safe | Choose the failure that does the least harm: a brake that sets on loss of power, a valve that closes, a part that yields before it fractures | Failure in the dangerous direction | When each part fails, in what state does the machine stop? |
 | Redundancy | Where one failure kills, add a second independent path. Common-cause failures defeat shared paths | Two paths with the same flaw or the same shared cause; a single point left in a critical load path | Name every single point. Are the backups independent? For the method, see `principles-reliability` |
-| Test to failure | A test that does not break the part has not shown its margin. Load a sample until it fails and compare with the prediction | Analysis trusted that no test has tried to break | Has any sample been taken to failure, and did it fail where and when predicted? |
+| Margin and failure tests | A proof test establishes a lower bound on capacity for the tested article, failure mode, and conditions. To measure a sample's capacity or check its predicted failure mode, take a representative sample to failure under controlled conditions and compare with the prediction | Demanding destruction after the required bound is proved; treating one sample's failure load as a guarantee for every part and condition | Did the article meet the acceptance limits at the required test load? For a failure test, did the load and mode match the prediction? |
 | Root cause | Every failure gets a physical cause: the load, the stress, the material, the process, or the use. Replacing the part leaves the cause in place | Fixing the broken part and rerunning | Can you state the mechanism and the evidence? Does the fix change the cause? For the analysis itself, see `principles-lessons` |
 
 Pairs with: before `principles-method`, `principles-ground`, `principles-loop`, `principles-reliability`; after `principles-integrate`, `principles-verify`.

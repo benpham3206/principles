@@ -167,7 +167,7 @@ class TestFreshMachine(unittest.TestCase):
         for codex in (".codex", ".codex-school"):
             self.assertIn("## Engineering policy", (home / codex / "AGENTS.md").read_text(encoding="utf-8"))
         self.assertIn("## Engineering policy",
-                      (home / ".cursor" / "rules" / "ben-engineering-policy.mdc").read_text(encoding="utf-8"))
+                      (home / ".cursor" / "rules" / "managed-engineering-policy.mdc").read_text(encoding="utf-8"))
         self.assertFalse((home / ".claude").exists())
         again = subprocess.run([sys.executable, str(clone / "install.py"), "--check"], env=env,
                                capture_output=True, text=True, timeout=300)
@@ -189,7 +189,7 @@ class TestPolicy(Fixture):
         (self.home / ".codex").mkdir()
         self.codex = self.home / ".codex" / "AGENTS.md"
         self.own_text = ("# My rules\nKeep caf\u00e9 text.\n\n"
-                         "<!-- BEGIN ben-other -->\nkeep this block\n<!-- END ben-other -->\n")
+                         "<!-- BEGIN other-rule -->\nkeep this block\n<!-- END other-rule -->\n")
         self.codex.write_text(self.own_text, encoding="utf-8")
         self.hermes = self.home / ".hermes" / "skills" / "software-development" / "hermes-execution-todo"
         for folder in (".claude", ".grok/rules", ".cursor/rules", ".kiro/steering"):
@@ -213,9 +213,9 @@ class TestPolicy(Fixture):
 
     def test_writes_block_keeps_own_text_then_check_is_clean(self) -> None:
         install.policy(check=False)
-        block = ("<!-- BEGIN ben-engineering-policy (managed by propagate-across-harnesses; edit "
+        block = ("<!-- BEGIN managed-engineering-policy (managed by propagate-across-harnesses; edit "
                  "~/.agents/skill-repos/benpham3206__principles/policy.md, then rerun) -->\n"
-                 "rule one\n<!-- END ben-engineering-policy -->\n")
+                 "rule one\n<!-- END managed-engineering-policy -->\n")
         self.assertEqual(self.codex.read_text(encoding="utf-8"), self.own_text + "\n" + block)
         before = {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in self.home.rglob("*") if p.is_file()}
         self.assertEqual(install.policy(check=True), 0)
@@ -233,18 +233,18 @@ class TestPolicy(Fixture):
         self.assertEqual(self.codex.read_text(encoding="utf-8"), original)
         install.policy(check=False)
         text = self.codex.read_text(encoding="utf-8")
-        self.assertEqual(text.count("BEGIN ben-engineering-policy"), 1)
+        self.assertEqual(text.count("BEGIN managed-engineering-policy"), 1)
         self.assertEqual(text, original.replace("rule one", body))
         self.assertEqual(install.policy(check=True), 0)
 
     def test_grok_rules_folder_gets_its_own_file(self) -> None:
         install.policy(check=False)
-        self.assertIn("rule one", (self.home / ".grok" / "rules" / "ben-engineering-policy.md").read_text())
+        self.assertIn("rule one", (self.home / ".grok" / "rules" / "managed-engineering-policy.md").read_text())
 
     def test_present_harnesses_get_headers_and_hermes_pointer(self) -> None:
         install.policy(check=False)
-        cursor = (self.home / ".cursor/rules/ben-engineering-policy.mdc").read_text()
-        self.assertTrue(cursor.startswith("---\ndescription: Engineering policy from principles (Ben fleet)\nalwaysApply: true\n---\n"))
+        cursor = (self.home / ".cursor/rules/managed-engineering-policy.mdc").read_text()
+        self.assertTrue(cursor.startswith("---\ndescription: Engineering policy from principles\nalwaysApply: true\n---\n"))
         kiro = (self.home / ".kiro/steering/engineering-policy.md").read_text()
         self.assertTrue(kiro.startswith("---\ntitle: Engineering policy from principles\ninclusion: always\n---\n"))
         for text in (cursor, kiro, (self.hermes / "references/engineering-policy.md").read_text()):
@@ -268,7 +268,7 @@ class TestPolicy(Fixture):
         self.assertGreater(install.policy(check=True), 0)
         self.assertFalse((self.home / ".cursor" / "rules").exists())
         install.policy(check=False)
-        self.assertIn("rule one", (self.home / ".cursor/rules/ben-engineering-policy.mdc").read_text())
+        self.assertIn("rule one", (self.home / ".cursor/rules/managed-engineering-policy.mdc").read_text())
         self.assertEqual(install.policy(check=True), 0)
 
     def test_duplicate_blocks_refuse_without_changing_the_file(self) -> None:
@@ -279,6 +279,76 @@ class TestPolicy(Fixture):
             with self.subTest(check=check), self.assertRaises(ValueError):
                 install.policy(check=check)
             self.assertEqual(self.codex.read_text(encoding="utf-8"), duplicate)
+
+    def test_migrates_legacy_blocks_and_filenames_without_losing_content(self) -> None:
+        legacy = ("<!-- BEGIN ben-engineering-policy (managed) -->\nold rule\n"
+                  "<!-- END ben-engineering-policy -->\n")
+        self.codex.write_text(self.own_text + legacy + "footer\n", encoding="utf-8")
+        paths = [(self.home / ".cursor/rules/ben-engineering-policy.mdc",
+                  self.home / ".cursor/rules/managed-engineering-policy.mdc"),
+                 (self.home / ".grok/rules/ben-engineering-policy.md",
+                  self.home / ".grok/rules/managed-engineering-policy.md")]
+        header = ("---\ndescription: Engineering policy from principles (Ben fleet)\n"
+                  "alwaysApply: true\n---\n")
+        for old, new in paths:
+            old.write_text((header if old.suffix == ".mdc" else "") + "user prefix\n" + legacy + "user suffix\n", encoding="utf-8")
+        before = {p: p.read_bytes() for p in self.home.rglob("*") if p.is_file()}
+        self.assertGreater(install.policy(check=True), 0)
+        self.assertEqual({p: p.read_bytes() for p in self.home.rglob("*") if p.is_file()}, before)
+        install.policy(check=False)
+        for old, new in paths:
+            self.assertFalse(old.exists())
+            text = new.read_text(encoding="utf-8")
+            self.assertTrue(text.startswith((header.replace(" (Ben fleet)", "") if new.suffix == ".mdc" else "") + "user prefix\n"))
+            self.assertTrue(text.endswith("user suffix\n"))
+            self.assertEqual(text.count("BEGIN managed-engineering-policy"), 1)
+            self.assertNotIn("ben-engineering-policy", text)
+        text = self.codex.read_text(encoding="utf-8")
+        self.assertTrue(text.startswith(self.own_text))
+        self.assertTrue(text.endswith("footer\n"))
+        self.assertNotIn("ben-engineering-policy", text)
+        self.assertEqual(install.policy(check=True), 0)
+
+    def test_mixed_legacy_and_current_blocks_become_one(self) -> None:
+        install.policy(check=False)
+        text = self.codex.read_text(encoding="utf-8")
+        legacy = ("<!-- BEGIN ben-engineering-policy (managed) -->\nold\n"
+                  "<!-- END ben-engineering-policy -->")
+        self.codex.write_text(text + legacy + "\nkeep footer\n", encoding="utf-8")
+        install.policy(check=False)
+        result = self.codex.read_text(encoding="utf-8")
+        self.assertEqual(result.count("BEGIN managed-engineering-policy"), 1)
+        self.assertNotIn("ben-engineering-policy", result)
+        self.assertTrue(result.endswith("\nkeep footer\n"))
+
+    def test_conflicting_legacy_filename_is_preserved(self) -> None:
+        install.policy(check=False)
+        old = self.home / ".cursor/rules/ben-engineering-policy.mdc"
+        old.write_text("user content", encoding="utf-8")
+        for check in (True, False):
+            with self.assertRaises(ValueError):
+                install.policy(check=check)
+            self.assertEqual(old.read_text(encoding="utf-8"), "user content")
+
+    def test_overlapping_policy_blocks_refuse_without_changing_content(self) -> None:
+        text = ("<!-- BEGIN ben-engineering-policy (managed) -->\n"
+                "<!-- BEGIN managed-engineering-policy (managed) -->\n"
+                "<!-- END ben-engineering-policy -->\n"
+                "<!-- END managed-engineering-policy -->\n")
+        self.codex.write_text(text, encoding="utf-8")
+        for check in (True, False):
+            with self.assertRaises(ValueError):
+                install.policy(check=check)
+            self.assertEqual(self.codex.read_text(encoding="utf-8"), text)
+
+    def test_legacy_description_in_user_text_is_preserved(self) -> None:
+        quote = "description: Engineering policy from principles (Ben fleet)\n"
+        self.codex.write_text(self.own_text + quote, encoding="utf-8")
+        cursor = self.home / ".cursor/rules/ben-engineering-policy.mdc"
+        cursor.write_text("# User notes\n" + quote, encoding="utf-8")
+        install.policy(check=False)
+        self.assertIn(quote, self.codex.read_text(encoding="utf-8"))
+        self.assertIn(quote, cursor.with_name("managed-engineering-policy.mdc").read_text(encoding="utf-8"))
 
     def test_missing_policy_is_skipped(self) -> None:
         (self.clone / "policy.md").unlink()
@@ -489,7 +559,7 @@ class TestDeadlines(unittest.TestCase):
         self.assertIn("timed out", done.stderr)
 
     def test_an_orphan_holding_the_output_cannot_stall_the_timeout(self) -> None:
-        # The PHAMPC hang: git was killed on timeout, but git-remote-https, which it had
+        # A process-tree hang: git was killed on timeout, but git-remote-https, which it had
         # started, still held the inherited stdout, so subprocess.run waited for it forever.
         # Here a child starts a 60 s grandchild that inherits stdout, then stalls itself.
         with tempfile.TemporaryDirectory() as tmp:

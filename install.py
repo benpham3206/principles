@@ -38,7 +38,7 @@ AGENT_SKILLS = HOME / ".agents" / "skills"
 FANOUT = AGENT_SKILLS / "propagate-across-harnesses" / "fanout.py"
 BUILTIN = Path(__file__).resolve().parent / "harnesses.py"
 REMOTE = HOME / ".agents" / "hooks" / "remote.py"
-# The always-on policy. Same tag as the old ~/.agents/engineering installer, so its blocks are replaced in place.
+# The always-on policy. The local renderer migrates blocks from the previous installer.
 POLICY = "policy.md"
 POLICY_TAG = "engineering-policy"
 POLICY_TITLE = "Engineering policy from principles"
@@ -305,11 +305,16 @@ def policy(check: bool) -> int:
     # reads the policy from ~/.grok/rules, and a second copy in ~/.grok/AGENTS.md would double it.
     targets = [(h, p, "" if head is None and h in CREATE_IF_MISSING else head)
                for h, p, head in fo.instruction_targets(POLICY_TAG, POLICY_TITLE)]
-    targets.append(("grok-rules", HOME / ".grok" / "rules" / f"ben-{POLICY_TAG}.md", ""))
+    # Installed agent-hooks may still supply legacy names and Cursor frontmatter.
+    targets = [(h, p.with_name(f"managed-{POLICY_TAG}.mdc") if h == "cursor" else p,
+                f"---\ndescription: {POLICY_TITLE}\nalwaysApply: true\n---\n\n" if h == "cursor" else head)
+               for h, p, head in targets]
+    targets.append(("grok-rules", HOME / ".grok" / "rules" / f"managed-{POLICY_TAG}.md", ""))
     targets.append(("hermes", HERMES / "references" / "engineering-policy.md", ""))
     made = harness_folders([p.parent for h, p, _ in targets if h not in ("canonical", "hermes")], check)
-    drift = (made if check else 0) + fo.install_rule(POLICY_TAG, body, source, targets, check)
-    return drift + fo.install_rule(POLICY_TAG, HERMES_POINTER, source, [("hermes", HERMES / "SKILL.md", None)], check)
+    from harnesses import install_rule
+    drift = (made if check else 0) + install_rule(POLICY_TAG, body, source, targets, check)
+    return drift + install_rule(POLICY_TAG, HERMES_POINTER, source, [("hermes", HERMES / "SKILL.md", None)], check)
 
 
 def harness_dirs() -> list[Path]:

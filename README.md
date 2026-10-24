@@ -65,7 +65,7 @@ python3 install.py --pull
 
 This clones the installed copy to `~/.agents/skill-repos/benpham3206__principles` and links each skill into `~/.agents/skills`. It then links them into every coding agent's skills folder, such as `~/.claude/skills`, `~/.codex/skills`, and `~/.cursor/skills`, when that harness's own folder exists. It creates a missing skills folder or instruction file for such a harness. It needs no admin rights; on Windows the links are junctions. Run the same command again to update. `python3 install.py --check` is a dry run that exits 1 when anything would change.
 
-The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates every other machine named by the maintainer's ssh aliases `mac`, `mbp13`, and `windows`, when they exist; `--check --all` is the dry run.
+The installer works from that installed clone, never from a working checkout, so unmerged edits stay out of active skills. The list of agents it knows lives in `harnesses.py`. When [agent-hooks](https://github.com/benpham3206/agent-hooks) is installed, its `fanout.py` is used instead, which adds its skill scan. `python3 install.py --all` also updates configured machines with the generic ssh aliases `mac` and `windows`, when they exist; `--check --all` is the dry run.
 
 For a harness the installer does not know, link or copy each folder in `skills/` into its skills directory. Each folder contains a `SKILL.md` with a name and description.
 
@@ -73,18 +73,18 @@ On every machine, a pull fast-forwards to exactly `origin/main`. It refuses a cl
 
 The installer also writes `policy.md`, the engineering policy, as one managed block into each harness's instruction file. Run `python3 -m unittest` to verify the repository.
 
-Install tests use temporary homes, including one that runs the real installer in a blank home with no agent-hooks. When agent-hooks is installed, the policy scenarios also run against its `fanout.py`. `harnesses.py` records the upstream commit and source hash it was copied from. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
+Install tests use temporary homes, including one that runs the real installer in a blank home with no agent-hooks. When agent-hooks is installed, the policy scenarios also run against its `fanout.py`. `harnesses.py` records its upstream commit, source hash, and local policy naming and migration changes. The always-on policy has a 50-line and 550-word budget; detailed execution procedures live in `principles-method`.
 
 ## Uninstall
 
 The plugin uninstalls with `/plugin uninstall principles@principles`. For an `install.py` installation, ask your agent to follow these steps, or follow them yourself. `~` means your home folder (`$HOME` in PowerShell). Keep the clone until you finish removing its links and policy blocks.
 
 1. Remove only skill links that lead to `~/.agents/skill-repos/benpham3206__principles`: first those in each harness's skills folder, then those in `~/.agents/skills`. See `SKILL_DIRS` in [harnesses.py](harnesses.py) for harness paths. On macOS, inspect each link with `ls -l "<link>"`, then use `unlink "<link>"`. On Windows, inspect its target with `Get-Item -LiteralPath '<link>' | Select-Object FullName, LinkType, Target`, then use `cmd /c rmdir "<link>"`. Replace `<link>` with the full link path. Windows links are junctions; removing one this way does not delete its target. Keep real folders and links to other clones.
-2. In each instruction file, delete only the managed policy block, including both marker lines below. Keep all other text. See `instruction_targets` in [harnesses.py](harnesses.py) and `policy` in [install.py](install.py) for paths, including the Hermes policy reference and pointer. Delete `~/.grok/rules/ben-engineering-policy.md` and `~/.cursor/rules/ben-engineering-policy.mdc` only if they contain nothing you added; otherwise remove just the block. Removing a block from a newly created instruction file leaves it empty, which is harmless.
+2. In each instruction file, delete only the managed policy block, including both marker lines below. Keep all other text. Older installations can use different marker prefixes and filenames; match the engineering policy block by its managed source, not its prefix. See `instruction_targets` in [harnesses.py](harnesses.py) and `policy` in [install.py](install.py) for paths, including the Hermes policy reference and pointer. Delete `~/.grok/rules/managed-engineering-policy.md` and `~/.cursor/rules/managed-engineering-policy.mdc` only if they contain nothing you added; otherwise remove just the block. Removing a block from a newly created instruction file leaves it empty, which is harmless.
 
    ```
-   <!-- BEGIN ben-engineering-policy (managed by propagate-across-harnesses; edit ~/.agents/skill-repos/benpham3206__principles/policy.md, then rerun) -->
-   <!-- END ben-engineering-policy -->
+   <!-- BEGIN managed-engineering-policy (managed by propagate-across-harnesses; edit ~/.agents/skill-repos/benpham3206__principles/policy.md, then rerun) -->
+   <!-- END managed-engineering-policy -->
    ```
 
 3. Move `~/.agents/skill-repos/benpham3206__principles` to Trash on macOS or the Recycle Bin on Windows. Keep any local work you still need.

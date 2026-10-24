@@ -2,12 +2,13 @@
 
 Source: https://github.com/benpham3206/agent-hooks/blob/a9e6c61a68526612a2fc39195b96a7e2f5628005/skills/propagate-across-harnesses/fanout.py
 Upstream file SHA-256: 47651f55cfafaa9c66b897acebabcc82f35e421a752f86099236ac8f4d8d38d7
-Extracted verbatim: SKILL_DIRS, codex_homes, instruction_targets, render, install_rule, points_to, link_skill.
-Only module imports and HOME initialization are reduced to their dependencies. Left out: the
+Originally extracted: SKILL_DIRS, codex_homes, instruction_targets, render, install_rule, points_to, link_skill.
+Local adaptations: neutral policy names and headers, legacy block and filename migration,
+and reduced module imports and HOME initialization. Left out: the
 skill scan, which runs agent-hooks' skill_guard.py. This repo's skills are reviewed through
 pull requests, the same exemption fanout.py gives agent-hooks' own skills.
-install.py uses the installed agent-hooks fanout.py when present, and this file otherwise.
-Do not edit these definitions; refresh from a reviewed upstream commit instead.
+install.py uses this policy renderer even when agent-hooks supplies the harness map.
+Refresh upstream definitions only from a reviewed commit; preserve these local adaptations.
 """
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ SKILLS = HOME / ".agents/skills"
 WINDOWS = os.name == "nt"
 DEVIN_SKILLS = Path(os.environ["APPDATA"], "devin/skills") if WINDOWS else HOME / ".config/devin/skills"
 
-# Harness skill dirs. Precedent: the 2026-09-17 bend fan-out.
+# Harness skill directories.
 SKILL_DIRS = [HOME / p for p in (
     ".claude/skills", ".codex/skills", ".grok/skills", ".kimi/skills", ".gemini/skills",
     ".copilot/skills", ".cursor/skills", ".kiro/skills", ".qoder/skills", ".omp/agent/skills",
@@ -46,22 +47,40 @@ def instruction_targets(tag: str, title: str) -> list[tuple[str, Path, str | Non
         ("gemini", HOME / ".gemini/GEMINI.md", None),
         ("copilot", HOME / ".copilot/copilot-instructions.md", None),
         ("opencode", HOME / ".config/opencode/AGENTS.md", ""),
-        ("cursor", HOME / f".cursor/rules/ben-{tag}.mdc",
-         f"---\ndescription: {title} (Ben fleet)\nalwaysApply: true\n---\n\n"),
+        ("cursor", HOME / f".cursor/rules/managed-{tag}.mdc",
+         f"---\ndescription: {title}\nalwaysApply: true\n---\n\n"),
         ("kiro", HOME / f".kiro/steering/{tag}.md", f"---\ntitle: {title}\ninclusion: always\n---\n\n"),
     ]
 
 
 def render(text: str, tag: str, body: str, source: str) -> str:
     """Return text with exactly one managed block for tag holding body."""
-    begin = f"<!-- BEGIN ben-{tag} "
-    end = f"<!-- END ben-{tag} -->"
-    if text.count(begin) > 1:
-        raise ValueError(f"more than one ben-{tag} block; fix by hand")
+    begin = f"<!-- BEGIN managed-{tag} "
+    end = f"<!-- END managed-{tag} -->"
+    # The old identifier is needed only to recognize installed policy blocks.
+    prefixes = (f"managed-{tag}", f"ben-{tag}")
+    patterns = []
+    expected = 0
+    for prefix in prefixes:
+        start, stop = f"<!-- BEGIN {prefix} ", f"<!-- END {prefix} -->"
+        pattern = re.compile(re.escape(start) + ".*?" + re.escape(stop), re.S)
+        count = text.count(start)
+        if count > 1 or count != text.count(stop) or count != len(pattern.findall(text)):
+            raise ValueError(f"ambiguous {prefix} block; fix by hand")
+        expected += count
+        patterns.append(pattern.pattern)
     block = f"{begin}(managed by propagate-across-harnesses; edit {source}, then rerun) -->\n{body}\n{end}"
-    pattern = re.compile(re.escape(begin) + ".*?" + re.escape(end), re.S)
+    pattern = re.compile("|".join(patterns), re.S)
+    if len(pattern.findall(text)) != expected:
+        raise ValueError(f"overlapping {tag} blocks; fix by hand")
     if pattern.search(text):
-        return pattern.sub(lambda _: block, text)
+        first = True
+        def replace(match):
+            nonlocal first
+            replacement = block if first else ""
+            first = False
+            return replacement
+        return pattern.sub(replace, text)
     text = text.rstrip("\n")
     return f"{text}\n\n{block}\n" if text else f"{block}\n"
 
@@ -75,14 +94,27 @@ def install_rule(tag: str, body: str, source: str, targets, check: bool) -> int:
         if not path.exists() and head is None:
             print(f"skip     {harness:12} no instruction file: {path}")
             continue
-        old = path.read_text(encoding="utf-8") if path.exists() else head
-        new = render(old, tag, body, source)
-        if new == old:
+        legacy = path.with_name(path.name.replace("managed-", "ben-", 1)) if path.name.startswith("managed-") else path
+        migrating = legacy != path and legacy.exists()
+        if migrating and path.exists():
+            raise ValueError(f"both {legacy} and {path} exist; reconcile by hand")
+        existing = legacy if migrating else path
+        old = existing.read_text(encoding="utf-8") if existing.exists() else head
+        # Replace only the exact generated Cursor description, preserving user frontmatter.
+        legacy_head = ("---\ndescription: Engineering policy from principles (Ben fleet)\n"
+                       "alwaysApply: true\n---\n")
+        neutral = old
+        if harness == "cursor" and old.startswith(legacy_head):
+            neutral = legacy_head.replace(" (Ben fleet)", "") + old[len(legacy_head):]
+        new = render(neutral, tag, body, source)
+        if new == old and not migrating:
             print(f"ok       {harness:12} {path}")
         elif check:
             drift += 1
             print(f"STALE    {harness:12} {path}")
         else:
+            if migrating:
+                legacy.rename(path)
             path.write_text(new, encoding="utf-8")
             print(f"wrote    {harness:12} {path}")
     return drift

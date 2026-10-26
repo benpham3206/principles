@@ -76,6 +76,43 @@ Delete unnecessary work before optimizing it. Understand a process before automa
 
 Keep the project model current; revise it when evidence changes. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make failures visible and recoverable, with an immediate signal and fallback when needed.
 
+### Optional scratchpad
+
+Use a scratchpad when work spans sessions, involves delegates, or needs a recovery record. Skip it for small tasks that can be completed and checked in one pass. Reuse the project's existing record when it serves this purpose; adapt these headings instead of creating a second ledger.
+
+Before task work, fill the intent, relevant 5W1H context, goal, binding constraints, and definition of done. Mark unknowns in Open. Keep Todo tied to the definition of done and State current with verified facts, pending work, and the next safe action. Link evidence rather than copying it. Keep secrets out of the record.
+
+Append dated checkpoints with expected versus actual results and evidence. Preserve earlier entries; append corrections when evidence changes. Record decisions with their reasons and limits of authority. Update the record at meaningful changes and before a handoff, so another reader can resume without guessing what ran or what remains.
+
+```markdown
+## Constraints
+
+- Must not break:
+
+## Goal
+
+## Todo
+
+## State
+
+## Checkpoint
+
+_(append-only; dated expected vs actual, with evidence)_
+
+## Definition of Done
+
+## Open
+
+## Decisions
+
+## Notes
+
+Intent:
+5W1H: What / Why / Who / When / Where / How
+```
+
+Check the record at handoff: can a fresh reader identify the goal, next safe action, unresolved questions, and evidence for completed work? A scratchpad supports continuity; it does not replace verification or grant permission to act.
+
 ## The method in each domain
 
 | Domain | Plan looks like | Build looks like | Verify looks like |

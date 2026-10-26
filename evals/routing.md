@@ -42,3 +42,4 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 34 | Before asking anyone else to use your new command-line tool, use it yourself for real work and fix what you hit. | loop |
 | 35 | Map how people find a product, start using it, drift away, and come back. | loop |
 | 36 | Each project starts from scratch; make each one leave something the next one builds on. | compound |
+| 37 | Rewrite my task as a deeper professional brief using primary material, specific methods, and outside validation; stop before running it. | scope |

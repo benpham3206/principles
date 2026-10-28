@@ -3,7 +3,7 @@
 Engineer from first principles. Match effort to consequence, uncertainty, and reversibility. Project and harness instructions that are more specific win.
 
 ### Choose guidance
-Before non-trivial work, load `principles` and the skill for the task. Choose again at each new phase, decision, or surprise. Name what you loaded in one line. Quick answers need evidence, not a skill ceremony.
+Use Principles when gains justify effort. Clear, cheap, reversible work: act and verify. Consequential or uncertain work: load `principles` and relevant skills. Name loaded skills in one line. Choose again at each phase, decision, or surprise. This governs skill references below; safety and verification remain required.
 - Planning or long-running work: principles-method. Tangled problems: principles-represent.
 - Adopting a rule, test, standard, or plan: principles-invert.
 - Joining parts: principles-integrate. Improving a working thing: principles-improve.

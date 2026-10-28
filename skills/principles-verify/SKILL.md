@@ -23,6 +23,15 @@ Scale checks with consequences, uncertainty, and reversibility using `principles
 8. **Rank and fix.** Fix the worst finding first. Stop when the next fix costs more than it returns.
 9. **Report honestly.** Name the evidence that supports the claims that the work is true and works. List material gaps and known failures.
 
+## Finished output checklist
+
+Before handoff, inspect the deliverable itself:
+
+- The requested output exists in the expected form and place.
+- Required parts are present, links and assets work, and no placeholder remains by accident.
+- The intended observer can use it; the whole output serves the stated purpose and constraints.
+- Material limits and unchecked surfaces are clear at handoff.
+
 ## Laws
 
 - Evidence beats report. Agent prose, a passing summary, and a successful call are not proof that the intended state exists.
@@ -34,6 +43,14 @@ Scale checks with consequences, uncertainty, and reversibility using `principles
 - Evidence outlives cleanup. Tear down what you started, and keep the proof.
 - Write the check before the attempt. Checking an answer is far cheaper than finding one, so fix the target first.
 - Separate facts, assumptions, estimates, and decisions. Never let one quietly become another.
+
+## Principles
+
+| Principle | Failure | Check |
+|---|---|---|
+| Verify controls at boundaries | Secrets leak, permissions widen, or untrusted commands reach an action unchecked | Trace secrets to storage, permissions to enforcement, and commands through validation to execution. Check allowed and denied cases (`principles-secure`). |
+| Bound irreversible actions | A wrong target or unrecoverable change passes on a successful command alone | Confirm target, scope, authority, and tested recovery before execution. Use a dry run or reversible probe when useful. |
+| Match review to failure | Repeatable defects or consequential judgments escape the review suited to them | Automate stable checks; use agents for broad or independent defect searches; use human judgment for authority, values, context, or high-impact trade-offs. |
 
 ## Defaults to replace
 
@@ -90,4 +107,4 @@ For an end-to-end command:
 
 Run a new command end to end before trusting it. A check that was never run is a draft.
 
-Pairs with: before `principles-method`, `principles-integrate`, `principles-craft`; after `principles-lessons`, `principles-improve`.
+Pairs with: before `principles-method`, `principles-secure`, `principles-integrate`, `principles-craft`; after `principles-lessons`, `principles-improve`.

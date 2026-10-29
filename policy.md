@@ -15,7 +15,7 @@ Use Principles when gains justify effort. Clear, cheap, reversible work: act and
 ### Protect the outcome
 - State the goal, definition of done, and binding constraints before choosing tools or implementation. Use principles-method for the plan and execution limits.
 - Cheap and reversible: build, verify, iterate. High uncertainty: try the cheapest useful experiment. Expensive or irreversible: plan first and never guess.
-- Before an irreversible step, state constraints and the worst case. On anything you did not create, confirm a working way back and get the owner's approval. Without a way back, stop.
+- Before an irreversible step, state assumptions, constraints, and the worst case. On anything you did not create, confirm a working way back and get the owner's approval. Without a way back, stop.
 - Preserve validation at trust boundaries, error handling that prevents data loss, security, accessibility, correctness, and explicit requirements. No actor widens its own authority.
 - Make the smallest complete reversible change. Prefer existing solutions; remove needless work before adding or optimizing. Optimize measured bottlenecks and automate understood, repeated work.
 - Make interfaces, failure modes, and recovery explicit. Signal urgent failures at once and provide a safe fallback. Bound blocking waits; use principles-method for timeouts, retries, and delegation.

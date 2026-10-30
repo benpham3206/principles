@@ -22,6 +22,7 @@ Each level contains the one below. Great work that is not true is not great, and
 ## Laws
 
 - The whole outranks the parts. Polish on details while the whole is wrong is effort at the wrong scale.
+- Every part has a reason to be there. A part with no function stays only as a deliberate choice, and that choice has its own reason: pleasure, rest, character, or play. Check: point at any part and say why it is there. "It came that way" is the answer of a default.
 - Judge each choice by its purpose and its effect on the people the work is for, not by a rule of style.
 - Taste is a prediction, so test it. The maker's confidence is not evidence; use, comparison, and other people's judgment are.
 - Taste is trained, not given. It grows by studying the best work and comparing versions side by side.
@@ -33,7 +34,7 @@ Heuristics that usually hold, and where they break:
 
 ## Faults
 
-Each is a fault when it serves nothing. Ornament that gives pleasure, repetition that calms, and hedging that states honest uncertainty can be chosen.
+Each is a fault when it has no reason under the second law. Ornament that gives pleasure, repetition that calms, and hedging that states honest uncertainty can be chosen.
 
 - **Sameness.** Every element at the same weight, so nothing leads.
 - **Decoration.** A part with no job, not even pleasure.

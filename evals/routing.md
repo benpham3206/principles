@@ -2,7 +2,7 @@
 
 Checks whether an agent that reads only the routing text (the `Choose guidance` list in `policy.md` and the map in `skills/principles`) loads the right skill first. Run it after any change to either.
 
-Give a fresh agent the routing text and the numbered situations, and ask for the one skill to load first for each, with no other files. Score the first choice against the expected skill. An entry with two expected skills accepts either.
+Give a fresh agent the routing text and the numbered situations, and ask for the one skill to load first for each, with no other files. Score the first choice against the expected skill. An entry with two expected skills accepts either. A fresh agent may still see the skills installed on its machine. An answer that names a skill absent from the routing text came from there: score it as a leak, not a routing miss, and rerun on an agent without it.
 
 | # | Situation | Expected |
 |---|---|---|

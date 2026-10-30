@@ -36,7 +36,7 @@ Use `principles-design` to choose the approach and the property a prototype must
 | When a person is the instrument, blind the judgment: hide which version is which, and include a pair known to differ | The maker perceives a difference nobody else can | Can judges tell the versions apart when they do not know which is which? |
 | Evidence on the scale of the claim: a rate of 1 in N needs on the order of N observations, and n judges resolve rank only to about 1 in n | A self-awarded extreme rank | Does the evidence count reach the claimed rarity? If not, restate the claim as a comparison with named best work |
 | Sample at more than twice the rate of the fastest change that matters; regular sampling cannot see faster change | A poll every minute that never sees a 20-second spike | What is the fastest change that matters, and is the sample rate more than twice it? |
-| Keep the signal between each stage's floor and ceiling: below the floor it is lost in noise, above the ceiling it distorts | A small signal buried in one stage's noise, or a large one clipped | For each stage, where does the signal sit between floor and ceiling? |
+| Keep the signal between each stage's floor and ceiling: below the floor it is lost in noise, above the ceiling it distorts | A small signal lost in one stage's noise, a large one clipped, or a rating scale where every version scores at the top | For each stage, including a rating scale, where does the signal sit between floor and ceiling? |
 
 ## References and calibration
 

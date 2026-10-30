@@ -60,11 +60,10 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | One change at a time, unless a designed experiment separates the effects | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change, or to a factor in a planned design (see `principles-synthesize`)? |
 | Keep it working throughout | A broken system during a long improvement | Is the thing usable after every step? |
 | Prefer reversible steps | An improvement that cannot be undone when it turns out wrong | Can this change be reverted in minutes? |
-| Optimize to a stated limit | Endless tuning with no target | What threshold makes this good enough? Stop at it |
+| Optimize to a stated limit: a threshold where value is passing it, or the best comparable work where value is rank | Endless tuning with no target, or stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? Stop at the threshold, or compare it with the best comparable work |
 | Write down known limits | A hidden ceiling found by the next person in an outage | Is the limit and its upgrade path recorded where the code or part lives? |
 | Improvements decay | A gain lost as the system drifts back | Is there a check that fails if the gain is undone? |
 | Find who pays: a gain can move its cost to someone the metric does not see, such as the user's attention, their battery, or a later maintainer | A faster path that drains the battery or someone's time | Who pays for this gain, and is that payer one of the guardrails? |
-| Stop at the bar where value is passing a threshold; where value is rank among comparable work, the last increments can matter most | Stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? If by rank, compare it with the best comparable work |
 
 ## Where to look
 

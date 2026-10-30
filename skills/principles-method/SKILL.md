@@ -21,7 +21,7 @@ Rate the task on three things: **consequence** (what a mistake costs), **uncerta
 | Expensive, irreversible | Investigate deeply before acting |
 | High uncertainty, irreversible | Do not guess. Reduce the uncertainty first |
 
-Reduce irreversibility before accepting it: run the step first for a small share, then widen on evidence (`principles-reliability`). With fixed time or budget and open scope, rank the parts by value and fix the cut order before building, so stopping early leaves a whole.
+Reduce irreversibility before accepting it, such as by staging a change (`principles-reliability`). With fixed time or budget and open scope, rank the parts by value and fix the cut order before building, so stopping early leaves a whole.
 
 Investigate an uncertainty when the answer could change an important decision. Use `principles-ground` to choose what to learn and when to stop. Use the same risk assessment to choose how much to spend on preventing, detecting, and recovering from failure (`principles-reliability`).
 

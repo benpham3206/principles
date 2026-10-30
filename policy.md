@@ -28,4 +28,4 @@ Use Principles when gains justify effort. Clear, cheap, reversible work: act and
 - User-facing quality includes visual craft and accessibility. For research, answer the question, cite material evidence, and state uncertainty. Report what was not checked.
 - Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns, once nothing still needs them. Move files to the trash; never delete permanently.
 - Keep project purpose, invariants, verify command, lessons, and file map in AGENTS.md. Docs must work from a fresh clone, link to authoritative details, and record decisions where successors can find them.
-- Publish on a branch with a pull request. Never push main or merge without the owner's explicit approval. Start the PR body with a visual showing the change.
+- Publish via branch and pull request. Never push main or merge without the owner's explicit approval. Write PRs and commits with principles-language; open each PR with a visual.

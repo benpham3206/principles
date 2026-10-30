@@ -22,10 +22,10 @@ Use `principles`, the [skill map](skills/principles/SKILL.md), to choose what to
 
 - Medium: `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`.
 - Creation: `principles-design`, `principles-synthesize`, `principles-integrate`, `principles-ecosystem`, `principles-world`, `principles-distribute`.
-- Decisions: `principles-scope`, `principles-ground`, `principles-research`, `principles-method`, `principles-represent`, `principles-invert`, `principles-horizons`, `principles-qualities`.
+- Decisions: `principles-scope`, `principles-ground`, `principles-research`, `principles-method`, `principles-represent`, `principles-invert`, `principles-horizons`.
 - Evaluation: `principles-measure`, `principles-verify`, `principles-craft`, `principles-secure`, `principles-reliability`.
 - Learning: `principles-lessons`, `principles-refine`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
-- People and agents: `principles-counsel`, `principles-develop`, `principles-mind`.
+- People and agents: `principles-counsel`, `principles-mind`.
 - Skills and closeout: `principles-create`, `principles-tidy`.
 
 Each skill names a principle, the failure it prevents, and a check. Simplification keeps useful distinctions, safety margins, accessibility, and intentional richness.

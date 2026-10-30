@@ -22,15 +22,15 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Task | Skills |
 |---|---|
 | Establish what is true | `principles-ground` for inference; `principles-research` for finding and synthesizing sources |
-| Define, collect, and compare measurements | `principles-measure` |
+| Define, collect, and compare measurements, and design experiments | `principles-measure` |
 | Diagnose a failure in use | `principles-lessons` for the timeline and causes; `principles-measure` for a baseline before trusting a signal; `principles-ground` for competing explanations |
 | Work in a medium | `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine` |
 | Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts; `principles-ecosystem` for pieces others adopt and extend; `principles-world` for one coherent place; `principles-distribute` for reaching people |
 | Deepen a task brief before execution | `principles-scope` for professional methods, primary material, and outside validation; return a rewritten prompt for review |
-| Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` before adopting a rule, test, standard, or plan, and for working backward; `principles-horizons` for consequences; `principles-qualities` for value trade-offs |
-| Check the result | `principles-verify` for evidence; `principles-craft` for quality; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
+| Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` before adopting a rule, test, standard, or plan, and for working backward; `principles-horizons` for consequences; `principles-craft` for value trade-offs and the quality bar |
+| Check the result | `principles-verify` for evidence; `principles-craft` for the quality bar; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
 | Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for cycles: dogfooding your own work, user lifecycles, feedback, and control; `principles-compound` for momentum carried from one cycle to the next |
-| Help people and agents | `principles-counsel` for advice; `principles-develop` for growth; `principles-mind` for agent design |
+| Help people and agents | `principles-counsel` for advice, teaching, and growth; `principles-mind` for agent design |
 | Extend and close the work | `principles-create` for adding a family skill; `principles-tidy` for task cleanup, documentation, and tool discovery |
 
 ## The six axes
@@ -67,4 +67,3 @@ Done means the work meets its intent and `principles-verify` finds no material i
 - **The observer completes the work.** Design for their real position, knowledge, attention, and body.
 - **Time is an axis.** Everything is met in sequence, changes, and wears.
 - **Ground truth lives outside language.** Measure, test, or simulate before you believe a description, your own included.
-- **Craft lives in the details nobody asked for.** The observer feels them without naming them.

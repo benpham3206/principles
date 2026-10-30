@@ -128,4 +128,4 @@ Honest materials: a surface should look like what it is made of and behave that 
 
 Study work that has lasted, and name why it works in terms of the axes: Dieter Rams for restraint, Massimo Vignelli for type and grid discipline, Robert Bringhurst for typographic rhythm, Josef Albers for color in context, Susan Kare for icons at their real size, Edward Tufte for the smallest effective difference, and the platform's own human interface guidelines for its conventions. `principles-craft` sets the bar.
 
-Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.

@@ -218,4 +218,4 @@ Use `principles-craft` to choose the bar and `principles-verify` to check the wo
 
 A notice can succeed by being accurate and useful during the short time it is needed.
 
-Pairs with: before `principles-method`, `principles-qualities`, `principles-counsel`; after `principles-verify`, `principles-simplify`.
+Pairs with: before `principles-method`, `principles-craft`, `principles-counsel`; after `principles-verify`, `principles-simplify`.

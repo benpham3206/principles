@@ -38,7 +38,7 @@ Examples of a reversed relation:
 
 1. State value X, whose interests it serves, and why it matters here.
 2. Describe its loss or violation as an outcome someone could observe. Ask what actions, incentives, constraints, or mistakes could cause it, then ask why those causes might arise.
-3. Ask whether a different choice serves a competing value Y. X and Y need not be opposites. Compare what pursuing each value gains, what it costs, and who bears each cost. Ask whether both can be served. Use `principles-qualities` to rank the trade-off with the rightful decision maker.
+3. Ask whether a different choice serves a competing value Y. X and Y need not be opposites. Compare what pursuing each value gains, what it costs, and who bears each cost. Ask whether both can be served. Use `principles-craft` to rank the trade-off with the rightful decision maker.
 4. For each unacceptable loss, choose what to avoid and a way to prevent, detect, or recover from it. Use `principles-secure` when misuse, compromised parts, or unauthorized action threaten what is protected. A difference in taste alone is not a threat.
 5. Treat proposed causes and motives as hypotheses. Check factual claims with `principles-ground`. After observation or a bounded test, use `principles-lessons` to turn the evidence into a rule or check for the next decision. Record it where that decision is made.
 

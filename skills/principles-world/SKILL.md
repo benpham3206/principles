@@ -67,4 +67,4 @@ A white flash or spinner between places, stock components in their default style
 - The quiet moments: what happens when the visitor does nothing.
 - The worst path: a slow connection, an old device, sound off, motion reduced, a screen reader. The world should keep its meaning and every action, in a calmer form.
 
-Pairs with: before `principles-visual`, `principles-sound`, `principles-language`, `principles-interaction`; after `principles-qualities`, `principles-verify`.
+Pairs with: before `principles-visual`, `principles-sound`, `principles-language`, `principles-interaction`; after `principles-craft`, `principles-verify`.

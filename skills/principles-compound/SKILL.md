@@ -66,4 +66,4 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 | **Trust** | Kept promises make the next agreement cheaper and larger | one broken promise outweighs many kept ones |
 | **Lineage** | Knowledge passed to others keeps compounding after its maker | it lives in one head |
 
-Pairs with: before `principles-lessons`, `principles-develop`, `principles-loop`; after `principles-improve`, `principles-measure`.
+Pairs with: before `principles-lessons`, `principles-counsel`, `principles-loop`; after `principles-improve`, `principles-measure`.

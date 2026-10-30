@@ -21,7 +21,7 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 13 | Choose among three approaches for syncing offline edits. | design |
 | 14 | A scheduling problem has many constraints and you cannot see where to start. | represent |
 | 15 | Pick which numbers go on an operations dashboard and how to chart them. | information |
-| 16 | A junior engineer asks you to fix their bug; their manager wants them to learn to debug. | develop |
+| 16 | A junior engineer asks you to fix their bug; their manager wants them to learn to debug. | counsel |
 | 17 | Merge three services built by different teams into one release. | integrate |
 | 18 | Before trusting that a sensor reading means a device is connected, find out what normal readings look like. | measure |
 | 19 | The task is done; temporary folders and a background process you started are still around. | tidy |
@@ -30,7 +30,7 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 22 | A draft works but feels off; compare it with the previous version and tighten it. | refine |
 | 23 | Choose a launch channel and a price for a new tool. | distribute |
 | 24 | Design the memory and goals of a coding assistant. | mind |
-| 25 | Shipping speed and review thoroughness conflict, and the owner must choose which wins. | qualities |
+| 25 | Shipping speed and review thoroughness conflict, and the owner must choose which wins. | craft |
 | 26 | You need published evidence on whether code review reduces defects. | research |
 | 27 | Reach a goal no known approach reaches: a battery that charges in five minutes and lasts twenty years. | synthesize |
 | 28 | After a fix, record what happened so the next agent does not repeat it. | lessons |
@@ -45,3 +45,5 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 37 | Rewrite my task as a deeper professional brief using primary material, specific methods, and outside validation; stop before running it. | scope |
 | 38 | Split a product into small pieces around a shared file format so outside developers can write their own adapters. | ecosystem |
 | 39 | Add an adapter for a new payment supplier to your own checkout service and prove the release works. | integrate |
+| 40 | Find which of four oven settings drive warping in printed parts, and whether any two interact, in as few runs as possible. | measure |
+| 41 | A manager asks how to help a new hire grow into leading design reviews within a year. | counsel |

@@ -110,4 +110,4 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Noise floor | Every capture holds noise; dynamic range is the gap from the floor to the clip point, and each added bit of a digital word adds about 6 dB | Recording quiet sources so close to the floor that fixing them lifts the noise | What is the signal-to-noise ratio at the quietest part? |
 | Capture limit | A sampled signal holds only frequencies below half the sample rate (Nyquist); anything above folds back as a false lower tone | Content above the limit entering the capture | Is the highest frequency present below half the sample rate? |
 
-Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.

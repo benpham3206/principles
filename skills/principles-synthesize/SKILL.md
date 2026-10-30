@@ -19,10 +19,10 @@ Start from what must be true. Keep a convention when its compatibility or famili
 
 ## Steps
 
-1. **Set an ambitious goal.** State an outcome a person can observe and measure: for example, "a car battery that charges in 5 minutes and lasts 20 years."
+1. **Set an ambitious goal.** State an outcome a named judge can observe, measured where a measure exists and compared with a named reference where only judgment exists: for example, "a car battery that charges in 5 minutes and lasts 20 years."
 2. **Write the complete output as if it already exists.** The finished spec, the product page, the paper's abstract, the user's day with it. Completeness forces every hidden requirement into view.
-3. **Work backward to a plan**, as in `principles-invert`. List each step from today to that output, and the technology each step needs. Mark each technology as existing, existing but too costly, or not yet invented.
-4. **Check the limits.** Test every step against physics and logic. Replace any step that breaks a law.
+3. **Work backward to a plan**, as in `principles-invert`. List each step from today to that output, and the capability or method each step needs. Mark each as existing, existing but too costly, or not yet invented.
+4. **Check the limits.** Test every step against the hard limits of its domain: physical law, logic, perception, budget, and binding rules. Replace any step that breaks one.
 5. **Generate candidates for each open step.** Draw from two places:
    - known approaches, which are more likely to work;
    - unusual approaches: ideas from other fields, inverted assumptions (`principles-invert`), or extreme parameters. These fail more often but may offer larger gains. For a target far beyond typical work, keep a stated share of candidates unlike existing work; typical methods give typical results.

@@ -63,7 +63,7 @@ For work that can block, stall, or run in the background:
 
 | Principle | Failure | Check |
 |---|---|---|
-| Bound each wait | A network call, remote machine, model call, server start, or health check hangs the task | Give it a timeout and name the response when it expires |
+| Bound each wait | A step whose duration rests on something you do not control hangs the task: a network or model call, a server start, a supplier, a reviewer, or a cure time | Give it a timeout and name the response when it expires |
 | Judge progress within limits | Useful work is stopped too soon, or stalled work consumes resources without end | Set limits for time to start, time between meaningful progress signals, and total duration. Keep work running while progress stays within all three |
 | Resolve state before retrying | A retry duplicates work or side effects from an unfinished attempt | On expiry, check completion and liveness. Stop what remains and confirm it stopped. Before retrying, check for completed effects. Retry at most once, only when safe; otherwise escalate |
 | Delegate parallel work and verify it | Work that could run in parallel runs in sequence, concurrent writers corrupt shared state, or a delegate's report is trusted unchecked | Delegate each part that can run alongside others, whether or not the parts are independent or check themselves. Give each delegate a bounded brief and exclusive file ownership, coordinate shared state, and keep dependencies ordered. Verify each result and the joined whole yourself; a delegate's own check is not verification |

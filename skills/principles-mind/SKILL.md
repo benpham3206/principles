@@ -26,7 +26,7 @@ Expose state for audit: budget used, memory size, calibration settings, and a lo
 
 ## Build small
 
-Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
+Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it in real work for a preset period with a pass criterion, such as daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
 
 ## Substrate
 
@@ -69,7 +69,7 @@ Own and explain are **invariants**: no configuration turns them off. Principle.
 
 - **Consolidate.** Move recurring episodes into semantic facts and procedures; keep the episode only while it still teaches. Principle.
 - **Forget on purpose.** Prune low-value memory. Forgetting is compression, and compression keeps the signal. Principle.
-- **Keep each person's memory private to that person.** Principle.
+- **Scope every memory to its owner**, such as a person, team, or task. Cross scopes only by explicit grant. Principle.
 
 ## Wake and sleep
 
@@ -80,7 +80,7 @@ Use separate cycles for acting and consolidating memory. Principle.
 
 ## Budgets force judgment
 
-Set explicit limits on compute per cycle and working memory. Account for the work forgone by each choice. These limits require the agent to choose where to spend its resources. Principle.
+Set explicit limits on every resource an agent spends, such as compute per cycle, working memory, and other people's attention. Account for the work forgone by each choice. These limits require the agent to choose where to spend its resources. Principle.
 
 ## Common case and tail
 

@@ -42,7 +42,7 @@ Use `principles-design` to choose the approach and the property a prototype must
 
 Use a reference with a stated value, uncertainty, and relevant conditions. Calibration establishes a relation between indications and reference values; adjustment changes the instrument. Verify the result after adjustment. Recheck references after changes that can alter the measurement.
 
-For physical quantities, metrological traceability belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
+Every result carries its chain of comparisons to a stated reference: versions, rater calibration, or baselines. For physical quantities, this is metrological traceability, and it belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
 
 Reproducible references let measurements survive changes in instruments and standards. When replacing a reference, compare old and new results within their uncertainties. Failure: a reference change looks like progress or drift. Check: can the two sets of results be compared on a common basis?
 
@@ -87,6 +87,7 @@ Define the response quantities and check how they will be measured, as above. An
 |---|---|---|
 | Software | The user or system boundary being timed, elapsed time or CPU time, workload and concurrency, versions, machine, initial state, and measurement overhead. Use a monotonic clock for durations. Separate cold and warm conditions when both occur in use | A warm cache beats a cold baseline; a timer stops before asynchronous work finishes; averages hide tail delays; many requests in one run are counted as independent experiments |
 | Physical work | The feature and datum, reference conditions, instrument range, alignment, fixture, contact force, and temperature. Use `principles-machine` for measurement geometry, including Abbe's principle | Angular error at an offset, thermal expansion, or fixture deformation exceeds the claimed difference despite stable readings |
+| Human responses | The person, their prior exposure to the thing, the task, the conditions, and how the response was elicited and recorded | Results from people who already know the work, or from a question that suggests the answer |
 
 ## Measurement record
 

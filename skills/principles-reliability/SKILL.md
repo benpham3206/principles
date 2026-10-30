@@ -76,6 +76,10 @@ Over-building is a failure too. A weekend prototype held to the bar of a flight 
 | The world repeats, reorders, and interrupts actions, so make each action safe to run twice and to stop midway | A duplicate effect, or a half-applied state after a stop | Run it twice; stop it midway. Is the end state one clean run, or can it resume? |
 | Control a hazard in order: remove it by design, contain it, then add controls that survive one fault and stop safe | A warning where a design change would have removed the hazard | For each hazard, why could it not be removed or contained before a control was added? |
 
+## Margin
+
+Margin is capacity over demand, against one named failure mode, for any resource: strength, time, money, attention, or capacity. A margin with no mode named means nothing. Check: for each limit that matters, name the mode and the ratio.
+
 ## Over its life
 
 A released thing keeps working only while someone keeps it. Plan its upkeep from the start.

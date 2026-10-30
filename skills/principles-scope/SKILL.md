@@ -7,7 +7,7 @@ description: Deepen a task brief before execution. Use when asked to strengthen 
 
 In one line: Deepen the task through better material, methods, and evidence, then return a rewritten brief for review.
 
-Start from the user's task. Preserve its outcome, audience, deliverable, budget, deadline, and authority. Return four answers and a self-contained rewritten prompt, then stop for review before executing it. Use `principles-method` for execution planning after the user accepts the brief.
+Start from the user's task. Preserve its outcome, audience, deliverable, budget, deadline, and authority. Return four answers and a self-contained rewritten brief, such as a prompt for an agent or a statement of work for a person, then stop for review before executing it. Use `principles-method` for execution planning after the user accepts the brief.
 
 ## Steps
 

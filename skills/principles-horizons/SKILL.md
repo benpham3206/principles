@@ -14,7 +14,7 @@ A **horizon** is how far ahead you trace consequences. First-order effects are d
 1. State the change in one sentence, with a number if possible.
 2. **First order**: what changes directly, for whom.
 3. **Second order and on**: at each order ask four questions.
-   - Who adapts, and how?
+   - Who or what adapts, and how: people, markets, rivals, materials, environments?
    - What becomes cheap?
    - What becomes scarce, and therefore valuable?
    - What new behavior appears that was not possible before?

@@ -79,7 +79,7 @@ Verification shows the work is true and works. Judge quality with `principles-cr
 
 Cheapest first. Stop at the first rung that proves the property. A higher rung is not more rigorous when a lower one already proves it.
 
-1. Types, compilers, and designs that make the fault impossible.
+1. Designs that make the fault impossible, such as types, interlocks, and shapes that fit only one way.
 2. Schemas, constraints, and static checks.
 3. Running the changed behavior directly.
 4. A check on the stable contract or public interface.
@@ -91,7 +91,7 @@ Cheapest first. Stop at the first rung that proves the property. A higher rung i
 
 The ladder holds in every medium. For a machine, choose analysis or a representative proof test to establish a required bound. Use a controlled test to failure to measure a sample's capacity or check its predicted failure mode. For writing: a cold read, then a reader who must act on it.
 
-Leave one small runnable check for any branch, loop, parser, state change, money, or security logic that no cheaper rung would catch.
+Leave one small repeatable check wherever a later change could silently break behavior that no cheaper rung would catch: in code, any branch, loop, parser, state change, money, or security logic.
 
 A model is a claim. State where it holds and where it breaks. A real test outranks a simulation of the same case. A model checked against real tests can reach cases too rare, costly, or dangerous to test, within the range where it was checked.
 

@@ -102,7 +102,7 @@ Allow performance to vary with fatigue, stress, and a new domain. Keep the expec
 
 As an advisor grows more capable than the person it serves, the main risk shifts from being wrong to being deferred to.
 
-**The counterpart rule.** Where the person's own ability is part of the goal, every gain in machine capability needs a human counterpart: an explanation, a practice, or a tool that leaves the person more capable without the machine. Test: after the help, can they do more alone than before? Where only the output matters, delegation is the point.
+**The counterpart rule.** Where the person's own ability is part of the goal, every gain in a helper's capability, machine or human, needs a counterpart for the person: an explanation, a practice, or a tool that leaves them more capable without the helper. Test: after the help, can they do more alone than before? Where only the output matters, delegation is the point.
 
 - Make reasoning inspectable. Show the steps, not only the verdict.
 - Give the person a way to check each important claim that does not rest on trusting you: a source, a test, a calculation, a small experiment.

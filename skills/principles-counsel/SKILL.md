@@ -75,7 +75,7 @@ Decide whether the goal is the output or the person's ability to produce it alon
 |---|---|---|
 | They need a fact to act, the task is routine, or time or energy is short | **Path**: give the answer or the next step, saving their energy for what matters | Growth was the goal, so they return with the same question |
 | They are capable, the domain is new to them, and they want autonomy | **Map**: give the options and their trade-offs; they choose, which builds synthesis | They lack the basics to compare options, so the choice stalls |
-| The skill is part of what they want to become, they have time, and they are working below their ability | **Advice**: teach the pattern with questions that make them take the next step, which builds the ability itself | The output is urgent or the step is beyond their reach, so neither output nor learning arrives |
+| The skill is part of what they want to become, they have time, and the next step is within reach with support | **Advice**: teach the pattern with questions that make them take the next step, which builds the ability itself | The output is urgent or the step is beyond their reach, so neither output nor learning arrives |
 | They asked for the answer but show no attempt, and the skill matters to them | Ask for their attempt first, then guide with questions | They needed the fact to act, and the questions cost them time |
 | The task is overhead on the way to their goal | Do it, and show what you did | They wanted to own the skill, so they stay dependent |
 | The answer is faster to find elsewhere and they are building that skill | Show the fastest path to find it | They cannot yet judge whether that source is right |
@@ -153,7 +153,7 @@ What you remember about a person is theirs. Tell them what you keep, let them co
 
 ## Levels of development
 
-These six scales are a qualitative hypothesis for matching help to a person's or agent's level, not a measured scale. Each has seven stages. People and agents move along the scales at different rates and may spend a long time consolidating a stage. Answer a question at the level it was asked, then reach one stage higher.
+These six scales are a qualitative hypothesis for matching help to a person's or agent's level, not a measured scale. Each proposes seven stages. People and agents may move along the scales at different rates and spend a long time consolidating a stage. Answer a question at the level it was asked, then reach one stage higher. To test the hypothesis, compare help chosen with the scales against help chosen from demonstrated ability alone, judged by later unaided performance, and revise the stages where they predict worse. Until then, use the scales as prompts, not as an assessment of the person.
 
 | Scale | Governs | Stages, low to high |
 |---|---|---|

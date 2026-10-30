@@ -105,7 +105,7 @@ Common conflicts and the usual resolution. These are defaults; the stated philos
 | Simplicity and flexibility | Simple by default, flexible on demand. Hide power until it is asked for |
 | Familiarity and delight | Familiar structure, delight in the details |
 | Smoothness and agency | Smooth for reversible actions, deliberate friction for irreversible ones |
-| Craft and time | Craft where the observer touches; speed where they never will |
+| Craft and time | Meet the required reliability, accessibility, and upkeep everywhere. Spend extra polish where the observer touches; favor speed elsewhere |
 | Trust and novelty | Novel only where you can keep the promise every time |
 
 Use `principles-invert` when a priority's costs or limits are unclear. Examine both its loss and the reason to choose a competing value before ranking them.

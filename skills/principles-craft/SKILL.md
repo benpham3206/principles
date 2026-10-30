@@ -29,7 +29,6 @@ Each level contains the one below. Great work that is not true is not great, and
 
 Heuristics that usually hold, and where they break:
 - Specificity marks taste; generic work says little about its maker or its observer. Shared conventions can be the right choice when they help people.
-- The observer feels care they cannot name, so details nobody asked for matter. Spend that care in proportion to the consequences.
 
 ## Faults
 

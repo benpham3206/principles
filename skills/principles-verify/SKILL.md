@@ -51,6 +51,8 @@ Before handoff, inspect the deliverable itself:
 | Verify controls at boundaries | Secrets leak, permissions widen, or untrusted commands reach an action unchecked | Trace secrets to storage, permissions to enforcement, and commands through validation to execution. Check allowed and denied cases (`principles-secure`). |
 | Bound irreversible actions | A wrong target or unrecoverable change passes on a successful command alone | Confirm target, scope, authority, and tested recovery before execution. Use a dry run or reversible probe when useful. |
 | Match review to failure | Repeatable defects or consequential judgments escape the review suited to them | Automate stable checks; use agents for broad or independent defect searches; use human judgment for authority, values, context, or high-impact trade-offs. |
+| For a process that varies, report a pass rate and its bound over enough runs, not one pass | A lucky pass certifies a part that fails one run in five | How many runs, and what rate do they support? |
+| Check a property over its own time: wear, drift, battery life, habit, and retention need a check that spans that time | Passes at minute one, fails at week three | Which claims are defined over time, and was each observed that long? |
 
 ## Defaults to replace
 
@@ -77,7 +79,7 @@ Verification shows the work is true and works. Judge quality with `principles-cr
 
 Cheapest first. Stop at the first rung that proves the property. A higher rung is not more rigorous when a lower one already proves it.
 
-1. Types, compilers, and designs that make the fault impossible.
+1. Designs that make the fault impossible, such as types, interlocks, and shapes that fit only one way.
 2. Schemas, constraints, and static checks.
 3. Running the changed behavior directly.
 4. A check on the stable contract or public interface.
@@ -89,13 +91,13 @@ Cheapest first. Stop at the first rung that proves the property. A higher rung i
 
 The ladder holds in every medium. For a machine, choose analysis or a representative proof test to establish a required bound. Use a controlled test to failure to measure a sample's capacity or check its predicted failure mode. For writing: a cold read, then a reader who must act on it.
 
-Leave one small runnable check for any branch, loop, parser, state change, money, or security logic that no cheaper rung would catch.
+Leave one small repeatable check wherever a later change could silently break behavior that no cheaper rung would catch: in code, any branch, loop, parser, state change, money, or security logic.
 
 A model is a claim. State where it holds and where it breaks. A real test outranks a simulation of the same case. A model checked against real tests can reach cases too rare, costly, or dangerous to test, within the range where it was checked.
 
 ## A repeatable verify command
 
-When people, agents, or automation need the same end-to-end check, provide one command they can all run. For a one-off task, use the smallest relevant check. If no shared command exists, report the gap; add one when repeated use justifies it.
+When people, agents, or automation need the same end-to-end check, provide one repeatable procedure they can all run, such as a command, a test rig, or a cold-read protocol. For a one-off task, use the smallest relevant check. If no shared command exists, report the gap; add one when repeated use justifies it.
 
 For an end-to-end command:
 

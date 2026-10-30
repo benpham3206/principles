@@ -33,7 +33,7 @@ A bulleted list where the parts have relations, a block diagram where the arrows
 1. Write the question the representation must answer, in one sentence. A structure built to show everything answers nothing.
 2. Find the dominant relation among the parts. Ask what connects them: something flowing, one thing following another, one containing another, one depending on another, one causing another, or options being compared.
 3. Pick the form from the table below. When two relations both matter, draw two views rather than one diagram that mixes them.
-4. Sketch it at the lowest fidelity that holds the structure: boxes, arrows, and labels. Name every part with the word the people involved use.
+4. Sketch it at the lowest fidelity that holds the structure, such as boxes, arrows, and labels, a table, an equation, a mockup, or a storyboard. Name every part with the word the people involved use.
 5. Read it. Look for the largest flow, the longest path, the loop, the empty cell, the box nobody owns, the arrow nobody can explain. That is where the work is.
 6. Write the actions. Each finding becomes a step with a verb, an owner, and a check that shows it is done. Order the steps by the dependencies the representation exposed.
 7. Redraw when the problem changes. A representation is a model; when reality moves, the model goes stale.
@@ -55,6 +55,7 @@ A bulleted list where the parts have relations, a block diagram where the arrows
 | Two variables split the field | Two-by-two matrix | Which quadrant each item sits in and what to do in each | Axes that are not independent; every item in one quadrant |
 | Events in time | Timeline or schedule bar chart | Overlaps, slack, what falls on the same date | No dependencies shown, so a slip looks local when it is not |
 | Things in space | Map, plan, or section drawing to scale | Distances, clashes, access, routes | Not to scale while being read as if it were |
+| One quantity depends on another, continuously | Curve over the full input range | Cliffs, dead zones, and saturation | Tuning at one point hides a jump elsewhere |
 
 ## Principles
 

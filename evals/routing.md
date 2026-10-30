@@ -2,7 +2,7 @@
 
 Checks whether an agent that reads only the routing text (the `Choose guidance` list in `policy.md` and the map in `skills/principles`) loads the right skill first. Run it after any change to either.
 
-Give a fresh agent the routing text and the numbered situations, and ask for the one skill to load first for each, with no other files. Score the first choice against the expected skill. An entry with two expected skills accepts either.
+Give a fresh agent the routing text and the numbered situations, and ask for the one skill to load first for each, with no other files. Score the first choice against the expected skill. An entry with two expected skills accepts either. A fresh agent may still see the skills installed on its machine. An answer that names a skill absent from the routing text came from there: score it as a leak, not a routing miss, and rerun on an agent without it.
 
 | # | Situation | Expected |
 |---|---|---|
@@ -47,3 +47,6 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 39 | Add an adapter for a new payment supplier to your own checkout service and prove the release works. | integrate |
 | 40 | Find which of four oven settings drive warping in printed parts, and whether any two interact, in as few runs as possible. | measure |
 | 41 | A manager asks how to help a new hire grow into leading design reviews within a year. | counsel |
+| 42 | Decide when a phone and watch app may interrupt someone with a notification, and how they tune each kind. | interaction |
+| 43 | Ship a new version to a small share of users first, with a signal that halts the rollout if something breaks. | reliability |
+| 44 | Use the crude first version of a build tool to build and check its own next version. | compound |

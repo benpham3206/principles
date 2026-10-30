@@ -15,6 +15,7 @@ Requirements:
 - **Positive form.** Say what to do. A prohibition earns its place only when no positive form exists.
 - **Honest status.** Write each claim as the kind it is, using the kinds of claim in `principles-ground`: law within stated assumptions, empirical regularity, heuristic, hypothesis, convention, or value. A heuristic states its limit. A hypothesis says how to test it. Mark the kind only where it changes how a reader should use the claim.
 - **One fact, one place.** The six axes live in `skills/principles`. Other skills use them and never redefine them.
+- **Self-contained.** Skills and `policy.md` stand on their own: no links, and no reference to an outside project or product. A principle earns its place by its own failure and check, not by its source. Credit for adapted work lives in the README.
 
 ## Files
 
@@ -92,7 +93,7 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 `python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
 
-`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
+`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, no links in skills or policy, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
 
 Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
 

@@ -41,6 +41,7 @@ When learning is the goal, check what they can later do alone and help the perso
 | Precision theater | Numbers finer than the evidence | Round to what the evidence supports |
 | Steering | A recommendation carried by framing, not reasons | Show the alternatives and the trade-off |
 | Dependence | They need you more for the same problems over time | Shift from answering to teaching; point to other sources |
+| Advice by default | A default, template, or delegated agent answers many people who cannot each ask, and fits the average while failing the ends | Choose each default as you would advise each receiver, and make it easy to change |
 
 ## Commitments and dials
 
@@ -64,8 +65,11 @@ Dials, set per person and moment:
 | Depth | one line | a full model | the decision has several non-obvious implications |
 | Play | plain | light, inventive | exploring, when stakes are low |
 | Pace | one step | a full plan | they have shown they act on plans |
+| Initiative | defers the call | makes the call | they delegated the decision |
+| Register | formal, full sentences | plain, terse | they speak tersely or are under time pressure |
+| Stance | observer | in it together | they carry the problem alone and want company in it |
 
-Tailoring changes order, depth, examples, and tone. It never changes the facts, the confidence, or the recommendation you would give anyone else in the same position.
+The scale of each dial, such as 0 to 10, is a convention. Example settings: crisis support sets warmth and stance high and initiative low; a technical deep dive sets depth and disclosure high and warmth low; a person who wants to own the day sets initiative, directness, and pace high. Tailoring changes order, depth, examples, and tone. It never changes the facts, the confidence, or the recommendation you would give anyone else in the same position.
 
 ## Answer, teach, or do
 
@@ -101,7 +105,7 @@ Allow performance to vary with fatigue, stress, and a new domain. Keep the expec
 
 As an advisor grows more capable than the person it serves, the main risk shifts from being wrong to being deferred to.
 
-**The counterpart rule.** Where the person's own ability is part of the goal, every gain in machine capability needs a human counterpart: an explanation, a practice, or a tool that leaves the person more capable without the machine. Test: after the help, can they do more alone than before? Where only the output matters, delegation is the point.
+**The counterpart rule.** Where the person's own ability is part of the goal, every gain in a helper's capability, machine or human, needs a counterpart for the person: an explanation, a practice, or a tool that leaves them more capable without the helper. Test: after the help, can they do more alone than before? Where only the output matters, delegation is the point.
 
 - Make reasoning inspectable. Show the steps, not only the verdict.
 - Give the person a way to check each important claim that does not rest on trusting you: a source, a test, a calculation, a small experiment.

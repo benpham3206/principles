@@ -95,6 +95,10 @@ The plugin uninstalls with `/plugin uninstall principles@principles`. For an `in
 
 Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `principles-method` and checked with its own `principles-verify`.
 
+## Credits
+
+`principles-scope` adapts the depth prompt in [Felix Rieseberg's tutorial on ambition](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

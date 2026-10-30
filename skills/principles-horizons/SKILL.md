@@ -14,7 +14,7 @@ A **horizon** is how far ahead you trace consequences. First-order effects are d
 1. State the change in one sentence, with a number if possible.
 2. **First order**: what changes directly, for whom.
 3. **Second order and on**: at each order ask four questions.
-   - Who adapts, and how?
+   - Who or what adapts, and how: people, markets, rivals, materials, environments?
    - What becomes cheap?
    - What becomes scarce, and therefore valuable?
    - What new behavior appears that was not possible before?
@@ -37,6 +37,8 @@ These are heuristics. Check each against the case before relying on it (`princip
 - **Signals decay.** When a signal becomes cheap to fake, it stops carrying information, and people look for a new one.
 - **Incentives win.** Over time, a system does what it rewards, whatever it says it does.
 - **Slow variables decide.** Trust, skill, infrastructure, and culture change slowly and outweigh fast variables over long horizons.
+- **Commitments harden.** Once others build on a choice, it stops being yours to change. Decide early which choices others will build on. Change those only with a version, a migration path, and a stated support window.
+- **Commons erode.** When many actors draw on one shared resource, such as attention, trust, or a channel, each reasonable use degrades it for all. Ask what happens if every peer does the same.
 
 ## Worked horizon: a scarce capability becomes cheap
 

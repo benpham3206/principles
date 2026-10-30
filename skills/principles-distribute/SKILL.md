@@ -23,7 +23,7 @@ Count paths that skip an event, such as buying without signing up. To combine pa
 
 ## Laws
 
-- Nobody can promise reach. Ranking rules are only partly visible from outside. What you control is the work, the experiments, how fast you learn, where people land, and what you offer them.
+- Nobody can promise reach. Any allocator of attention, such as a ranking rule, an editor, or a curator, is only partly visible from outside. What you control is the work, the experiments, how fast you learn, where people land, and what you offer them.
 - Start from the people and their need, not the channel. A channel is only where those people already are.
 - Every step is a choice the person makes. Each one needs a reason in their terms; see `principles-language` for calls to action.
 - Consent and honesty are part of the work. People can decline, unsubscribe, and leave; every price, term, incentive, deadline, and limit is true and stated in full.
@@ -52,7 +52,7 @@ The same cut posted everywhere, a link to a slow page that shows nothing above t
 2. Build the destination: the work doing its job at first sight, claims you can stand behind, one clear next step, and a way to reach the person again that they chose.
 3. Choose channels where those people already are, including direct contact, referrals, communities, and places offline. For each, write the value it seems to reward as a hypothesis.
 4. Make once, cut for each channel's format and value.
-5. Run each post or offer as an experiment, with `principles-improve`'s loop: a hypothesis first, a baseline, enough tries before judging, a conversion window long enough for slow outcomes, and the result recorded. Log every count with its denominator.
+5. Run each attempt to reach people, such as a post, an offer, a pitch, or an event, as an experiment, with `principles-improve`'s loop: a hypothesis first, a baseline, enough tries before judging, a conversion window long enough for slow outcomes, and the result recorded. Log every count with its denominator.
 6. Examine what beat or missed the baseline. Treat each explanation as a hypothesis. Test it by changing only the suspected cause, keeping audience, timing, and exposure as close as possible, and checking that the difference holds. A repeated result shows repeatability; it does not establish the cause.
 7. Ask for commitment early, in rising steps: attention, a way to reach them again, then a payment for a dated, deliverable offer where payment fits. State the full terms, the refund rule, and the delivery date.
 8. Choose the next fix by expected gain for its cost, not only by which rate looks lowest; `principles-improve` has the method.
@@ -63,7 +63,7 @@ The same cut posted everywhere, a link to a slow page that shows nothing above t
 | Principle | Failure | Check |
 |---|---|---|
 | People before channel | Posting where it is easy instead of where the people are | Can you name who this is for and where they already spend attention? |
-| Destination before attention | Visitors sent to a page that cannot serve them | Does the page show the work doing its job, with one next step, fast on a small screen? |
+| Destination before attention | Visitors sent to a page that cannot serve them | Where attention lands, such as a page, a shopfront, or a stage, does the work show itself doing its job, with one next step, at the observer's real position? On a screen, is it fast on a small one? |
 | Chained denominators | A rate measured on impressions multiplied by a count of views | Is each rate's numerator the next rate's denominator, over the same people and time window? |
 | Every path counted | Buyers who skipped a step missing from the math | Are paths that skip a step measured and added, without double counting? |
 | Right audience | Many views from people who cannot use the work | Of those who arrived, how many could use or buy it? |

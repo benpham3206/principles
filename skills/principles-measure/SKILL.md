@@ -7,7 +7,7 @@ description: Define and check measurements and the experiments that produce them
 
 In one line: Define the quantity, its reference, and its uncertainty before you trust or compare a number.
 
-A **measurement** assigns a value to a defined quantity through a stated procedure. A useful result says what was measured, under which conditions, against which reference, and with what uncertainty. This procedure applies to software and physical work.
+A **measurement** assigns a value to a defined quantity through a stated procedure. A useful result says what was measured, under which conditions, against which reference, and with what uncertainty. This procedure applies to any quantity: in software, in physical work, and in human responses such as perception and preference.
 
 Use `principles-design` to choose the approach and the property a prototype must test. Use this skill to measure that property. Return to design when the result rejects the approach or shows that the prototype cannot answer the question. Use `principles-ground` to reason from the evidence and decide whether more information would change the choice.
 
@@ -32,12 +32,17 @@ Use `principles-design` to choose the approach and the property a prototype must
 | Account for the observer | Profiling changes execution time; probe force changes the dimension | Compare measurement methods or vary the instrument's influence. Does the effect matter at the decision limit? |
 | Keep the comparison identifiable | Drift or several simultaneous changes are credited to one intervention | What else changed, and how does the design separate its effect? |
 | Keep the evidence behind the summary | An average hides failures, or a discarded run changes the verdict | Can the result be rebuilt from the retained readings, exclusions, and processing steps? |
+| A first experience is used once: later sessions with the same person measure learning | First-use time measured on the people who built it | Has each subject never met the thing before? |
+| When a person is the instrument, blind the judgment: hide which version is which, and include a pair known to differ | The maker perceives a difference nobody else can | Can judges tell the versions apart when they do not know which is which? |
+| Evidence on the scale of the claim: as an approximation, a rate of 1 in N needs on the order of N observations, and a rank claim needs a defined reference population, a sample of it, and a stated ranking procedure | A self-awarded extreme rank | Does the evidence reach the claimed rarity, against a named population? If not, restate the claim as a comparison with named best work |
+| To reconstruct a changing quantity, sample at more than twice its highest frequency that matters, a law for band-limited signals. To catch a brief event, sample more often than it lasts, or latch it with a counter or a peak hold | A poll every minute that never sees a 20-second spike | Is the goal reconstruction or detection? Is the rate above twice the highest frequency, or the gap shorter than the briefest event, or is the event latched? |
+| Keep the signal between each stage's floor and ceiling: below the floor it is lost in noise, above the ceiling it distorts | A small signal lost in one stage's noise, a large one clipped, or a rating scale where every version scores at the top | For each stage, including a rating scale, where does the signal sit between floor and ceiling? |
 
 ## References and calibration
 
 Use a reference with a stated value, uncertainty, and relevant conditions. Calibration establishes a relation between indications and reference values; adjustment changes the instrument. Verify the result after adjustment. Recheck references after changes that can alter the measurement.
 
-For physical quantities, metrological traceability belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
+Every result carries its chain of comparisons to a stated reference: versions, rater calibration, or baselines. For physical quantities, this is metrological traceability, and it belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
 
 Reproducible references let measurements survive changes in instruments and standards. When replacing a reference, compare old and new results within their uncertainties. Failure: a reference change looks like progress or drift. Check: can the two sets of results be compared on a common basis?
 
@@ -82,6 +87,7 @@ Define the response quantities and check how they will be measured, as above. An
 |---|---|---|
 | Software | The user or system boundary being timed, elapsed time or CPU time, workload and concurrency, versions, machine, initial state, and measurement overhead. Use a monotonic clock for durations. Separate cold and warm conditions when both occur in use | A warm cache beats a cold baseline; a timer stops before asynchronous work finishes; averages hide tail delays; many requests in one run are counted as independent experiments |
 | Physical work | The feature and datum, reference conditions, instrument range, alignment, fixture, contact force, and temperature. Use `principles-machine` for measurement geometry, including Abbe's principle | Angular error at an offset, thermal expansion, or fixture deformation exceeds the claimed difference despite stable readings |
+| Human responses | The person, their prior exposure to the thing, the task, the conditions, and how the response was elicited and recorded | Results from people who already know the work, or from a question that suggests the answer |
 
 ## Measurement record
 

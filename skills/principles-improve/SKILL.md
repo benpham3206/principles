@@ -53,16 +53,17 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | The bottleneck moves | Old wins defended after the limit has shifted | After each improvement, is the bottleneck found again? |
 | Delete before improving | Optimizing a step that should not exist | Was deletion tried first, and does the step have an owner who needs it? |
 | A place for everything, at the point of use | A tool, part, or file hunted for each time it is needed | Does each thing have one marked place where it is used, so a missing one shows at a glance? |
-| Clean to inspect | A leak, crack, or drift hidden under dirt or clutter | Does each cleaning include a look for what changed since the last one? |
+| Clean to inspect | A leak, crack, or drift hidden under dirt or clutter, or a real alert hidden among stale ones | Does each cleaning include a look for what changed since the last one? |
 | Standardize the best known way | Each person does the job their own way, so no gain can be measured or kept | Is the current best method written where the work happens, and is it the baseline for the next change? |
 | Simplify before speeding up | A fast, tangled thing nobody can change | Could fewer parts do the same job? |
 | Automate last | A script that encodes a process nobody understands | Can a person do it by hand, correctly, from a written list? Then automate |
 | One change at a time, unless a designed experiment separates the effects | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change, or to a factor in a planned design (see `principles-synthesize`)? |
 | Keep it working throughout | A broken system during a long improvement | Is the thing usable after every step? |
 | Prefer reversible steps | An improvement that cannot be undone when it turns out wrong | Can this change be reverted in minutes? |
-| Optimize to a stated limit | Endless tuning with no target | What threshold makes this good enough? Stop at it |
+| Optimize to a stated limit: a threshold where value is passing it, or the best comparable work where value is rank | Endless tuning with no target, or stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? Stop at the threshold, or compare it with the best comparable work |
 | Write down known limits | A hidden ceiling found by the next person in an outage | Is the limit and its upgrade path recorded where the code or part lives? |
 | Improvements decay | A gain lost as the system drifts back | Is there a check that fails if the gain is undone? |
+| Find who pays: a gain can move its cost to someone the metric does not see, such as the user's attention, their battery, or a later maintainer | A faster path that drains the battery or someone's time | Who pays for this gain, and is that payer one of the guardrails? |
 
 ## Where to look
 

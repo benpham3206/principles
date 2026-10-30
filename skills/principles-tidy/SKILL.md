@@ -18,7 +18,7 @@ Keep deliverables, verification evidence, rollback material still needed, and wo
 ## Close the task
 
 1. Inspect any existing cleanup workflow before using it. Prefer its inspection mode and check the exact targets and effects against this task's authority. Use the steps below directly when the tool is absent or its scope is broader than the task. No installation is required.
-2. Account for temporary files, generated output, downloads, logs, and backups created by the task, including those outside the repository. Keep each item that still serves a named purpose. Move obsolete files and folders to the platform's recoverable Trash; use the project-approved recoverable method when Trash is unavailable. If recovery is unavailable, retain the item and report it. Do not bypass a deletion guard.
+2. Account for every resource the task acquired, such as temporary files, generated output, downloads, logs, backups, accounts, reservations, and permissions, including those outside the repository. Keep each item that still serves a named purpose. Move obsolete files and folders to the platform's recoverable Trash; use the project-approved recoverable method when Trash is unavailable. If recovery is unavailable, retain the item and report it. Do not bypass a deletion guard.
 3. Check each process the task started by its current identity and workspace. Stop only processes proven to belong to this task, using a graceful stop with a timeout. Recheck that it stopped. Retain a service needed for handoff and state who will stop it. Avoid broad process-name termination.
 4. Inspect branches and worktrees the task created. Keep active checkouts and any uncommitted, untracked, or unpushed work. Retire a checkout or branch only with task authorization, proof its work is preserved, and a recoverable method. Leave a candidate for the owner when those conditions are absent.
 5. Reconcile dependencies, architecture, and tool discovery as below. Fix discrepancies introduced by the task. Record unrelated gaps for later work. Keep the pass within the task's scope; a cleanup request supplies no authority to merge, publish, install a skill, or discard tracked edits.
@@ -27,7 +27,7 @@ Keep deliverables, verification evidence, rollback material still needed, and wo
 
 ## Dependencies
 
-Compare changed dependency declarations and lockfiles with actual imports, build setup, runtime loading, and external services. Account for dependencies added, removed, or changed by the task, including optional and indirect uses. An absent text match alone does not prove a dependency is unused.
+Reconcile every declared relationship with actual use. In code, compare changed dependency declarations and lockfiles with actual imports, build setup, runtime loading, and external services. Account for dependencies added, removed, or changed by the task, including optional and indirect uses. An absent text match alone does not prove a dependency is unused.
 
 Use manifests and lockfiles as the authority for exact versions. Keep documentation focused on purpose, required setup, system prerequisites, and relevant limits. Correct stale setup commands and links. Change declarations only when the discrepancy is supported by evidence and within scope. Use the project's package manager to keep related files consistent; retain unrelated versions.
 
@@ -65,6 +65,7 @@ Say what became easier to find: name the tool, the entry point changed, and the 
 | One source per fact | A second inventory or diagram starts to disagree with the first | Does each repeated detail belong as a link to its authority? |
 | Useful tools remain reachable | The next agent rebuilds a tool because it cannot find the existing one | Starting with the normal entry documents alone, can a fresh agent find the tool and perform a safe documented operation? |
 | Bounded completion | A closeout pass grows into a repository rewrite | Can every change be traced to the task being closed? |
+| Record each resource's owner and expiry when it is acquired, so the claims of an actor that crashes lapse | Orphans pile up, and nobody can safely reclaim them | For each resource, who owns it, when does the claim lapse, and what reclaims it? |
 
 ## Completion
 

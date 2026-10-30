@@ -24,7 +24,7 @@ An **ecosystem** is a set of pieces, made by different makers, that work togethe
 1. Name the people and the one outcome the first piece delivers on its own. Use `principles-design` when the outcome is unclear.
 2. Find the contract: the smallest shared record or message that the pieces must agree on. Write it as plain, versioned files or messages, with a validator and a known-bad example that must fail.
 3. Split the work into pieces. Give each one job, one owner, the part of the contract it reads or writes, its dependencies, and a check that runs with them. Mark each piece own or rent.
-4. Ship the core with a one-command install, a way to try it once without installing, and a page that shows it working. Use `principles-distribute` to reach the first people.
+4. Ship the core with the cheapest way to meet it working, such as a one-command install, a way to try it once without installing, or a sample or loan of a physical piece, and a first encounter that shows it working. Use `principles-distribute` to reach the first people.
 5. Add adapters for what people already use and pay for. Give every adapter one shared test kit, so "compatible" means "passes the kit".
 6. Open the extension point once real adapters, or an established contract, show its shape. State the admission rules: declared source, pinned version, declared powers, and the test kit. Use `principles-secure` for the boundary.
 7. Where several surfaces show the same work, make one of them the authority and the rest views of it, and state how freshness is checked. Otherwise, state at the contract who owns each record and how it is exchanged.
@@ -40,9 +40,12 @@ An **ecosystem** is a set of pieces, made by different makers, that work togethe
 | One test kit | Each adapter is tested its own way, so "compatible" means nothing | Does one kit run against every adapter, including a known-bad one that must fail? |
 | Bring what people have | People must replace a tool, model, or subscription to join | Does the piece work with what its user already pays for? |
 | Stated ownership | Two surfaces or stores disagree about the same work, and nobody can say which is right | Where surfaces are views of one source, change it there: do the others update or mark themselves stale? Otherwise, does the contract state ownership, exchange, and conflict rules? |
-| Proof at the door | The page describes the ecosystem instead of showing a piece at work | Does the first screen show a real piece doing its job, with one command to try it? |
+| Proof at the door | The page describes the ecosystem instead of showing a piece at work | Does the first encounter, such as a first screen or a first look, show a real piece doing its job, with one step to try it? |
 | Versioned promises | A silent breaking change strands makers downstream | Is every contract versioned, with a migration path and a stated support window? |
 | Declared trust | Extensions run with powers nobody listed | Does each extension declare its source, version, and powers, and run where its harm is bounded? |
 | Exit | People stay because leaving loses their work | Can a person export everything and read it with ordinary tools? |
+| A maker builds when the return exceeds the cost: use, reach, income, or standing | A clean contract nobody builds on | What does a maker gain by building, and how soon do they see it? |
+| Makers you cannot brief meet only the bar they can check, so put the quality bar in the test kit wherever it can be checked | Outside pieces look and behave like another product | Can a stranger's piece fail the bar mechanically, without meeting you? |
+| Where your work depends on a contract you do not own, keep it behind an adapter you own and plan for its owner changing the terms | The owner changes a rule and the product breaks, or the rent becomes a tax | If the owner changed the terms tomorrow, what would break, and how long would a replacement take? |
 
 Pairs with: before `principles-integrate`, `principles-distribute`, `principles-secure`; after `principles-design`, `principles-horizons`.

@@ -78,6 +78,7 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Hearing range | The young human ear spans about 20 Hz to 20 kHz; sensitivity peaks near 2 to 4 kHz; the top falls with age and exposure | Detail placed where few listeners hear it, or energy past the speaker's range | Is the key content inside the band the listener hears? |
 | Masking | A loud sound hides quieter sounds at nearby frequencies and just after it | Two parts competing in the same band, so one disappears | Mute one part. Does the other appear? |
 | Attention | The ear locks onto speech, change, and the unexpected; a steady sound fades from notice | Alerts that fade into the background, or a constant tone that tires | Does the listener notice the sound the first time, and not tire of it? |
+| Consent to sound | Sound reaches everyone nearby, and listeners cannot close their ears. Start optional sound by the listener's act, and keep it off by default where others share the space. Event sounds the listener allowed in advance, and safety alarms, are the exceptions. | Sound that starts on its own in a shared room. | Does any sound start without the listener's act or prior permission, other than a safety signal? |
 
 ## Composition
 
@@ -101,6 +102,7 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Phrase and form | Phrases breathe in lengths the ear can hold, and repeat so the form can be learned | Phrases that never resolve, or repeat with no change | Mark the phrase ends. Does each have a landing? |
 | Decay | The tail of a note or room tells the listener the size of the space and how soft the source is | Tails that run into the next note and blur it | Do tails clear before the next onset that matters? |
 | Silence | Silence is contrast; a gap makes the next sound louder | Sound filling every moment | Where is the longest gap? Is it placed on purpose? |
+| Response timing | A sound that answers an action arrives close enough to fuse with it: within a few tens of milliseconds, as an empirical regularity. | A late sound reads as a second event. | Measure the delay from action to sound on the real device. |
 
 ## Signal
 

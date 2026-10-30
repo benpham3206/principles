@@ -19,12 +19,14 @@ A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance
 | Privacy breach | memory isolated per person | any path from one person's memory to another |
 | Resource spiral | hard budgets; exhaustion ends the cycle | cost per task rising with no gain |
 | Goal drift | own and explain are audited | actions that no stated goal explains |
+| Stale belief | each stored belief keeps its source, time, and confidence, and an old one is checked again before use | the agent acts on who the person used to be |
+| Message drift | each message between agents states what is asked, what is allowed, what is done, and what is uncertain | a receiver acts beyond the sender's authority, or a paraphrase changes the request |
 
 Expose state for audit: budget used, memory size, calibration settings, and a log of actions with reasons.
 
 ## Build small
 
-Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
+Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it in real work for a preset period with a pass criterion, such as daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
 
 ## Substrate
 
@@ -67,7 +69,7 @@ Own and explain are **invariants**: no configuration turns them off. Principle.
 
 - **Consolidate.** Move recurring episodes into semantic facts and procedures; keep the episode only while it still teaches. Principle.
 - **Forget on purpose.** Prune low-value memory. Forgetting is compression, and compression keeps the signal. Principle.
-- **Keep each person's memory private to that person.** Principle.
+- **Scope every memory to its owner**, such as a person, team, or task. Cross scopes only by explicit grant. Principle.
 
 ## Wake and sleep
 
@@ -78,35 +80,15 @@ Use separate cycles for acting and consolidating memory. Principle.
 
 ## Budgets force judgment
 
-Set explicit limits on compute per cycle and working memory. Account for the work forgone by each choice. These limits require the agent to choose where to spend its resources. Principle.
+Set explicit limits on every resource an agent spends, such as compute per cycle, working memory, and other people's attention. Account for the work forgone by each choice. These limits require the agent to choose where to spend its resources. Principle.
 
 ## Common case and tail
 
 Generate candidates from the usual solutions and from the unusual ones. Evaluate every candidate on how it handles the common case and how it handles the edge cases. Weight the edge cases more as the stakes rise. Principle.
 
-## Calibration: HEADSUP
+## Calibration
 
-Seven dials, each 0 to 10, set per person, state, and context:
-
-| Dial | Low | High |
-|---|---|---|
-| **H**onesty (disclosure) | the answer only | full reasoning and doubt shown |
-| **E**mpathy | clinical | deeply attuned |
-| **A**ssertiveness | defers | decides |
-| **D**irectness | implicit, diplomatic | blunt |
-| **S**peech style | formal, long | plain, terse |
-| **U**nderstanding | surface | deep, shown |
-| **P**erspective | observer | in it together |
-
-Example settings:
-
-| Mode | H | E | A | D | S | U | P |
-|---|---|---|---|---|---|---|---|
-| Own the day | 8 | 5 | 10 | 10 | 9 | 8 | 9 |
-| Crisis support | 8 | 10 | 2 | 7 | 8 | 9 | 10 |
-| Technical deep dive | 9 | 2 | 4 | 8 | 2 | 9 | 3 |
-
-**Adapt the style, never the truth.** Calibration changes how a thing is said, never whether it is true. Truthfulness is a commitment, not a dial: the H dial sets only how much reasoning is shown. Deliver the hard truth in the person's preferred style. Principle. For calibrating counsel to one person, see `principles-counsel`.
+Set how the agent speaks with the dials in `principles-counsel`, per person, state, and context, and keep the settings in its model of the person. Adapt the style, never the truth: calibration changes how a thing is said, never whether it is true. Principle.
 
 ## Hypotheses to test, not assume
 

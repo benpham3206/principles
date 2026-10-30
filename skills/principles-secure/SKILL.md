@@ -54,12 +54,14 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 | Untrusted until checked | Model, tool, and third-party output treated as safe because it came from your own system | Trace each output to the place it is acted on. Is it checked there? |
 | Fail to the safe state | A timeout, parse error, or missing policy that grants access, or a safety path that locks shut when power fails | Break the check: kill its dependency, cut its power, feed it garbage. Does it land in the state the threat model chose? |
 | Contain the compromise | One stolen credential opens everything | Assume each part is taken over in turn. What else can it reach? |
-| Keep secrets out of the work | A key in a commit, log, example, URL, or test fixture | Search history, logs, and fixtures for secrets. Do production keys appear outside their store? |
+| Keep secrets out of the work | A secret held anywhere but its store: a key in a commit, log, example, URL, or test fixture, or a code on a note beside the door | Search history, logs, and fixtures for secrets. Do production keys appear outside their store? |
 | Defense in depth | One control between the attacker and the asset | For each asset, how many independent controls must fail before it is lost? |
 | Verify the person, not the claim | An attacker who calls, writes, or walks in sounding like someone with authority is obeyed | Is each request for a sensitive action confirmed through a channel the requester does not control? |
 | Make the safe path the easy path | People disable a control because it costs them every day | Watch someone do the task. Do they keep the control on? |
 | Record the decisions | A breach or misuse that leaves no trace of who did what | From the log alone, can you tell who acted, on what authority, with what result? |
 | Plan the way back | Recovery that depends on the thing that was compromised | Can you revoke, rotate, and restore without the broken part? |
+| Delegated authority only narrows: a delegate holds at most its invoker's authority, for that task | A sub-agent, adapter, or deputy acts with power its invoker never had | For each delegated action, whose authority does it use, and is it no wider than the invoker's? |
+| Hold less: keep data and power only while a named decision needs them, since what is never held cannot be lost or misused | A breach exposes data nobody needed | For each stored item, which decision uses it, and when does it expire? |
 
 ## Reviewing a change for security
 
@@ -74,7 +76,7 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 
 ## Where to look
 
-- Every place outside text becomes an action: a shell command, query, file path, URL, template, deserializer, or tool call.
+- Every place outside content becomes an effect: a shell command, query, file path, URL, template, deserializer, or tool call; in the physical world, a payment, a door, or a dose.
 - Every credential: where it lives, who can read it, how long it lasts, how it is rotated.
 - Every default: what a new user, a new part, or a missing config gets.
 - Every error path: what a failed check returns, logs, and leaves open.

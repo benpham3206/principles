@@ -40,7 +40,7 @@ A white flash or spinner between places, stock components in their default style
 6. Add inhabitants and signs of life: a character, idle behavior, other visitors' traces, and signs that someone keeps the place.
 7. Give the visitor agency: things to touch that respond in character, and something they can change or leave.
 8. Seed depth: details that reward a second look, references to places not shown, and one secret.
-9. Walk every path as a first-time visitor, a returning one, a hurried one, and people using a screen reader, keyboard, captions, reduced motion or no sound. Mark each moment the world blinked, spoke out of voice, disagreed with itself, or withheld meaning or action from someone.
+9. Walk every path as a first-time visitor, a returning one, a hurried one, and people using a screen reader, keyboard, captions, reduced motion or no sound. In a physical place, include a step-free route, noise, a crowd, and dim light. Mark each moment the world blinked, spoke out of voice, disagreed with itself, or withheld meaning or action from someone.
 
 ## Principles
 
@@ -62,7 +62,7 @@ A white flash or spinner between places, stock components in their default style
 ## Where to look
 
 - The seams: every transition, wait, error, empty state, permission prompt, payment, and part made by someone outside the world.
-- The edges of attention: footers, status lines, cursors, favicons, tab titles, 404 pages and email.
+- The edges of attention, made last or by default: footers, status lines, cursors, favicons, tab titles, 404 pages and email; in a physical place, signage, receipts, packaging, and the hold music.
 - The return visit: what the world remembers, and what it repeats that it should not.
 - The quiet moments: what happens when the visitor does nothing.
 - The worst path: a slow connection, an old device, sound off, motion reduced, a screen reader. The world should keep its meaning and every action, in a calmer form.

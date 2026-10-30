@@ -28,8 +28,8 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Create and connect | `principles-design` for choosing an approach; `principles-synthesize` for new approaches; `principles-integrate` for joining parts and proving the whole works; `principles-ecosystem` for pieces others adopt and extend; `principles-world` for one coherent place; `principles-distribute` for reaching people |
 | Deepen a task brief before execution | `principles-scope` for professional methods, primary material, and outside validation; return a rewritten prompt for review |
 | Structure a decision | `principles-represent` for a useful problem structure; `principles-invert` before adopting a rule, test, standard, or plan, and for working backward; `principles-horizons` for consequences; `principles-craft` for value trade-offs and the quality bar |
-| Check the result | `principles-verify` for evidence; `principles-craft` for the quality bar; `principles-secure` for misuse; `principles-reliability` for failures and recovery |
-| Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity; `principles-loop` for cycles: dogfooding your own work, user lifecycles, feedback, and control; `principles-compound` for momentum carried from one cycle to the next |
+| Check the result | `principles-verify` for evidence; `principles-craft` for the quality bar; `principles-secure` for misuse; `principles-reliability` for failures, recovery, and staged release of changes |
+| Learn and improve | `principles-lessons` for events; `principles-refine` for revising toward a quality bar; `principles-improve` for measured gains; `principles-simplify` for less complexity, such as a change that touches many parts; `principles-loop` for cycles: dogfooding your own work, user lifecycles, feedback, and control; `principles-compound` for momentum carried from one cycle to the next, including bootstrapping each tool with the last |
 | Help people and agents | `principles-counsel` for advice, teaching, and growth; `principles-mind` for agent design |
 | Extend and close the work | `principles-create` for adding a family skill; `principles-tidy` for task cleanup, documentation, and tool discovery |
 
@@ -44,11 +44,11 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 
-Choose an axis on purpose when it can affect the result. Keep a sound default elsewhere.
+The columns are examples; every medium skill applies the same six axes. Choose an axis on purpose when it can affect the result. Keep a sound default elsewhere.
 
 ## Using the axes
 
-1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first.
+1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first. When several observers need different things, such as a user, an operator, and an outside maker, say which wins.
 2. Load the medium skill. Consider each axis; explain choices that could change the result or its risks.
 3. Make the smallest complete version. Address the relevant axes before spending time on polish.
 4. Use `principles-verify` at a depth suited to the work. Use `principles-refine` to fix the most important gap first.
@@ -65,5 +65,7 @@ Done means the work meets its intent and `principles-verify` finds no material i
 - **No ruin.** A loss that cannot be undone ends every later gain. Before an irreversible act, have a way back that has been tried.
 - **Constraint** creates form. A limit chosen early forces a coherent design; a limit met late forces a patch.
 - **The observer completes the work.** Design for their real position, knowledge, attention, and body.
+- **Craft lives in the details nobody asked for.** The observer feels them without naming them. Spend that care in proportion to the consequences.
 - **Time is an axis.** Everything is met in sequence, changes, and wears.
+- **Repetition changes value.** Judge each moment at the frequency it recurs. Friction compounds and novelty fades by the hundredth meeting.
 - **Ground truth lives outside language.** Measure, test, or simulate before you believe a description, your own included.

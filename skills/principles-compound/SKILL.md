@@ -1,6 +1,6 @@
 ---
 name: principles-compound
-description: Make gains feed later gains and protect them from loss. Use when choosing what to learn, build, record, or invest in, or when growth, decay, or debt accumulates over cycles.
+description: Make gains feed later gains and protect them from loss. Use when choosing what to learn, build, record, or invest in, bootstrapping a tool with earlier tools, or when growth, decay, or debt accumulates over cycles.
 ---
 
 # Compound
@@ -53,6 +53,18 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 | Expect the limit | A plan extends the curve past its ceiling | What limits growth, and when will it bind? |
 | Compound what stays scarce | Effort accumulates something that is becoming cheap and plentiful | Will this stock still be scarce and valued when the series matures? This is a heuristic; scarcity can change |
 | Stock over activity | Busy cycles leave the stock unchanged | Did the measured stock grow? |
+| Name the debt: a shortcut is a loan, and each later cycle pays interest until it is repaid | Unnamed shortcuts pile up until each cycle costs more than it adds | List each shortcut with its interest per cycle and the trigger that repays it |
+
+## Bootstrap
+
+To **bootstrap** is to build a crude first tool with what exists, then build each better tool with the last one. Where the tool is the bottleneck, it compounds fastest, because each gain improves the maker of the next gain: a compiler that compiles its successor, a machine that makes parts for a better machine, a skill library that writes and checks its own next version.
+
+- Start with the smallest tool that does the job crudely with what you have today.
+- Give each stage its first real job at once: building or checking the next stage.
+- Keep a known base. Keep the last trusted stage, and the means to rebuild the current one from it.
+- Check each stage against something outside the chain: a test, a measurement, or an independent tool or person.
+
+Failure: each stage trusts the one before, so a fault or a compromise passes into every successor and grows unseen. Check: can the current stage be rebuilt from a known base, and does something outside the chain check its output?
 
 ## What compounds
 

@@ -37,7 +37,7 @@ These are heuristics. Check each against the case before relying on it (`princip
 - **Signals decay.** When a signal becomes cheap to fake, it stops carrying information, and people look for a new one.
 - **Incentives win.** Over time, a system does what it rewards, whatever it says it does.
 - **Slow variables decide.** Trust, skill, infrastructure, and culture change slowly and outweigh fast variables over long horizons.
-- **Commitments harden.** Once others build on a choice, it stops being yours to change. Decide early which choices others will build on, and treat those as permanent.
+- **Commitments harden.** Once others build on a choice, it stops being yours to change. Decide early which choices others will build on. Change those only with a version, a migration path, and a stated support window.
 - **Commons erode.** When many actors draw on one shared resource, such as attention, trust, or a channel, each reasonable use degrades it for all. Ask what happens if every peer does the same.
 
 ## Worked horizon: a scarce capability becomes cheap

@@ -57,7 +57,7 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 
 ## Bootstrap
 
-To **bootstrap** is to build a crude first tool with what exists, then build each better tool with the last one. It is the fastest form of compounding, because each gain improves the maker of the next gain: a compiler that compiles its successor, a machine that makes parts for a better machine, a skill library that writes and checks its own next version.
+To **bootstrap** is to build a crude first tool with what exists, then build each better tool with the last one. Where the tool is the bottleneck, it compounds fastest, because each gain improves the maker of the next gain: a compiler that compiles its successor, a machine that makes parts for a better machine, a skill library that writes and checks its own next version.
 
 - Start with the smallest tool that does the job crudely with what you have today.
 - Give each stage its first real job at once: building or checking the next stage.

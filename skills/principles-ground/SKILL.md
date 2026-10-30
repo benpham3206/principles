@@ -113,7 +113,7 @@ These are the limits nothing designed can beat. State the general form; give loc
 4. Compare the limit with current practice. The gap is the opportunity, and its size says how much invention is possible.
 5. Ask what convention, not law, holds practice away from the limit. Conventions can change.
 
-Done when the limit is a number with units and each step to it names the law it rests on.
+Done when the limit is stated as its kind: for a physical or logical limit, a number with units and the law each step rests on; for a perceptual or economic limit, an estimate with its evidence and the conditions where it holds.
 
 ## Compare known to unknown
 

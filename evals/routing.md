@@ -47,3 +47,6 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 39 | Add an adapter for a new payment supplier to your own checkout service and prove the release works. | integrate |
 | 40 | Find which of four oven settings drive warping in printed parts, and whether any two interact, in as few runs as possible. | measure |
 | 41 | A manager asks how to help a new hire grow into leading design reviews within a year. | counsel |
+| 42 | Decide when a phone and watch app may interrupt someone with a notification, and how they tune each kind. | interaction |
+| 43 | Ship a new version to a small share of users first, with a signal that halts the rollout if something breaks. | reliability |
+| 44 | Use the crude first version of a build tool to build and check its own next version. | compound |

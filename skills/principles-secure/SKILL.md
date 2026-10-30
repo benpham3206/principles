@@ -60,6 +60,8 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 | Make the safe path the easy path | People disable a control because it costs them every day | Watch someone do the task. Do they keep the control on? |
 | Record the decisions | A breach or misuse that leaves no trace of who did what | From the log alone, can you tell who acted, on what authority, with what result? |
 | Plan the way back | Recovery that depends on the thing that was compromised | Can you revoke, rotate, and restore without the broken part? |
+| Delegated authority only narrows: a delegate holds at most its invoker's authority, for that task | A sub-agent, adapter, or deputy acts with power its invoker never had | For each delegated action, whose authority does it use, and is it no wider than the invoker's? |
+| Hold less: keep data and power only while a named decision needs them, since what is never held cannot be lost or misused | A breach exposes data nobody needed | For each stored item, which decision uses it, and when does it expire? |
 
 ## Reviewing a change for security
 

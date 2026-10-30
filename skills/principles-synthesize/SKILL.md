@@ -25,7 +25,7 @@ Start from what must be true. Keep a convention when its compatibility or famili
 4. **Check the limits.** Test every step against physics and logic. Replace any step that breaks a law.
 5. **Generate candidates for each open step.** Draw from two places:
    - known approaches, which are more likely to work;
-   - unusual approaches: ideas from other fields, inverted assumptions (`principles-invert`), or extreme parameters. These fail more often but may offer larger gains.
+   - unusual approaches: ideas from other fields, inverted assumptions (`principles-invert`), or extreme parameters. These fail more often but may offer larger gains. For a target far beyond typical work, keep a stated share of candidates unlike existing work; typical methods give typical results.
 6. **Verify.** Simulate where a model exists, stating where it holds. Then run the cheapest real test that could fail. Reality outranks the model. To separate the effects of several factors, use the experiment design in `principles-measure`.
 7. **Report the gaps.** Whatever remains unverified or uninvented is the research agenda, ranked by how much of the goal it blocks.
 

@@ -30,6 +30,7 @@ A skill earns a place when a distinct task needs guidance that existing skills d
 | Teach the decision | A checklist lists activity without saying when a choice is sound | Give the reader a changed case. Can the instructions still guide the choice? |
 | Keep one authority | Copied rules drift between the skill and repository instructions | Trace each shared rule to its source and remove duplicate definitions |
 | Prove the path | A valid document assumes a tool, context, or permission the reader lacks | Walk a fresh reader through a realistic task with optional tools absent |
+| Retire as well as add: merge or remove entries that no longer serve a distinct need, since every entry raises the cost of each later choice | Overlap and dead entries pile up until the right one cannot be found | When was each entry last the right answer to a real request, and what would merging or removing it change? |
 
 ## Completion
 

@@ -63,6 +63,8 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | Optimize to a stated limit | Endless tuning with no target | What threshold makes this good enough? Stop at it |
 | Write down known limits | A hidden ceiling found by the next person in an outage | Is the limit and its upgrade path recorded where the code or part lives? |
 | Improvements decay | A gain lost as the system drifts back | Is there a check that fails if the gain is undone? |
+| Find who pays: a gain can move its cost to someone the metric does not see, such as the user's attention, their battery, or a later maintainer | A faster path that drains the battery or someone's time | Who pays for this gain, and is that payer one of the guardrails? |
+| Stop at the bar where value is passing a threshold; where value is rank among comparable work, the last increments can matter most | Stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? If by rank, compare it with the best comparable work |
 
 ## Where to look
 

@@ -34,7 +34,7 @@ Most rules in these skills are empirical regularities or heuristics. Apply one w
 
 ## Label what you know
 
-- **Observation**: seen or measured directly. Note how, and with what instrument.
+- **Observation**: seen or measured directly. Note how, with what instrument, and when. An observation of a changing thing holds as of its time; note what change would void it.
 - **Inference**: derived from observations by a step you can state. It is no stronger than its weakest step.
 - **Hypothesis**: a proposed explanation, with the result that would show it false.
 - **Assumption**: taken as true to proceed, unchecked. Name what breaks if it is wrong.
@@ -107,9 +107,9 @@ These are the limits nothing designed can beat. State the general form; give loc
 
 ## First principles, as a procedure
 
-1. State the problem as a physical or logical goal, stripped of how it is done today.
+1. State the problem as the result that must hold, stripped of how it is done today.
 2. List what must be true: the axioms above that apply.
-3. Derive the limit: the best result physics and logic allow (minimum energy, minimum mass, minimum time, raw material cost).
+3. Derive the limit: the best result the governing limits allow, whether physical, logical, perceptual, or economic. For physical work, these are minimum energy, mass, time, and raw material cost.
 4. Compare the limit with current practice. The gap is the opportunity, and its size says how much invention is possible.
 5. Ask what convention, not law, holds practice away from the limit. Conventions can change.
 

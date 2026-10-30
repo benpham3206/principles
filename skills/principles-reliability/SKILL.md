@@ -72,5 +72,19 @@ Over-building is a failure too. A weekend prototype held to the bar of a flight 
 | Recovery and standbys are found by use | A standby, spare, backup, or rollback that was broken for months and first tried during the incident | When was each last run end to end, how long did it take, what was lost, and what was checked in the first minute after restart? |
 | Know the life pattern | One constant failure rate assumed for parts whose failures cluster early, from defects, or late, from wear | Do field or test data show how failures change with age for this part? Plan screening or replacement only where they do |
 | Conditions drift | A design proven under last year's load, temperature, users, or dependencies | What changed since it was proven, and was it proven again? |
+| Stage every change: a small, chosen share first, with a signal that halts it, then wider on evidence | A defect reaches everyone at once and cannot be recalled | Who meets the change first, what signal would halt it, and who can halt it? |
+| The world repeats, reorders, and interrupts actions, so make each action safe to run twice and to stop midway | A duplicate effect, or a half-applied state after a stop | Run it twice; stop it midway. Is the end state one clean run, or can it resume? |
+| Control a hazard in order: remove it by design, contain it, then add controls that survive one fault and stop safe | A warning where a design change would have removed the hazard | For each hazard, why could it not be removed or contained before a control was added? |
+
+## Over its life
+
+A released thing keeps working only while someone keeps it. Plan its upkeep from the start.
+
+- People depend on what it does, not only on what it promises. Before changing a behavior, find who relies on it.
+- Every address others cite, such as a link, an identifier, or a part number, keeps resolving or points to its successor.
+- Retire in order: announce, give a path to the replacement, support both for a stated window, then remove.
+- Name who keeps it when its maker leaves, and keep what they need to do so.
+
+Failure: a better version breaks the people who relied on the old one, or the thing decays once its maker moves on. Check: who relies on each behavior you change, and who keeps the thing next year?
 
 Pairs with: before `principles-verify`, `principles-lessons`; after `principles-method`, `principles-secure`, `principles-machine`, `principles-code`, `principles-integrate`.

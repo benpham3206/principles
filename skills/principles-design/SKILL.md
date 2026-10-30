@@ -33,5 +33,7 @@ These are heuristics. Scale exploration and documentation to what a wrong choice
 | Give the whole one main idea | Parts that compete for attention or require conflicting behavior | Can each consequential choice be traced to the intent, and do the parts work together in use? |
 | Test the property the decision depends on | A persuasive picture taken as proof of use or construction | Could this prototype fail on the property being claimed, under the relevant conditions? |
 | Preserve the reasons for the choice | Later changes undo a trade-off nobody remembers | Can another maker tell what is fixed, what is provisional, and why? |
+| Settle costly-to-reverse choices first: a stored data shape, a public promise, or a cut part before a color | A cheap choice is debated while a costly one is made by default | Which open decisions are costly to undo, and are they settled first, on evidence? |
+| When one idea serves several situations, such as devices, sizes, or audiences, state what stays the same and what adapts to each, and test each situation alone | A shrunk copy that fits none, or separate designs that share nothing | For each situation, which choices changed, and why? |
 
 Pairs with: before `principles-method`, `principles-craft`, `principles-represent`; after `principles-measure`, `principles-synthesize`, `principles-integrate`, `principles-refine`, `principles-verify`.

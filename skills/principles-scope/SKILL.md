@@ -39,6 +39,4 @@ These are heuristics for finding a stronger brief. More raw data, more tools, an
 
 The user has four concrete answers and a prompt they can review and run separately. Dependencies, assumptions, and limits of validation are visible. The underlying task remains unexecuted.
 
-Adapted from the depth prompt in [Felix Rieseberg's tutorial on ambition](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/).
-
 Pairs with: before `principles-method`, `principles-design`; after `principles-research`, `principles-craft`, `principles-verify`.

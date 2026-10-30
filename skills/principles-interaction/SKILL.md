@@ -11,7 +11,7 @@ An **interaction** is a loop: a person acts, perceives the system's response, an
 
 ## Laws of the medium
 
-- The person's outcome outranks the system's internal structure. Organize work around their task.
+- The person's outcome outranks the system's internal structure. Organize the work around their purpose: a task to finish or an experience to have.
 - Make possible actions, relevant state, and consequences perceivable and operable. Do not rely on a single sensory channel when another is needed for access.
 - Acknowledge an action, distinguish progress from completion, and report a result or failure within timing appropriate to the task and its risk.
 - Prevent consequential mistakes where practical and provide a path to recover. Add friction where it earns its cost through risk control, consent, security, error prevention, or deliberate tactile feedback.
@@ -66,6 +66,7 @@ INTERACTION
 | Friction | Add effort where its benefit earns the cost: risk control, consent, security, error prevention, or deliberate tactile feedback such as a detent. Use `principles-touch` for physical feel. | Confirmation fatigue, safeguards removed for speed, or resistance that excludes users. | Name what each added step or resistance protects or communicates. Test errors, effort, and an accessible alternative. |
 | Steps | Keep frequent, low-risk paths direct while preserving deliberate checkpoints where consequence warrants them. | Rare cases add steps for everyone; needed approvals are optimized away. | Compare common-path completion and error rates before and after removing a step. |
 | Cognitive load | Favor recognition, accessible state, and meaningful grouping over unaided recall. | The person must remember information the system already has. | What must be held in memory across screens? Can the system display or preserve it? |
+| Input gain | When a hand acts through a proxy, such as a pointer, a scroll, or a drag, keep one stable relation between the motion and the result. | Scrolling that speeds, slows, or snaps against the hand. | Move the same distance twice at the same speed. Does the result follow the hand the same way each time? |
 
 ## Observer
 
@@ -99,6 +100,9 @@ INTERACTION
 | Learning curve | Measure time to first success and time to proficiency. Judge trade-offs against the intended users and task. | Unnecessary onboarding or no improvement for regular users. | Compare newcomer first-success time with repeated-task performance. |
 | Interruption and resume | Preserve work and restore context where feasible, while respecting security and privacy boundaries. | Timeouts, app switches, or device changes erase progress. | Interrupt the task and return. Is saved state sufficient and appropriate? |
 | Long-term use | Design for accumulated data, changed habits, maintenance, and eventual exit. | A compelling demo degrades at real scale or traps accumulated work. | Test with representative long-lived data. Can the person find, clean up, export, and leave? |
+| Unprompted contact | Contact the system starts spends the person's attention, a limited stock shared with everything else. Send it only when it is worth their attention now. Give each kind one meaning and urgency, group similar contact, let stale contact expire, and let people tune each kind. | Contact nobody would have chosen, so people mute the channel and miss what matters. | Would the person, asked in advance, choose this interruption? What share of contacts lead to an action? |
+| Habituation | A repeated signal fades from notice. Reserve the strongest signal for what needs action, and change or retire a signal whose response has decayed. | The hundredth identical alert changes nothing. | Sent the hundredth time unchanged, does it still change what people do? |
+| Interruptible motion | Motion follows input and can be stopped or reversed at any moment, continuing from where it is. | Input locked while an animation plays, or a jump back to the start. | Interrupt a transition midway. Does it respond at once from its current state? |
 
 ## Control
 

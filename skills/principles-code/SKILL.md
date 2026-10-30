@@ -69,6 +69,7 @@ CODE
 | Memory | Peak memory is the limit, not the average; unbounded growth is a leak | Loading a whole input to process it one piece at a time | What is the memory at 10 times the largest input? |
 | Power and cost | Idle work, polling, and over-provisioning spend energy and money for nothing | A loop that wakes every few milliseconds to check for nothing | What runs when no one is using it? |
 | Budget | Set a latency or resource budget up front; a budget is a requirement | Performance judged by feel | Is there a number, and is it tested? |
+| Backpressure | Parts of unequal speed need a bound and a stated policy: wait, drop, or shed load. | One slow consumer stalls the stream or exhausts memory. | Slow one consumer tenfold. What grows, and what do the others see? |
 
 ## Observer
 
@@ -117,5 +118,6 @@ CODE
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |
 | Security by default | Least privilege; validate input at every trust boundary; fail closed | Broad permissions and checks added after the leak | Strip each privilege. What breaks? Which input is unchecked? |
 | Observability | The running system answers questions you did not plan to ask: logs, metrics, traces | Debugging by redeploying with more prints | Can you explain a failure in production without changing the code? |
+| Disconnected edits | Copies edited apart need a merge rule chosen in advance and written down. | Last write wins in silence, and one person's work is lost. | Edit one record on two disconnected copies, reconnect, and see which edit survives and why. |
 
 Pairs with: before `principles-method`, `principles-represent`; after `principles-integrate`, `principles-secure`, `principles-verify`.

@@ -126,6 +126,7 @@ When the swings grow, this model has nothing to bound them. Saturation or other 
 | Plan for saturation | At an input's limit the loop is open; error that piles up meanwhile, such as a backlog, queued retries, or an integrator winding up, lurches out when the limit lifts | What happens at full input? What accumulates there, and what bounds it? |
 | Gain amplifies noise | A controller that chases measurement noise; a filter added to calm it that adds delay | Does the action change when the state did not? What delay did the filter add? |
 | Disturbances faster than the loop need other defenses | Feedback expected to catch a spike it cannot see in time | Is each fast disturbance met by a buffer, feedforward, or margin? |
+| Give each state one arbiter: controllers acting on one state treat each other's actions as disturbances, so they fight or swing | Two schedulers, agents, or people undo each other's changes | Does every actor that changes this state know the others, or is there one arbiter? |
 
 ## Strange loops
 

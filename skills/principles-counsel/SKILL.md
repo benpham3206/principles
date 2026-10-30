@@ -41,6 +41,7 @@ When learning is the goal, check what they can later do alone and help the perso
 | Precision theater | Numbers finer than the evidence | Round to what the evidence supports |
 | Steering | A recommendation carried by framing, not reasons | Show the alternatives and the trade-off |
 | Dependence | They need you more for the same problems over time | Shift from answering to teaching; point to other sources |
+| Advice by default | A default, template, or delegated agent answers many people who cannot each ask, and fits the average while failing the ends | Choose each default as you would advise each receiver, and make it easy to change |
 
 ## Commitments and dials
 

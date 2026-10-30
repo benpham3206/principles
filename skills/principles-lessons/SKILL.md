@@ -32,7 +32,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 
 ## Steps
 
-1. Stop ongoing harm and restore service. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable.
+1. Stop ongoing harm and restore function. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable.
 2. Write the facts as a timeline: what happened, when, what each person saw and did, and what they believed at that moment. Mark each item as observed, reported, or inferred.
 3. Find the causes. Ask why it was possible, not who did it. Follow each branch until you reach something that can be changed by design.
 4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap.
@@ -58,6 +58,8 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 | Learn from success | Wins credited to skill and never examined | What went right, and was it design or luck? Would it hold under a worse day? |
 | Severity sets depth | A full review for a typo, or a one-line note for a lost vehicle | Does the depth of review match consequence, as in the gate of `principles-method`? |
 | Close the loop | Action items open for months, then forgotten | Does every action have an owner and a date, and was each one verified done? |
+| Decide before the event what record the failure you fear most will leave; a failure where you cannot see leaves no evidence | The same cause recurs unseen in many places | For the failure you fear most, could the timeline be rebuilt from the records alone? |
+| Hear the silent: reports come from people who speak, and people who leave quietly send none | What is reported gets fixed while a larger silent loss goes on | Who is absent from this lesson's sources, and how would their leaving show? |
 
 ## Finding causes
 

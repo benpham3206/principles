@@ -105,6 +105,21 @@ def ascii_errors(text: str) -> list[str]:
     return errors
 
 
+LINK = re.compile(r"https?://|\]\((?!#)")
+
+
+def link_errors(text: str) -> list[str]:
+    """A link out of the family, outside fenced code blocks; in-page anchors are allowed."""
+    errors = []
+    fenced = False
+    for i, line in enumerate(text.splitlines(), 1):
+        if line.startswith("```"):
+            fenced = not fenced
+        elif not fenced and LINK.search(line):
+            errors.append(f"line {i}: link out of the family")
+    return errors
+
+
 AXES = ("Form", "Material", "Energy", "Observer", "Composition", "Time")
 MEDIA = ("visual", "sound", "touch", "language", "interaction", "information", "code", "machine")
 SHAPE = ("Laws of the medium", "Defaults to replace", "Tree") + AXES
@@ -235,6 +250,17 @@ class TestAscii(unittest.TestCase):
         self.assertEqual(ascii_errors("all plain\n"), [])
 
 
+class TestLinks(unittest.TestCase):
+    def test_outside_link_is_an_error(self) -> None:
+        self.assertTrue(link_errors("See [a guide](https://example.com)."))
+
+    def test_relative_link_is_an_error(self) -> None:
+        self.assertTrue(link_errors("See [notes](../notes.md)."))
+
+    def test_in_page_anchor_passes(self) -> None:
+        self.assertEqual(link_errors("Go to [Control](#control)."), [])
+
+
 class TestShape(unittest.TestCase):
     GOOD = "\n".join(
         [f"## {s}\n" for s in SHAPE[:3]]
@@ -348,6 +374,12 @@ class TestRepo(unittest.TestCase):
         exempt = {ROOT / "AGENTS.md", ROOT / "skills" / "principles-language" / "SKILL.md"}
         errors = [f"{md}: {e}" for md in tracked_markdown() if md not in exempt
                   for e in stock_errors(md.read_text(encoding="utf-8"))]
+        self.assertEqual(errors, [])
+
+    def test_skills_and_policy_are_self_contained(self) -> None:
+        # AGENTS.md, Self-contained: skills and policy.md link to nothing outside the family.
+        files = [d / "SKILL.md" for d in skill_dirs()] + [ROOT / "policy.md"]
+        errors = [f"{f}: {e}" for f in files for e in link_errors(f.read_text(encoding="utf-8"))]
         self.assertEqual(errors, [])
 
     def test_six_axes_are_defined_in_one_place(self) -> None:

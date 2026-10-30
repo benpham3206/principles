@@ -118,5 +118,6 @@ A readable display can still mislead. Check its scales, data, labels, and claims
 | Selection | State what was left out and why: filtered rows, a chosen window, an excluded outlier | A start date chosen to produce a trend | Would a different window or filter change the story? |
 | Cause | A pattern shown is a pattern, not a cause; imply no more than the data shows | A trend line captioned as a mechanism | Does the wording claim more than correlation, if only correlation was tested? |
 | Map and territory | A display is a model with a projection, a boundary, and a grain; each can distort | Area on a map read as quantity; a map projection distorting size | What does the chosen map or diagram leave out, stretch, or merge? Is that stated? |
+| One definition per quantity | A quantity shown in several places has one definition and one computation. | Two views show different totals for the same measure, and neither is trusted. | Pick a figure shown in two places. Do both come from the same definition, and do they agree? |
 
 Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.

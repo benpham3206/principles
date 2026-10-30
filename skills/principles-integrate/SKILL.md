@@ -55,6 +55,7 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 | One maker per part at a time | Two makers editing the same part, each overwriting the other | Does every part have exactly one current owner? |
 | Every surface, both directions | Works on the tested path and fails on another platform, client, or the undo path | Is each surface listed with a result? Does every way in have a way out? |
 | Tolerances stack at seams | Each part within its limit, the assembly out of its limit | Add the worst cases where the whole needs a hard bound. For a stated failure allowance, combine them statistically only with a justified model of their dependence and shared bias; otherwise keep the bounds. Does the whole still meet its limit? |
+| Old and new run together: parts of different ages coexist, and an older part reads what a newer part wrote | Passes with all parts new and fails in the field | List the old and new pairs that will coexist, and run the seam test across each |
 
 ## Choosing a boundary
 

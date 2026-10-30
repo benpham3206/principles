@@ -19,6 +19,8 @@ A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance
 | Privacy breach | memory isolated per person | any path from one person's memory to another |
 | Resource spiral | hard budgets; exhaustion ends the cycle | cost per task rising with no gain |
 | Goal drift | own and explain are audited | actions that no stated goal explains |
+| Stale belief | each stored belief keeps its source, time, and confidence, and an old one is checked again before use | the agent acts on who the person used to be |
+| Message drift | each message between agents states what is asked, what is allowed, what is done, and what is uncertain | a receiver acts beyond the sender's authority, or a paraphrase changes the request |
 
 Expose state for audit: budget used, memory size, calibration settings, and a log of actions with reasons.
 
@@ -84,29 +86,9 @@ Set explicit limits on compute per cycle and working memory. Account for the wor
 
 Generate candidates from the usual solutions and from the unusual ones. Evaluate every candidate on how it handles the common case and how it handles the edge cases. Weight the edge cases more as the stakes rise. Principle.
 
-## Calibration: HEADSUP
+## Calibration
 
-Seven dials, each 0 to 10, set per person, state, and context:
-
-| Dial | Low | High |
-|---|---|---|
-| **H**onesty (disclosure) | the answer only | full reasoning and doubt shown |
-| **E**mpathy | clinical | deeply attuned |
-| **A**ssertiveness | defers | decides |
-| **D**irectness | implicit, diplomatic | blunt |
-| **S**peech style | formal, long | plain, terse |
-| **U**nderstanding | surface | deep, shown |
-| **P**erspective | observer | in it together |
-
-Example settings:
-
-| Mode | H | E | A | D | S | U | P |
-|---|---|---|---|---|---|---|---|
-| Own the day | 8 | 5 | 10 | 10 | 9 | 8 | 9 |
-| Crisis support | 8 | 10 | 2 | 7 | 8 | 9 | 10 |
-| Technical deep dive | 9 | 2 | 4 | 8 | 2 | 9 | 3 |
-
-**Adapt the style, never the truth.** Calibration changes how a thing is said, never whether it is true. Truthfulness is a commitment, not a dial: the H dial sets only how much reasoning is shown. Deliver the hard truth in the person's preferred style. Principle. For calibrating counsel to one person, see `principles-counsel`.
+Set how the agent speaks with the dials in `principles-counsel`, per person, state, and context, and keep the settings in its model of the person. Adapt the style, never the truth: calibration changes how a thing is said, never whether it is true. Principle.
 
 ## Hypotheses to test, not assume
 

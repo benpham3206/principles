@@ -65,6 +65,7 @@ Say what became easier to find: name the tool, the entry point changed, and the 
 | One source per fact | A second inventory or diagram starts to disagree with the first | Does each repeated detail belong as a link to its authority? |
 | Useful tools remain reachable | The next agent rebuilds a tool because it cannot find the existing one | Starting with the normal entry documents alone, can a fresh agent find the tool and perform a safe documented operation? |
 | Bounded completion | A closeout pass grows into a repository rewrite | Can every change be traced to the task being closed? |
+| Record each resource's owner and expiry when it is acquired, so the claims of an actor that crashes lapse | Orphans pile up, and nobody can safely reclaim them | For each resource, who owns it, when does the claim lapse, and what reclaims it? |
 
 ## Completion
 

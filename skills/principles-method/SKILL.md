@@ -21,6 +21,8 @@ Rate the task on three things: **consequence** (what a mistake costs), **uncerta
 | Expensive, irreversible | Investigate deeply before acting |
 | High uncertainty, irreversible | Do not guess. Reduce the uncertainty first |
 
+Reduce irreversibility before accepting it: run the step first for a small share, then widen on evidence (`principles-reliability`). With fixed time or budget and open scope, rank the parts by value and fix the cut order before building, so stopping early leaves a whole.
+
 Investigate an uncertainty when the answer could change an important decision. Use `principles-ground` to choose what to learn and when to stop. Use the same risk assessment to choose how much to spend on preventing, detecting, and recovering from failure (`principles-reliability`).
 
 Weigh expected benefit, information gained, downside, and reversibility. These are considerations, not quantities to add without a common scale.
@@ -32,7 +34,7 @@ For consequential or uncertain work. Skip or compress it when the work is clear,
 1. **Intent**: why. Ask the 5W1H: what, why, who, when, where, how.
 2. **Goal**: what, and the definition of done. Define success, constraints, and failure conditions before building.
 3. **Metrics**: how you will know. Use `principles-measure` to define quantities and check the measurement method before building a tool.
-4. **Constraints**: what cannot be violated. Name them before choosing tools. Language, framework, storage, and infrastructure are downstream choices; revisit them only when evidence shows a constraint or bottleneck changed.
+4. **Constraints**: what cannot be violated. Name them before choosing tools. Means such as language, framework, material, process, and infrastructure are downstream choices; revisit them only when evidence shows a constraint or bottleneck changed.
 5. **Assumptions and dependencies**: what depends on what, and why. Mark each as fact, assumption, estimate, or decision.
 6. **First principles**: what is actually necessary (see `principles-ground`).
 7. **Design**: choose a coherent approach with `principles-design`. Make the form, behavior, and construction concrete enough to check the consequential choices.

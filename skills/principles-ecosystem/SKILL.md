@@ -44,5 +44,8 @@ An **ecosystem** is a set of pieces, made by different makers, that work togethe
 | Versioned promises | A silent breaking change strands makers downstream | Is every contract versioned, with a migration path and a stated support window? |
 | Declared trust | Extensions run with powers nobody listed | Does each extension declare its source, version, and powers, and run where its harm is bounded? |
 | Exit | People stay because leaving loses their work | Can a person export everything and read it with ordinary tools? |
+| A maker builds when the return exceeds the cost: use, reach, income, or standing | A clean contract nobody builds on | What does a maker gain by building, and how soon do they see it? |
+| Makers you cannot brief meet only the bar they can check, so put the quality bar in the test kit wherever it can be checked | Outside pieces look and behave like another product | Can a stranger's piece fail the bar mechanically, without meeting you? |
+| Where your work depends on a contract you do not own, keep it behind an adapter you own and plan for its owner changing the terms | The owner changes a rule and the product breaks, or the rent becomes a tax | If the owner changed the terms tomorrow, what would break, and how long would a replacement take? |
 
 Pairs with: before `principles-integrate`, `principles-distribute`, `principles-secure`; after `principles-design`, `principles-horizons`.

@@ -108,6 +108,7 @@ LANGUAGE
 | Listener | Make spoken meaning followable on first hearing | Clauses inside other clauses, long lists, or "see above" require rereading | Perform at the intended pace. Can a listener follow the important turns? |
 | Obligations | List what the piece owes its audience: each question to answer, thing to deliver, constraint to keep, and effect to cause. A brief, prompt, or rubric states them; otherwise derive them from the reader's need | A polished piece skips a required answer, or a song's chorus never pays off what the verse promised | Point to the passage that meets each item. Is anything owed with no passage, or is there a passage that meets nothing? |
 | Directness | State each answer where the reader looks for it, at the depth and with the evidence the task requires | An answer only implied across three paragraphs, or one line where reasons were needed | Read each question, then only its passage. Is the answer stated, complete, and supported? |
+| Text for what cannot be seen | A description of an image, icon, or sound carries its function in context, not its appearance. | "Image of" a file name, or a list of colors where the purpose of a link was needed. | Hide the media. Does the text alone let the reader do what the media let them do? |
 
 ## Composition
 
@@ -121,6 +122,7 @@ LANGUAGE
 | Lists | Number sequences and use bullets for comparable items. Keep items parallel | The reader cannot tell whether order matters | Does numbering show a sequence, and do the items serve the same kind of purpose? |
 | Links and literals | Give links descriptive text and context. Reproduce commands and interface labels exactly | "Click here" hides the destination; a label cannot be found | Predict each destination and match each literal name to the thing it names |
 | Formatting | Make punctuation and emphasis carry structure, voice, or a needed effect | Repeated dashes, colons, or bold labels add empty emphasis | Check each pause and highlighted span. What does it do? |
+| Cut order | Where a channel may cut a message, such as a glance, a banner, or a preview, put the load-bearing words first so every cut still makes sense. | The cut drops the verb or the number. | Cut the message at a third, then at half. Does each version still say what to do? |
 
 ## Time
 
@@ -147,6 +149,7 @@ Linguistics describes patterns; writing choices also need a purpose. Check patte
 | Evidence | Support factual claims with a source, test, measurement, or observation. A description is not proof | "Experts say" hides a source; "highlighting its value" adds unsupported praise | Name the support and what it establishes. What would show the claim wrong? Use `principles-ground` |
 | Interpretation | Separate what the source establishes from your inference, and say why the evidence supports the claim. Keep the conclusion no broader than its evidence. In fiction, poetry, and lyrics, place the detail so the audience draws the link | A quote or chart dropped in with no stated meaning; a conclusion wider than its data; a story that explains an image the reader already felt | For each piece of evidence, what does the source establish, what is inferred, and why does it support the claim? Does the conclusion reach cases the evidence did not test? |
 | Ambiguity | Remove unintended readings that change understanding or action. Keep multiple meanings that enrich the work | A modifier changes an instruction, or an edit erases a poem's double meaning | Place "only" and "not" by what they modify. Make grouping and the meaning of "and", "or", or slashes clear when they affect an action |
+| Force words | In a contract, specification, or rule, use a few force words, such as must, should, and may. Define each once and use it only in that sense. | "Should" means required in one place and optional in another, so implementers disagree. | List the force words. Is each defined once and used only that way? |
 
 ## Documentation
 

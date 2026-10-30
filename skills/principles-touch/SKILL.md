@@ -57,6 +57,7 @@ TOUCH
 | Texture | Skin reads texture at a fine scale, so surface pattern guides the hand to grip, to a control, or to an edge | Uniform texture everywhere, so the hand cannot find anything | Close your eyes. Can the hand tell the controls from the body? |
 | Weight and density | Weight is felt as quality, but only to the point where it tires. Mass should sit where the hand and the balance point can carry it | Heavy at the end of a lever arm | Hold it at arm's length for a minute. Where does the weight sit? |
 | Compliance | A soft layer spreads pressure over contact area and raises comfort, but a layer too soft bottoms out and gives no support | Foam that compresses to the base, or a rigid surface under long contact | Press with a body part for a long time. Does the pressure stay even? |
+| Felt vocabulary | A set of felt signals holds only as many meanings as the body can tell apart without looking. Give each meaning one pattern and keep the set small. | Near-identical patterns fire on every event, so none carries meaning. | Play the set blind, in random order. Can people name each one? |
 
 Honest materials: a surface should feel like what it is made of, and a hollow part should not be sold as solid.
 

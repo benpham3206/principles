@@ -33,6 +33,7 @@ Use this skill for the path from question to sources to findings. Use `principle
 | Carry conditions into the synthesis | Results from different settings appear to agree or contradict when they answer different questions | Compare definitions, methods, population, period, and version before combining findings |
 | Bound claims about absence | An unsuccessful search becomes proof that a thing does not exist | Say where and how you searched. What coverage would justify the stronger claim? A bounded search supports only a bounded absence claim |
 | Stop with an honest result | More reading replaces a conclusion, or an effort limit becomes a false claim of completeness | Which material question remains open, what could change the answer, and why did the search stop? |
+| What people did outranks what they say they would do | Stated interest counted as demand | Is each claim about people backed by observed action, and by how many distinct people? |
 
 ## Completion
 

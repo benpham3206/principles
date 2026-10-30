@@ -51,6 +51,8 @@ Before handoff, inspect the deliverable itself:
 | Verify controls at boundaries | Secrets leak, permissions widen, or untrusted commands reach an action unchecked | Trace secrets to storage, permissions to enforcement, and commands through validation to execution. Check allowed and denied cases (`principles-secure`). |
 | Bound irreversible actions | A wrong target or unrecoverable change passes on a successful command alone | Confirm target, scope, authority, and tested recovery before execution. Use a dry run or reversible probe when useful. |
 | Match review to failure | Repeatable defects or consequential judgments escape the review suited to them | Automate stable checks; use agents for broad or independent defect searches; use human judgment for authority, values, context, or high-impact trade-offs. |
+| For a process that varies, report a pass rate and its bound over enough runs, not one pass | A lucky pass certifies a part that fails one run in five | How many runs, and what rate do they support? |
+| Check a property over its own time: wear, drift, battery life, habit, and retention need a check that spans that time | Passes at minute one, fails at week three | Which claims are defined over time, and was each observed that long? |
 
 ## Defaults to replace
 
@@ -95,7 +97,7 @@ A model is a claim. State where it holds and where it breaks. A real test outran
 
 ## A repeatable verify command
 
-When people, agents, or automation need the same end-to-end check, provide one command they can all run. For a one-off task, use the smallest relevant check. If no shared command exists, report the gap; add one when repeated use justifies it.
+When people, agents, or automation need the same end-to-end check, provide one repeatable procedure they can all run, such as a command, a test rig, or a cold-read protocol. For a one-off task, use the smallest relevant check. If no shared command exists, report the gap; add one when repeated use justifies it.
 
 For an end-to-end command:
 

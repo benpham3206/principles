@@ -13,7 +13,7 @@ Use `principles-craft` to set the quality bar and the medium skills to judge spe
 
 ## Steps
 
-1. Return to the intent, audience, constraints, and definition of done. Keep the current version as a baseline. Name what must survive the revision and the quality gap that matters most.
+1. Return to the intent, audience, constraints, and definition of done. Keep the current version as a baseline. Name what must survive the revision, including behavior others rely on, and the quality gap that matters most.
 2. Examine the actual work at the three distances from `principles-verify`. Find the largest gap between the intended result and what happens in use. Name the evidence that would support or reject a revision. For measurable claims, compare actual results with the predicted range and the measurement's uncertainty. Investigate a difference larger than both: check the measurement, the implementation, and the assumptions, then revise the model and its conclusions where the evidence warrants (`principles-ground`).
 3. Work at the scale of the gap. A wrong structure needs more than polished details. Return to `principles-design` when the approach no longer serves the need. For a failure, find its cause with `principles-lessons`; for a measured bottleneck, use `principles-improve`.
 4. Make a bounded, reversible revision with an expected effect. Change coupled parts together when coherence requires it; separate changes when their effects need to be distinguished. Keep the previous version available for comparison and recovery.

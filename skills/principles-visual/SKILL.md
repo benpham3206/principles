@@ -91,6 +91,7 @@ Honest materials: a surface should look like what it is made of and behave that 
 | Appearance | Define colors by role, such as text, background, separator, and accent, rather than by value. Each role then keeps its meaning in light, dark, and increased-contrast settings | A palette that works in one appearance only; a dark mode made by inverting values | View every screen in each appearance the platform offers. Does each role keep its contrast and meaning? |
 | Legibility | Text needs contrast against its actual background and a weight heavy enough for its size. A 4.5:1 contrast ratio for body text is a common accessibility convention | Light gray text, thin weights at small sizes, text over busy images | Measure contrast on the real background. Is any small text set in a thin weight? |
 | Text size | People enlarge text. The layout keeps its order and content at the largest size they can choose | Truncated labels, overlapping parts, or a hierarchy that flips at large sizes | Set text to the largest size. Does every label still read, and does the order hold? |
+| Adaptation | When the canvas changes size or shape, rank the content and keep the first-ranked parts whole. Let the rest move, fold, or go. | A layout shrunk to fit, so the main item becomes small or is cut. | At the smallest and the largest canvas, is the first-ranked item still first and whole? |
 
 ## Composition
 
@@ -115,6 +116,7 @@ Honest materials: a surface should look like what it is made of and behave that 
 | Timing | Speed implies mass; heavy things ease slowly | Linear motion that feels mechanical | Does the easing match the weight? |
 | Transition | Transitions explain where things came from and went | Cuts or fades that lose the observer | Can you track each object across the change? |
 | Deformation | Squash and stretch show material and force | Rigid objects stretching, soft ones not | Does deformation match the material? |
+| Layout stability | What the observer has seen stays put unless the move is the message. Reserve space for content that arrives late. | Late images, fonts, or banners shift the layout under the eye or the pointer. | Load it on a slow connection. Does anything already seen move? |
 
 ## Atmosphere
 

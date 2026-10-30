@@ -55,6 +55,7 @@ A bulleted list where the parts have relations, a block diagram where the arrows
 | Two variables split the field | Two-by-two matrix | Which quadrant each item sits in and what to do in each | Axes that are not independent; every item in one quadrant |
 | Events in time | Timeline or schedule bar chart | Overlaps, slack, what falls on the same date | No dependencies shown, so a slip looks local when it is not |
 | Things in space | Map, plan, or section drawing to scale | Distances, clashes, access, routes | Not to scale while being read as if it were |
+| One quantity depends on another, continuously | Curve over the full input range | Cliffs, dead zones, and saturation | Tuning at one point hides a jump elsewhere |
 
 ## Principles
 

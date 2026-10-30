@@ -7,7 +7,7 @@ description: Define and check measurements and the experiments that produce them
 
 In one line: Define the quantity, its reference, and its uncertainty before you trust or compare a number.
 
-A **measurement** assigns a value to a defined quantity through a stated procedure. A useful result says what was measured, under which conditions, against which reference, and with what uncertainty. This procedure applies to software and physical work.
+A **measurement** assigns a value to a defined quantity through a stated procedure. A useful result says what was measured, under which conditions, against which reference, and with what uncertainty. This procedure applies to any quantity: in software, in physical work, and in human responses such as perception and preference.
 
 Use `principles-design` to choose the approach and the property a prototype must test. Use this skill to measure that property. Return to design when the result rejects the approach or shows that the prototype cannot answer the question. Use `principles-ground` to reason from the evidence and decide whether more information would change the choice.
 
@@ -32,6 +32,11 @@ Use `principles-design` to choose the approach and the property a prototype must
 | Account for the observer | Profiling changes execution time; probe force changes the dimension | Compare measurement methods or vary the instrument's influence. Does the effect matter at the decision limit? |
 | Keep the comparison identifiable | Drift or several simultaneous changes are credited to one intervention | What else changed, and how does the design separate its effect? |
 | Keep the evidence behind the summary | An average hides failures, or a discarded run changes the verdict | Can the result be rebuilt from the retained readings, exclusions, and processing steps? |
+| A first experience is used once: later sessions with the same person measure learning | First-use time measured on the people who built it | Has each subject never met the thing before? |
+| When a person is the instrument, blind the judgment: hide which version is which, and include a pair known to differ | The maker perceives a difference nobody else can | Can judges tell the versions apart when they do not know which is which? |
+| Evidence on the scale of the claim: a rate of 1 in N needs on the order of N observations, and n judges resolve rank only to about 1 in n | A self-awarded extreme rank | Does the evidence count reach the claimed rarity? If not, restate the claim as a comparison with named best work |
+| Sample at more than twice the rate of the fastest change that matters; regular sampling cannot see faster change | A poll every minute that never sees a 20-second spike | What is the fastest change that matters, and is the sample rate more than twice it? |
+| Keep the signal between each stage's floor and ceiling: below the floor it is lost in noise, above the ceiling it distorts | A small signal buried in one stage's noise, or a large one clipped | For each stage, where does the signal sit between floor and ceiling? |
 
 ## References and calibration
 

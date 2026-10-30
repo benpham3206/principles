@@ -1,6 +1,6 @@
 ---
 name: principles-language
-description: Shape meaning and experience with words. Use when writing or editing prose, poetry, lyrics, dialogue, speeches, scripts, social posts, instructions, names, or UI copy.
+description: Shape meaning and experience with words. Use when writing or editing prose, poetry, lyrics, dialogue, speeches, scripts, social posts, reports, pull requests, commit messages, instructions, names, or UI copy.
 ---
 
 # Language
@@ -58,10 +58,10 @@ LANGUAGE
 ├── Form          words, sentences, paragraphs, lines and stanzas
 ├── Material      diction, connotation, register, tone, imagery
 ├── Energy        emphasis, verbs, voice, cadence, modifiers
-├── Observer      knowledge, attention, point of view, instructions
-├── Composition   structure, headings, transitions, lists, links
+├── Observer      obligations, directness, knowledge, attention, point of view, instructions
+├── Composition   structure, order, reading path, headings, transitions, lists, links
 ├── Time          pacing, reveals, setup and payoff, aging
-└── Meaning       linguistic structure, context, terms, claims
+└── Meaning       linguistic structure, context, terms, claims, interpretation
 ```
 
 ## Form
@@ -106,6 +106,8 @@ LANGUAGE
 | Instructions | Give the reader or model clear actions and the context they need | Success needs knowledge the instructions do not give | Can a fresh reader act? When an action must be prohibited, give a usable alternative if one exists |
 | Examples | Make clear which features are required and which wording or format choices are only examples | A model or learner copies details as requirements | Vary examples or state what can differ |
 | Listener | Make spoken meaning followable on first hearing | Clauses inside other clauses, long lists, or "see above" require rereading | Perform at the intended pace. Can a listener follow the important turns? |
+| Obligations | List what the piece owes its audience: each question to answer, thing to deliver, constraint to keep, and effect to cause. A brief, prompt, or rubric states them; otherwise derive them from the reader's need | A polished piece skips a required answer, or a song's chorus never pays off what the verse promised | Point to the passage that meets each item. Is anything owed with no passage, or is there a passage that meets nothing? |
+| Directness | State each answer where the reader looks for it, at the depth and with the evidence the task requires | An answer only implied across three paragraphs, or one line where reasons were needed | Read each question, then only its passage. Is the answer stated, complete, and supported? |
 
 ## Composition
 
@@ -113,6 +115,7 @@ LANGUAGE
 |---|---|---|---|
 | Structure | Match form to content: steps in a list, comparisons in a table, an argument in paragraphs | Layout hides the relation among ideas | Can the reader see how the parts relate? |
 | Order | Lead answers and reports with the finding. In final task responses, state the result and completed work with needed context, material evidence, and limits, then next steps or actions if any remain. Keep the account focused on outcomes. Put prerequisites before procedural steps | The answer is buried or needed context arrives late | Read in order. Can the reader understand and act at each point? |
+| Reading path | Match the structure to how the audience reads. For text people scan or search, make each section stand alone with its point first. For text read in order, let each part build on the last, and introduce every reference before it is needed | A reference page that makes sense only from the top, or a story that re-explains itself in every paragraph | If the audience skips around, jump to a random section: can they act on it? If they read in order, does each part rely only on what came before? |
 | Headings and titles | Headings help readers find their way; levels show hierarchy. Titles can name the subject or suggest a mood or idea | A heading hides content, or a title promises the wrong experience | Read headings alone. Do they give a usable outline and the right expectation? |
 | Connections | Show how sentences and paragraphs build on each other | A jump needs context the reader lacks; "moreover" does not show the relation | Name the relation. Use a transition that shows it, or remove the empty transition |
 | Lists | Number sequences and use bullets for comparable items. Keep items parallel | The reader cannot tell whether order matters | Does numbering show a sequence, and do the items serve the same kind of purpose? |
@@ -142,6 +145,7 @@ Linguistics describes patterns; writing choices also need a purpose. Check patte
 | Terms and names | Explain needed terms before use. Keep labels stable where they distinguish concepts; choose titles for their role | A definition drops a condition, a synonym implies a new concept, or a name ages with implementation | Can the reader follow each use? Check pronoun references and whether the name still fits |
 | Precision | Match exactness to evidence. The endpoints of a factual range must have a meaningful relation | False precision or an unsupported claim of coverage | Check numbers, conditions, and endpoints. Use a list if a range misleads; keep breadth or contrast when it serves a purpose |
 | Evidence | Support factual claims with a source, test, measurement, or observation. A description is not proof | "Experts say" hides a source; "highlighting its value" adds unsupported praise | Name the support and what it establishes. What would show the claim wrong? Use `principles-ground` |
+| Interpretation | Separate what the source establishes from your inference, and say why the evidence supports the claim. Keep the conclusion no broader than its evidence. In fiction, poetry, and lyrics, place the detail so the audience draws the link | A quote or chart dropped in with no stated meaning; a conclusion wider than its data; a story that explains an image the reader already felt | For each piece of evidence, what does the source establish, what is inferred, and why does it support the claim? Does the conclusion reach cases the evidence did not test? |
 | Ambiguity | Remove unintended readings that change understanding or action. Keep multiple meanings that enrich the work | A modifier changes an instruction, or an edit erases a poem's double meaning | Place "only" and "not" by what they modify. Make grouping and the meaning of "and", "or", or slashes clear when they affect an action |
 
 ## Documentation
@@ -162,7 +166,18 @@ For procedures:
 3. Run examples from the stated starting conditions and show expected results. Treat unchecked commands and counts as not yet confirmed.
 4. Generate changing facts from their source when practical. Otherwise, check them against it.
 
-For a record of a change, such as a change request or a history entry, lead with the problem and resulting behavior, name the evidence, and link long records. Choose the structure for a brief account of the change.
+## Change records
+
+A **change record** explains a change to the people who must judge, keep, or act on it. A pull request supports review. A commit message preserves the reason for later readers of the history. A release note tells users what changed for them and any action they must take. The rows below apply in full to a pull request. A commit message keeps the change and its reason; a release note keeps the effect on users and any action they must take. Add evidence and risk to either when its readers or the change's risk need them. Scale the length to the risk of the change, not the size of the diff. Link long records instead of pasting them.
+
+| Leaf | Principle | Failure | Check |
+|---|---|---|---|
+| Title | Name the actual change and its scope, specific enough to tell it from similar records. Follow the repository's convention; the imperative mood is a common default for commit subjects | "Fix bug" or "Update files"; a refactor titled as if behavior changed | Does the title describe the change without implying an effect the evidence does not show? |
+| Lead | Open with the problem and the resulting behavior. Describe a fix by the symptom people saw and the condition that caused it. In a pull request, put first the visual that shows the point fastest: before and after output, a diagram, or a sketch of the diff | A file-by-file tour, with the reason last or missing | Read the first three lines. Do they say what changed, for whom, and why? |
+| Evidence | Show what ran and what it returned, and name what was not checked | "Tested and works"; passing tests that never ran the changed path; ticked boxes with no proof | Can a reviewer repeat each check from the record, and see each gap? |
+| Risk | State whether the change can be undone, what it reaches, and how to roll it back | A one-way change, such as a data migration or a published name, presented like a typo fix | If this is wrong, what breaks, and how is it reverted? |
+| Scope | Keep each pull request to one coherent purpose. Separate unrelated changes; keep dependent changes together when splitting them would leave an incomplete or unsafe state. Point to the decisions that need the reviewer | Unrelated edits bundled together, or a change split so one half breaks without the other | Can the reviewer name the purpose, the dependencies, and the decisions that need them? |
+| Plain account | Give a self-contained account of the problem, resulting behavior, reason, evidence, and material risk. Remove repeated explanation, file-by-file narration, and unsupported praise. Bound claims of benefit or completeness to what was checked. The defaults list above applies | Headings over empty sections, emoji labels, "This PR...", praise, "fully tested" with no test named, a closing summary that repeats the opening | Does each passage help the reader judge, keep, or use the change? |
 
 ## Requests
 

@@ -78,4 +78,4 @@ A big join at the end, interfaces agreed in conversation, units implied by conte
 
 Integrate vertically where the boundary costs more than it saves: where the interface keeps changing, the supplier is the bottleneck, or the seam itself is where the product is won. Buy where the part is stable, standard, and not what makes the product better.
 
-Pairs with: before `principles-code`, `principles-machine`, `principles-represent`; after `principles-verify`.
+Pairs with: before `principles-code`, `principles-machine`, `principles-represent`; after `principles-ecosystem`, `principles-verify`.

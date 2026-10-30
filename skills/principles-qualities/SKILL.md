@@ -13,7 +13,7 @@ A **quality** is a property an observer experiences in finished work. Qualities 
 
 | Quality | What it is | Test | Failure |
 |---|---|---|---|
-| **Intention** | Every part exists for a stated reason | Can you say why each part is there? | Parts added because they were easy or expected |
+| **Intention** | Each part is there by choice | Apply the reason law in `principles-craft` | Parts added because they were easy or expected |
 | **Agency** | The observer stays in control of what matters to them | Can they undo, stop, choose, and see what happens? | Choices made for them, without their knowledge |
 | **Responsibility** | The maker owns the consequences, including misuse and failure | What happens on the worst day? Who carries it? | Harm pushed onto users, bystanders, or the future |
 | **Familiarity** | It uses conventions the observer already knows | Does a newcomer get it without a lesson? | Novelty where convention would have worked |

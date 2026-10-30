@@ -43,3 +43,5 @@ Give a fresh agent the routing text and the numbered situations, and ask for the
 | 35 | Map how people find a product, start using it, drift away, and come back. | loop |
 | 36 | Each project starts from scratch; make each one leave something the next one builds on. | compound |
 | 37 | Rewrite my task as a deeper professional brief using primary material, specific methods, and outside validation; stop before running it. | scope |
+| 38 | Split a product into small pieces around a shared file format so outside developers can write their own adapters. | ecosystem |
+| 39 | Add an adapter for a new payment supplier to your own checkout service and prove the release works. | integrate |

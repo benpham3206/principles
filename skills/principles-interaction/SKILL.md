@@ -114,4 +114,4 @@ Distinguish **authority** (who may decide), **execution** (who does the work), a
 
 Use `principles-secure` to enforce authority boundaries outside the actor. Use `principles-verify` to check the main task through waiting, failure, interruption, handoff, and recovery. Distinguish design predictions from observed use.
 
-Pairs with: before `principles-method`, `principles-qualities`, `principles-language`, `principles-visual`, `principles-sound`, `principles-touch`, `principles-secure`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-craft`, `principles-language`, `principles-visual`, `principles-sound`, `principles-touch`, `principles-secure`; after `principles-verify`.

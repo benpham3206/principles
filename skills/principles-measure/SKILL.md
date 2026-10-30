@@ -1,6 +1,6 @@
 ---
 name: principles-measure
-description: Define and check measurements. Use when choosing metrics, benchmarking software, measuring physical quantities, calibrating instruments, analyzing dimensions, estimating uncertainty, or comparing measured results.
+description: Define and check measurements and the experiments that produce them. Use when choosing metrics, benchmarking software, measuring physical quantities, calibrating instruments, designing experiments, analyzing dimensions, estimating uncertainty, or comparing measured results.
 ---
 
 # Measure
@@ -60,6 +60,21 @@ For a difference between two results, include the covariance between them. A sha
 | Equations must respect dimensions | A conversion or model adds unlike quantities or hides a missing scale | Do both sides have the same dimensions? Does converting units preserve the physical result? Dimensional consistency is necessary, not proof that the model is correct |
 | Use dimensionless groups to expose scale | A small prototype is assumed to behave like a larger system | Form independent dimensionless groups from the governing quantities. With a complete set of quantities, their number is the number of quantities minus the rank of their dimensions |
 | Similarity depends on the governing model | Matching size ratios hides changed flow, heat, friction, or boundary conditions | Are the relevant dimensionless groups, operating regime, and boundary conditions comparable? State any unmatched effect before extrapolating |
+
+## Experiment design
+
+Define the response quantities and check how they will be measured, as above. An **experiment design** separates the causes of changes in those responses.
+
+- Choose which experiment to run by its value to the decision, as in `principles-ground`.
+- **Vary several factors at once** with a design that separates the effects and interactions the decision needs. Factorial designs can reveal interactions that changing one factor at a time misses. Fractions and orthogonal arrays reduce runs but can mix effects; state which effects the design cannot separate and keep needed interactions estimable. An uncontrolled before-and-after comparison cannot separate several changes.
+- Randomize run order against unknown drift. Group runs by known nuisance conditions. Use independent repeat runs at the same settings to estimate pure error; repeated readings of one run are different. Repeated center points can test for net curvature. Add points that identify the curved terms the decision needs.
+- Work in stages: screen many factors with few runs, model the few that matter as a response surface to find the best settings, then confirm with fresh runs. Validate the model where the decision will use it; extrapolation needs its own justification.
+- **Design against noise in three stages**, as in Taguchi's method. System design chooses the architecture. Parameter design finds settings less sensitive to wear, temperature, and use. Tolerance design tightens only the remaining critical tolerances. Compare the cost of better settings with tighter tolerances. Vary noise deliberately and repeat runs enough to estimate both mean and spread.
+- For costly runs, use earlier results to choose the next run by its expected value to the decision and its cost. A Gaussian process can model a few factors with a smooth response. Its uncertainty depends on its assumptions; check it on fresh runs.
+- Carry prior knowledge into the analysis as in `principles-ground`.
+- Prefer many cheap, fast, reversible experiments over one large one.
+- Decide before running what result would kill the idea.
+- Record every run, including failures. A failed run is data; an unrecorded one is lost.
 
 ## Checks by domain
 

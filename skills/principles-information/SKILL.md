@@ -119,4 +119,4 @@ A readable display can still mislead. Check its scales, data, labels, and claims
 | Cause | A pattern shown is a pattern, not a cause; imply no more than the data shows | A trend line captioned as a mechanism | Does the wording claim more than correlation, if only correlation was tested? |
 | Map and territory | A display is a model with a projection, a boundary, and a grain; each can distort | Area on a map read as quantity; a map projection distorting size | What does the chosen map or diagram leave out, stretch, or merge? Is that stated? |
 
-Pairs with: before `principles-method`, `principles-qualities`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.

@@ -13,7 +13,7 @@ A **mind**, here, perceives, remembers, decides, and acts toward goals. Guidance
 
 | Mode | Guard | Signal |
 |---|---|---|
-| Dependency | teach rather than answer when learning is the goal (see `principles-develop`) | the person asks the same kind of question again and again |
+| Dependency | teach rather than answer when learning is the goal (see `principles-counsel`) | the person asks the same kind of question again and again |
 | Echo chamber | check factual claims independently of what the person wants to hear | the agent never disagrees |
 | Manipulation | every influence on the person can be explained on request | the agent cannot or will not say why it framed a thing that way |
 | Privacy breach | memory isolated per person | any path from one person's memory to another |
@@ -114,4 +114,4 @@ Example settings:
 - Per-user weight changes improve help without harming independence.
 - Alignment can emerge from development: a mind that reasons at higher levels may choose good values. Treat this as one layer of safety, never the only one. Keep external checks as well.
 
-Pairs with: before `principles-code`, `principles-counsel`; after `principles-develop`, `principles-secure`, `principles-verify`.
+Pairs with: before `principles-code`, `principles-counsel`; after `principles-counsel`, `principles-secure`, `principles-verify`.

@@ -1,6 +1,6 @@
 ---
 name: principles-verify
-description: Check work before calling it done. Use when finishing a task, reviewing a result, or comparing options against evidence and the intended quality bar.
+description: Check work before calling it done. Use when finishing a task, reviewing a result, comparing options against evidence and the intended quality bar, or checking every reachable state of a flow, protocol, or mechanism.
 ---
 
 # Verify
@@ -57,6 +57,38 @@ Before handoff, inspect the deliverable itself:
 ## Defaults to replace
 
 "It compiles." "Tests pass" when the changed path never ran. A subagent's summary taken as proof. A screenshot from before the last change. Only the happy path tried. A check that was never seen to fail. Done declared with no evidence named. Polish on the details while the whole is wrong.
+
+## Check every reachable state
+
+For a system that moves between states, such as a checkout, a protocol, a lock, or a machine with modes, check every reachable state instead of a sample. Use it when retries, timeouts, concurrency, or recovery create more paths than tests can cover, and a fault would cost more than the model. Tests try the paths someone thought of. An exhaustive search also tries the paths nobody did.
+
+What it proves: in a finite model, every rule that is true or false of one state holds in every reachable state, and no state is stuck. It does not prove progress, such as "every payment ends in success or a refusal": a loop with a way out passes. A counter or deadline in the state lets the search check a bounded rule, such as "retries never exceed 3", but that alone does not prove that every run finishes. To show progress, use a checker of temporal rules with stated assumptions about scheduling and time, or show why every run must reach an end state.
+
+1. **Write the rules.** Write each rule the reader agrees to as a predicate on one state, named by the reader's sentence, such as "You are charged at most once". If the model has no variable for a rule, add one. Never weaken a rule to make it hold.
+2. **Write the steps.** Name each step as the reader sees it happen, such as "you press pay" or "the card times out". Declare the end states; any other state with no step out is a deadlock. Build each state from dicts, lists, tuples, sets, enum members, and plain values, with no NaN and no container in two places; the script refuses anything else, because it could make two different states look equal.
+3. **Bound the model.** Use the smallest values that can show a fault: two workers, not twenty; a retry count that stops at 2. Say what the bounds leave out.
+4. **Check the model against the real thing.** Compare its start states, steps, and effects with the code, the machine, or the process. A step the model omits is a step the search never tries.
+5. **Run the search.** Run `python3 <this skill's folder>/check_states.py MODEL.py --out DIR` on a model in the form below. The search is breadth-first, so each path it reports is a shortest one. Exit 0: every rule holds in every reachable state. Exit 1: a rule breaks, and `report.md` gives the shortest path to it. Exit 2: the search reached its bound, or the model or the check failed, so nothing is proven.
+6. **Make the chart readable.** `chart.mmd` is a Mermaid statechart that marks each state that breaks a rule. Give one label to states that act the same until a reader who has not seen the model can trace each break; about 20 arrows is a starting default, not a limit. Never merge two states that break different rules.
+7. **Replay each break.** Replay each path on the real thing, one step at a time. If the break does not occur, suspect the model until you show otherwise.
+
+Hand off the chart, one line per broken rule with its sentence and numbered path, what the model leaves out, and the command that reruns the check. Report the model result apart from the tests of the real thing.
+
+```python
+init = {"phase": "cart", "charged": 0}    # a start state, or a list of them
+
+def steps(s):                              # yield (what the reader sees, next state)
+    if s["phase"] == "cart":
+        yield "you press pay", {**s, "phase": "paying"}
+    if s["phase"] == "paying":
+        yield "the card clears", {**s, "phase": "paid", "charged": s["charged"] + 1}
+        yield "the card times out", {**s, "phase": "cart"}
+
+rules = {"You are charged at most once": lambda s: s["charged"] <= 1}
+end = lambda s: s["phase"] == "paid"       # optional: states where stopping is correct
+label = lambda s: s["phase"].title()       # optional: chart words; equal labels share a box
+title = "Checkout"                         # optional
+```
 
 ## Three distances
 

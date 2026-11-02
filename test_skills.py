@@ -10,6 +10,7 @@ frontmatter as YAML then fail and the skill silently never registers.
 
 from __future__ import annotations
 
+import ast
 import inspect
 import re
 import subprocess
@@ -186,6 +187,20 @@ def one_line_errors(text: str) -> list[str]:
     return errors
 
 
+def script_errors(source: str, stdlib: frozenset) -> list[str]:
+    """Imports outside the standard library in a skill script."""
+    errors = []
+    for node in ast.walk(ast.parse(source)):
+        if isinstance(node, ast.Import):
+            names = [a.name for a in node.names]
+        elif isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
+            names = [node.module]
+        else:
+            continue
+        errors += [f"imports {n!r}, outside the standard library" for n in names if n.split(".")[0] not in stdlib]
+    return errors
+
+
 def tracked_markdown() -> list[Path]:
     out = subprocess.check_output(["git", "ls-files", "*.md"], cwd=ROOT)
     return [ROOT / f for f in out.decode().splitlines()]
@@ -307,6 +322,14 @@ class TestOneLine(unittest.TestCase):
         self.assertTrue(one_line_errors("# X\n\nIn one line: Do this. Then that.\n"))
 
 
+class TestScripts(unittest.TestCase):
+    def test_third_party_import_is_an_error(self) -> None:
+        self.assertTrue(script_errors("import requests\n", frozenset({"os"})))
+
+    def test_standard_library_and_relative_imports_pass(self) -> None:
+        self.assertEqual(script_errors("import os.path\nfrom . import x\n", frozenset({"os"})), [])
+
+
 def unproven_checkers(namespace: dict, source: str) -> list[str]:
     """Checkers with no known-bad case: no test asserts that they return errors."""
     return sorted(n for n, f in namespace.items()
@@ -394,6 +417,16 @@ class TestRepo(unittest.TestCase):
         missing += [f"map: {d.name}" for d in skill_dirs()
                     if d.name != "principles" and f"`{d.name}`" not in mapping]
         self.assertEqual(missing, [])
+
+    @unittest.skipUnless(hasattr(sys, "stdlib_module_names"), "needs Python 3.10 or later")
+    def test_skill_scripts_use_only_the_standard_library_and_have_a_test(self) -> None:
+        # AGENTS.md, Scripts for a mechanical step: standard library only, with a root test.
+        scripts = sorted((ROOT / "skills").glob("*/*.py"))
+        errors = [f"{p}: {e}" for p in scripts
+                  for e in script_errors(p.read_text(encoding="utf-8"), sys.stdlib_module_names)]
+        errors += [f"{p}: no test_{p.stem}.py at the repository root" for p in scripts
+                   if not (ROOT / f"test_{p.stem}.py").is_file()]
+        self.assertEqual(errors, [])
 
     def test_policy_stays_short(self) -> None:
         text = (ROOT / "policy.md").read_text(encoding="utf-8")

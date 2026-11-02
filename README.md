@@ -27,6 +27,7 @@ Use `principles`, the [skill map](skills/principles/SKILL.md), to choose what to
 - Learning: `principles-lessons`, `principles-refine`, `principles-improve`, `principles-simplify`, `principles-loop`, `principles-compound`.
 - People and agents: `principles-counsel`, `principles-mind`.
 - Skills and closeout: `principles-create`, `principles-tidy`.
+- Mode: `principles-mode`.
 
 Each skill names a principle, the failure it prevents, and a check. Simplification keeps useful distinctions, safety margins, accessibility, and intentional richness.
 
@@ -37,6 +38,10 @@ Use `principles-design` to choose an approach, `principles-refine` to revise an 
 Use `principles-measure` for measurements in software and physical work. It defines the quantity, method, references, uncertainty, and comparison; `principles-ground` handles what to infer from the evidence.
 
 Use `principles-research` to frame a source search, trace claims to evidence, and synthesize a cited answer with explicit gaps. It covers gathering and reporting evidence; `principles-ground` owns inference and the decision to learn more.
+
+Start `/principles-mode` to run one task from the first message to the hand-off. It restates the goal, follows a primary playbook (answer a question, fix a fault, make something new, restructure, settle a fork by experiment, or improve a measure) with a long-run overlay for unattended work, and gives the basis for each material claim. Agents do not start it on their own.
+
+`principles-verify` checks every reachable state of a small model with `check_states.py`, a standard library script in its folder. It reports the shortest path to each broken rule and draws a Mermaid statechart.
 
 Use `principles-create` to add a family skill with the repository's conventions and an overlap check. Use `principles-tidy` for task cleanup, dependency and architecture docs, and tool discovery. Tidy works without a cleanup tool, reports tools used, and leaves entry pointers for fresh agents.
 
@@ -98,6 +103,8 @@ Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `princip
 ## Credits
 
 `principles-scope` adapts the depth prompt in [Felix Rieseberg's tutorial on ambition](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/).
+
+`principles-mode` and the state check in `principles-verify` adapt `poteto-mode` and `statechart` from poteto's [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
 ## License
 

@@ -127,4 +127,4 @@ Check the record at handoff: can a fresh reader identify the goal, next safe act
 | Business | customer, problem, unit economics | smallest offer someone pays for | revenue, retention, cost per unit |
 | Learning | target skill, the test that proves it | deliberate practice at the edge of ability | the test, unaided |
 
-Pairs with: before `principles-scope`, `principles-ground`, `principles-represent`; after `principles-design`, `principles-refine`, `principles-verify`, `principles-lessons`.
+Pairs with: before `principles-mode`, `principles-scope`, `principles-ground`, `principles-represent`; after `principles-design`, `principles-refine`, `principles-verify`, `principles-lessons`.

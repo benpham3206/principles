@@ -7,13 +7,13 @@ Use Principles when gains justify effort. Clear, cheap, reversible work: act and
 - Planning or long-running work: principles-method. Tangled problems: principles-represent.
 - Adopting a rule, test, standard, or plan: principles-invert.
 - Joining parts: principles-integrate. Improving a working thing: principles-improve.
-- A failure or surprise: principles-lessons.
+- A failure, surprise, or fault that resists fixes or costs much effort: principles-lessons.
 - Outside input, secrets, permissions, agents with power, or control changes: principles-secure.
 - Making something: the medium skill. Before calling work done: principles-verify.
 - Task cleanup, documentation, and tool discovery: principles-tidy.
 
 ### Protect the outcome
-- State the goal, definition of done, and binding constraints before choosing tools or implementation. Use principles-method for the plan and execution limits.
+- State the goal, definition of done, and binding constraints before choosing tools or implementation.
 - Cheap and reversible: build, verify, iterate. High uncertainty: try the cheapest useful experiment. Expensive or irreversible: plan first and never guess.
 - Before an irreversible step, state assumptions, constraints, and the worst case. On anything you did not create, confirm a working way back and get the owner's approval. Without a way back, stop.
 - Preserve validation at trust boundaries, error handling that prevents data loss, security, accessibility, correctness, and explicit requirements. No actor widens its own authority.

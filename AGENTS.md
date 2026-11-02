@@ -16,6 +16,7 @@ Requirements:
 - **Honest status.** Write each claim as the kind it is, using the kinds of claim in `principles-ground`: law within stated assumptions, empirical regularity, heuristic, hypothesis, convention, or value. A heuristic states its limit. A hypothesis says how to test it. Mark the kind only where it changes how a reader should use the claim.
 - **One fact, one place.** The six axes live in `skills/principles`. Other skills use them and never redefine them.
 - **Self-contained.** Skills and `policy.md` stand on their own: no links, and no reference to an outside project or product. A principle earns its place by its own failure and check, not by its source. Credit for adapted work lives in the README.
+- **Scripts for a mechanical step.** A skill may carry a script when its method needs a mechanical step that an agent would otherwise rebuild each time, such as a search of every state. The script uses only the Python standard library and runs on Python 3.9 or later. Its skill may name that runtime and the file format the script writes. A root `test_<script>.py` runs it on a known-bad case.
 
 ## Files
 
@@ -25,6 +26,7 @@ policy.md                  always-on policy, written into every harness's instru
 install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
+test_check_states.py       the state search in principles-verify on known-bad and known-good models
 evals/routing.md           situations with the skill an agent should load first
 evals/agent-ab.md          lessons and checks for rerunning the with-and-without principles eval
 harnesses.py               built-in harness map from agent-hooks, with local policy naming and migration
@@ -57,9 +59,10 @@ This repo is built by its own skills. Before adding or changing a skill or `poli
 
 ```
 skills/<name>/SKILL.md      one skill, frontmatter name equals folder name
+skills/<name>/<script>.py   optional script; see Scripts for a mechanical step
 ```
 
-Frontmatter: `name` and `description`. The description front-loads what the skill is and lists only distinct triggers, under 45 words.
+Frontmatter: `name` and `description`. A skill that only a person should start, such as `principles-mode`, also sets `disable-model-invocation: true`. The description front-loads what the skill is and lists only distinct triggers, under 45 words.
 
 The first line under the title is `In one line:` followed by the skill's rule as one imperative sentence of 20 words or fewer. The description says when to load the skill; the one line says what to do.
 
@@ -91,9 +94,9 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 ## Verify
 
-`python3 -m unittest` runs the install tests and the skill checks. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
+`python3 -m unittest` runs the install tests, the skill checks, and the script tests. Run it before every commit; a change is not done until it passes. CI runs it on every pull request.
 
-`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, no links in skills or policy, and the policy line and word limits. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
+`test_skills.py` enforces frontmatter, name equals folder, description length, references that resolve, ASCII outside code fences, one `Pairs with:` line per skill, the medium skill shape, the stock vocabulary ban, the six axes in one place, every skill listed in the README and the map, no links in skills or policy, the policy line and word limits, and skill scripts that import only the standard library and have a root test. The other rules here need a reader. When a rule can be checked mechanically, add the check before adding more rules.
 
 Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
 

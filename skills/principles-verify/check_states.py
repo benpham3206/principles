@@ -42,11 +42,17 @@ class ModelError(Exception):
     pass
 
 
+MODEL_FAILURES = (Exception, SystemExit)    # a model calling exit() must not set the exit code
+
+
 def freeze(v):
     """A hashable key for a state. Values a rule can tell apart, such as a list and a
-    tuple, or True and 1, get different keys, so no reachable state is skipped."""
+    tuple, True and 1, 0.0 and -0.0, or two key orders, get different keys, so no
+    reachable state is skipped."""
     if isinstance(v, dict):
-        return ("dict", tuple(sorted((repr(k), freeze(x)) for k, x in v.items())))
+        return ("dict", tuple((freeze(k), freeze(x)) for k, x in v.items()))
+    if isinstance(v, (float, complex)):
+        return (type(v).__name__, repr(v))
     if isinstance(v, (list, tuple)):
         return (type(v).__name__, tuple(freeze(x) for x in v))
     if isinstance(v, (set, frozenset)):
@@ -62,7 +68,7 @@ def freeze(v):
 def call(fn, s, what):
     try:
         return fn(copy.deepcopy(s))
-    except Exception as e:
+    except MODEL_FAILURES as e:
         raise ModelError(f"{what} failed in state {s!r}: {type(e).__name__}: {e}") from e
 
 
@@ -73,10 +79,10 @@ def successors(model: dict, s) -> list:
         for step in model["steps"](copy.deepcopy(s)):
             if not (isinstance(step, tuple) and len(step) == 2):
                 raise ModelError(f"steps() must yield (label, next state); got {step!r} in state {s!r}")
-            out.append((step[0], copy.deepcopy(step[1])))
+            out.append((str(step[0]), copy.deepcopy(step[1])))
     except ModelError:
         raise
-    except Exception as e:
+    except MODEL_FAILURES as e:
         raise ModelError(f"steps() failed in state {s!r}: {type(e).__name__}: {e}") from e
     return out
 
@@ -214,7 +220,7 @@ def positive(text: str) -> int:
 def load(path: Path) -> dict:
     try:
         model = runpy.run_path(str(path))
-    except Exception as e:
+    except MODEL_FAILURES as e:
         raise ModelError(f"could not load {path}: {type(e).__name__}: {e}") from e
     missing = [n for n in ("init", "steps") if n not in model]
     if missing:

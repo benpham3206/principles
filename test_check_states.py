@@ -84,13 +84,28 @@ class TestSearch(unittest.TestCase):
         self.assertIn("s2 --> [*]", chart)
 
     def test_values_a_rule_can_tell_apart_are_different_states(self) -> None:
-        # A list and a tuple, or True and 1, compare equal in Python; merging them hid a break.
-        for a, b in (("[]", "()"), ("1", "True")):
-            model = (f'init = [{{"x": {a}}}, {{"x": {b}}}]\ndef steps(s):\n    return []\n'
-                     f'end = lambda s: True\nrules = {{"Same type": lambda s: type(s["x"]) is type({a})}}\n')
+        # Each pair compares equal in Python; merging them would hide the second state's break.
+        pairs = [('{"x": []}', '{"x": ()}', 'type(s["x"]) is list'),
+                 ('{"x": 1}', '{"x": True}', 'type(s["x"]) is int'),
+                 ('{"x": 0.0}', '{"x": -0.0}', 'str(s["x"]) == "0.0"'),
+                 ('{"a": 0, "b": 0}', '{"b": 0, "a": 0}', 'next(iter(s)) == "a"')]
+        for a, b, rule in pairs:
+            model = (f'init = [{a}, {b}]\ndef steps(s):\n    return []\n'
+                     f'end = lambda s: True\nrules = {{"First kind": lambda s: {rule}}}\n')
             code, out, _, _ = check(model)
-            self.assertEqual(code, 1, out)
+            self.assertEqual(code, 1, (a, b, out))
             self.assertIn("Explored 2 states", out)
+
+    def test_every_rule_is_checked_and_gets_its_own_shortest_path(self) -> None:
+        model = ('init = {"n": 0}\ndef steps(s):\n    if s["n"] < 5:\n        yield "count", {"n": s["n"] + 1}\n'
+                 'end = lambda s: s["n"] == 5\n'
+                 'rules = {"Holds always": lambda s: s["n"] >= 0, "Under 2": lambda s: s["n"] < 2,\n'
+                 '         "Under 4": lambda s: s["n"] < 4}\n')
+        code, out, _, _ = check(model)
+        self.assertEqual(code, 1, out)
+        self.assertIn("- Holds: Holds always", out)
+        self.assertEqual(len(path_steps(out, "Under 2")), 3)
+        self.assertEqual(len(path_steps(out, "Under 4")), 5)
 
     def test_a_model_that_edits_and_reuses_one_state_loses_no_successor(self) -> None:
         model = ('init = {"n": [0]}\ndef steps(s):\n    if s["n"][0] == 0:\n'
@@ -151,6 +166,9 @@ class TestModelFailure(unittest.TestCase):
             'init = {"n": 0}\ndef steps(s):\n    return []\nend = lambda s: True\nrules = {"No deadlock": lambda s: True}\n':
                 "built-in deadlock check",
             'init = {"f": bytearray(b"x")}\ndef steps(s):\n    return []\n': "a state holds",
+            "raise SystemExit(0)\n": "SystemExit",
+            "raise SystemExit(1)\n": "SystemExit",
+            'import sys\ninit = 0\ndef steps(s):\n    sys.exit(0)\n    yield\n': "SystemExit",
         }
         for model, reason in cases.items():
             code, _, err, _ = check(model)
@@ -168,6 +186,11 @@ class TestChart(unittest.TestCase):
         _, out, _, chart = check("GUARD = True\n" + CHECKOUT)
         self.assertIn("class s2 mayBreak", chart)
         self.assertIn("(1 of 2 states behind it)", out)
+
+    def test_a_label_of_any_type_becomes_text(self) -> None:
+        code, out, _, chart = check('init = 0\ndef steps(s):\n    yield ["wait"], s\n')
+        self.assertEqual(code, 0, out)
+        self.assertIn("s0 --> s0 : ['wait']", chart)
 
     def test_a_step_that_stays_in_one_box_is_drawn(self) -> None:
         _, out, _, chart = check('init = {"n": 0}\ndef steps(s):\n    yield "wait", s\n')

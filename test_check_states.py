@@ -88,9 +88,12 @@ class TestSearch(unittest.TestCase):
         pairs = [('{"x": []}', '{"x": ()}', 'type(s["x"]) is list'),
                  ('{"x": 1}', '{"x": True}', 'type(s["x"]) is int'),
                  ('{"x": 0.0}', '{"x": -0.0}', 'str(s["x"]) == "0.0"'),
-                 ('{"a": 0, "b": 0}', '{"b": 0, "a": 0}', 'next(iter(s)) == "a"')]
+                 ('{"a": 0, "b": 0}', '{"b": 0, "a": 0}', 'next(iter(s)) == "a"'),
+                 ('float("nan")', '-float("nan")', 'math.copysign(1.0, s) > 0'),
+                 ('set([0, 8])', 'set([8, 0])', 'next(iter(s)) == 0')]
+        self.assertNotEqual(list(set([0, 8])), list(set([8, 0])))   # the last pair iterates differently here
         for a, b, rule in pairs:
-            model = (f'init = [{a}, {b}]\ndef steps(s):\n    return []\n'
+            model = (f'import math\ninit = [{a}, {b}]\ndef steps(s):\n    return []\n'
                      f'end = lambda s: True\nrules = {{"First kind": lambda s: {rule}}}\n')
             code, out, _, _ = check(model)
             self.assertEqual(code, 1, (a, b, out))
@@ -106,6 +109,14 @@ class TestSearch(unittest.TestCase):
         self.assertIn("- Holds: Holds always", out)
         self.assertEqual(len(path_steps(out, "Under 2")), 3)
         self.assertEqual(len(path_steps(out, "Under 4")), 5)
+
+    def test_enum_members_are_states(self) -> None:
+        model = ('import enum\nclass Phase(enum.Enum):\n    IDLE = 1\n    DONE = 2\ninit = Phase.IDLE\n'
+                 'def steps(s):\n    if s is Phase.IDLE:\n        yield "finish", Phase.DONE\n'
+                 'end = lambda s: s is Phase.DONE\n')
+        code, out, _, _ = check(model)
+        self.assertEqual(code, 0, out)
+        self.assertIn("Explored 2 states", out)
 
     def test_a_model_that_edits_and_reuses_one_state_loses_no_successor(self) -> None:
         model = ('init = {"n": [0]}\ndef steps(s):\n    if s["n"][0] == 0:\n'
@@ -169,6 +180,12 @@ class TestModelFailure(unittest.TestCase):
             "raise SystemExit(0)\n": "SystemExit",
             "raise SystemExit(1)\n": "SystemExit",
             'import sys\ninit = 0\ndef steps(s):\n    sys.exit(0)\n    yield\n': "SystemExit",
+            # Outside the state contract: an object with its own equality, one list in two places, a cycle.
+            'class Thing:\n    pass\ninit = {"t": Thing()}\ndef steps(s):\n    return []\n': "a state holds a Thing",
+            'shared = [0]\ninit = {"a": shared, "b": shared}\ndef steps(s):\n    return []\n': "in two places",
+            'init = {}\ninit["me"] = init\ndef steps(s):\n    return []\n': "in two places",
+            # A crash in the checker must not exit 1, which means a rule breaks.
+            'init = 0\nfor _ in range(5000):\n    init = (init,)\ndef steps(s):\n    return []\n': "RecursionError",
         }
         for model, reason in cases.items():
             code, _, err, _ = check(model)
@@ -196,6 +213,11 @@ class TestChart(unittest.TestCase):
         _, out, _, chart = check('init = {"n": 0}\ndef steps(s):\n    yield "wait", s\n')
         self.assertIn("s0 --> s0 : wait", chart)
         self.assertIn("- Holds: No deadlock", out)
+
+    def test_text_that_cannot_be_encoded_is_escaped_not_fatal(self) -> None:
+        code, out, err, _ = check('title = "\\ud800"\ninit = 0\ndef steps(s):\n    return []\nend = lambda s: True\n')
+        self.assertEqual(code, 0, err)
+        self.assertIn("# State check: \\ud800", out)
 
     def test_chart_text_cannot_change_the_chart_syntax(self) -> None:
         model = ('title = "[#1: \\"x\\"]"\ninit = {"a": 0}\ndef steps(s):\n    if s["a"] == 0:\n'

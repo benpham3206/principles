@@ -4,8 +4,9 @@
     python3 check_states.py MODEL.py [--out DIR] [--max-states N]
 
 MODEL.py defines:
-    init       a start state, or a list of them, built from dicts, lists, tuples, sets,
-               and plain values
+    init       a start state, or a list of them. A state is a tree of dicts, lists, tuples,
+               sets, frozensets, enum members, and None, bool, int, float, complex, str,
+               and bytes values, with no container in two places; anything else is refused
     steps(s)   yields (what the reader sees happen, next state); each yielded state is
                copied at once, so a model may edit and reuse one dict
     rules      {sentence the reader agrees to: predicate that is true in a good state};
@@ -17,9 +18,9 @@ MODEL.py defines:
 The search is breadth-first, so the path it reports to each broken rule is a shortest
 one. A state with no step out that is not an end state breaks "No deadlock". Writes
 DIR/report.md and DIR/chart.mmd and prints the report. Exit 0: every rule holds in every
-reachable state. Exit 1: a rule breaks, even if the search stopped early. Exit 2: the
-search stopped at --max-states (start states count) with no rule broken, the model failed
-to load or run, or the output could not be written. Python 3.9 or later, standard
+reachable state. Exit 1: a rule breaks, even if the search stopped early, and nothing
+else. Exit 2: no verdict, because the search stopped at --max-states (start states count)
+with no rule broken, or the model or the check failed. Python 3.9 or later, standard
 library only.
 """
 
@@ -27,8 +28,10 @@ from __future__ import annotations
 
 import argparse
 import copy
+import enum
 import json
 import runpy
+import struct
 import sys
 from collections import deque
 from pathlib import Path
@@ -45,24 +48,33 @@ class ModelError(Exception):
 MODEL_FAILURES = (Exception, SystemExit)    # a model calling exit() must not set the exit code
 
 
-def freeze(v):
-    """A hashable key for a state. Values a rule can tell apart, such as a list and a
-    tuple, True and 1, 0.0 and -0.0, or two key orders, get different keys, so no
-    reachable state is skipped."""
-    if isinstance(v, dict):
-        return ("dict", tuple((freeze(k), freeze(x)) for k, x in v.items()))
-    if isinstance(v, (float, complex)):
-        return (type(v).__name__, repr(v))
-    if isinstance(v, (list, tuple)):
-        return (type(v).__name__, tuple(freeze(x) for x in v))
-    if isinstance(v, (set, frozenset)):
-        return (type(v).__name__, frozenset(freeze(x) for x in v))
-    try:
-        hash(v)
-    except TypeError:
-        raise ModelError(f"a state holds a {type(v).__name__}; use dicts, lists, tuples, sets, "
-                         "and plain values") from None
-    return (type(v).__name__, v)
+PLAIN = (type(None), bool, int, str, bytes)
+CONTAINERS = (dict, list, tuple, set, frozenset)
+
+
+def freeze(v, inside=None):
+    """A hashable key for a state. Two states share a key only when a copy of each looks
+    the same to every rule and step: same types, same float bits, same order in every
+    container. The state contract is closed, because an object with its own equality, or
+    one container in two places, could make two different states look equal."""
+    t = type(v)
+    if t in PLAIN or isinstance(v, enum.Enum):
+        return (t, v)
+    if t is float:
+        return (t, struct.pack("!d", v))
+    if t is complex:
+        return (t, struct.pack("!dd", v.real, v.imag))
+    if t not in CONTAINERS:
+        raise ModelError(f"a state holds a {t.__name__}; use dicts, lists, tuples, sets, frozensets, "
+                         "enum members, and None, bool, int, float, complex, str, or bytes values")
+    inside = set() if inside is None else inside
+    if t in (dict, list, set):
+        if id(v) in inside:
+            raise ModelError(f"a state holds one {t.__name__} in two places; give each place its own copy")
+        inside.add(id(v))
+    if t is dict:
+        return (t, tuple((freeze(k, inside), freeze(x, inside)) for k, x in v.items()))
+    return (t, tuple(freeze(x, inside) for x in v))
 
 
 def call(fn, s, what):
@@ -88,8 +100,7 @@ def successors(model: dict, s) -> list:
 
 
 def explore(model: dict, max_states: int):
-    init = model["init"]
-    starts = init if isinstance(init, list) else [init]
+    starts = model["init"] if isinstance(model["init"], list) else [model["init"]]
     rules = dict(model.get("rules", {}))
     end = model.get("end", lambda s: False)
     seen: dict = {}            # key -> (state, parent key, step that reached it)
@@ -97,13 +108,14 @@ def explore(model: dict, max_states: int):
     queue: deque = deque()
     complete = True
     for s in starts:
+        s = copy.deepcopy(s)
         k = freeze(s)
         if k in seen:
             continue
         if len(seen) >= max_states:
             complete = False
             continue
-        seen[k] = (copy.deepcopy(s), None, None)
+        seen[k] = (s, None, None)
         queue.append(k)
     arrows: set = set()        # (from key, step, to key)
     bad: dict = {name: [] for name in [*rules, DEADLOCK]}
@@ -132,9 +144,8 @@ def explore(model: dict, max_states: int):
 def path(seen: dict, k) -> list:
     out = []
     while k is not None:
-        s, parent, step = seen[k]
-        out.append((step, s))
-        k = parent
+        out.append(k)
+        k = seen[k][1]
     return out[::-1]
 
 
@@ -175,8 +186,8 @@ def build(model: dict, seen, order, arrows, bad, complete, max_states: int, sour
 
     lines = ["---", f"title: {json.dumps(str(title))}", "---", "stateDiagram-v2"]
     lines += [f'    state "{mermaid_text(text)}" as {nid}' for text, nid in box.items()]
-    starts = model["init"] if isinstance(model["init"], list) else [model["init"]]
-    lines += [f"    [*] --> {nid}" for nid in dict.fromkeys(node[k] for k in map(freeze, starts) if k in node)]
+    starts = [k for k in order if seen[k][1] is None]
+    lines += [f"    [*] --> {nid}" for nid in dict.fromkeys(node[k] for k in starts)]
     lines += [f"    {a} --> {b} : {mermaid_text(str(step))}" for a, step, b in drawn]
     ends = dict.fromkeys(node[k] for k in order if call(end, seen[k][0], "end()"))
     lines += [f"    {nid} --> [*]" for nid in ends]
@@ -187,7 +198,7 @@ def build(model: dict, seen, order, arrows, bad, complete, max_states: int, sour
     chart = "\n".join(lines) + "\n"
 
     rep = [f"# State check: {title}", "",
-           f"Explored {len(seen)} states and {len(arrows)} steps from {plural(len(dict.fromkeys(map(freeze, starts))), 'start state')}. "
+           f"Explored {len(seen)} states and {len(arrows)} steps from {plural(len(starts), 'start state')}. "
            + ("The search was complete." if complete else
               f"The search stopped at {max_states} states, so a rule that held is not proven."),
            (f"The chart has {len(box)} states and {len(drawn)} arrows." if len(box) <= CHART_BUDGET else
@@ -198,8 +209,9 @@ def build(model: dict, seen, order, arrows, bad, complete, max_states: int, sour
         rep.append(f"- {status}: {r}")
     for r, ks in broken.items():
         rep += ["", f"## Shortest path to break: {r}", ""]
-        for i, (step, s) in enumerate(path(seen, ks[0]), 1):
-            rep.append(f"{i}. {'start' if step is None else step}: {names[node[freeze(s)]]} `{s!r}`")
+        for i, k in enumerate(path(seen, ks[0]), 1):
+            s, _, step = seen[k]
+            rep.append(f"{i}. {'start' if step is None else step}: {names[node[k]]} `{s!r}`")
     if marks:
         rep += ["", "## Chart marks", ""]
         for nid, rs in marks.items():
@@ -243,21 +255,20 @@ def main(argv: list[str] | None = None) -> int:
         model = load(args.model)
         found = explore(model, args.max_states)
         chart, report, n_arrows, broken = build(model, *found, args.max_states, str(args.model))
-    except ModelError as e:
-        print(f"check_states: {e}", file=sys.stderr)
-        return 2
-    try:
         out.mkdir(parents=True, exist_ok=True)
-        (out / "report.md").write_text(report, encoding="utf-8")
+        (out / "report.md").write_text(report, encoding="utf-8", errors="backslashreplace")
         if chart is None:
             (out / "chart.mmd").unlink(missing_ok=True)
         else:
-            (out / "chart.mmd").write_text(chart, encoding="utf-8")
-    except OSError as e:
-        print(f"check_states: could not write to {out}: {e}", file=sys.stderr)
+            (out / "chart.mmd").write_text(chart, encoding="utf-8", errors="backslashreplace")
+        print(report, end="")
+        print(f"\nWrote {out / 'report.md'}" + ("" if chart is None else f" and {out / 'chart.mmd'}"))
+    except ModelError as e:
+        print(f"check_states: {e}", file=sys.stderr)
         return 2
-    print(report, end="")
-    print(f"\nWrote {out / 'report.md'}" + ("" if chart is None else f" and {out / 'chart.mmd'}"))
+    except Exception as e:     # exit 1 means a rule breaks, so no other failure may end with it
+        print(f"check_states: could not finish: {type(e).__name__}: {e}", file=sys.stderr)
+        return 2
     if chart is not None and n_arrows > ARROW_BUDGET:
         print(f"check_states: the chart has {n_arrows} arrows; merge labels in label() "
               f"toward {ARROW_BUDGET} so a reader can follow it", file=sys.stderr)
@@ -265,4 +276,5 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(errors="backslashreplace")
     raise SystemExit(main())

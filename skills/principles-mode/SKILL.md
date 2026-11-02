@@ -31,7 +31,7 @@ The **mode** runs one task from start to finish. It adds no new principles. It o
 
 When part of the work earns a delegate, because it can run in parallel or needs an independent view:
 
-- Brief a fresh delegate with the goal, the constraints, the acceptance check, the files it owns, and every instruction given since the work began. A delegate resumed with old context drops later instructions; reuse one only for state that is costly to move, such as uncommitted edits or a running process.
+- Give each delegate the current goal, the constraints, the acceptance check, the files it owns, and every instruction that applies. Before you resume a delegate, send it every change since its last work. Choose a fresh delegate or reuse one by how reliable its context is, whether you need an independent view, and what it costs to move its state, such as uncommitted edits or a running process.
 - You own each delegate's result. Read the actual output, such as the diff, the file, or the render, and write your own summary. A delegate's report is a claim, not evidence.
 - A second opinion is the same brief given to a different model or person. Different reviewers tend to miss different faults, so a second one widens the search; they can still share an error. Judge each finding by the artifact or evidence it points to, never by how many reviewers agree.
 

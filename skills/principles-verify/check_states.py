@@ -6,7 +6,8 @@
 MODEL.py defines:
     init       a start state, or a list of them. A state is a tree of dicts, lists, tuples,
                sets, frozensets, enum members, and None, bool, int, float, complex, str,
-               and bytes values, with no container in two places; anything else is refused
+               and bytes values, with no NaN and no container in two places; anything else
+               is refused
     steps(s)   yields (what the reader sees happen, next state); each yielded state is
                copied at once, so a model may edit and reuse one dict
     rules      {sentence the reader agrees to: predicate that is true in a good state};
@@ -58,12 +59,14 @@ def freeze(v, inside=None):
     container. The state contract is closed, because an object with its own equality, or
     one container in two places, could make two different states look equal."""
     t = type(v)
-    if t in PLAIN or isinstance(v, enum.Enum):
+    if t in PLAIN:
         return (t, v)
-    if t is float:
-        return (t, struct.pack("!d", v))
-    if t is complex:
-        return (t, struct.pack("!dd", v.real, v.imag))
+    if isinstance(v, enum.Enum):        # by name, never by the member's own equality
+        return (t, "member", v.name)
+    if t in (float, complex):
+        if v != v:                      # Python compares a shared NaN equal to itself
+            raise ModelError("a state holds NaN; use None or a named value for a missing number")
+        return (t, struct.pack("!dd", v.real, v.imag) if t is complex else struct.pack("!d", v))
     if t not in CONTAINERS:
         raise ModelError(f"a state holds a {t.__name__}; use dicts, lists, tuples, sets, frozensets, "
                          "enum members, and None, bool, int, float, complex, str, or bytes values")
@@ -263,18 +266,22 @@ def main(argv: list[str] | None = None) -> int:
             (out / "chart.mmd").write_text(chart, encoding="utf-8", errors="backslashreplace")
         print(report, end="")
         print(f"\nWrote {out / 'report.md'}" + ("" if chart is None else f" and {out / 'chart.mmd'}"))
+        if chart is not None and n_arrows > ARROW_BUDGET:
+            print(f"check_states: the chart has {n_arrows} arrows; merge labels in label() "
+                  f"toward {ARROW_BUDGET} so a reader can follow it", file=sys.stderr)
     except ModelError as e:
         print(f"check_states: {e}", file=sys.stderr)
         return 2
-    except Exception as e:     # exit 1 means a rule breaks, so no other failure may end with it
+    except MODEL_FAILURES as e:     # exit 1 means a rule breaks, so no other failure may end with it
         print(f"check_states: could not finish: {type(e).__name__}: {e}", file=sys.stderr)
         return 2
-    if chart is not None and n_arrows > ARROW_BUDGET:
-        print(f"check_states: the chart has {n_arrows} arrows; merge labels in label() "
-              f"toward {ARROW_BUDGET} so a reader can follow it", file=sys.stderr)
     return 1 if broken else (0 if found[4] else 2)
 
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(errors="backslashreplace")
-    raise SystemExit(main())
+    try:
+        code = main()
+    except Exception:                   # even the error message failed to print
+        code = 2
+    raise SystemExit(code)

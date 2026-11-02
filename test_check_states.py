@@ -89,11 +89,10 @@ class TestSearch(unittest.TestCase):
                  ('{"x": 1}', '{"x": True}', 'type(s["x"]) is int'),
                  ('{"x": 0.0}', '{"x": -0.0}', 'str(s["x"]) == "0.0"'),
                  ('{"a": 0, "b": 0}', '{"b": 0, "a": 0}', 'next(iter(s)) == "a"'),
-                 ('float("nan")', '-float("nan")', 'math.copysign(1.0, s) > 0'),
                  ('set([0, 8])', 'set([8, 0])', 'next(iter(s)) == 0')]
         self.assertNotEqual(list(set([0, 8])), list(set([8, 0])))   # the last pair iterates differently here
         for a, b, rule in pairs:
-            model = (f'import math\ninit = [{a}, {b}]\ndef steps(s):\n    return []\n'
+            model = (f'init = [{a}, {b}]\ndef steps(s):\n    return []\n'
                      f'end = lambda s: True\nrules = {{"First kind": lambda s: {rule}}}\n')
             code, out, _, _ = check(model)
             self.assertEqual(code, 1, (a, b, out))
@@ -116,6 +115,13 @@ class TestSearch(unittest.TestCase):
                  'end = lambda s: s is Phase.DONE\n')
         code, out, _, _ = check(model)
         self.assertEqual(code, 0, out)
+        self.assertIn("Explored 2 states", out)
+        # A member's own equality must not merge two members.
+        code, out, _, _ = check('import enum\nclass P(enum.Enum):\n    A = 1\n    B = 2\n'
+                                '    def __eq__(self, o):\n        return True\n    __hash__ = None\n'
+                                'init = [P.A, P.B]\ndef steps(s):\n    return []\nend = lambda s: True\n'
+                                'rules = {"Only A": lambda s: s.name == "A"}\n')
+        self.assertEqual(code, 1, out)
         self.assertIn("Explored 2 states", out)
 
     def test_a_model_that_edits_and_reuses_one_state_loses_no_successor(self) -> None:
@@ -184,6 +190,10 @@ class TestModelFailure(unittest.TestCase):
             'class Thing:\n    pass\ninit = {"t": Thing()}\ndef steps(s):\n    return []\n': "a state holds a Thing",
             'shared = [0]\ninit = {"a": shared, "b": shared}\ndef steps(s):\n    return []\n': "in two places",
             'init = {}\ninit["me"] = init\ndef steps(s):\n    return []\n': "in two places",
+            'init = (float("nan"), 0)\ndef steps(s):\n    return []\n': "NaN",
+            # A model's own code that exits outside a callback, here through bool() of a rule result.
+            'class R:\n    def __bool__(self):\n        raise SystemExit(1)\ninit = 0\ndef steps(s):\n    return []\n'
+            'rules = {"Good": lambda s: R()}\n': "SystemExit",
             # A crash in the checker must not exit 1, which means a rule breaks.
             'init = 0\nfor _ in range(5000):\n    init = (init,)\ndef steps(s):\n    return []\n': "RecursionError",
         }

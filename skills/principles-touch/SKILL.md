@@ -7,12 +7,12 @@ description: Design how matter and space meet the body. Use when shaping ergonom
 
 In one line: Shape where the body meets the thing, and check contact, weight, temperature, and edges in the hand.
 
-When designing for touch, shape the points where a body meets an object or a space. Check contact, temperature, weight, and edges in the hand, and movement through a room.
+A **touch** design covers each place where a body meets an object or a space: the hand on a handle, the foot on a floor, the body moving through a room.
 
 ## Laws of the medium
 
 - The body is the instrument. Measure with it before you trust a drawing.
-- Design for the ends of the range. The middle takes care of itself.
+- Design for the ends of the range, one body dimension at a time. A person small in one dimension can be large in another.
 - Contact area and force set pressure. Spread the load where the body rests.
 - Feel is heat flow, force, and friction. Name the mechanism before you choose the material.
 - A control found by hand and confirmed by feel needs no look.
@@ -56,10 +56,8 @@ TOUCH
 | Friction | Grip needs friction; friction depends on the pair of surfaces, moisture, oil, and the contact pressure. Wet, oily, or gloved hands change it | A smooth finish on a part held with wet hands | Test the grip dry, wet, oily, and gloved |
 | Texture | Skin reads texture at a fine scale, so surface pattern guides the hand to grip, to a control, or to an edge | Uniform texture everywhere, so the hand cannot find anything | Close your eyes. Can the hand tell the controls from the body? |
 | Weight and density | Weight is felt as quality, but only to the point where it tires. Mass should sit where the hand and the balance point can carry it | Heavy at the end of a lever arm | Hold it at arm's length for a minute. Where does the weight sit? |
+| Honest materials | A surface should feel like what it is made of. Weight, temperature, and sound in the hand reveal a fake | Plastic painted as metal, or a hollow part weighted to pass as solid | Lift it, tap it, and hold it for a minute. Does the feel match the material? |
 | Compliance | A soft layer spreads pressure over contact area and raises comfort, but a layer too soft bottoms out and gives no support | Foam that compresses to the base, or a rigid surface under long contact | Press with a body part for a long time. Does the pressure stay even? |
-| Felt vocabulary | A set of felt signals holds only as many meanings as the body can tell apart without looking. Give each meaning one pattern and keep the set small. | Near-identical patterns fire on every event, so none carries meaning. | Play the set blind, in random order. Can people name each one? |
-
-Honest materials: a surface should feel like what it is made of, and a hollow part should not be sold as solid.
 
 ## Energy
 
@@ -68,7 +66,8 @@ Honest materials: a surface should feel like what it is made of, and a hollow pa
 | Force to operate | Required force sets who can use it and how often. The weakest user and the thousandth repeat set the limit, not the first try | Force tuned to a strong user on a fresh part | Measure force with a gauge. Test with the weakest intended user |
 | Resistance | Resistance tells the hand it is working, and the right amount tells it how far to go | No resistance, so the hand overshoots; or high resistance for a light job | Does resistance rise as the action nears its end? |
 | Travel and detents | Travel is the distance the control moves; a detent is a felt step. A click must come at the point of action, so the hand knows without looking | A control that acts before or after its click, or has no click | Press slowly with eyes closed. Does the feel mark exactly when it acts? |
-| Vibration and haptics | Skin senses vibration by frequency, with the greatest sensitivity in a middle band; a pulse should be strong enough to notice and short enough not to numb. Haptics replace sight when the eyes are busy | Constant buzz that the body ignores, or feedback that fires on every event | Is each pulse distinct from background vibration? Does it mean one thing? |
+| Vibration and haptics | Skin senses vibration by frequency, with the greatest sensitivity in a middle band; a pulse should be strong enough to notice and short enough not to numb. Haptics replace sight when the eyes are busy | Constant buzz that the body stops noticing, or a pulse too weak to feel through a pocket or glove | Is each pulse distinct from background vibration where the device is carried? |
+| Felt vocabulary | A set of felt signals holds only as many meanings as the body can tell apart without looking. Give each meaning one pattern and keep the set small | Near-identical patterns fire on every event, so none carries meaning | Play the set blind, in random order. Can people name each one? |
 | Effort over a day | Small loads repeated all day add up. Static posture and a held grip tire muscle even at low force | Tested for a minute, used for a shift | Run the real task for the real duration. Where does the body complain first? |
 
 ## Observer
@@ -89,7 +88,7 @@ Honest materials: a surface should feel like what it is made of, and a hollow pa
 |---|---|---|---|
 | Control layout | Place by frequency, then by sequence: the most used nearest the easy reach, controls used in order laid out in that order, controls of one function grouped | Layout by internal wiring or by the drawing's neatness | List controls by use frequency. Does proximity follow it? |
 | Separation | Controls that do different things, or whose mistaken use costs a lot, sit apart or differ in shape, resistance, or guard | Dangerous and harmless controls side by side and alike | For each control, what happens if the neighbor is hit? |
-| Circulation | People move along paths, and a path is the shortest line between what they want. Clear paths along those lines; obstacles in them cause detours or collisions | Furniture or walls across the natural line, or paths that cross the busiest ones | Trace a person's route for each common task. Where do paths cross? |
+| Circulation | People take the shortest line between where they are and what they want. Clear paths along those lines; obstacles in them cause detours or collisions | Furniture or walls across the natural line, or paths that cross the busiest ones | Trace a person's route for each common task. Where do paths cross? |
 | Zones | A space divides by activity, noise, and privacy, with a transition between zones. Related activities adjoin and conflicting ones separate | Everything in one open space, or adjacency by accident | Draw the zones. Which neighbors conflict? |
 | Thresholds | A threshold marks a change of state. It should be noticeable to the body through a step, a change in light, a narrowing, or a change in floor, and safe for every user | A silent change of level, or a threshold nobody can cross with a cart or chair | Cross it blind, with a cart, a stick, and a chair |
 

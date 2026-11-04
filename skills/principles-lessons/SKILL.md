@@ -35,9 +35,9 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 1. Stop ongoing harm and restore function. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable enough to investigate safely.
 2. Write the facts as a timeline: what happened, when, what each person saw and did, and what they believed at that moment. Mark each item as observed, reported, or inferred.
 3. Find the causes. Ask why it was possible, not who did it. Follow each branch until you reach something that can be changed by design.
-4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap.
+4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap. Search past records, such as logs, tickets, reviews, and agent sessions, for earlier instances; a mistake seen more than once is a class.
 5. Choose the change, strongest form first: remove the hazard, then make the error impossible, then make it detectable, then train or document. A reminder is the weakest fix.
-6. Add the check. Write the test, alarm, review item, or gate that would have caught it. Confirm it fails with the cause present and passes with it removed.
+6. Add the check. Write the test, alarm, review item, or gate that would have caught it. Confirm it fails with the cause present and passes with it removed. Where a real past instance exists, run the check on it and watch it fail.
 7. Close. Record the lesson where the next person or agent will meet it; for an agent, that is the skill, rule, or instruction file its next session loads. Assign each change an owner and a date. Reopen the event only on new evidence.
 
 ## Principles

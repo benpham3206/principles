@@ -23,7 +23,9 @@ In one line: Show what matters first, and give every color, effect, and containe
 
 In images and scenes: stock gray backgrounds, centered everything, a single front light, an eye-level camera at a 50 mm lens, pure black and pure white, saturated primaries.
 
-In interfaces: a gradient, glow, blur, or shadow on every surface; a card or border around every group; one corner radius at every level of nesting; accents in several hues, or a hue that means nothing; emoji standing in for a drawn icon set; an icon beside every heading; gray text too faint to read; thin weights at small sizes; one size and weight for every level, or many sizes with no scale; default type size and leading; spacing typed by feel; a logo on every screen; placeholder names and round numbers in place of real content; and the most common page template of the moment, such as a centered headline over three equal cards, kept with no reason.
+In interfaces: a gradient, glow, blur, or shadow on every surface; a card or border around every group; one corner radius at every level of nesting; accents in several hues, or a hue that means nothing; emoji standing in for a drawn icon set; an icon beside every heading; gray text too faint to read; thin weights at small sizes; one size and weight for every level, or many sizes with no scale; default type size and leading; spacing typed by feel; a logo on every screen; placeholder names and round numbers in place of real content; controls that give no sign they were touched, and changes of place or size that cut so the observer loses track of what moved; the toolkit's default typeface and palette, kept because they were there; and the most common page template of the moment, such as a centered headline over three equal cards, kept with no reason.
+
+Replace them in passes, and judge each pass against the one before it. Build the functional version first. Then check the value structure in grayscale at thumbnail size. Set the system: a type scale, a spacing scale, and color roles. Where the content needs a point of distinction, choose one move that strengthens hierarchy, recognition, or meaning, such as a scale contrast, a single strong color, or an unusual grid, and keep everything around it quiet; restraint alone can be the result. Design every state, and how the observer follows each change into the next. Fill in real and worst-case content. Render the result at its real size and look at it. A default that survives every pass names its reason.
 
 ## Tree
 
@@ -34,7 +36,7 @@ VISUAL
 ├── Energy        light: intensity, direction, color, softness, falloff
 ├── Observer      viewpoint, perspective, focal length, focus, exposure, optical effects, format, appearance, legibility, text size
 ├── Composition   hierarchy, content and chrome, spacing, grouping, alignment, balance, rhythm, framing, typography, real content
-├── Time          motion, timing, transition, deformation
+├── Time          motion, feedback, timing, choreography, transition, deformation, layout stability
 └── Atmosphere    depth cues, haze, scattering, environment
 ```
 
@@ -112,8 +114,10 @@ Honest materials: a surface should look like what it is made of and behave that 
 
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
-| Motion | Motion draws the eye harder than anything still; move only what matters. Keep motion on frequent actions brief or absent, and let people reduce it | Many things moving at once; a flourish on every tap; motion with no way to turn it down | What moves, and why? How often does each animation run, and what remains with reduced motion? |
-| Timing | Speed implies mass; heavy things ease slowly | Linear motion that feels mechanical | Does the easing match the weight? |
+| Motion | Motion draws the eye harder than anything still. Use it where it explains continuity, location, or cause, such as where a panel came from or what a drop changed. Keep motion on frequent actions brief or absent, and let people reduce it | Many things moving at once; a flourish on every tap; motion with no way to turn it down; or an object that jumps to a new place so the observer loses it | What moves, and what does the motion explain? How often does each animation run? With motion reduced or absent, is every change still understandable? |
+| Feedback | Every meaningful action, by pointer, touch, keyboard, or assistive technology, gets a prompt acknowledgment that each user can perceive, on screen and through the accessibility interface. About 100 ms is a common starting heuristic for a discrete action to feel instant. When completion is delayed, expose a waiting state, progress when it is knowable, and completion | Controls that give no sign they were touched; a spinner a screen reader never announces; a pause with nothing on screen | Measure from each activation to its acknowledgment, for every supported input method, with a screen reader on as well. Does a long operation report its waiting state, progress, and completion? |
+| Timing | Speed implies mass; heavy things ease slowly. In interfaces, about 150 to 300 ms is a common starting heuristic; distance and perceived weight can inform it, and coordinated parts may share one duration. Easing out often suits arrivals and easing in departures. A dragged object stays attached to the input; a spring suits the settle after release where elasticity fits the material | Linear motion that feels mechanical; one duration for every move; a dragged object that lags the pointer | Does the easing match the weight? Does each duration explain the change while the interface stays responsive and coordinated parts stay together? Does a dragged object track the input exactly? |
+| Choreography | When several things move together, order them only when the order means something: the subject leads, and related items follow at a short stagger. A stagger never delays access to a control | Each part on its own clock, or an order that implies a sequence the content does not have | Play it at a tenth of the speed. Does the order match a real relationship, and is every control usable at once? |
 | Transition | Transitions explain where things came from and went | Cuts or fades that lose the observer | Can you track each object across the change? |
 | Deformation | Squash and stretch show material and force | Rigid objects stretching, soft ones not | Does deformation match the material? |
 | Layout stability | What the observer has seen stays put unless the move is the message. Reserve space for content that arrives late. | Late images, fonts, or banners shift the layout under the eye or the pointer. | Load it on a slow connection. Does anything already seen move? |
@@ -128,6 +132,6 @@ Honest materials: a surface should look like what it is made of and behave that 
 
 ## Learn from the best
 
-Study work that has lasted, and name why it works in terms of the axes: Dieter Rams for restraint, Massimo Vignelli for type and grid discipline, Robert Bringhurst for typographic rhythm, Josef Albers for color in context, Susan Kare for icons at their real size, Edward Tufte for the smallest effective difference, and the platform's own human interface guidelines for its conventions. `principles-craft` sets the bar.
+Study work that has lasted, and name why it works in terms of the axes: Dieter Rams for restraint, Massimo Vignelli for type and grid discipline, Robert Bringhurst for typographic rhythm, Josef Albers for color in context, Susan Kare for icons at their real size, Edward Tufte for the smallest effective difference, the Bauhaus for form drawn from function and elementary geometry, Josef Muller-Brockmann and the Swiss style for asymmetric grids and type as the image, Frank Thomas and Ollie Johnston for timing, anticipation, and follow-through, and the platform's own human interface guidelines for its conventions. `principles-craft` sets the bar.
 
 Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.

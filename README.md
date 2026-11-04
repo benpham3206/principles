@@ -106,6 +106,8 @@ Rules live in [AGENTS.md](AGENTS.md). Every skill is built with its own `princip
 
 `principles-mode` and the state check in `principles-verify` adapt `poteto-mode` and `statechart` from poteto's [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
+The contract-aware fixes, migration choices, and shared-state guidance in `principles-code`, and the performance checks in `principles-measure`, adapt pstack's [principles and benchmark checklist](https://github.com/cursor/plugins/tree/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

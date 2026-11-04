@@ -100,8 +100,8 @@ CODE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Lifecycle | Every resource has an owner who acquires and releases it | Handles, connections, and tasks that outlive their need | For each resource, who closes it, and on every path? |
-| Concurrency and ordering | Shared mutable state under concurrent access needs one rule; prefer sharing nothing | Races that appear only under load | What can run at the same time, and what orders it? |
-| Versioning and migration | Change an interface in steps: add the new, migrate callers, then delete the old | Breaking change shipped in one step | Can old and new callers run side by side during the move? |
+| Concurrency and ordering | Give independent writers separate mutable objects. When one shared object is required, enforce ordering with a single writer, a lock, or an atomic update | Two writers lose each other's updates despite owning different fields in one file | Must these writers share an object? If so, what enforces ordering when they overlap? |
+| Versioning and migration | Replace an internal interface and all callers together when they can ship together. Stage compatibility when callers deploy separately or cannot all be reached | A needless compatibility layer survives an internal change, or a coordinated change breaks independently deployed callers | Can every caller move in one release? If not, how do versions coexist, and what evidence permits removing the old path? |
 | Idempotency and retries | An operation that may be repeated must give the same result; retries back off and stop | Duplicate charges, duplicate rows, retry storms | Run it twice. Is the outcome the same as once? |
 | Failure and recovery | Assume each dependency fails; define the degraded behavior and the way back | A single failure that takes down everything | Kill each dependency in turn. What does the user see? |
 | Logs | A log line records what happened, with identifiers, at the moment it happened | Logs written for the author, or flooding at the cost of signal | Follow one request across the logs. Is it traceable? |
@@ -112,7 +112,7 @@ CODE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Change reach | Before editing, list every place the change must reach: callers, tests, fixtures, config, exports. Be minimal in the solution, complete in the change | A small diff that leaves callers, fixtures, or docs broken | Search every use of what you touched. Is each one updated or still correct? |
-| Fix once, at the source | A bug in shared code is fixed in the shared code, after finding every caller, not patched at each symptom | The same guard added in three callers while the cause stays | Does the fix live where the wrong value is made? |
+| Fix once, at the source | Trace the first broken contract and fix it for every affected caller. Handle legitimate states where support is missing; fix the producer of states that should never exist | A symptom guard hides corrupt state, or valid input is rejected because its handler is broken | Is the triggering state allowed by the contract? Which producer or handler first violates that contract? |
 | Tests | Test behavior through the interface, not the implementation; a test must fail when the behavior breaks | Tests that pin internals and break on every refactor | Change the internals, keep the behavior. Do tests still pass? Break the behavior. Do they fail? |
 | Error handling | Handle an error at the boundary that can act on it; below that, pass it up with context | Swallowed errors, or the same error handled at every layer | For each handler, can it fix, retry, or report? |
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |

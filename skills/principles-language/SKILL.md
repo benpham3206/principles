@@ -101,7 +101,7 @@ LANGUAGE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Prior knowledge | Supply what this audience needs to follow the next idea | Unexplained jargon or needless explanation | Identify unfamiliar terms and missing context |
-| Attention | Give the main point enough space and make it easy for this audience to notice | A footnote draws attention away from the finding | Can the reader find what matters and give it the attention it needs? |
+| Attention | Put the main point where this audience looks first, and give it enough space and emphasis to receive the attention it needs | A footnote draws attention away from the finding | Can the reader find what matters and give it the attention it needs? |
 | Point of view | Address the reader in instructions and direct asks. Elsewhere, choose the actor or perspective the piece needs | "You" hides responsibility or breaks a story's perspective | Who acts, who is responsible, and whom does the text address? |
 | Instructions | Give the reader or model clear actions and the context they need | Success needs knowledge the instructions do not give | Can a fresh reader act? When an action must be prohibited, give a usable alternative if one exists |
 | Examples | Make clear which features are required and which wording or format choices are only examples | A model or learner copies details as requirements | Vary examples or state what can differ |
@@ -115,7 +115,7 @@ LANGUAGE
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Structure | Match form to content: steps in a list, comparisons in a table, an argument in paragraphs | Layout hides the relation among ideas | Can the reader see how the parts relate? |
-| Order | Lead answers and reports with the finding. In final task responses, state the result and completed work with needed context, material evidence, and limits, then next steps or actions if any remain. Keep the account focused on outcomes. Put prerequisites before procedural steps | The answer is buried or needed context arrives late | Read in order. Can the reader understand and act at each point? |
+| Order | Lead answers and reports with the finding. In a final task response, give the result and the completed work first. Then give the context, material evidence, and limits they need. List next steps last, if any remain. Keep the account focused on outcomes. Put prerequisites before procedural steps | The answer is buried or needed context arrives late | Read in order. Can the reader understand and act at each point? |
 | Reading path | Match the structure to how the audience reads. For text people scan or search, make each section stand alone with its point first. For text read in order, let each part build on the last, and introduce every reference before it is needed | A reference page that makes sense only from the top, or a story that re-explains itself in every paragraph | If the audience skips around, jump to a random section: can they act on it? If they read in order, does each part rely only on what came before? |
 | Headings and titles | Headings help readers find their way; levels show hierarchy. Titles can name the subject or suggest a mood or idea | A heading hides content, or a title promises the wrong experience | Read headings alone. Do they give a usable outline and the right expectation? |
 | Connections | Show how sentences and paragraphs build on each other | A jump needs context the reader lacks; "moreover" does not show the relation | Name the relation. Use a transition that shows it, or remove the empty transition |

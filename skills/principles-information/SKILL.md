@@ -12,7 +12,7 @@ An **information display** arranges data or structure so a reader can find a tru
 ## Laws of the medium
 
 - The reader's question comes first. Choose the encoding that answers it with the least effort.
-- Position beats everything. When a comparison matters, put it on a common aligned scale.
+- Position on a common scale is the most accurate encoding channel. When a comparison matters, put it on a common aligned scale.
 - Emphasis is finite. One finding in color, the rest in gray.
 - Remove ink until reading changes, then restore the last piece.
 - Label directly and state the finding in the title. A reader should not decode a legend or guess a point.
@@ -56,7 +56,7 @@ INFORMATION
 | Color scheme | Categorical color for unordered groups (distinct hues, few); sequential for ordered magnitude (one hue, light to dark); diverging for values around a meaningful midpoint (two hues, neutral center) | A rainbow for ordered data; categories in a sequential ramp | Is the data nominal, ordered, or centered? Does the scheme match? |
 | Category count | People can match only a handful of hues to a legend | Ten colors in one chart | Count the hues. Past about five (a rule of thumb), group, label directly, or facet |
 | Redundant coding | Color alone fails for readers with color-vision differences and for grayscale print | Groups separated by red versus green only | Convert to grayscale and simulate color-vision loss. Do groups still separate? |
-| Contrast | Text and marks need enough contrast against the background to read at the real size and in the real light | Light gray labels on white | Measure the contrast ratio of text and of key marks against the background |
+| Contrast | Text and key marks need enough contrast against the background to read at the real size and in the real light; 4.5:1 for normal body text, and 3:1 for large text and for marks that carry meaning, are common accessibility conventions | Light gray labels on white | Measure the contrast ratio of text and of key marks against the background |
 
 ## Energy
 

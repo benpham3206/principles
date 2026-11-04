@@ -66,7 +66,7 @@ For work that can block, stall, or run in the background:
 | Bound each wait | A step whose duration rests on something you do not control hangs the task: a network or model call, a server start, a supplier, a reviewer, or a cure time | Give it a timeout and name the response when it expires |
 | Judge progress within limits | Useful work is stopped too soon, or stalled work consumes resources without end | Set limits for time to start, time between meaningful progress signals, and total duration. Keep work running while progress stays within all three |
 | Resolve state before retrying | A retry duplicates work or side effects from an unfinished attempt | On expiry, check completion and liveness. Stop what remains and confirm it stopped. Before retrying, check for completed effects. Retry at most once, only when safe; otherwise escalate |
-| Delegate parallel work and verify it | Work that could run in parallel runs in sequence, concurrent writers corrupt shared state, or a delegate's report is trusted unchecked | Delegate each part that can run alongside others, whether or not the parts are independent or check themselves. Give each delegate a bounded brief and exclusive file ownership, coordinate shared state, and keep dependencies ordered. Verify each result and the joined whole yourself; a delegate's own check is not verification |
+| Delegate parallel work and verify it | Work that could run in parallel runs in sequence, concurrent writers corrupt shared state, or a delegate's report is trusted unchecked | Delegate each part that can run alongside others, even when the parts depend on each other. Give each delegate a bounded brief, exclusive file ownership, and the checks that prove done, written before it starts. Coordinate shared state and keep dependencies ordered. Verify each result and the joined whole yourself before use; a delegate's own check is not verification |
 
 ## Refine
 
@@ -76,13 +76,13 @@ Delete unnecessary work before optimizing it. Understand a process before automa
 
 ## Working record
 
-Keep the project model current; revise it when evidence changes. Use `principles-represent` when its structure hides the next action, and keep a baseline to compare against. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make failures visible and recoverable, with an immediate signal and fallback when needed.
+Keep the project model current; revise it when evidence changes. Use `principles-represent` when its structure hides the next action, and keep a baseline to compare against. Record the links between intent, requirements, decisions, implementation, and verification where the next person will find them. State known limits where the work lives. Make each failure visible and recoverable: signal it at once, and give a fallback for any failure that can harm someone or lose data.
 
 ### Optional scratchpad
 
 Use a scratchpad when work spans sessions, involves delegates, or needs a recovery record. Skip it for small tasks that can be completed and checked in one pass. Reuse the project's existing record when it serves this purpose; adapt these headings instead of creating a second ledger.
 
-Before task work, fill the intent, relevant 5W1H context, goal, binding constraints, and definition of done. Mark unknowns in Open. Keep Todo tied to the definition of done and State current with verified facts, pending work, and the next safe action. Link evidence rather than copying it. Keep secrets out of the record.
+Before task work, fill the intent, the 5W1H lines you can answer, the goal, binding constraints, and definition of done. Mark unknowns in Open. Keep Todo tied to the definition of done and State current with verified facts, pending work, and the next safe action. Link evidence rather than copying it. Keep secrets out of the record.
 
 Append dated checkpoints with expected versus actual results and evidence. Preserve earlier entries; append corrections when evidence changes. Record decisions with their reasons and limits of authority. Update the record at meaningful changes and before a handoff, so another reader can resume without guessing what ran or what remains.
 

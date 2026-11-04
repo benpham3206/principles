@@ -17,7 +17,7 @@ The **mode** runs one task from start to finish. It adds no new principles. It o
 3. **Name the shape before you build.** Name the structure the work rests on: the data and its states for code, the load path for a machine, the argument for prose. Choose it with `principles-represent`.
 4. **Settle facts by experiment.** Before you ask the person a question, classify it. When an authorized experiment of proportionate cost can answer it, such as one about behavior, timing, layout, output, or cost, run it and let the result decide. Ask about preference, values, authority, a one-way door, or a fact you cannot reach within the task's bounds.
 5. **Name the principle behind each decision.** In the reply, name each principle that changed a choice and the choice it changed. Cite only skills you read during this task.
-6. **Give each material claim its basis.** In the same sentence, say what you measured or observed, or that you inferred or guessed it. Run any check you can run yourself before you hand it to the person.
+6. **Give each material claim its basis.** In the same sentence, say what you measured or observed, or that you inferred or guessed it. Run each check you can run yourself before you hand the work to the person.
 7. **Hand off.** Run `principles-verify`, then `principles-tidy`, then reply as the Reply section below says.
 
 ## Authority
@@ -31,7 +31,7 @@ The **mode** runs one task from start to finish. It adds no new principles. It o
 
 When part of the work earns a delegate, because it can run in parallel or needs an independent view:
 
-- Give each delegate the current goal, the constraints, the acceptance check, the files it owns, and every instruction that applies. Before you resume a delegate, send it every change since its last work. Choose a fresh delegate or reuse one by how reliable its context is, whether you need an independent view, and what it costs to move its state, such as uncommitted edits or a running process.
+- Give each delegate the current goal, the constraints, the acceptance check, the files it owns, and every instruction that applies. Before you resume a delegate, send it every change since its last work. Choose a fresh delegate when the old one's context is unreliable or you need an independent view, unless moving its state, such as uncommitted edits or a running process, would cost more than that gain. Otherwise reuse it.
 - You own each delegate's result. Read the actual output, such as the diff, the file, or the render, and write your own summary. A delegate's report is a claim, not evidence.
 - A second opinion is the same brief given to a different model or person. Different reviewers tend to miss different faults, so a second one widens the search; they can still share an error. Judge each finding by the artifact or evidence it points to, never by how many reviewers agree.
 
@@ -96,7 +96,7 @@ For a rename, extraction, merge, move, or new internal shape.
 1. Name the burden the change removes, such as two sources of truth, a dependency, or a rule that must change in several places.
 2. Pin current behavior with checks on what users observe, not on internals. Watch them pass before you start.
 3. Move in small steps, and run the checks after each one.
-4. Choose a coordinated or staged migration with `principles-code`. Move callers and remove the old path when the migration's compatibility conditions allow it.
+4. Choose a coordinated or staged migration with `principles-code`. Move callers to the new path. Remove the old path when no supported caller or stored data depends on it and the migration's compatibility, support, and rollback conditions allow removal.
 5. Show that the checks pass and that the named burden shrank, measured where you can: fewer sources of truth, dependencies, or places a change must touch.
 
 ### Settle a fork by experiment

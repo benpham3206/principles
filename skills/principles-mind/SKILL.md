@@ -26,7 +26,7 @@ Expose state for audit: budget used, memory size, calibration settings, and a lo
 
 ## Build small
 
-Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it in real work for a preset period with a pass criterion, such as daily for 30 days. If it helps and continuity feels real, add sleep cycles, then automatic calibration. If not, find the failure mode before adding anything.
+Start with memory that persists across sessions, a generate-then-revise loop, and manual calibration. Use it in real work for a preset period with a pass criterion, such as daily for 30 days. Add sleep cycles, then automatic calibration, only if a pass criterion set in advance is met and real use shows the memory helps, stays accurate, and gives the person useful continuity. Fewer repeated explanations from the person support this but do not prove it. If not, find the failure mode before adding anything.
 
 ## Substrate
 
@@ -84,11 +84,11 @@ Set explicit limits on every resource an agent spends, such as compute per cycle
 
 ## Common case and tail
 
-Generate candidates from the usual solutions and from the unusual ones. Evaluate every candidate on how it handles the common case and how it handles the edge cases. Weight the edge cases more as the stakes rise. Principle.
+Generate candidates from the usual solutions and from the unusual ones. Evaluate every candidate on how it handles the common case and how it handles the edge cases. Raise the weight of edge-case scores as the cost of a miss rises, and state the weight used. Principle.
 
 ## Calibration
 
-Set how the agent speaks with the dials in `principles-counsel`, per person, state, and context, and keep the settings in its model of the person. Adapt the style, never the truth: calibration changes how a thing is said, never whether it is true. Principle.
+Set how the agent speaks with the dials in `principles-counsel`, per person, state, and context, and keep the settings in its model of the person. Adapt the style, never the truth. Principle.
 
 ## Hypotheses to test, not assume
 

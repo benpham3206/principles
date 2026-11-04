@@ -47,7 +47,7 @@ Match confidence to evidence. Give a range and its basis, such as "4 to 7 days, 
 
 ## Reasoning Methods
 
-Choose and combine reasoning methods based on the problem, available evidence, and uncertainty. Check assumptions, consider alternative explanations, and revise conclusions when evidence changes.
+Choose and combine reasoning methods based on the problem, available evidence, and uncertainty. For each method used, list its assumptions and the alternative explanations still in play. Revise the conclusion when evidence changes its support, including when a result breaks an assumption.
 
 | Method | Use and check |
 |---|---|
@@ -93,7 +93,7 @@ Failure: research that continues after the choice is settled, or an irreversible
 
 ## Axioms by domain
 
-These are the limits nothing designed can beat. State the general form; give local values (Earth gravity, sea-level air) as one case, labelled.
+These are the limits nothing designed can beat. State each limit in its general form. Give a local value (Earth gravity, sea-level air) only as a labelled example.
 
 - **Conservation.** Energy, mass, momentum, and charge are conserved. Every design is an accounting of where they go.
 - **Entropy.** Every real process loses some useful energy as heat. No machine is perfectly efficient; no process runs backward for free.
@@ -109,14 +109,14 @@ These are the limits nothing designed can beat. State the general form; give loc
 
 1. State the problem as the result that must hold, stripped of how it is done today.
 2. List what must be true: the axioms above that apply.
-3. Derive the limit: the best result the governing limits allow, whether physical, logical, perceptual, or economic. For physical work, these are minimum energy, mass, time, and raw material cost.
-4. Compare the limit with current practice. The gap is the opportunity, and its size says how much invention is possible.
+3. Derive the limit: the best result the governing limits allow, whether physical, logical, perceptual, or economic. For physical work, the limits are minimum energy, mass, time, and raw material cost.
+4. Compare the limit with current practice. The gap is an upper bound on the opportunity. Its size shows how much invention could be possible, if the cause is a convention and not a law.
 5. Ask what convention, not law, holds practice away from the limit. Conventions can change.
 
 Done when the limit is stated as its kind: for a physical or logical limit, a number with units and the law each step rests on; for a perceptual or economic limit, an estimate with its evidence and the conditions where it holds.
 
 ## Compare known to unknown
 
-To reason about something new, anchor it to the nearest thing that is known and measured, then reason only about the difference. State which known case you chose and why it is close. The size of the difference is the size of your uncertainty.
+To reason about something new, anchor it to the nearest thing that is known and measured, then reason only about the difference. State which known case you chose and why it is close. Treat the size of the difference as a first estimate of your uncertainty, and widen it if the known case was weakly measured.
 
 Pairs with: before `principles-measure`; after `principles-method`, `principles-research`, `principles-horizons`.

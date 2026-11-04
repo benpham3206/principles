@@ -24,7 +24,7 @@ Prevention lowers how often failure starts. Detection, containment, and recovery
 - **Shared causes limit redundancy.** Redundancy removes the failures that do not disable every copy. A cause the copies share disables them together, so it sets a floor that more copies cannot lower.
 - **Parts in series multiply.** When every part must work and their failures are independent over the same period, multiply their chances of working: 100 parts at 99 percent each give about 37 percent. Each required part added can only hold or lower the total.
 - **A failure nobody sees is still running.** Time to detect is part of the failure.
-- **Treat an unexercised path as broken until it runs.** A standby, backup, fallback, or rollback that has not run recently is a hypothesis.
+- **Treat an unexercised path as broken until it runs.** A standby, backup, fallback, or rollback that has not run within its test interval is a hypothesis. Set that interval by the harm.
 - **Protection is made of parts.** Monitors, failover, and redundancy add failure modes of their own. Count them.
 - **Reliability is conditional.** A rate measured under one load, environment, age, and set of users does not transfer to others.
 
@@ -66,11 +66,11 @@ Over-building is a failure too. A weekend prototype held to the bar of a flight 
 | Isolate enough to act | An alarm that says something is wrong but not enough to choose a response | From the signal alone, can the receiver choose the safe action? |
 | Watch the watcher | A monitor that died quietly, so silence reads as health | Stop the monitor. Does anyone find out, and how soon? |
 | Fail loudly where wrong is worse than stopped | A part that fails by giving plausible wrong output, so nothing downstream reacts | Can this part fail silent and wrong? What checks its output against an independent source? |
-| Two can detect; three can mask one | Two disagreeing channels and no way to tell which is right | With one channel faulty, do the healthy results set a safe output? When agreement is ambiguous, is that detected and contained? Naming the faulty part needs its own check |
+| Two can detect; three can mask one | Two disagreeing channels and no way to tell which is right | With one channel faulty, do the healthy channels still give a safe output? If the channels disagree and no vote is possible, does the system detect that and move to a safe state? Naming the faulty part needs its own check |
 | Contain the blast | One fault cascades through shared pools, retries, or load moved onto the survivors | Fail one part at peak load. What fails with it? Can the survivors carry its load? |
 | Degrade on purpose | All or nothing; a fallback that fails open | With each part removed, what does the user get, and is the loss shown? |
 | Recovery and standbys are found by use | A standby, spare, backup, or rollback that was broken for months and first tried during the incident | When was each last run end to end, how long did it take, what was lost, and what was checked in the first minute after restart? |
-| Know the life pattern | One constant failure rate assumed for parts whose failures cluster early, from defects, or late, from wear | Do field or test data show how failures change with age for this part? Plan screening or replacement only where they do |
+| Know the life pattern | One constant failure rate assumed for parts whose failures cluster early, from defects, or late, from wear | Do field or test data show how failures change with age for this part? Plan screening or replacement only for parts whose data show early or late clusters of failures |
 | Conditions drift | A design proven under last year's load, temperature, users, or dependencies | What changed since it was proven, and was it proven again? |
 | Stage every change: a small, chosen share first, with a signal that halts it, then wider on evidence | A defect reaches everyone at once and cannot be recalled | Who meets the change first, what signal would halt it, and who can halt it? |
 | The world repeats, reorders, and interrupts actions, so make each action safe to run twice and to stop midway | A duplicate effect, or a half-applied state after a stop | Run it twice; stop it midway. Is the end state one clean run, or can it resume? |
@@ -86,7 +86,7 @@ A released thing keeps working only while someone keeps it. Plan its upkeep from
 - People depend on what it does, not only on what it promises. Before changing a behavior, find who relies on it.
 - Every address others cite, such as a link, an identifier, or a part number, keeps resolving or points to its successor.
 - Retire in order: announce, give a path to the replacement, support both for a stated window, then remove.
-- Name who keeps it when its maker leaves, and keep what they need to do so.
+- Name who will maintain it after its maker leaves. Hand that person the sources, access, and notes they need.
 
 Failure: a better version breaks the people who relied on the old one, or the thing decays once its maker moves on. Check: who relies on each behavior you change, and who keeps the thing next year?
 

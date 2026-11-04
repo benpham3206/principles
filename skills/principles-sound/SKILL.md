@@ -14,7 +14,7 @@ A **sound** work arranges pressure variations for a listener. Choose what they s
 - Level is a log scale. Sound pressure level in dB is 20 log10 of the pressure ratio to a reference, so +6 dB doubles pressure and +10 dB is heard as roughly twice as loud (a rule of thumb that varies with frequency and level). Think in ratios.
 - Two equal, uncorrelated sources add 3 dB, not 6. Two identical in-phase signals add 6 dB; opposite phase cancels.
 - Each part owns a band, a position, and a moment. When two share all three, one is lost.
-- The first milliseconds, the loudest part, and the lowest frequency tell the listener most. Set them first.
+- The onset (the first milliseconds), the loudest part, and the lowest frequency tell the listener most. Set those three before other detail.
 - The room and the speaker are part of the work. A wavelength is the speed of sound (about 343 m/s in air at 20 degrees Celsius) divided by frequency, so low notes are meters long and meet the room as modes, not rays.
 - Judge at the three distances: low volume, a cheap speaker, the next room.
 - Silence and quiet are material. Contrast needs both.
@@ -73,7 +73,7 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Position | Level from a point source in free field falls 6 dB per doubling of distance (inverse square); nearer sounds are louder, drier, and brighter | Distance implied by level alone with no change in reverb or tone | Does a far sound lose level, highs, and dry-to-reverb ratio together? |
-| Room | Walls return energy as reflections; reverberation time (RT60) is the time for the level to fall 60 dB | One reverb on everything, or a room with no tail | Does every source sit in one room, or in rooms chosen to differ? |
+| Room | Walls return energy as reflections; reverberation time (RT60) is the time for the level to fall 60 dB | One reverb on everything, or a room with no tail | List the room each source sits in. Is each difference between rooms chosen on purpose? |
 | Playback system | Small speakers cannot move enough air for low frequencies; headphones place sound inside the head | Mix judged on one system only | Play it on the smallest and the largest system the work will meet |
 | Hearing range | The young human ear spans about 20 Hz to 20 kHz; sensitivity peaks near 2 to 4 kHz; the top falls with age and exposure | Detail placed where few listeners hear it, or energy past the speaker's range | Is the key content inside the band the listener hears? |
 | Masking | A loud sound hides quieter sounds at nearby frequencies and just after it | Two parts competing in the same band, so one disappears | Mute one part. Does the other appear? |
@@ -97,7 +97,7 @@ Honest sources: a sound should behave as the object it implies. A big object rin
 | Leaf | Principle | Failure | Check |
 |---|---|---|---|
 | Rhythm | A pattern of accents against a steady pulse gives the ear something to predict | A grid with no accent, or accents with no pulse | Tap the pulse. Do the accents fall where you meant? |
-| Tempo | Tempo sets energy and room: a faster pulse needs shorter decays | A tempo left at the default | Why this tempo? What does the decay do at this speed? |
+| Tempo | Tempo sets energy and room: a faster pulse needs shorter decays | A tempo left at the default | State the reason for the tempo in one sentence. Do decays end before the next accent at this speed, or overlap by choice? |
 | Groove | Small shifts from the grid, often a few to tens of milliseconds, give feel; a part ahead of the beat pushes, behind it relaxes | Every note on the exact grid, or random offsets with no pattern | Shift one part earlier and later. Which feel serves the work? |
 | Phrase and form | Phrases breathe in lengths the ear can hold, and repeat so the form can be learned | Phrases that never resolve, or repeat with no change | Mark the phrase ends. Does each have a landing? |
 | Decay | The tail of a note or room tells the listener the size of the space and how soft the source is | Tails that run into the next note and blur it | Do tails clear before the next onset that matters? |

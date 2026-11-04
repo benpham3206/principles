@@ -22,7 +22,7 @@ the history agrees with  speaking,   moving between,  signs of life     visitor 
 - **It persists across every threshold.** A page change, a load, a menu or a door that resets the place reminds the visitor it was never real.
 - **Every channel means the same thing.** Look, sound, words, motion, touch, captions and spoken descriptions carry one meaning in their own form. A part that contradicts the world breaks every part around it; a deliberate difference is written in the canon.
 - **The interface lives inside the fiction, and reality stays legible.** Controls, status and waiting can be things in the world. Anything real and consequential, such as money, data, consent, safety or leaving, is said plainly, even if it breaks the spell.
-- **Detail implies more than it shows.** The visitor should sense a place larger than the part they can see.
+- **Detail implies more than it shows.** The visitor should sense a place larger than the part they can see. Use details that point to places, people, or history beyond what is shown.
 - **The visitor is a guest.** What they can do fits the fiction, and they can always understand what is happening, refuse it and leave without penalty.
 - **Restraint keeps the spell.** Mystery, quiet and empty space are part of the place. Explaining everything ends it.
 
@@ -35,12 +35,12 @@ A white flash or spinner between places, stock components in their default style
 1. Write the canon in one place: what this world is, its rules, its history, its inhabitants, and what it is not. Every maker reads it before adding a part.
 2. Derive each channel the world uses from the canon: its palette and light, type, motion curve and rhythm, sound, materials, and the text equivalents for people who do not see or hear them. Name each in the canon with its reason.
 3. Write the voice: how the world speaks, a list of words it uses and never uses, and sample lines for a greeting, an error, an empty state, a wait and a goodbye.
-4. Map the thresholds: the first entrance, each move between places, a return visit, and the exit, whether they are pages, doors, scenes or queues. Decide what persists across each, what changes, and which rituals repeat on purpose and which shorten for someone who has seen them.
+4. Map the thresholds: the first entrance, each move between places, a return visit, and the exit, whether they are pages, doors, scenes or queues. For each threshold, decide what persists and what changes. Mark each ritual as repeated on purpose or shortened for a returning visitor.
 5. Put the interface in the world: status as a sign, waiting as an event in the place, errors in the voice, controls with the world's material. Keep costs, data use, consent, safety and exits plain and outside the fiction where clarity needs it.
 6. Add inhabitants and signs of life: a character, idle behavior, other visitors' traces, and signs that someone keeps the place.
 7. Give the visitor agency: things to touch that respond in character, and something they can change or leave.
 8. Seed depth: details that reward a second look, references to places not shown, and one secret.
-9. Walk every path as a first-time visitor, a returning one, a hurried one, and people using a screen reader, keyboard, captions, reduced motion or no sound. In a physical place, include a step-free route, noise, a crowd, and dim light. Mark each moment the world blinked, spoke out of voice, disagreed with itself, or withheld meaning or action from someone.
+9. Walk every path as a first-time, a returning, and a hurried visitor. Then walk it again with a screen reader, with keyboard only, with captions, with reduced motion, and with no sound. In a physical place, include a step-free route, noise, a crowd, and dim light. Mark each moment the world blinked, spoke out of voice, disagreed with itself, or withheld meaning or action from someone.
 
 ## Principles
 
@@ -49,7 +49,7 @@ A white flash or spinner between places, stock components in their default style
 | One canon, one place | Each maker invents their own version of the world | Is there one written canon, and does every part trace to it? |
 | Persistence | The world resets at a page load, menu or scene change | Move between any two places. Does anything blink, reload or restart? |
 | Channels agree | A sound, font, curve, color or caption that contradicts the world | List each channel. Does each one name its source in the canon, and does each carry the same meaning? |
-| In-world interface, legible reality | Generic dialogs on top of the place, or a real cost hidden as part of the story | Is each control, status and wait in the world's terms, and can a visitor tell what is fiction, what is real, and what they agreed to? |
+| In-world interface, legible reality | Generic dialogs on top of the place, or a real cost hidden as part of the story | Is each control, status, and wait in the world's terms? Can a visitor tell what is fiction, what is real, and what they agreed to? |
 | One voice | The error text sounds like a vendor and the hero text like a brand | Read every string aloud in sequence. Is it one speaker? |
 | Thresholds are designed | A ritual repeated until it is a chore, or a hard cut that breaks the place | Is each entrance, move, return and exit chosen, with a reason for what repeats? |
 | Signs of life | A static place that feels abandoned | What changes when nobody acts: idle motion, time of day, traces of others? |

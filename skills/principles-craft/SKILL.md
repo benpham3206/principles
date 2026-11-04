@@ -32,7 +32,7 @@ Heuristics that usually hold, and where they break:
 
 ## Faults
 
-Each is a fault when it has no reason under the second law. Ornament that gives pleasure, repetition that calms, and hedging that states honest uncertainty can be chosen.
+Each is a fault when it has no reason to be there. Ornament that gives pleasure, repetition that calms, and hedging that states honest uncertainty can be chosen.
 
 - **Sameness.** Every element at the same weight, so nothing leads.
 - **Decoration.** A part with no job, not even pleasure.
@@ -48,7 +48,7 @@ Each is a fault when it has no reason under the second law. Ornament that gives 
 - A clear main idea the observer gets without help.
 - Choices hold at all three distances (see `principles-verify`).
 - Materials are honest: each one does what it looks like it does.
-- Consistent where it should be, surprising where it means to be.
+- Repeat patterns where consistency helps people learn. Depart from one on purpose, when emphasis, context, or access needs justify it.
 
 ## Steps
 
@@ -76,9 +76,9 @@ A **quality** is a property an observer experiences in finished work. Qualities 
 | **Familiarity** | It uses conventions the observer already knows | Does a newcomer get it without a lesson? | Novelty where convention would have worked |
 | **Flexibility** | It adapts to uses the maker did not foresee | Does it still work at other sizes, users, and contexts? | Brittle fit to one case |
 | **Simplicity** | The fewest parts that meet the need | What could you remove? | Complexity that has not earned its place |
-| **Craft** | Care visible at every scale | Does it hold up close? | Polish on the surface, neglect underneath |
+| **Craft** | Care visible at every scale | Inspect the smallest part the observer can reach. Does it meet the standard of the whole? | Polish on the surface, neglect underneath |
 | **Delight** | A moment of joy beyond function | Does anything make the observer smile, and does it serve them? | Delight that costs time or clarity |
-| **Time** | It respects the observer's time and ages well | How long to the first useful result? How does it look in ten years? | Waiting, trends that date, wear that ruins it |
+| **Time** | It respects the observer's time and ages well | How long to the first useful result? How will it wear, stay useful, and be maintained over time? Which parts depend on a current trend or tool? | Waiting, trends that date, wear that ruins it |
 | **Trust** | It behaves as promised, every time | Does behavior match appearance and claims? | Surprises, hidden states, broken promises |
 | **Smoothness** | Transitions between states are continuous and expected | Can you see a seam, hear a click, feel a stutter where none is meant? | Jank, abrupt jumps, mismatched rhythm |
 
@@ -112,7 +112,7 @@ Use `principles-invert` when a priority's costs or limits are unclear. Examine b
 ## Writing a design philosophy
 
 1. State the intent and the observer.
-2. Rank the qualities for this work. The top three decide most conflicts.
+2. Rank the qualities for this work. Use the ranking to guide trade-offs; the top three usually decide conflicts. Weigh the size of each gain and loss, and revisit the ranking when it no longer serves the intent.
 3. Place it on the fluid to textured dial.
 4. Name one reference that embodies it and one that violates it.
 5. Write it in five lines or fewer, so every maker on the project can hold it in their head.

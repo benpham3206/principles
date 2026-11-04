@@ -27,8 +27,6 @@ install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
 test_check_states.py       the state search in principles-verify on known-bad and known-good models
-evals/routing.md           situations with the skill an agent should load first
-evals/agent-ab.md          lessons and checks for rerunning the with-and-without principles eval
 harnesses.py               built-in harness map from agent-hooks, with local policy naming and migration
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests
@@ -41,7 +39,7 @@ README.md                  human entry point; lists every skill
 - **policy.md reaches every session on every machine.** A wrong line there misleads every agent until the next install. Treat a policy change as the highest-consequence change in the repo.
 - **install.py writes outside the repo.** It edits harness instruction files and links folders on this machine and, with `--all`, on others. Test it against a temp home, as `test_install.py` does; run `--check` before a real run.
 - **Install works without agent-hooks.** `install.py` uses agent-hooks' `fanout.py` when installed and `harnesses.py` otherwise. `TestFreshMachine` runs the real installer in a blank home; `TestPolicy` uses `harnesses.py`. `TestPolicyRealFanout` repeats the policy scenarios with the installed dependency when present; only this optional integration skips when absent. `TestPosixScripts` skips where `/bin/sh` is absent, such as Windows; CI runs it on Linux. Refresh `harnesses.py` only from a reviewed upstream commit, update its recorded commit and hash, and preserve the local policy naming and migration documented in its header.
-- **Some agent tools on Windows save new files as UTF-16.** Text editors and PowerShell show such a file normally; Python, git diffs, and CLIs reading stdin see NUL bytes. `evals/routing.md` reached main this way. `test_skills.py` rejects NUL bytes in tracked markdown; check the bytes of any file an agent creates outside markdown.
+- **Some agent tools on Windows save new files as UTF-16.** Text editors and PowerShell show such a file normally; Python, git diffs, and CLIs reading stdin see NUL bytes. A routing eval file once reached main this way. `test_skills.py` rejects NUL bytes in tracked markdown; check the bytes of any file an agent creates outside markdown.
 
 ## Use the skills on this repository
 
@@ -100,7 +98,7 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
 
-Routing needs an agent, so no unit test covers it. After changing the `Choose guidance` list in `policy.md` or the map in `skills/principles`, run `evals/routing.md` on fresh agents, at least twice. Every situation should route as expected. When an agent misroutes in real work, add that situation before changing the routing text. The eval measures choosing a skill once asked; whether an agent stops to choose mid-task needs observation of real sessions.
+Routing needs an agent, so no unit test covers it. After changing the `Choose guidance` list in `policy.md` or the map in `skills/principles`, run the owner's routing eval on fresh agents, at least twice. The eval lives in an untracked `evals/` folder so its situations do not leak into the skills it grades. Phrase each situation as a user would. Leave out anything that tells the agent it is being evaluated, but keep words such as test when they belong to the user's task. Grade by the skill files the agent actually opened, not by what it says it loaded. Every situation should route as expected. When an agent misroutes in real work, add that situation before changing the routing text. The eval measures choosing a skill once asked; whether an agent stops to choose mid-task needs observation of real sessions.
 
 ## Git
 

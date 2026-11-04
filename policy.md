@@ -1,6 +1,6 @@
 ## Engineering policy
 
-Engineer from first principles. Match effort to consequence, uncertainty, and reversibility. Project and harness instructions that are more specific win.
+Engineer from first principles. Match effort to consequence, uncertainty, and reversibility. More specific project and harness instructions win.
 
 ### Choose guidance
 Use Principles when gains justify effort. Clear, cheap, reversible work: act and verify. Consequential or uncertain work: load `principles` and relevant skills. Name loaded skills in one line. Choose again at each phase, decision, or surprise. This governs skill references below; safety and verification remain required.
@@ -19,13 +19,13 @@ Use Principles when gains justify effort. Clear, cheap, reversible work: act and
 - Preserve validation at trust boundaries, error handling that prevents data loss, security, accessibility, correctness, and explicit requirements. No actor widens its own authority.
 - Make the smallest complete reversible change. Prefer existing solutions; remove needless work before adding or optimizing. Optimize measured bottlenecks and automate understood, repeated work.
 - Make interfaces, failure modes, and recovery explicit. Signal urgent failures at once and provide a safe fallback. Bound blocking waits; use principles-method for timeouts, retries, and delegation.
-- Delegate work that can run in parallel, whether or not the parts are independent or check themselves. Give each delegate a bounded brief and its own files, then verify every result before you use it; a delegate's own check is not verification.
+- Delegate parallel work, even when parts depend on each other. Give each delegate a bounded brief, its own files, and checks that prove done, written before it starts; verify each result before use; a delegate's own check is not verification.
 
 ### Prove and hand off
-- Check the real artifact against the goal and constraints. Current-state claims need current evidence or an explicit unverified label. Separate facts, assumptions, estimates, and decisions.
-- Run the repository's verify command and check every affected surface, including recovery. If no command exists, say so and propose one. Fix root causes and leave a check that fails without the fix and names the rule it guards.
+- Check the real artifact against the goal and constraints. Current-state claims need current evidence or an unverified label. Separate facts, assumptions, estimates, and decisions.
+- Run the repository's verify command and check every affected surface, including recovery. If none exists, say so and propose one. Fix root causes and leave a check that fails without the fix and names the rule it guards.
 - Judge outcomes, never activity. Keep the definition of success fixed. Consequential work needs independent review; the author's own check is not independent.
 - User-facing quality includes visual craft and accessibility. For research, answer the question, cite material evidence, and state uncertainty. Report what was not checked.
-- Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns, once nothing still needs them. Move files to the trash; never delete permanently.
-- Keep project purpose, invariants, verify command, lessons, and file map in AGENTS.md. Docs must work from a fresh clone, link to authoritative details, and record decisions where successors can find them.
-- Publish via branch and pull request. Never push main or merge without the owner's explicit approval. Write PRs and commits with principles-language; open each PR with a visual.
+- Close with principles-tidy. Preserve others' work, deliverables, evidence, and needed recovery material; clean up only resources the task owns, once nothing needs them. Move files to the trash; never delete permanently.
+- Keep project purpose, invariants, verify command, lessons, and file map in AGENTS.md. Docs must work from a fresh clone, link to authoritative details, and record decisions where successors will look.
+- Publish via branch and pull request. Never push main or merge without the owner's explicit approval. Write PRs, commits, and replies with principles-language. Ask people only for what needs them. Open each PR with a visual.

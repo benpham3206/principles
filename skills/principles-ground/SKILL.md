@@ -47,7 +47,7 @@ Match confidence to evidence. Give a range and its basis, such as "4 to 7 days, 
 
 ## Reasoning Methods
 
-Choose and combine reasoning methods based on the problem, available evidence, and uncertainty. For each method used, list its assumptions and the alternative explanations still in play. Revise the conclusion when evidence changes its support, including when a result breaks an assumption.
+Choose and combine reasoning methods based on the problem, available evidence, and uncertainty. For each method used, state and check its assumptions, and consider the plausible alternative explanations. Revise the conclusion when evidence changes its support, including when a result breaks an assumption.
 
 | Method | Use and check |
 |---|---|

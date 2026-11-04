@@ -18,7 +18,7 @@ Apply each law that changes the goal, the people served, or the cost of failure.
 - Use types, contracts, and safe defaults to make valid behavior easy and invalid behavior hard. Reject values the type system cannot rule out at the boundary.
 - Every boundary needs a contract: what comes in, what goes out, what can fail.
 - Match evidence to the claim: test behavior, measure performance, and check causes before acting on them.
-- Design for likely change. Keep an uncertain choice easy to revise when revising it later would cost more than keeping it flexible now.
+- Design for likely change. Keep an uncertain choice easy to revise when the expected cost and risk of revising it later justify the cost of keeping it flexible now.
 
 ## Defaults to replace
 

@@ -86,7 +86,7 @@ A released thing keeps working only while someone keeps it. Plan its upkeep from
 - People depend on what it does, not only on what it promises. Before changing a behavior, find who relies on it.
 - Every address others cite, such as a link, an identifier, or a part number, keeps resolving or points to its successor.
 - Retire in order: announce, give a path to the replacement, support both for a stated window, then remove.
-- Name who will maintain it after its maker leaves. Hand that person the sources, access, and notes they need.
+- Name who will maintain it after its maker leaves. Preserve and hand over what they need, including sources, access, notes, tools, spares, and recovery material.
 
 Failure: a better version breaks the people who relied on the old one, or the thing decays once its maker moves on. Check: who relies on each behavior you change, and who keeps the thing next year?
 

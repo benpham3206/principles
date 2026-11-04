@@ -66,7 +66,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 - Work backward from the effect on a cause tree. Each node is something that had to be true for the node above it. Keep branches that evidence supports; mark the rest as untested.
 - Separate three layers: the trigger (what set it off), the conditions (what let the trigger cause harm), and the defenses (what should have caught it and did not). Most lasting fixes sit in the conditions and the defenses.
 - Ask what changed. Compare the failing case with the last working one: code, material, supplier, load, operator, procedure, weather. The difference is where to look first.
-- List each defense that should have caught the failure and did not. For each, record whether it was missing or failed, then choose which to change.
+- List each defense that should have prevented, detected, contained, or reduced the harm, or supported recovery, and did not. For each, record whether it was missing or failed, then choose which to change.
 - Suspect the system when the same failure has many owners. A trap that catches different people is a design fault.
 - Stop at about five levels of why (a rule of thumb). Fewer levels usually end at a symptom. Many more usually go past what anyone can change.
 

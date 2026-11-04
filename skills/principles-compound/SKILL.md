@@ -35,7 +35,7 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 
 1. Name the stock that should grow and the cycle that adds to it.
 2. For each cycle, name where its gain is retained and what in the next cycle starts from it. A gain with no home resets.
-3. Estimate the rate and the cycle length. Shorten the cycle before raising the rate, as long as the quality measure does not fall below its baseline.
+3. Estimate the rate and the cycle length. Shorten the cycle before raising the rate, provided quality holds. Use the quality measure as evidence, and check for losses it does not capture.
 4. Name what the stock loses each cycle and what will limit its growth.
 5. Name the one loss that would reset the stock. Bound it before raising the rate.
 6. Measure the stock, not the activity, at intervals longer than its noise (`principles-measure`). Move effort from cycles that reset to cycles that compound.

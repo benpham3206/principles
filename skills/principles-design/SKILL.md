@@ -23,7 +23,7 @@ Use `principles-method` to set the scope and rigor. Use the matching medium skil
 
 ## Principles
 
-These are heuristics. When a wrong choice is cheap to undo, keep exploration and documentation light. As the cost grows, spend more on each.
+These are heuristics. Scale exploration and documentation to the consequences of a wrong choice, including harm done before it is reversed and the cost of undoing it.
 
 | Principle | Failure | Check |
 |---|---|---|

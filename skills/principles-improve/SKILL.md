@@ -9,7 +9,7 @@ In one line: Measure the gain on the goal's own metric, and keep every requireme
 
 An **improvement** moves a working thing toward its goal on a measured metric while preserving its requirements. Extra activity or polish alone proves no gain.
 
-Use `principles-refine` for revisions to expression, coherence, or fit judged through comparison and use. A refinement can include measured improvement; match the evidence to the claim.
+Use `principles-refine` for revisions to expression, coherence, or fit judged through comparison and use. A refinement can include measured improvement. Claim a gain only with measurements, and claim better fit only with comparison or observed use.
 
 ```
 MEASURE ----> BOTTLENECK ----> QUESTION ----> DELETE ----> SIMPLIFY ----> SPEED UP ----> AUTOMATE
@@ -41,8 +41,8 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 5. Simplify what remains with `principles-simplify`. Reduce parts, states, branches, and dependencies while preserving requirements.
 6. Speed up the loop that is left: the time from a change to knowing whether it worked.
 7. Automate only work that is understood, stable, and repeated, or a one-time job whose manual cost or risk exceeds the cost of building and checking the automation. Automating a broken process makes it fail faster.
-8. Optimize performance only when a measured metric breaks a stated limit at the bottleneck, or measurements show it will before a fix could be ready, and the code or part is verified and not about to be deleted. Otherwise ship the simple version and write down its known limit and how to raise it.
-9. Run each change as an experiment. First record its hypothesis, expected metric change, and acceptable guardrail ranges. Keep it only if the gain exceeds noise and every guardrail holds; otherwise revert it. Record the measurements and decision, including rejected changes, in the work's history. Then find the limit again. Six Sigma's define, measure, analyze, improve, control cycle (DMAIC) is one form of this loop. Control checks that the gain holds.
+8. Optimize performance only when all three hold: a measured metric at the bottleneck breaks a stated limit, or measurements show it will before a fix could be ready; the code or part is verified; and it is not about to be deleted. Otherwise ship the simple version and write down its known limit and how to raise it.
+9. Run each change as an experiment. First record its hypothesis, expected metric change, and acceptable guardrail ranges. Keep it only if the gain exceeds noise and every guardrail holds; otherwise revert it. Record the measurements and decision, including rejected changes, in the work's history. Then find the limit again. Six Sigma's define, measure, analyze, improve, control cycle (DMAIC) is one form of this loop. Its control phase checks that the gain holds.
 
 ## Principles
 
@@ -60,7 +60,7 @@ Optimizing first, a speedup with no baseline, automation of an unclear process, 
 | One change at a time, unless a designed experiment separates the effects | Several changes together, so the cause of any gain or loss is unknown | Can each effect be traced to one change, or to a factor in a planned design (see `principles-synthesize`)? |
 | Keep it working throughout | A broken system during a long improvement | Is the thing usable after every step? |
 | Prefer reversible steps | An improvement that cannot be undone when it turns out wrong | Can this change be reverted in minutes? |
-| Optimize to a stated limit: a threshold where value is passing it, or the best comparable work where value is rank | Endless tuning with no target, or stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? Stop at the threshold, or compare it with the best comparable work |
+| Optimize to a stated limit: a threshold when passing it is what counts, or the best comparable work when rank counts | Endless tuning with no target, or stopping at adequate on work judged against the best | Is this work judged by a threshold or by rank? Stop at the threshold, or compare it with the best comparable work |
 | Write down known limits | A hidden ceiling found by the next person in an outage | Is the limit and its upgrade path recorded where the code or part lives? |
 | Improvements decay | A gain lost as the system drifts back | Is there a check that fails if the gain is undone? |
 | Find who pays: a gain can move its cost to someone the metric does not see, such as the user's attention, their battery, or a later maintainer | A faster path that drains the battery or someone's time | Who pays for this gain, and is that payer one of the guardrails? |

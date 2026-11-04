@@ -59,7 +59,7 @@ The same rule closes every kind of loop: route the observation through reality, 
 4. Find where it closes: what returns, how late, and through whose eyes. Where it does not close through real use, close it, first by using the work yourself.
 5. Name what limits each reinforcing loop.
 6. Before intervening, predict what each candidate change does to the whole loop, including side effects on people and parts outside the boundary. Pick by predicted effect for its cost; `principles-improve` has the method.
-7. For a loop people turn, design the return: what renews for them each time, and what they would miss. Give first, make giving back small and obvious, let members make value for each other with credit and a voice, and remember people only with consent.
+7. For a loop people turn, design the return: what renews for them each time, and what they would miss. Give first. Make giving back small and obvious. Let members make value for each other, with credit and a voice. Remember people only with their consent.
 8. Check the loop's health over many turns, not one: does it settle, do people take part willingly and leave easily, are they better off, and does it harm anyone outside it?
 9. Decide what each turn should carry into the next, and keep it there with `principles-compound`.
 
@@ -88,7 +88,7 @@ The same rule closes every kind of loop: route the observation through reality, 
 |---|---|---|
 | Measure delays separately: action to effect, effect to observation, and time spent deciding or passing a signal on | Acting on each new reading can chase noise. The longest delay may not be the one that limits learning | Which delay limits learning here? |
 | People come back for what renews: new value, being remembered, other people, visible progress | Some returns are habits that serve the person well with nothing new | Would they come back if nothing reminded them? |
-| Giving with no condition starts trust that taking cannot, and value made by members for members lets a community outgrow its founders | Some gifts are taken and never returned, and that is fine; members can be exploited for unpaid work | Use the gift and community checks in the table above |
+| Giving with no condition starts trust that taking cannot, and value made by members for members lets a community outgrow its founders | Some gifts are taken and never returned, and that is fine; members can be exploited for unpaid work | Would the gift stand if it were never returned? Who gets credit, who decides, and can members leave with their work? |
 
 ## Defaults to replace
 
@@ -132,7 +132,7 @@ When the swings grow, this model has nothing to bound them. Saturation or other 
 
 A **strange loop** moves through a hierarchy of levels and arrives back where it began. Examples include hands drawing each other, a canon whose repeats rise in pitch and return to the start, and a statement within a formal system about that system. Self-reference, recursion, and feedback can be parts of a strange loop; each can also exist without one. One hypothesis holds that a self arises from a pattern that represents itself this way.
 
-A library of principles can contain this structure, and it dogfoods itself when it does. Its principles govern how work is made. They also govern how the principles themselves may change. A lesson from the work can revise those rules and then change how the next work is made: work, rules, rules about rules, and back to work.
+A library of principles can contain this structure. A library that does dogfoods itself. Its principles govern how work is made. They also govern how the principles themselves may change. A lesson from the work can revise those rules and then change how the next work is made: work, rules, rules about rules, and back to work.
 
 Such loops can give a thing identity and a way to improve itself. They can also produce paradox, endless chains of justification, and echo chambers. Name the levels to make these risks visible. Check each turn against evidence outside the loop.
 

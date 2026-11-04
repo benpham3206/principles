@@ -7,7 +7,7 @@ description: Choose principles for the task and use the six axes of made things.
 
 In one line: Set the goal, build the smallest complete version, test it against reality, and use axes where they matter.
 
-Use this map to choose relevant skills and examine important choices. The six axes apply across media; treat them as prompts, not a checklist. Consider an axis when it could change the result or its risks, then check consequential choices against reality.
+Use this map to pick the skills the task needs and to examine each choice that is costly or hard to undo. The six axes apply across media; treat them as prompts, not a checklist. Consider an axis when it could change the result or its risks, then check consequential choices against reality.
 
 ```
 Set the goal -> Check assumptions -> Make -> Predict -> Test
@@ -45,14 +45,14 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | **Composition** | How are the parts arranged? | hierarchy, spacing, balance | arrangement, mix | structure, order | flow, information architecture | modules, coupling, data flow | assembly, load paths, interfaces |
 | **Time** | How does it change? | motion, transition | rhythm, tempo, decay | pacing, narrative order | sequence, undo, learning | lifecycle, concurrency, versions | wear, fatigue, maintenance |
 
-The columns are examples; every medium skill applies the same six axes. Choose an axis on purpose when it can affect the result. Keep a sound default elsewhere.
+The columns are examples; every medium skill applies the same six axes. Choose an axis on purpose when it can affect the result. On the other axes, keep a well-tested default.
 
 ## Using the axes
 
 1. State intent in one sentence: the purpose, the observer, and the one constraint that binds hardest. If you cannot, run `principles-method` first. When several observers need different things, such as a user, an operator, and an outside maker, say which wins.
 2. Load the medium skill. Consider each axis; explain choices that could change the result or its risks.
-3. Make the smallest complete version. Address the relevant axes before spending time on polish.
-4. Use `principles-verify` at a depth suited to the work. Use `principles-refine` to fix the most important gap first.
+3. Make the smallest complete version. Address each axis that can change the result before polishing.
+4. Use `principles-verify` at the depth that `principles-method` sets for the task's consequence. Use `principles-refine` to fix the most important gap first.
 
 Done means the work meets its intent and `principles-verify` finds no material issue. State the choices and remaining gaps that matter to the result.
 

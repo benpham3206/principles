@@ -18,7 +18,7 @@ A **horizon** is how far ahead you trace consequences. First-order effects are d
    - What becomes cheap?
    - What becomes scarce, and therefore valuable?
    - What new behavior appears that was not possible before?
-4. Stop when the answers stop changing, or the uncertainty swamps the signal. Usually that is the third to sixth order.
+4. Stop when the answers stop changing, or the uncertainty swamps the signal. In many cases that is the third to sixth order. Stop by the test above, not by the count.
 5. Name the **worst credible outcome** at each order, and what would have to be true for it to happen.
 6. Mark each order as likely, plausible, or speculative. These are scenarios, not predictions.
 
@@ -42,7 +42,7 @@ These are heuristics. Check each against the case before relying on it (`princip
 
 ## Worked horizon: a scarce capability becomes cheap
 
-An example of the method, labelled by confidence for a typical case. Cases include printed text, mechanical calculation, and machine analysis. Relabel each order for the case at hand.
+An example of the method, labelled by confidence for a typical case. Past cases of a scarce capability becoming cheap include printed text, mechanical calculation, and machine analysis. Relabel each order for the case at hand.
 
 | Order | Change | Confidence |
 |---|---|---|
@@ -55,9 +55,9 @@ An example of the method, labelled by confidence for a typical case. Cases inclu
 
 From this horizon come four design goals for any tool that makes a capability cheap:
 
-- **The counterpart rule.** Where the person's own ability is part of the goal, every gain in the tool's capability ships with a human counterpart; `principles-counsel` holds the rule and its test. Where the goal is only the output, as with a routine task handed off for its result, delegation is the point.
-- **Turn search into checking.** Make hard problems tractable by finding structure, so that answers become checkable and search narrows (see `principles-verify`).
-- **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. A result nobody understands cannot be trusted or corrected.
+- **The counterpart rule.** Where the person's own ability is part of the goal, pair each gain in the tool's capability with a gain in what the person can do unaided; `principles-counsel` holds the rule and its test. Where the goal is only the output, as with a routine task handed off for its result, delegation is the point.
+- **Turn search into checking.** Find structure in a hard problem so that a candidate answer can be checked quickly and the search space shrinks (see `principles-verify`).
+- **Understanding keeps pace.** The person's model of the world should grow with the system's, even if more slowly. At each release, check what they understand of what it does, and teach the gap. A result nobody understands cannot be trusted or corrected.
 - **Value flows to insight as well as labor.** Design so that people capture value from new understanding, not only from cheaper work.
 
 Pairs with: before `principles-ground`; after `principles-method`, `principles-synthesize`.

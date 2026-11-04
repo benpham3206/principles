@@ -25,8 +25,8 @@ In one line: Remove the cause of difficulty, not just parts, and confirm the dif
 | Keep one home for each fact | Copies drift apart | Can one edit update the rule wherever it is used? |
 | Preserve needed distinctions | A shorter rule merges cases that need different actions | Try two such cases. Does each still lead to the right action? |
 | Keep context at the point of use | Detail moves behind a link nobody knows to open | Can a new reader finish the task and find its limits? |
-| Preserve intentional richness | Minimalism removes texture, expression, or depth the person values | Does the result still serve the stated experience? |
-| Some difficulty cannot be removed, only moved: put it with the party that carries it best, once, not with every party each time | The core looks small because every user absorbs the hidden cost | For each irreducible difficulty, who carries it, how many times, and who would carry it best? |
+| Preserve intentional richness | Minimalism removes texture, expression, or depth the person values | Name the experience before cutting. After the cut, does a person who valued it still get it? |
+| Some difficulty can only be moved. Put it once with the party best able to carry it, not with every party each time | The core looks small because every user absorbs the hidden cost | For each irreducible difficulty, who carries it, how many times, and who would carry it best? |
 
 Examples: replace duplicate instructions with one source and a clear reference; keep separate controls when they perform different actions. A backup or a recovery path can be necessary even when the usual path never uses it.
 

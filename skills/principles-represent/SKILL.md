@@ -20,7 +20,7 @@ Name the question -> Choose a structure -> Sketch -> Read -> Act
 - Solving a problem is often finding the representation in which the answer is obvious. Try a second form before working harder in the first.
 - Structure before polish. A sketch with the right relations beats a finished render of the wrong ones.
 - One view, one relation. Combine views by placing them side by side, never by overlaying meanings. The rules for marks and lines are in `principles-information`.
-- Conservation is a free check. Anything that flows must balance; use the balance to find what is missing.
+- Conservation is a free check. A conserved quantity, such as mass or energy, must balance; a budget, such as money or time, balances inside a stated accounting boundary. Use the balance to find what is missing.
 - The representation is not the problem. Test what it shows against the real thing before acting on it.
 - Delete what the question does not need. Every part left in must help answer it.
 
@@ -65,7 +65,7 @@ A bulleted list where the parts have relations, a block diagram where the arrows
 | Completeness is checkable | A tree or flow that looks finished but leaks | Do the children add up to the parent? Do inputs equal outputs plus losses? Does every state have an exit? |
 | Show quantity where quantity decides | Equal-sized boxes for a part that is most of the cost and a part that is none of it | Is the biggest thing drawn biggest, or labelled with its number? |
 | Name the unknowns | Guesses drawn with the same weight as facts | Mark each part as measured, estimated, or assumed (see `principles-ground`) |
-| Chunk to what a reader can hold | Thirty boxes on one level | More than about seven items on one level (a rule of thumb) means a missing grouping |
+| Chunk to what a reader can hold | Thirty boxes on one level | More than about seven items on one level suggests a missing grouping (a rule of thumb; a table or list of peers can hold more) |
 | One zoom level per view | System context, modules, and functions on one page | Could every box on the page be described at the same level of detail? |
 | A representation ends in actions | A clear diagram and no change in what anyone does | List the steps it implies. If there are none, it was decoration or the question was wrong |
 | Keep it as text when it must change | A diagram nobody updates because redrawing costs an hour | Can it be regenerated from a text source or the data itself, and diffed? |

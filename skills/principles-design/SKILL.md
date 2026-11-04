@@ -15,7 +15,7 @@ Use `principles-method` to set the scope and rigor. Use the matching medium skil
 
 1. Name whom or what the work serves (people, agents, or systems), their situation, and the need. Separate evidence of the need from assumptions and from the proposed solution. State the outcome and the experience the work should give them.
 2. Name the constraints before choosing a form or mechanism. Rank the qualities that may trade off with `principles-craft`; a preference cannot compensate for a broken hard constraint.
-3. Find the decisions that could change the approach. Use `principles-represent` if the problem's structure hides them. Compare meaningfully different approaches where uncertainty warrants it, including an existing solution. Skip extra concepts when the evidence already fixes the choice. Use `principles-synthesize` when a new approach is needed.
+3. Find the decisions that could change the approach. Use `principles-represent` if the problem's structure hides them. Compare two or more different approaches, including an existing solution, when an open question could change the choice. Skip extra concepts when the evidence already fixes the choice. Use `principles-synthesize` when a new approach is needed.
 4. Give each candidate a main idea. Choose across the six axes from `principles`, using the medium skills. Make the parts support that idea: form, behavior, construction, and upkeep must fit together. Include access, failure, recovery, and change over time where they matter.
 5. Make the cheapest prototype that can expose the most consequential uncertainty. A sketch can test arrangement; it cannot prove timing, physical grip, or structural strength. Match the prototype's fidelity to the question, then try it in the conditions that matter. Use `principles-measure` to define and collect quantitative evidence.
 6. Compare the candidates against the same need, constraints, and named criteria. Use the comparison procedure in `principles-measure` for quantitative claims, and named criteria with direct observation for experiential judgments. Show the trade-offs and evidence. Choose a coherent whole rather than combining incompatible favorite parts. If none serves the need, reopen the framing or constraints with their owner.
@@ -23,7 +23,7 @@ Use `principles-method` to set the scope and rigor. Use the matching medium skil
 
 ## Principles
 
-These are heuristics. Scale exploration and documentation to what a wrong choice would cost.
+These are heuristics. Scale exploration and documentation to the consequences of a wrong choice, including harm done before it is reversed and the cost of undoing it.
 
 | Principle | Failure | Check |
 |---|---|---|
@@ -34,6 +34,6 @@ These are heuristics. Scale exploration and documentation to what a wrong choice
 | Test the property the decision depends on | A persuasive picture taken as proof of use or construction | Could this prototype fail on the property being claimed, under the relevant conditions? |
 | Preserve the reasons for the choice | Later changes undo a trade-off nobody remembers | Can another maker tell what is fixed, what is provisional, and why? |
 | Settle costly-to-reverse choices first: a stored data shape, a public promise, or a cut part before a color | A cheap choice is debated while a costly one is made by default | Which open decisions are costly to undo, and are they settled first, on evidence? |
-| When one idea serves several situations, such as devices, sizes, or audiences, state what stays the same and what adapts to each, and test each situation alone | A shrunk copy that fits none, or separate designs that share nothing | For each situation, which choices changed, and why? |
+| When one idea serves several situations, such as devices, sizes, or audiences, state what stays the same and what adapts to each. Test each situation alone | A shrunk copy that fits none, or separate designs that share nothing | For each situation, which choices changed, and why? |
 
 Pairs with: before `principles-method`, `principles-craft`, `principles-represent`; after `principles-measure`, `principles-synthesize`, `principles-integrate`, `principles-refine`, `principles-verify`.

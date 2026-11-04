@@ -24,7 +24,7 @@ happened    evidence,   was          case like   check, or    fails when  stop c
 - Blame ends learning. People report what is safe to report.
 - Hindsight makes every past choice look obvious. Judge decisions by what was known when they were made.
 - Evidence decays. Collect it before the analysis, not after.
-- The cheapest lesson is the near miss. Pay attention before the bill arrives.
+- The cheapest lesson is the near miss. Review each near miss as you would a failure, while it still costs nothing.
 
 ## Defaults to replace
 
@@ -32,13 +32,13 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 
 ## Steps
 
-1. Stop ongoing harm and restore function. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable.
+1. Stop ongoing harm and restore function. Preserve evidence at once, including failed parts, logs, and the current state. Begin the full analysis when the situation is stable enough to investigate safely.
 2. Write the facts as a timeline: what happened, when, what each person saw and did, and what they believed at that moment. Mark each item as observed, reported, or inferred.
 3. Find the causes. Ask why it was possible, not who did it. Follow each branch until you reach something that can be changed by design.
 4. Name the class. Ask where else the same cause lives: other parts, other code paths, other projects, other people facing the same trap.
 5. Choose the change, strongest form first: remove the hazard, then make the error impossible, then make it detectable, then train or document. A reminder is the weakest fix.
 6. Add the check. Write the test, alarm, review item, or gate that would have caught it. Confirm it fails with the cause present and passes with it removed.
-7. Close. Record the lesson where the next person or agent will meet it; for an agent, that is the skill, rule, or instruction file its next session loads. Assign each change an owner and a date, and stop re-arguing the event. Moving forward is the point.
+7. Close. Record the lesson where the next person or agent will meet it; for an agent, that is the skill, rule, or instruction file its next session loads. Assign each change an owner and a date. Reopen the event only on new evidence.
 
 ## Principles
 
@@ -58,7 +58,7 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 | Learn from success | Wins credited to skill and never examined | What went right, and was it design or luck? Would it hold under a worse day? |
 | Severity sets depth | A full review for a typo, or a one-line note for a lost vehicle | Does the depth of review match consequence, as in the gate of `principles-method`? |
 | Close the loop | Action items open for months, then forgotten | Does every action have an owner and a date, and was each one verified done? |
-| Decide before the event what record the failure you fear most will leave; a failure where you cannot see leaves no evidence | The same cause recurs unseen in many places | For the failure you fear most, could the timeline be rebuilt from the records alone? |
+| Decide in advance what record the failure you fear most will leave. A failure you cannot see leaves no evidence | The same cause recurs unseen in many places | For the failure you fear most, could the timeline be rebuilt from the records alone? |
 | Hear the silent: reports come from people who speak, and people who leave quietly send none | What is reported gets fixed while a larger silent loss goes on | Who is absent from this lesson's sources, and how would their leaving show? |
 
 ## Finding causes
@@ -66,9 +66,9 @@ A single root cause, "human error" as a finding, "be more careful" as the action
 - Work backward from the effect on a cause tree. Each node is something that had to be true for the node above it. Keep branches that evidence supports; mark the rest as untested.
 - Separate three layers: the trigger (what set it off), the conditions (what let the trigger cause harm), and the defenses (what should have caught it and did not). Most lasting fixes sit in the conditions and the defenses.
 - Ask what changed. Compare the failing case with the last working one: code, material, supplier, load, operator, procedure, weather. The difference is where to look first.
-- Look for missing or failed defenses. Identify which ones let the failure reach people or damage the system, then choose which to change.
+- List each defense that should have prevented, detected, contained, or reduced the harm, or supported recovery, and did not. For each, record whether it was missing or failed, then choose which to change.
 - Suspect the system when the same failure has many owners. A trap that catches different people is a design fault.
-- Stop at about five levels of why (a rule of thumb). Fewer usually stops at a symptom; many more usually leaves what anyone can change.
+- Stop at about five levels of why (a rule of thumb). Fewer levels usually end at a symptom. Many more usually go past what anyone can change.
 
 ## Moving forward
 

@@ -9,7 +9,7 @@ In one line: Keep each gain and feed it into the next cycle, and protect the ser
 
 A gain **compounds** when it becomes input to the next gain. The thing that grows is a **stock**: knowledge, skill, tools, records, trust, capital, or a body of work. Each **cycle** adds to it or takes from it. The same arithmetic applies to a person, a team, a codebase, an organization, or a field.
 
-Compounding is momentum: what each cycle carries into the next. `principles-loop` shapes the cycle itself, and the two are used together.
+Compounding is momentum: what each cycle carries into the next. `principles-loop` shapes the cycle itself; use it with this skill, which tracks what the cycle carries forward.
 
 ```
 gain -> retained in the stock -> reinvested as input -> next gain
@@ -35,7 +35,7 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 
 1. Name the stock that should grow and the cycle that adds to it.
 2. For each cycle, name where its gain is retained and what in the next cycle starts from it. A gain with no home resets.
-3. Estimate the rate and the cycle length. Shorten the cycle before raising the rate, when quality holds.
+3. Estimate the rate and the cycle length. Shorten the cycle before raising the rate, provided quality holds. Use the quality measure as evidence, and check for losses it does not capture.
 4. Name what the stock loses each cycle and what will limit its growth.
 5. Name the one loss that would reset the stock. Bound it before raising the rate.
 6. Measure the stock, not the activity, at intervals longer than its noise (`principles-measure`). Move effort from cycles that reset to cycles that compound.
@@ -57,7 +57,7 @@ Growth planned as a straight line, or as a curve with no ceiling. Activity count
 
 ## Bootstrap
 
-To **bootstrap** is to build a crude first tool with what exists, then build each better tool with the last one. Where the tool is the bottleneck, it compounds fastest, because each gain improves the maker of the next gain: a compiler that compiles its successor, a machine that makes parts for a better machine, a skill library that writes and checks its own next version.
+To **bootstrap** is to build a crude first tool with what exists, then build each better tool with the last one. A tool that is the bottleneck tends to compound fastest, because each gain improves the maker of the next gain: a compiler that compiles its successor, a machine that makes parts for a better machine, a skill library that writes and checks its own next version.
 
 - Start with the smallest tool that does the job crudely with what you have today.
 - Give each stage its first real job at once: building or checking the next stage.

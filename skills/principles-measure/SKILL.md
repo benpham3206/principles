@@ -13,7 +13,7 @@ Use `principles-design` to choose the approach and the property a prototype must
 
 ## Steps
 
-1. Name the decision the measurement serves. Set the relevant limit or smallest difference that would change the choice, and the other requirements that must hold. Match the effort to the consequence of a wrong reading.
+1. Name the decision the measurement serves. Set the relevant limit or smallest difference that would change the choice, and the other requirements that must hold. Spend more effort when a wrong reading would cause larger or less reversible harm.
 2. Define the quantity before collecting it. Name the object or population, unit, reference frame, boundaries, time window, denominator, and summary statistic as applicable. Separate the property of interest from a proxy for it. A server response time covers a different interval from the time a person waits for a usable result.
 3. Choose and check the method. Check resolution, bias, noise, lag, range, and the effect of observing the system. Test known inputs or references across the relevant range. Correct known bias and carry the uncertainty of the correction. A fine display does not establish accuracy.
 4. Plan the comparison. Use a baseline and comparable conditions. Record or control workload, environment, initial state, and other causes that can move the result. Use `principles-synthesize` for randomized or blocked experiments and designs that separate factors and interactions. State the sampling and stopping rule before using the results to choose a winner.
@@ -34,15 +34,15 @@ Use `principles-design` to choose the approach and the property a prototype must
 | Keep the evidence behind the summary | An average hides failures, or a discarded run changes the verdict | Can the result be rebuilt from the retained readings, exclusions, and processing steps? |
 | A first experience is used once: later sessions with the same person measure learning | First-use time measured on the people who built it | Has each subject never met the thing before? |
 | When a person is the instrument, blind the judgment: hide which version is which, and include a pair known to differ | The maker perceives a difference nobody else can | Can judges tell the versions apart when they do not know which is which? |
-| Evidence on the scale of the claim: as an approximation, a rate of 1 in N needs on the order of N observations, and a rank claim needs a defined reference population, a sample of it, and a stated ranking procedure | A self-awarded extreme rank | Does the evidence reach the claimed rarity, against a named population? If not, restate the claim as a comparison with named best work |
-| To reconstruct a changing quantity, sample at more than twice its highest frequency that matters, a law for band-limited signals. To catch a brief event, sample more often than it lasts, or latch it with a counter or a peak hold | A poll every minute that never sees a 20-second spike | Is the goal reconstruction or detection? Is the rate above twice the highest frequency, or the gap shorter than the briefest event, or is the event latched? |
+| Match the evidence to the size of the claim. As an approximation, a rate of 1 in N needs on the order of N observations. A rank claim needs a defined reference population, a sample of it, and a stated ranking procedure | A self-awarded extreme rank | Does the evidence reach the claimed rarity, against a named population? If not, restate the claim as a comparison with named best work |
+| To reconstruct a changing quantity, sample at more than twice its highest frequency that matters (a law for band-limited signals). To catch a brief event, sample at intervals shorter than the event, or latch it with a counter or a peak hold | A poll every minute that never sees a 20-second spike | Is the goal reconstruction or detection? Is the rate above twice the highest frequency, or the gap shorter than the briefest event, or is the event latched? |
 | Keep the signal between each stage's floor and ceiling: below the floor it is lost in noise, above the ceiling it distorts | A small signal lost in one stage's noise, a large one clipped, or a rating scale where every version scores at the top | For each stage, including a rating scale, where does the signal sit between floor and ceiling? |
 
 ## References and calibration
 
 Use a reference with a stated value, uncertainty, and relevant conditions. Calibration establishes a relation between indications and reference values; adjustment changes the instrument. Verify the result after adjustment. Recheck references after changes that can alter the measurement.
 
-Every result carries its chain of comparisons to a stated reference: versions, rater calibration, or baselines. For physical quantities, this is metrological traceability, and it belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
+Every result carries its chain of comparisons to a stated reference: versions, rater calibration, or baselines. For physical quantities, that chain is metrological traceability, and it belongs to the result. It requires a documented, unbroken chain of calibrations to a stated reference, each contributing uncertainty. A calibrated instrument alone does not establish that a particular result is fit for its use. Check the whole procedure against the required uncertainty.
 
 Reproducible references let measurements survive changes in instruments and standards. When replacing a reference, compare old and new results within their uncertainties. Failure: a reference change looks like progress or drift. Check: can the two sets of results be compared on a common basis?
 
@@ -77,7 +77,7 @@ Define the response quantities and check how they will be measured, as above. An
 - **Design against noise in three stages**, as in Taguchi's method. System design chooses the architecture. Parameter design finds settings less sensitive to wear, temperature, and use. Tolerance design tightens only the remaining critical tolerances. Compare the cost of better settings with tighter tolerances. Vary noise deliberately and repeat runs enough to estimate both mean and spread.
 - For costly runs, use earlier results to choose the next run by its expected value to the decision and its cost. A Gaussian process can model a few factors with a smooth response. Its uncertainty depends on its assumptions; check it on fresh runs.
 - Carry prior knowledge into the analysis as in `principles-ground`.
-- Prefer many cheap, fast, reversible experiments over one large one.
+- Prefer many cheap, fast, reversible experiments over one large one, unless the effect appears only at full scale or a run cannot be repeated.
 - Decide before running what result would kill the idea.
 - Record every run, including failures. A failed run is data; an unrecorded one is lost.
 

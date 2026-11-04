@@ -16,7 +16,7 @@ Scale checks with consequences, uncertainty, and reversibility using `principles
 1. **Set intent and done.** State the purpose, observer, binding constraint, and success condition when these are not already clear.
 2. **Check affected surfaces.** Include the entry points, platforms, stored data, docs, and recovery paths the change reaches. Report material surfaces you did not check.
 3. **Check the real thing.** Run the feature, read the actual value, inspect the actual diff, look at the actual render. A report, a summary, a cached result, or a successful call is a claim, not evidence.
-4. **Use the simplest evidence that proves it.** Stop at the first rung below that proves the claim.
+4. **Use the simplest evidence that proves it.** Use the lowest rung of the evidence ladder below that proves the claim, and stop there.
 5. **Make repeatable checks when they will be reused.** Keep enough evidence for another person to confirm important results.
 6. **Check each distance that could expose a different fault.** Skip a distance only when it cannot change the outcome.
 7. **Read it cold when understanding or use matters.** Check it as an observer with none of your context.
@@ -35,10 +35,10 @@ Before handoff, inspect the deliverable itself:
 ## Laws
 
 - Evidence beats report. Agent prose, a passing summary, and a successful call are not proof that the intended state exists.
-- Outcome over activity. Judge work by the verified state of the world under fixed constraints, never by files, calls, or process produced. No maker certifies their own work, redefines success, or widens their own authority; consequential work gets an independent reviewer.
+- Outcome over activity. Judge work by the verified state of the world under fixed constraints, never by files, calls, or process produced. A maker does not certify their own work, redefine success, or widen their own authority. Consequential work gets an independent reviewer.
 - A check that cannot fail proves nothing. Watch it fail once: write it before the fix, or break the fix. Better, keep a known-bad case beside it that must fail on every run, so the proof does not depend on any maker remembering.
 - A test is a check that runs without its author: it keeps a stated rule true for people who never saw the reason. It earns its place when it guards a named rule or a failure that happened, fails when that rule breaks, and catches what no cheaper rung would. Name the rule in the test. Delete the test when the rule goes; a test that guards nothing costs every run and teaches people to ignore failures.
-- When a check surprises you, suspect the observation before the system.
+- When a check surprises you, validate the observation first: inspect the raw output and read the resulting state independently. Rerun the check only when repeating it is safe. Then suspect the system.
 - Never weaken a check to make it pass. A weakened check is a hidden failure.
 - Evidence outlives cleanup. Tear down what you started, and keep the proof.
 - Write the check before the attempt. Checking an answer is far cheaper than finding one, so fix the target first.

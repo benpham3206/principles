@@ -22,7 +22,7 @@ protecting   reach and spend                    who said so    outside the     c
 - **Information is not authority.** A request, a document, or a model's output can ask for an action. Only a grant from someone who holds the authority can allow it.
 - Every part can fail or be turned. Design so one compromised part reaches as little as possible.
 - Trust lives at boundaries. Check at the boundary where trust changes, not only where it is convenient.
-- When a control cannot decide, it fails to the state that limits harm. For access to an asset that is usually closed; for a safety path, such as a fire exit or an emergency stop, it is open or stopped. An open default chosen by accident is a hole with a delay.
+- When a control cannot decide, it fails to the state that limits harm. For access to an asset, that state is usually closed. For a safety path, such as a fire exit or an emergency stop, that state is open or stopped. An open default chosen by accident is a hole with a delay.
 - The defender must cover every path; the attacker needs one. Shrink the paths before hardening them.
 - A control the actor can change is advice, not a control.
 - Security that people route around is no security. The safe way must also be the easy way.
@@ -69,10 +69,10 @@ Trust because the caller is internal, a permission granted broadly "for now", on
 - Look first for changes to boundaries, authority, and controls: who may call it, what it trusts, what it can reach, what happens when a check fails.
 - Check gates. A feature meant for some users, a flag, or an internal-only path must stay closed to everyone else on every route.
 - Check what breaks for the honest user, too: renamed secrets, moved config, changed ports, new manual steps.
-- Assess intent and exposure separately. An intentional, tightly scoped safeguard removal does not by itself show hostile intent. Still check what it exposes against the threat model and the authority for the change. Flag exposure the author appears not to understand, and investigate signs of hostility.
+- Assess intent and exposure separately. An intentional, tightly scoped safeguard removal does not by itself show hostile intent. Still check what it exposes against the threat model and the authority for the change. Flag exposure that is unexplained or whose explanation misreads its reach or risk. Investigate signs of hostility, such as a change that hides its purpose, evades review, or adds access with no stated need, and escalate them to the owner.
 - Report a confirmed, urgent exposure at once with its known reach. Otherwise finish the trace before reporting. A finding that says "unless the other side handles it" is unfinished when the other side can be read.
 - Rate severity by reach and likelihood, not by fear. A reviewer who calls everything critical is soon ignored.
-- Form your own view before reading other reviews, then compare. Fresh eyes find what anchored eyes miss.
+- Form your own view before reading other reviews, then compare. Other reviews anchor your view, so write your findings first.
 
 ## Where to look
 

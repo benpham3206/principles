@@ -13,7 +13,7 @@ An **interaction** is a loop: a person acts, perceives the system's response, an
 
 - The person's outcome outranks the system's internal structure. Organize the work around their purpose: a task to finish or an experience to have.
 - Make possible actions, relevant state, and consequences perceivable and operable. Do not rely on a single sensory channel when another is needed for access.
-- Acknowledge an action, distinguish progress from completion, and report a result or failure within timing appropriate to the task and its risk.
+- Acknowledge an action, distinguish progress from completion, and report a result or failure within the time limits that the task and its risk set.
 - Prevent consequential mistakes where practical and provide a path to recover. Add friction where it earns its cost through risk control, consent, security, error prevention, or deliberate tactile feedback.
 - Reduce unnecessary steps and memory demands without hiding necessary information, safeguards, or uncommon paths.
 - Make the system's authority boundaries legible: what a person has authorized, what automation is doing, what can still be changed, and who can intervene.
@@ -50,7 +50,7 @@ INTERACTION
 
 | Leaf | Principle | Failure | Check |
 | --- | --- | --- | --- |
-| States | Design the states each element can actually enter: empty, loading, partial, error, success, disabled, or pending approval where relevant. | Only the happy state works; waiting, partial results, and recovery are ambiguous. | Enumerate reachable states and transitions. Is each understandable and operable? |
+| States | List every state an element can reach, such as empty, loading, partial, error, success, disabled, or pending approval. Design each one. | Only the happy state works; waiting, partial results, and recovery are ambiguous. | Enumerate reachable states and transitions. Is each understandable and operable? |
 | Feedback | Acknowledge input through a perceivable channel; distinguish receipt, progress, completion, and side effects. | A silent action is repeated, or an acknowledgment is mistaken for success. | After acting, can the person tell what was received, what is pending, and what changed? |
 | Visual feedback | Use hierarchy, labels, contrast, and focus to make actions and state changes legible. Use `principles-visual` for appearance. | Color alone carries status; decoration hides a control; a change occurs outside attention. | At actual size, can the person find the next action and notice its result? Check without color and with nonvisual access. |
 | Sound feedback | Give useful cues distinct meaning and urgency. Use `principles-sound` for audibility, masking, and repetition. Provide accessible alternatives and control over optional sounds. | Alerts merge, interrupt speech, tire the listener, or carry the only record of an event. | Test in noise, at low volume, on small speakers, and muted. Is the event still clear, with a record when needed? |
@@ -62,7 +62,7 @@ INTERACTION
 | Leaf | Principle | Failure | Check |
 | --- | --- | --- | --- |
 | Response latency | For ordinary interface responses, about 0.1 s can feel immediate, 1 s can preserve the train of thought, and 10 s can strain attention. These are starting heuristics, not deadlines. Direct manipulation and urgent tasks can need tighter timing. | Silent waits, false precision, or a spinner that conceals stalled work. | Measure acknowledgment and completion under representative load. Does feedback fit the wait? Can people recognize stalled work and leave and return where safe? |
-| Effort | Each action costs movement, attention, and memory. Spend effort where it advances the goal or protects an important constraint. | Repeated work serves the system rather than the person's task. | Count the required motions, decisions, and remembered facts. What has a justified purpose? |
+| Effort | Each action costs movement, attention, and memory. Spend effort where it advances the goal or protects an important constraint. | Repeated work serves the system rather than the person's task. | Count the required motions, decisions, and remembered facts. Name the goal or constraint each one serves, and cut any that serves none. |
 | Friction | Add effort where its benefit earns the cost: risk control, consent, security, error prevention, or deliberate tactile feedback such as a detent. Use `principles-touch` for physical feel. | Confirmation fatigue, safeguards removed for speed, or resistance that excludes users. | Name what each added step or resistance protects or communicates. Test errors, effort, and an accessible alternative. |
 | Steps | Keep frequent, low-risk paths direct while preserving deliberate checkpoints where consequence warrants them. | Rare cases add steps for everyone; needed approvals are optimized away. | Compare common-path completion and error rates before and after removing a step. |
 | Cognitive load | Favor recognition, accessible state, and meaningful grouping over unaided recall. | The person must remember information the system already has. | What must be held in memory across screens? Can the system display or preserve it? |

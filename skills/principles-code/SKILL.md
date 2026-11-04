@@ -18,7 +18,7 @@ Apply each law that changes the goal, the people served, or the cost of failure.
 - Use types, contracts, and safe defaults to make valid behavior easy and invalid behavior hard. Reject values the type system cannot rule out at the boundary.
 - Every boundary needs a contract: what comes in, what goes out, what can fail.
 - Match evidence to the claim: test behavior, measure performance, and check causes before acting on them.
-- Design for likely change. Keep uncertain choices easy to revise when their cost justifies it.
+- Design for likely change. Keep an uncertain choice easy to revise when the expected cost and risk of revising it later justify the cost of keeping it flexible now.
 
 ## Defaults to replace
 
@@ -88,7 +88,7 @@ CODE
 |---|---|---|---|
 | Modules and boundaries | Draw boundaries where change is independent; hide the decision likely to change | A change to one decision touching many files | Pick a likely change. How many modules does it touch? |
 | Coupling and cohesion | Things that change together live together; things that do not, apart | Unrelated code in one file; one idea split across five | For each module, can you state its one reason to change? |
-| Data flow | Keep dependencies in one-way order; represent needed feedback through an explicit seam that preserves build and test order | A cycle blocks build or test order, or hides accidental coupling | Can each part build and test before what uses it? If behavior feeds back, is its seam explicit and testable? |
+| Data flow | Keep dependencies in one direction. When behavior must feed back, route it through an explicit seam so each part still builds and tests before what uses it | A cycle blocks build or test order, or hides accidental coupling | Can each part build and test before what uses it? If behavior feeds back, is its seam explicit and testable? |
 | Layering | Each layer talks to the one below through its interface only | A top layer reaching into storage details | Can you replace the layer below without touching the one above? |
 | Single source of truth | Every fact has one authoritative place; others derive from it | Two copies edited separately | Search for the fact. How many places define it? |
 | Seams | Put a seam where behavior can be swapped without editing the code under test | Code that can only be tested by running the whole system | Can the clock, network, and store be replaced in a test? |

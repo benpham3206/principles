@@ -72,7 +72,7 @@ For a defect in code, a machine, a document, or a process.
 1. Reproduce it on the real surface, the way the person met it. Record the exact steps and the result.
 2. If it does not reproduce, make no fix yet. Investigate within bounds: logs, the code path, the differences between environments. Record the competing explanations and the next check that would tell them apart. Stop when progress needs access, authority, or information you lack.
 3. Write a check that fails because of the fault, such as a test, a measurement, or a script. Watch it fail.
-4. Trace back to the first wrong state: the writer of the bad value, not the place it showed (`principles-lessons`). When two fixes that share one premise fail, write the premise down and test it directly.
+4. Trace the first violated requirement and its causes with `principles-lessons`. For code, locate the broken contract with `principles-code`. When two fixes that share one premise fail, write the premise down and test it directly.
 5. Fix it there with the smallest change. A guard is a fix only when the state it handles is legitimate.
 6. Watch the check pass, then repeat the reproduction on the real surface.
 7. Search for siblings: other callers, parts, or pages with the same cause.
@@ -96,7 +96,7 @@ For a rename, extraction, merge, move, or new internal shape.
 1. Name the burden the change removes, such as two sources of truth, a dependency, or a rule that must change in several places.
 2. Pin current behavior with checks on what users observe, not on internals. Watch them pass before you start.
 3. Move in small steps, and run the checks after each one.
-4. Move every caller and delete the old path in the same change. Keep a compatibility layer only with a named reason and a removal date.
+4. Choose a coordinated or staged migration with `principles-code`. Move callers and remove the old path when the migration's compatibility conditions allow it.
 5. Show that the checks pass and that the named burden shrank, measured where you can: fewer sources of truth, dependencies, or places a change must touch.
 
 ### Settle a fork by experiment

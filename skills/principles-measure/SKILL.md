@@ -89,6 +89,11 @@ Define the response quantities and check how they will be measured, as above. An
 | Physical work | The feature and datum, reference conditions, instrument range, alignment, fixture, contact force, and temperature. Use `principles-machine` for measurement geometry, including Abbe's principle | Angular error at an offset, thermal expansion, or fixture deformation exceeds the claimed difference despite stable readings |
 | Human responses | The person, their prior exposure to the thing, the task, the conditions, and how the response was elicited and recorded | Results from people who already know the work, or from a question that suggests the answer |
 
+For software performance comparisons, check what each run actually completed before crediting a gain:
+
+- Record attempted, successful, failed, skipped, and retried work. Check the required output or effect and that the work completes inside the timed interval. Compare equivalent workloads and output quality. Fast failures and missing work are not useful throughput.
+- For a capacity or bottleneck claim, observe the limiting resource with a profile or counters. Check whether the load generator, fixture, or observer limits the result before attributing it to the system. Label an unverified cause as a hypothesis.
+
 ## Measurement record
 
 Keep the question and decision limit, quantity definition, procedure or command, instrument and system versions, references, conditions, raw readings, sampling and exclusion rules, calculation, uncertainty basis, result, and decision together. A manual procedure is repeatable evidence when its setup and observations are recorded. Scale the record to the claim; a single reading still needs a unit and a defined meaning.

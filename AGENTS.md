@@ -27,6 +27,8 @@ install.py                 links skills and writes policy.md on every machine
 test_skills.py             mechanical checks of the rules in this file
 test_install.py            install.py against a temp home
 test_check_states.py       the state search in principles-verify on known-bad and known-good models
+routing_model.py           the map and policy routes as a state model for that search
+test_routing_states.py     every route reaches a skill folder and every folder is reached
 harnesses.py               built-in harness map from agent-hooks, with local policy naming and migration
 README.md                  human entry point; lists every skill
 .claude-plugin/            Claude Code plugin and marketplace manifests
@@ -98,7 +100,7 @@ Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`,
 
 Every test guards a rule in this file or a hazard above, and its name or docstring says which. A test with no rule is deleted. The test law lives in `principles-verify`.
 
-Routing needs an agent, so no unit test covers it. After changing the `Choose guidance` list in `policy.md` or the map in `skills/principles`, run the owner's routing eval on fresh agents, at least twice. The eval lives in an untracked `evals/` folder so its situations do not leak into the skills it grades. Phrase each situation as a user would. Leave out anything that tells the agent it is being evaluated, but keep words such as test when they belong to the user's task. Grade by the skill files the agent actually opened, not by what it says it loaded. Every situation should route as expected. When an agent misroutes in real work, add that situation before changing the routing text. The eval measures choosing a skill once asked; whether an agent stops to choose mid-task needs observation of real sessions.
+`test_routing_states.py` checks the shape of routing: every task in the map and the policy names a skill folder, every folder except the hub is a target in the map, and a skill in two map rows is a declared overlap. Whether an agent picks the right route needs an agent, so no unit test covers it. After changing the `Choose guidance` list in `policy.md` or the map in `skills/principles`, run the owner's routing eval on fresh agents, at least twice. The eval lives in an untracked `evals/` folder so its situations do not leak into the skills it grades. Phrase each situation as a user would. Leave out anything that tells the agent it is being evaluated, but keep words such as test when they belong to the user's task. Grade by the skill files the agent actually opened, not by what it says it loaded. Every situation should route as expected. When an agent misroutes in real work, add that situation before changing the routing text. The eval measures choosing a skill once asked; whether an agent stops to choose mid-task needs observation of real sessions.
 
 ## Git
 

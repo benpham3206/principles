@@ -22,6 +22,7 @@ Use `principles-method` to scale the work to its consequences. Load the skills t
 | Task | Skills |
 |---|---|
 | Run one task from the first message to the hand-off | `principles-mode`, which a person starts by name |
+| Scale the work to its consequences | `principles-method` |
 | Establish what is true | `principles-ground` for inference; `principles-research` for finding and synthesizing sources |
 | Define, collect, and compare measurements, and design experiments | `principles-measure` |
 | Diagnose a failure in use | `principles-lessons` for the timeline and causes; `principles-measure` for a baseline before trusting a signal; `principles-ground` for competing explanations |

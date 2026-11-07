@@ -19,7 +19,7 @@ Use Principles when gains justify effort. Clear, cheap, reversible work: act and
 - Preserve validation at trust boundaries, error handling that prevents data loss, security, accessibility, correctness, and explicit requirements. No actor widens its own authority.
 - Make the smallest complete reversible change. Prefer existing solutions; remove needless work before adding or optimizing. Optimize measured bottlenecks and automate understood, repeated work.
 - Make interfaces, failure modes, and recovery explicit. Signal urgent failures at once, with a safe fallback. Bound blocking waits; see principles-method.
-- Delegate parallel work, even when parts depend on each other. Give each delegate a bounded brief, its own files, and checks that prove done, written before it starts; verify each result before use; a delegate's own check is not verification.
+- Finish and verify one task before starting another; queue others. Delegate parallel parts, even dependent ones, with bounded briefs, own files, checks that prove done, written first; verify each result before use; a delegate's own check is not verification.
 
 ### Prove and hand off
 - Check the real artifact against the goal and constraints. Once checks pass, dogfood it: use it as intended, including to build the next authorized step (bootstrap). Current-state claims need current evidence or an unverified label. Separate facts, assumptions, estimates, and decisions.

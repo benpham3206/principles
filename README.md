@@ -20,7 +20,7 @@ Use `principles`, the [skill map](skills/principles/SKILL.md), to choose what to
 
 ## Skills
 
-- Medium: `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`.
+- Medium: `principles-visual`, `principles-sound`, `principles-motion`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`.
 - Creation: `principles-design`, `principles-synthesize`, `principles-integrate`, `principles-ecosystem`, `principles-world`, `principles-distribute`.
 - Decisions: `principles-scope`, `principles-ground`, `principles-research`, `principles-method`, `principles-represent`, `principles-invert`, `principles-horizons`.
 - Evaluation: `principles-measure`, `principles-verify`, `principles-craft`, `principles-secure`, `principles-reliability`.

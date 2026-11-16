@@ -70,7 +70,7 @@ Put what an agent most needs first. Some harnesses read only the first 60 to 120
 
 ### Medium skills
 
-Every medium skill (`principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`) follows the same shape, with `principles-visual` as the reference:
+Every medium skill (`principles-visual`, `principles-sound`, `principles-motion`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-code`, `principles-machine`) follows the same shape, with `principles-visual` as the reference:
 
 ```
 # <Medium>

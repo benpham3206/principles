@@ -122,6 +122,8 @@ Honest materials: a surface should look like what it is made of and behave that 
 | Deformation | Squash and stretch show material and force | Rigid objects stretching, soft ones not | Does deformation match the material? |
 | Layout stability | What the observer has seen stays put unless the move is the message. Reserve space for content that arrives late. | Late images, fonts, or banners shift the layout under the eye or the pointer. | Load it on a slow connection. Does anything already seen move? |
 
+For a film, animation, or motion graphic whose job is sequenced pictures over time, use `principles-motion`. The leaves above cover motion as an axis of a still or an interface.
+
 ## Atmosphere
 
 | Leaf | Principle | Failure | Check |
@@ -134,4 +136,4 @@ Honest materials: a surface should look like what it is made of and behave that 
 
 Study work that has lasted, and name why it works in terms of the axes: Dieter Rams for restraint, Massimo Vignelli for type and grid discipline, Robert Bringhurst for typographic rhythm, Josef Albers for color in context, Susan Kare for icons at their real size, Edward Tufte for the smallest effective difference, the Bauhaus for form drawn from function and elementary geometry, Josef Muller-Brockmann and the Swiss style for asymmetric grids and type as the image, Frank Thomas and Ollie Johnston for timing, anticipation, and follow-through, and the platform's own human interface guidelines for its conventions. `principles-craft` sets the bar.
 
-Pairs with: before `principles-method`, `principles-craft`; after `principles-verify`.
+Pairs with: before `principles-method`, `principles-craft`, `principles-motion`; after `principles-verify`.

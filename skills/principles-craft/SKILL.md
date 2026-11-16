@@ -117,4 +117,4 @@ Use `principles-invert` when a priority's costs or limits are unclear. Examine b
 4. Name one reference that embodies it and one that violates it.
 5. Write it in five lines or fewer, so every maker on the project can hold it in their head.
 
-Pairs with: before `principles-verify`, `principles-method`, `principles-world`; after `principles-refine`, `principles-visual`, `principles-sound`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-machine`.
+Pairs with: before `principles-verify`, `principles-method`, `principles-world`; after `principles-refine`, `principles-visual`, `principles-sound`, `principles-motion`, `principles-touch`, `principles-language`, `principles-interaction`, `principles-information`, `principles-machine`.

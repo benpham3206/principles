@@ -122,7 +122,7 @@ def link_errors(text: str) -> list[str]:
 
 
 AXES = ("Form", "Material", "Energy", "Observer", "Composition", "Time")
-MEDIA = ("visual", "sound", "touch", "language", "interaction", "information", "code", "machine")
+MEDIA = ("visual", "sound", "motion", "touch", "language", "interaction", "information", "code", "machine")
 SHAPE = ("Laws of the medium", "Defaults to replace", "Tree") + AXES
 LEAF_HEADER = "| Leaf | Principle | Failure | Check |"
 

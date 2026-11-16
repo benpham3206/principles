@@ -1,6 +1,6 @@
 ---
 name: principles-code
-description: Design and review software, interfaces, and data models. Use when writing, structuring, or refactoring code, APIs, schemas, services, or infrastructure.
+description: Design and review software, interfaces, and data models in any language. Use when writing, structuring, or refactoring code, APIs, schemas, services, or infrastructure.
 ---
 
 # Code
@@ -19,22 +19,23 @@ Apply each law that changes the goal, the people served, or the cost of failure.
 - Every boundary needs a contract: what comes in, what goes out, what can fail.
 - Match evidence to the claim: test behavior, measure performance, and check causes before acting on them.
 - Design for likely change. Keep an uncertain choice easy to revise when the expected cost and risk of revising it later justify the cost of keeping it flexible now.
+- The same obligations hold in every language; what differs is who checks them. Know what this language proves for you, such as ownership, closed cases, purity, or termination, and within which limits. What it does not prove, you still owe, with weaker evidence: a test, a review, or a convention.
 
 ## Defaults to replace
 
-A catch-all error handler that logs and continues, a boolean flag argument, nullable fields everywhere, a utilities module, a generic "manager" or "helper" class, retry with no limit or backoff, copied logic in two places, a dependency added for one function, tests that mirror the implementation line by line, secrets and magic numbers inline, time and randomness read from the environment, comments that restate the code.
+A catch-all error handler that logs and continues, a boolean flag argument, nullable fields everywhere, a utilities module, a generic "manager" or "helper" class, retry with no limit or backoff, copied logic in two places, a dependency added for one function, tests that mirror the implementation line by line, secrets and magic numbers inline, time and randomness read from the environment, comments that restate the code, a default branch that hides a new case, an unchecked cast with no stated assumption, a copy made only to quiet the compiler, a loop that forces an order on independent work, one fact drawn on screen by hand in three places.
 
 ## Tree
 
 ```
 CODE
-├── Form          interfaces, types, function shape, naming
-├── Material      data structures, language and paradigm, dependencies, state
-├── Energy        compute, memory, I/O, latency, power
+├── Form          interfaces, types, closed cases, function shape, effects, absence and failure, naming
+├── Material      data structures, language and paradigm, its grain, ownership, dependencies, state
+├── Energy        compute, memory, I/O, latency, power, cost model, independent work
 ├── Observer      caller, maintainer, operator, attacker, model reading it as context
-├── Composition   modules, coupling and cohesion, data flow, layers, single source of truth, seams
-├── Time          lifecycle, concurrency, versions and migrations, retries, failure and recovery, logs
-└── Correctness   tests, error handling, invariants, security, observability
+├── Composition   modules, coupling and cohesion, data flow, layers, single source of truth, derived output, seams
+├── Time          lifecycle, concurrency, termination and progress, versions and migrations, retries, failure and recovery, logs
+└── Correctness   tests, laws, error handling, invariants, escape hatches, security, observability
 ```
 
 ## Form
@@ -43,8 +44,11 @@ CODE
 |---|---|---|---|
 | Interface depth | A deep module has a small interface and much behind it; cost is the interface, benefit is the behavior | Shallow modules whose interface is as large as their body | Compare the lines needed to call it with the work it does |
 | Types | Use types to encode invariants the language can express; validate the rest at runtime boundaries | Illegal values are easy to create, or assumptions stay hidden | Which invalid combinations can still be represented? Where are they rejected? |
+| Closed cases | When the set of alternatives is fixed, model it as named cases, each with its own data, and handle every case by name. Where the language cannot check this, keep one test that lists the cases | A pair of flags accepts a state that has no meaning, or a default branch gives a new case the wrong behavior in silence | Add a case. What makes each place that must handle it fail until it does? |
 | Function shape | One function, one level of abstraction, inputs in and a result out | Functions that read, compute, write, and log in one body | Can you name it without "and"? |
 | Signature honesty | The signature states every input, output, and failure | Hidden inputs (globals, clock, environment) and hidden failures | Can you call it from a test with nothing else set up? |
+| Effects | By default, keep each rule a calculation of its inputs, and put reads, writes, time, and randomness at the edge. Where an effect must sit among decisions, name it and its order | Hidden reads or writes make the result depend on ambient state, and make a repeat or a reorder unsafe | Trace the reads and writes through the code it calls. Run it twice on the same inputs. Is the result the same, with no change left behind? |
+| Absence and failure | A result that can be missing or can fail has a different shape from a valid value, so a caller handles it or passes it on in plain view | A stand-in value such as -1 or an empty string means "missing", and a caller uses it as data | Follow a missing result through each caller. Is it handled or passed on before anything uses it as data? |
 | Naming | A name states what a thing is or does at its level; one concept, one word | One idea under three names, or one name for two ideas | Read only the names. Does the program's story survive? |
 | Surface area | Everything exported is a promise; export the minimum | Internals public because it was easier | Delete an export. Who breaks? |
 
@@ -54,6 +58,8 @@ CODE
 |---|---|---|---|
 | Data structures | Choose the data first; the code follows its shape | Clever code compensating for a wrong structure | Draw the data. Does each operation fall out in a line or two? |
 | Language and paradigm | Pick the language whose strengths match the problem's hardest part | A familiar tool forced onto a poor fit | What is the hardest part, and what does the language give for it? |
+| Grain of the language | Each language has a model it favors, such as ownership, values, pure functions, views drawn from state, or isolated actors. Write to that model unless a stated requirement rules it out. Know which parts the tools check and which parts are convention | Code that works around the model collects copies, casts, locks, and manual refreshes, and loses the checks that the model brings | For each workaround, which requirement forces it? Does the language's own form meet that requirement? |
+| Ownership and aliasing | Bind a value as constant unless it must change. By default, give mutable data one writer at a time, and share it by read or by copy. Where writers must share, make the sharing explicit (see Concurrency and ordering) | A write through one name changes what another name reads, without warning | For each mutable value, who can write it now? Does every reader expect those writes? |
 | Dependencies | Each dependency is a liability you inherit: its bugs, its license, its release schedule, its attack surface | Pulling a library for ten lines of work | Could you write it in a day? What happens when it is abandoned? |
 | State | Minimize state and localize it; derive what you can instead of storing it | The same fact held in two places that drift | For each stored value, what recomputes it? Who may write it? |
 | Representation | Store the lossless form; compute the display form | Rounded, formatted, or truncated values stored as truth | Can the original be recovered from what is stored? |
@@ -68,6 +74,8 @@ CODE
 | I/O and latency | Crossing a boundary (disk, network, process) costs orders of magnitude more than arithmetic | A call per item where one batch would do | Count the round trips per request |
 | Memory | Peak memory is the limit, not the average; unbounded growth is a leak | Loading a whole input to process it one piece at a time | What is the memory at 10 times the largest input? |
 | Power and cost | Idle work, polling, and over-provisioning spend energy and money for nothing | A loop that wakes every few milliseconds to check for nothing | What runs when no one is using it? |
+| Cost model | Know what each operation costs in this language and runtime: what allocates, copies, blocks, dispatches, or recomputes | A hidden copy on each call, a whole tree redrawn for one changed value, a lock taken inside a hot loop | On each measured hot path, what allocates, copies, blocks, dispatches, or recomputes on each step? Does the cost fit its budget? |
+| Independent work | Order only the steps that need an earlier result or effect. Keep independent parts free of shared mutable state, so they can run in any order, and at once when the gain is worth the coordination | Needless order leaves cores idle, or a reorder changes the answer because a dependency was missed | Draw which step needs which result or effect. Swap two steps with no arrow between them. Is the answer the same? |
 | Budget | Set a latency or resource budget up front; a budget is a requirement | Performance judged by feel | Is there a number, and is it tested? |
 | Backpressure | Parts of unequal speed need a bound and a stated policy: wait, drop, or shed load. | One slow consumer stalls the stream or exhausts memory. | Slow one consumer tenfold. What grows, and what do the others see? |
 
@@ -91,6 +99,7 @@ CODE
 | Data flow | Keep dependencies in one direction. When behavior must feed back, route it through an explicit seam so each part still builds and tests before what uses it | A cycle blocks build or test order, or hides accidental coupling | Can each part build and test before what uses it? If behavior feeds back, is its seam explicit and testable? |
 | Layering | Each layer talks to the one below through its interface only | A top layer reaching into storage details | Can you replace the layer below without touching the one above? |
 | Single source of truth | Every fact has one authoritative place; others derive from it | Two copies edited separately | Search for the fact. How many places define it? |
+| Derived output | Describe the output as a function of its source state. This holds for a screen, a query, a build, and a cache. Incremental updates must equal a fresh computation, within any staleness the contract allows | Hand-written update steps miss a case, and the output drifts from the state | After a sequence of changes, recompute the output from the state alone. Does it match what the updates produced, within the allowed staleness? |
 | Seams | Put a seam where behavior can be swapped without editing the code under test | Code that can only be tested by running the whole system | Can the clock, network, and store be replaced in a test? |
 | Review signals | Use size and branching as signals to inspect code, not as split targets | A metric drives a harmful split, or tangled code avoids review | What responsibility or change would a split clarify? Would it only move code? |
 | Abstraction timing | As a rule of thumb, abstract on the third repeat, from real cases | A general framework built for a case that never came | How many real uses justify this abstraction? |
@@ -101,6 +110,7 @@ CODE
 |---|---|---|---|
 | Lifecycle | Every resource has an owner who acquires and releases it | Handles, connections, and tasks that outlive their need | For each resource, who closes it, and on every path? |
 | Concurrency and ordering | Give independent writers separate mutable objects. When one shared object is required, enforce ordering with a single writer, a lock, or an atomic update | Two writers lose each other's updates despite owning different fields in one file | Must these writers share an object? If so, what enforces ordering when they overlap? |
+| Termination and progress | Work that must finish has a measure that shrinks toward a base case, or an explicit bound. Work that runs without end, such as a service loop, bounds each turn and the resources it holds | An unexpected input loops without end, or a deep input exhausts the stack | What gets smaller on each step, or what bound stops it? Does the deepest expected input fit the stack? |
 | Versioning and migration | Replace an internal interface and all callers together when they can ship together. Stage compatibility when callers deploy separately or cannot all be reached | A needless compatibility layer survives an internal change, or a coordinated change breaks independently deployed callers | Can every caller move in one release? If not, how do versions coexist, and what evidence permits removing the old path? |
 | Idempotency and retries | An operation that may be repeated must give the same result; retries back off and stop | Duplicate charges, duplicate rows, retry storms | Run it twice. Is the outcome the same as once? |
 | Failure and recovery | Assume each dependency fails; define the degraded behavior and the way back | A single failure that takes down everything | Kill each dependency in turn. What does the user see? |
@@ -114,8 +124,10 @@ CODE
 | Change reach | Before editing, list every place the change must reach: callers, tests, fixtures, config, exports. Be minimal in the solution, complete in the change | A small diff that leaves callers, fixtures, or docs broken | Search every use of what you touched. Is each one updated or still correct? |
 | Fix once, at the source | Trace the first broken contract and fix it for every affected caller. Handle legitimate states where support is missing; fix the producer of states that should never exist | A symptom guard hides corrupt state, or valid input is rejected because its handler is broken | Is the triggering state allowed by the contract? Which producer or handler first violates that contract? |
 | Tests | Test behavior through the interface, not the implementation; a test must fail when the behavior breaks | Tests that pin internals and break on every refactor | Change the internals, keep the behavior. Do tests still pass? Break the behavior. Do they fail? |
+| Laws | State the laws an operation obeys, such as round trip, identity, and order independence. Check them over generated inputs, over every input up to a bound, or by proof (`principles-verify`) | Chosen examples pass while the law breaks on an input nobody wrote down | Name one law of this operation. What checks it beyond the examples? |
 | Error handling | Handle an error at the boundary that can act on it; below that, pass it up with context | Swallowed errors, or the same error handled at every layer | For each handler, can it fix, retry, or report? |
 | Invariants | State what must always hold and assert it where it could break | Silent corruption found far from its cause | Name the invariants. Where is each checked? |
+| Escape hatches | Code that bypasses a guarantee of the language, such as an unchecked cast or an unsafe block, moves that proof from the tool to you. Keep it small, behind an interface that callers cannot misuse, and state and test the assumption it rests on | The assumption is false, or a caller breaks it, far from where the fault shows | Which guarantee does each one bypass? What evidence shows that its assumption holds? Can a caller break it? |
 | Security by default | Least privilege; validate input at every trust boundary; fail closed | Broad permissions and checks added after the leak | Strip each privilege. What breaks? Which input is unchecked? |
 | Observability | The running system answers questions you did not plan to ask: logs, metrics, traces | Debugging by redeploying with more prints | Can you explain a failure in production without changing the code? |
 | Disconnected edits | Copies edited apart need a merge rule chosen in advance and written down. | Last write wins in silence, and one person's work is lost. | Edit one record on two disconnected copies, reconnect, and see which edit survives and why. |
